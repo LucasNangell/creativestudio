@@ -21,6 +21,7 @@ import {
 import { AlertTriangle, Download, TrendingUp } from "lucide-react";
 
 import {
+  DemoContentLoader,
   DemoShell,
   trackDemoFinish,
   trackDemoInteraction,
@@ -58,13 +59,27 @@ export function BiDemo() {
   const [period, setPeriod] = useState<BiPeriod>("30d");
   const [region, setRegion] = useState<BiRegion>("all");
   const [product, setProduct] = useState<BiProduct>("all");
-  const [view, setView] = useState<"executive" | "operational">("executive");
   const [exportMsg, setExportMsg] = useState("");
   const [activeNav, setActiveNav] = useState("overview");
+  const [isNavLoading, setIsNavLoading] = useState(false);
 
   const kpis = useMemo(() => getBiKpis(period, region, product), [period, region, product]);
   const chartData = BI_LINE_DATA[period];
   const categoryData = BI_CATEGORY_DATA[product];
+
+  const handleNavChange = (id: string) => {
+    if (id === activeNav) return;
+    setIsNavLoading(true);
+    setActiveNav(id);
+    trackDemoInteraction(DEMO_ID, "nav_change", { section: id });
+    window.setTimeout(() => setIsNavLoading(false), 320);
+  };
+
+  const handleFilterChange = (setter: () => void) => {
+    setIsNavLoading(true);
+    setter();
+    window.setTimeout(() => setIsNavLoading(false), 280);
+  };
 
   const handleExport = () => {
     setExportMsg("Exportação simulada — arquivo BI-demo.csv gerado.");
@@ -73,9 +88,9 @@ export function BiDemo() {
   };
 
   const sidebarItems = [
-    { id: "overview", label: "Visão geral", active: activeNav === "overview", onClick: () => setActiveNav("overview") },
-    { id: "sales", label: "Vendas", active: activeNav === "sales", onClick: () => setActiveNav("sales") },
-    { id: "alerts", label: "Alertas", active: activeNav === "alerts", onClick: () => setActiveNav("alerts") },
+    { id: "overview", label: "Visão geral", active: activeNav === "overview", onClick: () => handleNavChange("overview") },
+    { id: "sales", label: "Vendas", active: activeNav === "sales", onClick: () => handleNavChange("sales") },
+    { id: "alerts", label: "Alertas", active: activeNav === "alerts", onClick: () => handleNavChange("alerts") },
   ];
 
   return (
@@ -86,6 +101,7 @@ export function BiDemo() {
       ctaLabel="Quero um painel para minha empresa"
       sidebar={<DemoSidebar title="BI Demo" items={sidebarItems} />}
     >
+      <DemoContentLoader loading={isNavLoading}>
       <div className="p-4 sm:p-6">
         <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex flex-wrap gap-3">
@@ -93,8 +109,10 @@ export function BiDemo() {
               label="Período"
               value={period}
               onChange={(e) => {
-                setPeriod(e.target.value as BiPeriod);
-                trackDemoInteraction(DEMO_ID, "filter_period", { value: e.target.value });
+                handleFilterChange(() => {
+                  setPeriod(e.target.value as BiPeriod);
+                  trackDemoInteraction(DEMO_ID, "filter_period", { value: e.target.value });
+                });
               }}
               options={[
                 { label: "7 dias", value: "7d" },
@@ -108,8 +126,10 @@ export function BiDemo() {
               label="Região"
               value={region}
               onChange={(e) => {
-                setRegion(e.target.value as BiRegion);
-                trackDemoInteraction(DEMO_ID, "filter_region", { value: e.target.value });
+                handleFilterChange(() => {
+                  setRegion(e.target.value as BiRegion);
+                  trackDemoInteraction(DEMO_ID, "filter_region", { value: e.target.value });
+                });
               }}
               options={[
                 { label: "Todas", value: "all" },
@@ -124,8 +144,10 @@ export function BiDemo() {
               label="Produto"
               value={product}
               onChange={(e) => {
-                setProduct(e.target.value as BiProduct);
-                trackDemoInteraction(DEMO_ID, "filter_product", { value: e.target.value });
+                handleFilterChange(() => {
+                  setProduct(e.target.value as BiProduct);
+                  trackDemoInteraction(DEMO_ID, "filter_product", { value: e.target.value });
+                });
               }}
               options={[
                 { label: "Todos", value: "all" },
@@ -138,26 +160,32 @@ export function BiDemo() {
           </div>
 
           <div className="flex flex-wrap gap-2">
-            <Button
-              variant={view === "executive" ? "primary" : "secondary"}
-              size="sm"
-              onClick={() => {
-                setView("executive");
-                trackDemoInteraction(DEMO_ID, "view_executive");
-              }}
-            >
-              Visão executiva
-            </Button>
-            <Button
-              variant={view === "operational" ? "primary" : "secondary"}
-              size="sm"
-              onClick={() => {
-                setView("operational");
-                trackDemoInteraction(DEMO_ID, "view_operational");
-              }}
-            >
-              Visão operacional
-            </Button>
+            {activeNav === "overview" ? (
+              <Button variant="primary" size="sm" disabled>
+                Visão executiva
+              </Button>
+            ) : (
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() => handleNavChange("overview")}
+              >
+                Visão executiva
+              </Button>
+            )}
+            {activeNav === "sales" ? (
+              <Button variant="primary" size="sm" disabled>
+                Visão operacional
+              </Button>
+            ) : (
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() => handleNavChange("sales")}
+              >
+                Visão operacional
+              </Button>
+            )}
             <Button variant="outline" size="sm" onClick={handleExport}>
               <Download className="h-4 w-4" aria-hidden />
               Exportar
@@ -171,6 +199,8 @@ export function BiDemo() {
           </p>
         ) : null}
 
+        {activeNav === "overview" ? (
+          <>
         <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <DemoKpiCard label="Receita" value={formatMoney(kpis.receita)} change="+8,2%" trend="up" />
           <DemoKpiCard label="Margem" value={`${kpis.margem}%`} change="Estável" trend="neutral" />
@@ -178,7 +208,6 @@ export function BiDemo() {
           <DemoKpiCard label="Ticket médio" value={formatMoney(kpis.ticketMedio)} change="-2,1%" trend="down" />
         </div>
 
-        {view === "executive" ? (
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-nangell border border-glass-border bg-nangell-dark/30 p-4">
               <h3 className="mb-4 text-sm font-medium text-nangell-text">Receita vs Meta</h3>
@@ -233,7 +262,16 @@ export function BiDemo() {
               </div>
             </div>
           </div>
-        ) : (
+          </>
+        ) : activeNav === "sales" ? (
+          <>
+        <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <DemoKpiCard label="Receita" value={formatMoney(kpis.receita)} change="+8,2%" trend="up" />
+          <DemoKpiCard label="Margem" value={`${kpis.margem}%`} change="Estável" trend="neutral" />
+          <DemoKpiCard label="Clientes ativos" value={String(kpis.clientesAtivos)} change="+14 novos" trend="up" />
+          <DemoKpiCard label="Ticket médio" value={formatMoney(kpis.ticketMedio)} change="-2,1%" trend="down" />
+        </div>
+
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-nangell border border-glass-border bg-nangell-dark/30 p-4">
               <h3 className="mb-4 text-sm font-medium text-nangell-text">Receita vs Custo</h3>
@@ -278,33 +316,8 @@ export function BiDemo() {
               </div>
             </div>
           </div>
-        )}
 
-        <div className="mt-6 grid gap-4 lg:grid-cols-2">
-          <div>
-            <h3 className="mb-3 flex items-center gap-2 text-sm font-medium text-nangell-text">
-              <AlertTriangle className="h-4 w-4 text-amber-400" aria-hidden />
-              Alertas inteligentes
-            </h3>
-            <ul className="space-y-2">
-              {BI_ALERTS.map((alert) => (
-                <li
-                  key={alert.id}
-                  className={cn(
-                    "rounded-nangell border px-4 py-3",
-                    alert.severity === "critical" && "border-red-500/30 bg-red-500/5",
-                    alert.severity === "warning" && "border-amber-500/30 bg-amber-500/5",
-                    alert.severity === "info" && "border-nangell-cyan/30 bg-nangell-cyan/5",
-                  )}
-                >
-                  <p className="text-sm font-medium text-nangell-text">{alert.title}</p>
-                  <p className="mt-1 text-xs text-nangell-muted">{alert.description}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
+          <div className="mt-6">
             <h3 className="mb-3 flex items-center gap-2 text-sm font-medium text-nangell-text">
               <TrendingUp className="h-4 w-4 text-emerald-400" aria-hidden />
               Ranking de clientes
@@ -330,8 +343,33 @@ export function BiDemo() {
               ))}
             </ul>
           </div>
-        </div>
+          </>
+        ) : (
+          <div className="mt-2">
+            <h3 className="mb-3 flex items-center gap-2 text-sm font-medium text-nangell-text">
+              <AlertTriangle className="h-4 w-4 text-amber-400" aria-hidden />
+              Alertas inteligentes
+            </h3>
+            <ul className="space-y-2">
+              {BI_ALERTS.map((alert) => (
+                <li
+                  key={alert.id}
+                  className={cn(
+                    "rounded-nangell border px-4 py-3",
+                    alert.severity === "critical" && "border-red-500/30 bg-red-500/5",
+                    alert.severity === "warning" && "border-amber-500/30 bg-amber-500/5",
+                    alert.severity === "info" && "border-nangell-cyan/30 bg-nangell-cyan/5",
+                  )}
+                >
+                  <p className="text-sm font-medium text-nangell-text">{alert.title}</p>
+                  <p className="mt-1 text-xs text-nangell-muted">{alert.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
+      </DemoContentLoader>
     </DemoShell>
   );
 }

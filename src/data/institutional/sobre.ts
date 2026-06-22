@@ -189,6 +189,28 @@ export const sobreStackVisual = [
   "LGPD",
 ] as const;
 
+export type SobreTeamMember = {
+  name: string;
+  role: string;
+  specialty: string;
+  avatar: string;
+};
+
+export const sobreEquipe: SobreTeamMember[] = [
+  {
+    name: "Fundador · Engenharia",
+    role: "CEO & Lead Engineer",
+    specialty: "Arquitetura full stack, Next.js e integrações complexas",
+    avatar: "/assets/brand/icon-gradient.webp",
+  },
+  {
+    name: "Fundador · Produto",
+    role: "Head of Product",
+    specialty: "UX estratégica, prototipação e discovery de negócio",
+    avatar: "/assets/brand/icon-transparent.webp",
+  },
+];
+
 export const sobreCta = {
   title: "Pronto para conhecer como podemos ajudar sua operação?",
   description:

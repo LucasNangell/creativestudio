@@ -151,7 +151,7 @@ const FALLBACK_PROJECTS: RelatedProjectCard[] = homeDemos.map((demo) => ({
   title: demo.title,
   shortDescription: demo.description,
   category: demo.category,
-  coverImage: `/assets/mockups/${demo.id}.png`,
+  coverImage: `/assets/mockups/${demo.id}.webp`,
   demoRoute: demo.demoHref,
   caseHref: demo.caseHref,
 }));

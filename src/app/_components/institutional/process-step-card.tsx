@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { ArrowRight, BookOpen, FolderKanban } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
 import type { ProcessoEtapa } from "@/data/institutional/processo";
 
 type ProcessStepCardProps = {
@@ -18,9 +22,12 @@ export function ProcessStepCard({ etapa }: ProcessStepCardProps) {
           {String(etapa.step).padStart(2, "0")}
         </span>
         <div className="min-w-0 flex-1">
-          <h2 className="font-heading text-xl font-bold text-nangell-text sm:text-2xl">
-            {etapa.title}
-          </h2>
+          <div className="flex flex-wrap items-center gap-3">
+            <h2 className="font-heading text-xl font-bold text-nangell-text sm:text-2xl">
+              {etapa.title}
+            </h2>
+            <Badge variant="outline">{etapa.duration}</Badge>
+          </div>
           <p className="mt-3 text-base leading-relaxed text-nangell-muted">
             {etapa.description}
           </p>
@@ -79,6 +86,31 @@ export function ProcessStepCard({ etapa }: ProcessStepCardProps) {
           </ul>
         </div>
       </div>
+
+      {etapa.caseSlug || etapa.blogSlug ? (
+        <div className="mt-6 flex flex-wrap gap-3 border-t border-glass-border pt-5">
+          {etapa.caseSlug ? (
+            <Link
+              href={`/portfolio/${etapa.caseSlug}`}
+              className="inline-flex items-center gap-2 text-sm font-medium text-nangell-cyan hover:text-nangell-blue"
+            >
+              <FolderKanban className="h-4 w-4" aria-hidden />
+              Ver case relacionado
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+            </Link>
+          ) : null}
+          {etapa.blogSlug ? (
+            <Link
+              href={`/blog/${etapa.blogSlug}`}
+              className="inline-flex items-center gap-2 text-sm font-medium text-nangell-cyan hover:text-nangell-blue"
+            >
+              <BookOpen className="h-4 w-4" aria-hidden />
+              Ler artigo relacionado
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+            </Link>
+          ) : null}
+        </div>
+      ) : null}
     </article>
   );
 }

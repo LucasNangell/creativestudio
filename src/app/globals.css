@@ -2,14 +2,14 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  --nangell-cyan: #00c2fc;
-  --nangell-blue: #058ff7;
+  --nangell-cyan: #33cffd;
+  --nangell-blue: #3ba3f8;
   --nangell-electric: #3061fa;
   --nangell-violet: #6139fa;
   --nangell-dark: #05070d;
   --nangell-surface: #0b0f1a;
   --nangell-text: #f8fafc;
-  --nangell-muted: #94a3b8;
+  --nangell-muted: #a8b8cc;
   --nangell-glass-border: rgba(255, 255, 255, 0.08);
 }
 
@@ -61,9 +61,11 @@
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible,
+  [role="button"]:focus-visible,
   [role="tab"]:focus-visible,
   [tabindex]:focus-visible {
     @apply outline-2 outline-offset-2 outline-nangell-electric;
+    box-shadow: 0 0 0 4px rgba(48, 97, 250, 0.25);
   }
 
   button {
@@ -128,6 +130,10 @@
 
   .focus-ring {
     @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nangell-electric;
+  }
+
+  .text-on-gradient {
+    color: #e2e8f0;
   }
 
   .text-gradient-brand {

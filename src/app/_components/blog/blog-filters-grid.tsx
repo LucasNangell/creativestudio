@@ -124,11 +124,18 @@ export function BlogFiltersGrid({
           </div>
 
           {hasMore ? (
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-sm text-nangell-muted" aria-live="polite">
+                Exibindo {visiblePosts.length} de {filtered.length} artigos
+              </p>
               <Button variant="outline" onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}>
                 Carregar mais artigos
               </Button>
             </div>
+          ) : filtered.length > PAGE_SIZE ? (
+            <p className="text-center text-sm text-nangell-muted" aria-live="polite">
+              Todos os {filtered.length} artigos estão visíveis.
+            </p>
           ) : null}
         </>
       )}

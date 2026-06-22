@@ -22,6 +22,9 @@ export type ProcessoEtapa = {
   step: number;
   title: string;
   description: string;
+  duration: string;
+  caseSlug?: string;
+  blogSlug?: string;
   deliverables: string[];
   clientReceives: string[];
   successCriteria: string[];
@@ -31,6 +34,8 @@ export const processoEtapas: ProcessoEtapa[] = [
   {
     step: 1,
     title: "Diagnóstico",
+    duration: "1 a 2 semanas",
+    blogSlug: "diagnostico-tecnico-antes-do-orcamento",
     description:
       "Conversa estratégica para entender seu processo atual, dores operacionais, objetivos de negócio e restrições técnicas ou orçamentárias.",
     deliverables: [
@@ -52,6 +57,7 @@ export const processoEtapas: ProcessoEtapa[] = [
   {
     step: 2,
     title: "Levantamento de requisitos",
+    duration: "2 a 3 semanas",
     description:
       "Documentação detalhada de fluxos, integrações, perfis de usuário, regras de negócio e requisitos não funcionais (performance, segurança, LGPD).",
     deliverables: [
@@ -74,6 +80,8 @@ export const processoEtapas: ProcessoEtapa[] = [
   {
     step: 3,
     title: "Prototipação",
+    duration: "2 a 4 semanas",
+    blogSlug: "demonstrar-software-em-acao",
     description:
       "Validação visual e funcional de telas, jornadas críticas e arquitetura de informação antes do desenvolvimento em produção.",
     deliverables: [
@@ -95,6 +103,8 @@ export const processoEtapas: ProcessoEtapa[] = [
   {
     step: 4,
     title: "Desenvolvimento incremental",
+    duration: "4 a 16 semanas",
+    caseSlug: "crm-inteligente",
     description:
       "Engenharia iterativa com entregas parciais funcionais, code review, padrões de qualidade e comunicação semanal de progresso.",
     deliverables: [
@@ -116,6 +126,8 @@ export const processoEtapas: ProcessoEtapa[] = [
   {
     step: 5,
     title: "Testes, segurança e performance",
+    duration: "2 a 3 semanas",
+    blogSlug: "arquitetura-moderna-sistemas-2026",
     description:
       "Homologação rigorosa com testes funcionais, de carga, segurança (OWASP), acessibilidade e otimização de Core Web Vitals.",
     deliverables: [
@@ -137,6 +149,8 @@ export const processoEtapas: ProcessoEtapa[] = [
   {
     step: 6,
     title: "Deploy, treinamento e evolução",
+    duration: "1 a 2 semanas",
+    caseSlug: "dashboard-bi",
     description:
       "Publicação em produção, treinamento da equipe, monitoramento pós-lançamento e roadmap de melhorias contínuas.",
     deliverables: [

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { ChevronRight, Info } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
+import { Skeleton } from "@/components/ui/skeleton";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
@@ -75,8 +76,8 @@ export function DemoShell({
         >
           <Info className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" aria-hidden />
           <p>
-            Ambiente demonstrativo com dados fictícios. Nenhuma informação exibida é real ou
-            persistida em servidores.
+            Ambiente de simulação com dados fictícios para fins de demonstração técnica.
+            Nenhuma informação exibida é real ou persistida em servidores.
           </p>
         </div>
 
@@ -95,6 +96,31 @@ export function DemoShell({
       </Container>
     </div>
   );
+}
+
+export function DemoContentLoader({
+  loading,
+  children,
+}: {
+  loading?: boolean;
+  children: React.ReactNode;
+}) {
+  if (loading) {
+    return (
+      <div className="p-4 sm:p-6" role="status" aria-live="polite" aria-busy="true">
+        <span className="sr-only">Carregando painel da demonstração…</span>
+        <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <Skeleton key={i} className="h-20 w-full" />
+          ))}
+        </div>
+        <Skeleton className="mb-4 h-10 w-full max-w-md" />
+        <Skeleton className="h-[280px] w-full rounded-nangell-lg" />
+      </div>
+    );
+  }
+
+  return children;
 }
 
 export function trackDemoInteraction(

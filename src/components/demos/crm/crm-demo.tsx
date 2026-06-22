@@ -20,6 +20,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import {
   Building2,
+  Download,
   Filter,
   GripVertical,
   Mail,
@@ -29,6 +30,7 @@ import {
 } from "lucide-react";
 
 import {
+  DemoContentLoader,
   DemoShell,
   trackDemoFinish,
   trackDemoInteraction,
@@ -162,10 +164,21 @@ export function CrmDemo() {
   const [whatsappMessage, setWhatsappMessage] = useState("");
   const [proposalSent, setProposalSent] = useState(false);
   const [activeNav, setActiveNav] = useState("pipeline");
+  const [isNavLoading, setIsNavLoading] = useState(false);
+  const [isActionLoading, setIsActionLoading] = useState(false);
+  const [exportMsg, setExportMsg] = useState("");
 
   useEffect(() => {
     setLeads(loadLeads());
   }, []);
+
+  const handleNavChange = (id: string) => {
+    if (id === activeNav) return;
+    setIsNavLoading(true);
+    setActiveNav(id);
+    trackDemoInteraction(DEMO_ID, "nav_change", { section: id });
+    window.setTimeout(() => setIsNavLoading(false), 320);
+  };
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 8 } }));
 
@@ -217,11 +230,13 @@ export function CrmDemo() {
 
     if (!newStatus) return;
 
+    setIsActionLoading(true);
     const next = leads.map((lead) =>
       lead.id === leadId ? { ...lead, status: newStatus!, ultimaInteracao: "Agora" } : lead,
     );
     persistLeads(next);
     trackDemoInteraction(DEMO_ID, "kanban_move", { status: newStatus });
+    window.setTimeout(() => setIsActionLoading(false), 280);
   };
 
   const handleOpenLead = (lead: CrmLead) => {
@@ -254,15 +269,40 @@ export function CrmDemo() {
   };
 
   const handleCreateProposal = () => {
+    setIsActionLoading(true);
     setProposalSent(true);
     trackDemoFinish(DEMO_ID, "proposal_created");
-    setTimeout(() => setProposalSent(false), 3000);
+    window.setTimeout(() => {
+      setProposalSent(false);
+      setIsActionLoading(false);
+    }, 3000);
   };
 
+  const handleExportCsv = () => {
+    setExportMsg("Exportação simulada — arquivo CRM-leads.csv gerado.");
+    trackDemoFinish(DEMO_ID, "export_csv");
+    window.setTimeout(() => setExportMsg(""), 4000);
+  };
+
+  const statusChartData = useMemo(() => {
+    return CRM_COLUMNS.map((col) => ({
+      label: col.label,
+      count: leads.filter((l) => l.status === col.id).length,
+    }));
+  }, [leads]);
+
+  const originChartData = useMemo(() => {
+    const origins = ["Site", "WhatsApp", "Indicação", "LinkedIn", "Evento"] as CrmLeadOrigin[];
+    return origins.map((origin) => ({
+      label: origin,
+      count: leads.filter((l) => l.origem === origin).length,
+    }));
+  }, [leads]);
+
   const sidebarItems = [
-    { id: "dashboard", label: "Dashboard", active: activeNav === "dashboard", onClick: () => setActiveNav("dashboard") },
-    { id: "pipeline", label: "Pipeline", active: activeNav === "pipeline", onClick: () => setActiveNav("pipeline") },
-    { id: "relatorios", label: "Relatórios", active: activeNav === "relatorios", onClick: () => setActiveNav("relatorios") },
+    { id: "dashboard", label: "Dashboard", active: activeNav === "dashboard", onClick: () => handleNavChange("dashboard") },
+    { id: "pipeline", label: "Pipeline", active: activeNav === "pipeline", onClick: () => handleNavChange("pipeline") },
+    { id: "relatorios", label: "Relatórios", active: activeNav === "relatorios", onClick: () => handleNavChange("relatorios") },
   ];
 
   return (
@@ -273,7 +313,133 @@ export function CrmDemo() {
       ctaLabel="Quero um CRM parecido"
       sidebar={<DemoSidebar title="CRM Demo" items={sidebarItems} />}
     >
+      <DemoContentLoader loading={isNavLoading || isActionLoading}>
       <div className="p-4 sm:p-6">
+        {activeNav === "dashboard" ? (
+          <>
+            <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <DemoKpiCard label="Pipeline total" value={kpis.pipeline} change="+12% vs mês anterior" trend="up" />
+              <DemoKpiCard label="Leads novos" value={String(kpis.novos)} change="Esta semana" trend="neutral" />
+              <DemoKpiCard label="Negócios fechados" value={String(kpis.fechados)} change={kpis.taxa} trend="up" />
+              <DemoKpiCard label="Taxa de conversão" value={kpis.taxa} change="Simulado" trend="neutral" />
+            </div>
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div className="rounded-nangell border border-glass-border bg-nangell-dark/30 p-4">
+                <h3 className="mb-4 text-sm font-medium text-nangell-text">Leads por etapa do funil</h3>
+                <ul className="space-y-3">
+                  {statusChartData.map((item) => (
+                    <li key={item.label}>
+                      <div className="mb-1 flex justify-between text-xs text-nangell-muted">
+                        <span>{item.label}</span>
+                        <span>{item.count}</span>
+                      </div>
+                      <div className="h-2 overflow-hidden rounded-full bg-white/5">
+                        <div
+                          className="h-full rounded-full bg-nangell-gradient"
+                          style={{ width: `${Math.max((item.count / leads.length) * 100, 4)}%` }}
+                        />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-nangell border border-glass-border bg-nangell-dark/30 p-4">
+                <h3 className="mb-4 text-sm font-medium text-nangell-text">Origem dos leads</h3>
+                <ul className="space-y-3">
+                  {originChartData.map((item) => (
+                    <li key={item.label}>
+                      <div className="mb-1 flex justify-between text-xs text-nangell-muted">
+                        <span>{item.label}</span>
+                        <span>{item.count}</span>
+                      </div>
+                      <div className="h-2 overflow-hidden rounded-full bg-white/5">
+                        <div
+                          className="h-full rounded-full bg-nangell-blue"
+                          style={{ width: `${Math.max((item.count / leads.length) * 100, 4)}%` }}
+                        />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </>
+        ) : activeNav === "relatorios" ? (
+          <>
+            <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+                <Select
+                  label="Origem"
+                  value={originFilter}
+                  onChange={(e) => {
+                    setOriginFilter(e.target.value);
+                    trackDemoInteraction(DEMO_ID, "filter_origin", { value: e.target.value });
+                  }}
+                  options={[
+                    { label: "Todas", value: "all" },
+                    ...(["Site", "WhatsApp", "Indicação", "LinkedIn", "Evento"] as CrmLeadOrigin[]).map(
+                      (o) => ({ label: o, value: o }),
+                    ),
+                  ]}
+                  className="sm:max-w-[180px]"
+                />
+                <Select
+                  label="Status"
+                  value={statusFilter}
+                  onChange={(e) => {
+                    setStatusFilter(e.target.value);
+                    trackDemoInteraction(DEMO_ID, "filter_status", { value: e.target.value });
+                  }}
+                  options={[
+                    { label: "Todos", value: "all" },
+                    ...CRM_COLUMNS.map((c) => ({ label: c.label, value: c.id })),
+                  ]}
+                  className="sm:max-w-[180px]"
+                />
+              </div>
+              <Button variant="outline" size="sm" onClick={handleExportCsv}>
+                <Download className="h-4 w-4" aria-hidden />
+                Exportar CSV
+              </Button>
+            </div>
+            {exportMsg ? (
+              <p className="mb-4 text-sm text-emerald-400" role="status">
+                {exportMsg}
+              </p>
+            ) : null}
+            <div className="overflow-x-auto rounded-nangell border border-glass-border">
+              <table className="w-full min-w-[640px] text-left text-sm">
+                <thead className="border-b border-glass-border bg-nangell-dark/40">
+                  <tr>
+                    <th className="px-4 py-3 font-medium text-nangell-muted">Nome</th>
+                    <th className="px-4 py-3 font-medium text-nangell-muted">Empresa</th>
+                    <th className="px-4 py-3 font-medium text-nangell-muted">Status</th>
+                    <th className="px-4 py-3 font-medium text-nangell-muted">Origem</th>
+                    <th className="px-4 py-3 font-medium text-nangell-muted">Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredLeads.map((lead) => (
+                    <tr key={lead.id} className="border-b border-glass-border/50 hover:bg-white/[0.02]">
+                      <td className="px-4 py-3 text-nangell-text">{lead.nome}</td>
+                      <td className="px-4 py-3 text-nangell-muted">{lead.empresa}</td>
+                      <td className="px-4 py-3">
+                        <Badge variant="muted">
+                          {CRM_COLUMNS.find((c) => c.id === lead.status)?.label ?? lead.status}
+                        </Badge>
+                      </td>
+                      <td className="px-4 py-3 text-nangell-muted">{lead.origem}</td>
+                      <td className="px-4 py-3 font-mono text-nangell-cyan">
+                        {formatCurrency(lead.valorEstimado)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        ) : (
+          <>
         <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <DemoKpiCard label="Pipeline total" value={kpis.pipeline} change="+12% vs mês anterior" trend="up" />
           <DemoKpiCard label="Leads novos" value={String(kpis.novos)} change="Esta semana" trend="neutral" />
@@ -356,7 +522,10 @@ export function CrmDemo() {
             ) : null}
           </DragOverlay>
         </DndContext>
+          </>
+        )}
       </div>
+      </DemoContentLoader>
 
       <Modal
         open={!!selectedLead}

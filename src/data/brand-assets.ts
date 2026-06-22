@@ -1,12 +1,12 @@
 export const brandAssets = {
-  logoHorizontalLight: "/assets/brand/logo-horizontal-light.png",
-  logoHorizontalDark: "/assets/brand/logo-horizontal-dark.png",
-  logoVerticalLight: "/assets/brand/logo-vertical-light.png",
-  logoVerticalDark: "/assets/brand/logo-vertical-dark.png",
-  iconGradient: "/assets/brand/icon-gradient.png",
-  iconTransparent: "/assets/brand/icon-transparent.png",
-  logoHorizontalLightBgWhite: "/assets/brand/logo-horizontal-light-bg-white.png",
-  logoVerticalLightBgWhite: "/assets/brand/logo-vertical-light-bg-white.png",
+  logoHorizontalLight: "/assets/brand/logo-horizontal-light.webp",
+  logoHorizontalDark: "/assets/brand/logo-horizontal-dark.webp",
+  logoVerticalLight: "/assets/brand/logo-vertical-light.webp",
+  logoVerticalDark: "/assets/brand/logo-vertical-dark.webp",
+  iconGradient: "/assets/brand/icon-gradient.webp",
+  iconTransparent: "/assets/brand/icon-transparent.webp",
+  logoHorizontalLightBgWhite: "/assets/brand/logo-horizontal-light-bg-white.webp",
+  logoVerticalLightBgWhite: "/assets/brand/logo-vertical-light-bg-white.webp",
 } as const;
 
 export type BrandLogoVariant = "horizontal" | "vertical" | "icon";

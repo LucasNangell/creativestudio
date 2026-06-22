@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { SectionHeading } from "@/app/_components/home/section-heading";
 import { TechMarquee } from "@/app/_components/home/tech-marquee";
@@ -16,6 +17,7 @@ import { buttonVariants } from "@/components/ui/button";
 import {
   sobreCta,
   sobreDiferenciaisTecnicos,
+  sobreEquipe,
   sobreHero,
   sobreHistoria,
   sobreManifesto,
@@ -74,20 +76,45 @@ export function SobrePageContent() {
             </div>
           </Reveal>
 
-          <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {sobreHistoria.milestones.map((milestone) => (
-              <StaggerItem key={milestone.year}>
-                <div className="glass-card h-full p-5">
-                  <p className="font-mono text-xs tracking-widest text-nangell-cyan uppercase">
-                    {milestone.year}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-nangell-muted">
-                    {milestone.label}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <Reveal>
+            <ol className="relative mx-auto mt-12 max-w-2xl">
+              <div
+                className="absolute top-0 bottom-0 left-[19px] w-0.5 bg-gradient-to-b from-nangell-cyan via-nangell-blue to-nangell-violet sm:left-1/2 sm:-translate-x-px"
+                aria-hidden
+              />
+              {sobreHistoria.milestones.map((milestone, index) => (
+                <li
+                  key={milestone.year}
+                  className={cn(
+                    "relative pb-10 last:pb-0",
+                    index % 2 === 0 ? "sm:pr-[calc(50%+2rem)] sm:text-right" : "sm:pl-[calc(50%+2rem)]",
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "absolute top-1 left-0 flex h-10 w-10 items-center justify-center rounded-full border-2 border-nangell-cyan bg-nangell-dark font-mono text-[10px] font-bold text-nangell-cyan sm:left-1/2 sm:-translate-x-1/2",
+                    )}
+                    aria-hidden
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div
+                    className={cn(
+                      "ml-14 sm:ml-0",
+                      index % 2 === 0 ? "sm:mr-0" : "sm:ml-0",
+                    )}
+                  >
+                    <p className="font-mono text-xs tracking-widest text-nangell-cyan uppercase">
+                      {milestone.year}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-nangell-muted sm:text-base">
+                      {milestone.label}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
         </Container>
       </Section>
 
@@ -221,6 +248,45 @@ export function SobrePageContent() {
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-nangell-muted">
                     {point.description}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </Container>
+      </Section>
+
+      <Section className="bg-nangell-surface/30">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Pessoas"
+              title="Nossa equipe"
+              description="Profissionais que unem engenharia rigorosa e visão de produto em cada entrega."
+            />
+          </Reveal>
+
+          <StaggerContainer className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
+            {sobreEquipe.map((member) => (
+              <StaggerItem key={member.name}>
+                <div className="glass-card flex h-full flex-col items-center p-6 text-center sm:p-8">
+                  <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-nangell-cyan/30 bg-nangell-dark">
+                    <Image
+                      src={member.avatar}
+                      alt={`Avatar de ${member.name}`}
+                      width={80}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h3 className="mt-4 font-heading text-lg font-semibold text-nangell-text">
+                    {member.name}
+                  </h3>
+                  <p className="mt-1 font-mono text-xs tracking-widest text-nangell-cyan uppercase">
+                    {member.role}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-nangell-muted">
+                    {member.specialty}
                   </p>
                 </div>
               </StaggerItem>
