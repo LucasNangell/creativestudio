@@ -82,6 +82,21 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: "/_next/static/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        source: "/assets/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
         source: "/demos/:path*",
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
@@ -90,8 +105,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/((?!demos).*)",
-        headers: securityHeaders,
+        source: "/((?!_next/static|_next/image|assets|demos|api).*)",
+        headers: [
+          ...securityHeaders,
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, s-maxage=60, stale-while-revalidate=300, must-revalidate",
+          },
+        ],
       },
     ];
   },

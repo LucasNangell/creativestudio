@@ -39,10 +39,10 @@ export function HeroSection() {
           <div>
             <Reveal>
               <BrandLogo
-                variant="icon"
+                variant="horizontal"
                 theme="dark"
                 priority
-                className="mb-6 h-14 w-14"
+                className="mb-6 h-10 w-auto max-w-[min(100%,240px)] sm:h-11"
               />
             </Reveal>
 

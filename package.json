@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && node scripts/integrate-portfolio-demos.mjs && next build && node scripts/verify-demo-assets.mjs",
+    "build": "node scripts/sync-brand-assets.mjs && prisma generate && node scripts/integrate-portfolio-demos.mjs && next build && node scripts/verify-demo-assets.mjs",
     "postinstall": "prisma generate",
     "start": "next start -H 0.0.0.0",
     "lint": "eslint .",

@@ -4,7 +4,9 @@ import { homeSeo } from "@/data/home";
 export const siteConfig = {
   name: "Nangell Creative Studio",
   legalName: "Nangell Creative Studio",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nangell.com.br",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
+    "https://nangellcreativestudio.online",
   description: homeSeo.description,
   keywords: [...homeSeo.keywords],
   locale: "pt_BR",

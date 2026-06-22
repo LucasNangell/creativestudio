@@ -17,6 +17,9 @@ import { getAbsoluteAssetUrl, siteConfig } from "@/lib/seo/site";
 
 import "./globals.css";
 
+/** Evita HTML cacheado por 1 ano na CDN após deploy (Hostinger hcdn). */
+export const revalidate = 300;
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
