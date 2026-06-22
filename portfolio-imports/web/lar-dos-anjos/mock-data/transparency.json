@@ -1,0 +1,70 @@
+{
+  "reference_month": { "year": 2026, "month": 6 },
+  "data_state": "complete",
+  "month_income": 12450,
+  "monthly_goal": 15000,
+  "goal_progress_percent": 83,
+  "daily_cost_estimate": 485,
+  "active_donors": 127,
+  "month_expense": 9820,
+  "month_balance": 2630,
+  "total_income": 89400,
+  "total_expense": 72100,
+  "net_balance": 17300,
+  "income_by_source": { "asaas": 61200, "pix_manual": 28200 },
+  "month_income_by_source": { "asaas": 8900, "pix_manual": 3550 },
+  "expenses_by_category": [
+    { "category_id": "cat-001", "name": "Ração", "color": "#B9895D", "total": 3200 },
+    { "category_id": "cat-002", "name": "Veterinário", "color": "#2AA98C", "total": 2800 },
+    { "category_id": "cat-003", "name": "Medicamentos", "color": "#7BBAA9", "total": 1450 },
+    { "category_id": "cat-004", "name": "Transporte", "color": "#DEB88F", "total": 890 },
+    { "category_id": "cat-005", "name": "Limpeza", "color": "#263238", "total": 680 },
+    { "category_id": "cat-006", "name": "Estrutura", "color": "#2AA98C", "total": 800 }
+  ],
+  "monthly_evolution": [
+    { "year": 2026, "month": 1, "label": "Jan/26", "income": 9800, "expense": 8200, "balance": 1600 },
+    { "year": 2026, "month": 2, "label": "Fev/26", "income": 10200, "expense": 7900, "balance": 2300 },
+    { "year": 2026, "month": 3, "label": "Mar/26", "income": 11500, "expense": 9100, "balance": 2400 },
+    { "year": 2026, "month": 4, "label": "Abr/26", "income": 10800, "expense": 8600, "balance": 2200 },
+    { "year": 2026, "month": 5, "label": "Mai/26", "income": 12100, "expense": 9400, "balance": 2700 },
+    { "year": 2026, "month": 6, "label": "Jun/26", "income": 12450, "expense": 9820, "balance": 2630 }
+  ],
+  "public_expenses": [
+    {
+      "id": "exp-001",
+      "title": "Ração premium — junho",
+      "public_description": "Alimentação dos animais resgatados",
+      "amount": 3200,
+      "date": "2026-06-05",
+      "category": { "name": "Ração", "color": "#B9895D" }
+    },
+    {
+      "id": "exp-002",
+      "title": "Consultas veterinárias",
+      "public_description": "Atendimentos preventivos e emergenciais",
+      "amount": 2800,
+      "date": "2026-06-12",
+      "category": { "name": "Veterinário", "color": "#2AA98C" }
+    },
+    {
+      "id": "exp-003",
+      "title": "Medicamentos e vacinas",
+      "public_description": "Estoque mensal de medicamentos",
+      "amount": 1450,
+      "date": "2026-06-15",
+      "category": { "name": "Medicamentos", "color": "#7BBAA9" }
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep-001",
+      "month": 5,
+      "year": 2026,
+      "summary": "Mês com aumento de 12% na arrecadação recorrente.",
+      "total_income": 12100,
+      "total_expense": 9400,
+      "net_balance": 2700
+    }
+  ],
+  "pending_note": "Dados simulados para demonstração. Valores fictícios sem vínculo com operação real."
+}

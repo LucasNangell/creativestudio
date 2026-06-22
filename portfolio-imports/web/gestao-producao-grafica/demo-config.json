@@ -1,0 +1,78 @@
+{
+  "title": "Gestão de Produção Gráfica",
+  "slug": "gestao-producao-grafica",
+  "category": "gestao-operacional",
+  "systemType": "web-fullstack",
+  "recommendedDemoType": "IFRAME",
+  "demoRoute": "/demo/gestao-producao-grafica",
+  "caseRoute": "/cases/gestao-producao-grafica",
+  "coverImageSuggestion": "/assets/mockups/gestao-producao-grafica.webp",
+  "shortDescription": "Plataforma completa para gestão de ordens de serviço gráficas, com painéis em tempo real, PCP e controle de produção.",
+  "stack": [
+    "React 19",
+    "TypeScript",
+    "Vite 6",
+    "TanStack Router",
+    "TanStack Query",
+    "Tailwind CSS v4",
+    "FastAPI",
+    "Python",
+    "MySQL",
+    "Chart.js",
+    "Zustand"
+  ],
+  "mainFeatures": [
+    "Gestão de ordens de serviço (OS) com busca avançada e filtros",
+    "Painel PCP com kanban e reordenação drag-and-drop",
+    "Dashboards em tela cheia por setor e global",
+    "Análise técnica de arquivos PDF",
+    "Módulo de papelaria com mockups 3D",
+    "Integração com e-mail e portal do cliente",
+    "Relatórios personalizados e exportação",
+    "Controle de permissões por usuário e IP"
+  ],
+  "demoInteractions": [
+    "Entrar na demonstração com um clique",
+    "Filtrar ordens de serviço por situação e setor",
+    "Papelaria: visualizar mockup 3D e job Corel concluído (OS 5485/2026)",
+    "Análise: biblioteca de problemas, pré-análise automática e itens registrados (OS 4521/2026)",
+    "Navegar pelo kanban PCP e reordenar itens"
+  ],
+  "mockDataFiles": [
+    "mock-data/auth-me.json",
+    "mock-data/permissions.json",
+    "mock-data/config-public.json",
+    "mock-data/os-search.json",
+    "mock-data/os-details.json",
+    "mock-data/os-history.json",
+    "mock-data/pcp-queue.json",
+    "mock-data/aux-data.json",
+    "mock-data/dashboard-setor.json",
+    "mock-data/notifications.json",
+    "mock-data/papelaria-contexto.json",
+    "mock-data/papelaria-job.json",
+    "mock-data/analise-problemas-padrao.json",
+    "mock-data/analise-full.json",
+    "mock-data/pre-analise-snapshot.json"
+  ],
+  "hasStaticBuild": true,
+  "buildEntryPoint": "build/index.html",
+  "requiresBackend": false,
+  "backendWasMocked": true,
+  "securityNotes": [
+    "Nenhuma credencial real incluída",
+    "Nenhum arquivo .env de produção copiado",
+    "URLs de produção e IPs internos removidos",
+    "Dados de clientes substituídos por registros fictícios",
+    "Integrações externas (Exchange, Google Drive, MDB) desabilitadas na demo",
+    "WebSocket desabilitado — sem conexão a servidores reais"
+  ],
+  "integrationNotes": [
+    "Copiar a pasta build/ para o site do portfólio em /demo/gestao-producao-grafica/",
+    "Embedar via iframe apontando para build/index.html",
+    "Usar sandbox='allow-scripts allow-same-origin allow-forms' no iframe",
+    "O build usa caminhos relativos (base ./) — funciona em subpastas",
+    "Credenciais demo visíveis na tela de login: usuario demo / senha demo",
+    "Telas secundárias (e-mail, papelaria, análise) exibem dados vazios — foco na home e PCP"
+  ]
+}

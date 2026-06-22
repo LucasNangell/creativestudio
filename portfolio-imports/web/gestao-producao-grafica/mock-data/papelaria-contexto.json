@@ -1,0 +1,30 @@
+{
+  "os": {
+    "nro": 5485,
+    "ano": 2026,
+    "produto": "Ct Visita",
+    "titulo": "Cartão de visita — João Demo (papelaria)",
+    "solicitante": "Cliente Demonstração",
+    "titular": "João Demo",
+    "cores": "4/4",
+    "frente_verso": "Frente e Verso"
+  },
+  "prefill": {
+    "nome_cliente": "João Demo",
+    "cargo": "Diretor Comercial",
+    "empresa": "Empresa Alpha Ltda",
+    "telefone": "(11) 3000-0000",
+    "email": "contato@empresa-demo.com"
+  },
+  "modelos": [
+    {
+      "id": 1,
+      "produto": "Ct Visita",
+      "nome_exibicao": "Cartão de Visita — Frente e Verso",
+      "tem_mockup_config": true,
+      "tem_preview_config": true
+    }
+  ],
+  "autoSelectedModelId": 1,
+  "warnings": []
+}

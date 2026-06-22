@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /entrar
+Disallow: /ui-playground
+
+Sitemap: https://demo.nangell.studio/lar-dos-anjos/sitemap.xml

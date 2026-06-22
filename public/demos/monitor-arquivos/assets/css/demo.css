@@ -1,0 +1,55 @@
+/* Banner e ajustes visuais da versão demonstrativa */
+.demo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #0f766e 0%, #115e59 100%);
+  color: #ecfdf5;
+  font-size: 0.875rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+  position: relative;
+}
+
+.demo-banner strong {
+  font-weight: 700;
+}
+
+.demo-banner span {
+  opacity: 0.92;
+}
+
+.demo-banner__reset {
+  margin-left: auto;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.demo-banner__reset:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.app--demo {
+  min-height: calc(100vh - 44px);
+}
+
+@media (max-width: 640px) {
+  .demo-banner {
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .demo-banner__reset {
+    margin-left: 0;
+    width: 100%;
+  }
+}

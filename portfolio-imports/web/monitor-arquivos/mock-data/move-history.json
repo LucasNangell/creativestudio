@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2026-06-20 09:16:10",
+    "file_name": "2026#10482#Cliente Alpha.pdf",
+    "dest_path": "\\\\servidor-demo\\Arquivos\\Clientes\\10482-Cliente Alpha\\2026#10482#Cliente Alpha v2.pdf",
+    "status": "Sucesso",
+    "error_msg": ""
+  },
+  {
+    "timestamp": "2026-06-20 09:10:22",
+    "file_name": "2026#22001#Cliente Beta.pdf",
+    "dest_path": "\\\\servidor-demo\\Arquivos\\Clientes\\22001-Cliente Beta\\2026#22001#Cliente Beta v1.pdf",
+    "status": "Sucesso",
+    "error_msg": ""
+  },
+  {
+    "timestamp": "2026-06-20 08:58:05",
+    "file_name": "arquivo_vazio.pdf",
+    "dest_path": "\\\\servidor-demo\\Arquivos\\Clientes\\33001-Cliente Gamma\\",
+    "status": "Erro (Preservado)",
+    "error_msg": "Arquivo de origem vazio — movimentação cancelada com segurança."
+  }
+]

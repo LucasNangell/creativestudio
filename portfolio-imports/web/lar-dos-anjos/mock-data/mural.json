@@ -1,0 +1,47 @@
+[
+  {
+    "id": "mural-001",
+    "displayName": "Maria Exemplo",
+    "planName": "Anjo Cuidado",
+    "impactMonths": 8,
+    "message": "Por todos os anjinhos de quatro patas!",
+    "badges": [{ "id": "badge-001", "name": "Anjo Fiel", "icon": "heart" }],
+    "createdAt": "2026-05-12T10:00:00.000Z"
+  },
+  {
+    "id": "mural-002",
+    "displayName": "João Demo",
+    "planName": "Anjo Guardião",
+    "impactMonths": 14,
+    "message": null,
+    "badges": [{ "id": "badge-002", "name": "Anjo Guardião", "icon": "shield" }],
+    "createdAt": "2026-04-03T14:30:00.000Z"
+  },
+  {
+    "id": "mural-003",
+    "displayName": "Empresa Alpha Ltda.",
+    "planName": "Anjo Protetor Master",
+    "impactMonths": 6,
+    "message": "Apoio corporativo ao abrigo demonstrativo.",
+    "badges": [{ "id": "badge-003", "name": "Apoiador de Campanha", "icon": "target" }],
+    "createdAt": "2026-03-20T09:15:00.000Z"
+  },
+  {
+    "id": "mural-004",
+    "displayName": "Anjo Silencioso",
+    "planName": "Anjo Ração",
+    "impactMonths": 3,
+    "message": null,
+    "badges": [],
+    "createdAt": "2026-02-08T18:45:00.000Z"
+  },
+  {
+    "id": "mural-005",
+    "displayName": "Ana Demonstração",
+    "planName": "Anjo Semente",
+    "impactMonths": 1,
+    "message": "Primeira doação — que venham muitas!",
+    "badges": [{ "id": "badge-004", "name": "Primeiro Passo", "icon": "footprints" }],
+    "createdAt": "2026-06-01T11:00:00.000Z"
+  }
+]

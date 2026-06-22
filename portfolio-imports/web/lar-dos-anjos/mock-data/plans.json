@@ -1,0 +1,80 @@
+[
+  {
+    "id": "plan-demo-001",
+    "name": "Anjo Semente",
+    "slug": "anjo-semente",
+    "value": 9.9,
+    "description": "Semente de esperança para nossos pets",
+    "impactText": "Alimenta 1 pet por 2 dias",
+    "badgeName": "Semente",
+    "badgeColor": "#DEB88F",
+    "displayOrder": 1,
+    "isFeatured": false,
+    "isActive": true
+  },
+  {
+    "id": "plan-demo-002",
+    "name": "Anjo Ração",
+    "slug": "anjo-racao",
+    "value": 19.9,
+    "description": "Garante alimentação básica mensal",
+    "impactText": "Alimenta 1 pet por 1 semana",
+    "badgeName": "Ração",
+    "badgeColor": "#B9895D",
+    "displayOrder": 2,
+    "isFeatured": false,
+    "isActive": true
+  },
+  {
+    "id": "plan-demo-003",
+    "name": "Anjo Cuidado",
+    "slug": "anjo-cuidado",
+    "value": 39.9,
+    "description": "Cuidados veterinários preventivos",
+    "impactText": "Vacina 1 pet",
+    "badgeName": "Cuidado",
+    "badgeColor": "#7BBAA9",
+    "displayOrder": 3,
+    "isFeatured": true,
+    "isActive": true
+  },
+  {
+    "id": "plan-demo-004",
+    "name": "Anjo Saúde",
+    "slug": "anjo-saude",
+    "value": 79.9,
+    "description": "Tratamentos e consultas veterinárias",
+    "impactText": "Consulta veterinária completa",
+    "badgeName": "Saúde",
+    "badgeColor": "#2AA98C",
+    "displayOrder": 4,
+    "isFeatured": false,
+    "isActive": true
+  },
+  {
+    "id": "plan-demo-005",
+    "name": "Anjo Guardião",
+    "slug": "anjo-guardiao",
+    "value": 149.9,
+    "description": "Proteção e cuidado integral",
+    "impactText": "Cuida de 2 pets por 1 mês",
+    "badgeName": "Guardião",
+    "badgeColor": "#6A4F36",
+    "displayOrder": 5,
+    "isFeatured": false,
+    "isActive": true
+  },
+  {
+    "id": "plan-demo-006",
+    "name": "Anjo Protetor Master",
+    "slug": "anjo-protetor-master",
+    "value": 299.9,
+    "description": "Apoio máximo ao abrigo demonstrativo",
+    "impactText": "Impacto transformador mensal",
+    "badgeName": "Protetor Master",
+    "badgeColor": "#2AA98C",
+    "displayOrder": 6,
+    "isFeatured": true,
+    "isActive": true
+  }
+]

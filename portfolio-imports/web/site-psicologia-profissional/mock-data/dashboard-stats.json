@@ -1,0 +1,36 @@
+{
+  "total_agendamentos": 5,
+  "agendamentos_novos": 1,
+  "agendamentos_em_analise": 1,
+  "agendamentos_confirmados": 2,
+  "agendamentos_cancelados": 1,
+  "total_posts": 5,
+  "posts_publicados": 5,
+  "posts_rascunho": 0,
+  "ultimos_agendamentos": [
+    {
+      "id": "a1000001-0000-4000-8000-000000000001",
+      "nome": "João Demo Silva",
+      "status": "novo",
+      "data_preferida": "2026-06-23",
+      "horario_preferido": "09:30",
+      "criado_em": "2026-06-20T09:15:00-03:00"
+    },
+    {
+      "id": "a1000002-0000-4000-8000-000000000002",
+      "nome": "Maria Exemplo Santos",
+      "status": "em_analise",
+      "data_preferida": "2026-06-25",
+      "horario_preferido": "14:00",
+      "criado_em": "2026-06-18T14:30:00-03:00"
+    },
+    {
+      "id": "a1000003-0000-4000-8000-000000000003",
+      "nome": "Carlos Demonstração Lima",
+      "status": "confirmado",
+      "data_preferida": "2026-06-24",
+      "horario_preferido": "11:00",
+      "criado_em": "2026-06-15T11:20:00-03:00"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "title": "HT Monitor — Automação de Arquivos PDF",
+  "slug": "monitor-arquivos",
+  "category": "Automação Industrial / Pré-impressão",
+  "systemType": "Web fullstack (SPA + API Python; demo estática com mock)",
+  "recommendedDemoType": "IFRAME",
+  "demoRoute": "/demo/monitor-arquivos",
+  "caseRoute": "/cases/monitor-arquivos",
+  "coverImageSuggestion": "/assets/mockups/monitor-arquivos.webp",
+  "shortDescription": "Automatize renomeação e movimentação de PDFs com painel web em tempo real. Menos retrabalho, mais controle no fluxo de pré-impressão.",
+  "stack": [
+    "HTML5",
+    "CSS3",
+    "JavaScript (SPA vanilla)",
+    "Python",
+    "FastAPI",
+    "MySQL",
+    "Watchdog",
+    "Tkinter",
+    "PyInstaller",
+    "Apache Tomcat"
+  ],
+  "mainFeatures": [
+    "Dashboard com status em tempo real",
+    "Monitoramento de pastas e sync MySQL",
+    "Renomeação automática com padrões configuráveis",
+    "Movimentação origem → destino com regras",
+    "Históricos de operações",
+    "Log centralizado de erros",
+    "Painel web responsivo"
+  ],
+  "demoInteractions": [
+    "Navegar entre módulos (Dashboard, Banco, Renomeador, Movimentações, Erros)",
+    "Adicionar pasta fictícia de monitoramento",
+    "Criar ou editar padrão de renomeação",
+    "Editar regra de movimentação",
+    "Executar movimentação manual simulada",
+    "Reiniciar demo para restaurar dados iniciais"
+  ],
+  "mockDataFiles": [
+    "mock-data/status.json",
+    "mock-data/settings.json",
+    "mock-data/rename-history.json",
+    "mock-data/move-history.json",
+    "mock-data/errors.json",
+    "mock-data/rename-patterns.json",
+    "mock-data/move-rules.json"
+  ],
+  "hasStaticBuild": true,
+  "buildEntryPoint": "build/index.html",
+  "requiresBackend": false,
+  "backendWasMocked": true,
+  "securityNotes": [
+    "Credenciais MySQL reais removidas e substituídas por valores demo",
+    "Caminhos UNC de produção substituídos por servidor-demo fictício",
+    "URLs internas (apogee, redecamara, cgraf.online) não incluídas",
+    "Backend Python e scripts de deploy excluídos do pacote",
+    "Nenhum executável ou dump de banco incluído"
+  ],
+  "integrationNotes": [
+    "Servir pasta build/ como arquivos estáticos",
+    "Embedar via iframe com altura mínima de 700-800px",
+    "Manter banner demo visível para identificação",
+    "Fontes Google externas podem exigir ajuste de CSP",
+    "Screenshots e mockup de capa ainda pendentes"
+  ]
+}

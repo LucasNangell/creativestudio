@@ -7,7 +7,18 @@ out/
 
 # Build outputs
 dist/
-build/
+
+# Portfolio imports — staging bruto (não versionar builds/sources pesados)
+portfolio-imports/**/source/
+portfolio-imports/**/build/
+portfolio-imports/**/node_modules/
+portfolio-imports/**/.next/
+portfolio-imports/**/*.env
+portfolio-imports/**/*.env.*
+portfolio-imports/**/*.db
+portfolio-imports/**/*.sqlite
+portfolio-imports/**/*.exe
+portfolio-imports/**/*.msi
 
 # Environment
 .env

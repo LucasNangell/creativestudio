@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-06-22T14:30:00.000Z",
+  "warning": "Dados fictícios para demonstração comercial — Nangell Creative Studio.",
+  "items": [
+    {
+      "id": "demo-news-001",
+      "title": "Projeto de lei sobre transparência municipal avança em comissão",
+      "summary": "Comissão aprova relatório preliminar com foco em publicação de despesas e contratos.",
+      "content": "Em sessão demonstrativa, parlamentares simulados debateram mecanismos de auditoria cidadã e prazos de divulgação de dados públicos.",
+      "url": "https://exemplo-demo.local/noticias/transparencia-municipal",
+      "source": "portal-noticias-demo.com.br",
+      "publishedAt": "2026-06-22T13:45:00.000Z",
+      "collectedAt": "2026-06-22T13:50:00.000Z"
+    },
+    {
+      "id": "demo-news-002",
+      "title": "Debate sobre mobilidade urbana mobiliza lideranças regionais",
+      "summary": "Proposta simula integração entre transporte coletivo e ciclovias em três distritos.",
+      "content": "Gestores fictícios apresentaram indicadores de fluxo e impacto estimado na redução de congestionamentos.",
+      "url": "https://exemplo-demo.local/noticias/mobilidade-urbana",
+      "source": "agencia-exemplo.com.br",
+      "publishedAt": "2026-06-22T12:20:00.000Z",
+      "collectedAt": "2026-06-22T12:25:00.000Z"
+    },
+    {
+      "id": "demo-news-003",
+      "title": "Audiência pública discute investimentos em saúde básica",
+      "summary": "Especialistas demonstram cenário de ampliação de unidades de atenção primária.",
+      "content": "Relatório simulado aponta necessidade de reforço em equipes multiprofissionais e telemedicina.",
+      "url": "https://exemplo-demo.local/noticias/saude-basica",
+      "source": "jornal-regiao-demo.com.br",
+      "publishedAt": "2026-06-22T11:10:00.000Z",
+      "collectedAt": "2026-06-22T11:15:00.000Z"
+    },
+    {
+      "id": "demo-news-004",
+      "title": "Painel de segurança pública apresenta indicadores trimestrais",
+      "summary": "Dados simulados mostram queda de ocorrências em áreas com patrulhamento inteligente.",
+      "content": "Autoridades fictícias destacaram parcerias com câmeras comunitárias e central integrada de alertas.",
+      "url": "https://exemplo-demo.local/noticias/seguranca-publica",
+      "source": "portal-cidade-demo.com.br",
+      "publishedAt": "2026-06-22T10:30:00.000Z",
+      "collectedAt": "2026-06-22T10:35:00.000Z"
+    },
+    {
+      "id": "demo-news-005",
+      "title": "Programa de habitação popular entra em fase de consulta",
+      "summary": "Minuta demonstrativa prevê priorização de famílias em áreas de risco geológico.",
+      "content": "Consulta simulada receberá contribuições de moradores e entidades até o final do mês demonstrativo.",
+      "url": "https://exemplo-demo.local/noticias/habitacao-popular",
+      "source": "midia-civil-demo.org.br",
+      "publishedAt": "2026-06-22T09:55:00.000Z",
+      "collectedAt": "2026-06-22T10:00:00.000Z"
+    },
+    {
+      "id": "demo-news-006",
+      "title": "Fórum regional debate desenvolvimento econômico sustentável",
+      "summary": "Empresários fictícios e representantes públicos simulam pacto por energia limpa.",
+      "content": "Painel apresentou metas de emprego verde e incentivos fiscais em ambiente de demonstração.",
+      "url": "https://exemplo-demo.local/noticias/economia-sustentavel",
+      "source": "economia-demo.net",
+      "publishedAt": "2026-06-22T08:40:00.000Z",
+      "collectedAt": "2026-06-22T08:45:00.000Z"
+    },
+    {
+      "id": "demo-news-007",
+      "title": "Comitê de educação analisa expansão de ensino técnico",
+      "summary": "Proposta simula novas vagas em cursos alinhados ao mercado regional.",
+      "content": "Estudo demonstrativo indica demanda por formação em tecnologia, saúde e logística.",
+      "url": "https://exemplo-demo.local/noticias/ensino-tecnico",
+      "source": "educacao-exemplo.edu.br",
+      "publishedAt": "2026-06-21T18:20:00.000Z",
+      "collectedAt": "2026-06-21T18:25:00.000Z"
+    },
+    {
+      "id": "demo-news-008",
+      "title": "Monitoramento ambiental registra melhora em qualidade do ar",
+      "summary": "Sensores fictícios apontam redução de particulados após medidas de controle veicular.",
+      "content": "Relatório simulado será apresentado em audiência pública sobre clima urbano.",
+      "url": "https://exemplo-demo.local/noticias/qualidade-ar",
+      "source": "ambiental-demo.org",
+      "publishedAt": "2026-06-21T16:10:00.000Z",
+      "collectedAt": "2026-06-21T16:15:00.000Z"
+    },
+    {
+      "id": "demo-news-009",
+      "title": "Plataforma digital de participação cidadã atinge marco simulado",
+      "summary": "Mais de 12 mil contribuições fictícias foram registradas em consultas públicas.",
+      "content": "Ferramenta demonstrativa permite sugestões de projetos e votação temática em tempo real simulado.",
+      "url": "https://exemplo-demo.local/noticias/participacao-cidada",
+      "source": "governo-aberto-demo.gov.br",
+      "publishedAt": "2026-06-21T14:00:00.000Z",
+      "collectedAt": "2026-06-21T14:05:00.000Z"
+    },
+    {
+      "id": "demo-news-010",
+      "title": "Cooperativas agrícolas apresentam plano de irrigação regional",
+      "summary": "Projeto demonstrativo prevê modernização de sistemas e apoio a pequenos produtores.",
+      "content": "Parlamentares fictícios visitaram área simulada para avaliar impacto na produção de grãos.",
+      "url": "https://exemplo-demo.local/noticias/agricultura-regional",
+      "source": "campo-demo.com.br",
+      "publishedAt": "2026-06-21T11:30:00.000Z",
+      "collectedAt": "2026-06-21T11:35:00.000Z"
+    },
+    {
+      "id": "demo-news-011",
+      "title": "Rede de proteção social reforça atendimento a famílias vulneráveis",
+      "summary": "Programa simulado amplia cadastro único e visitas domiciliares em bairros prioritários.",
+      "content": "Gestores demonstram integração entre assistência social, saúde mental e empregabilidade.",
+      "url": "https://exemplo-demo.local/noticias/protecao-social",
+      "source": "assistencia-demo.org.br",
+      "publishedAt": "2026-06-21T09:15:00.000Z",
+      "collectedAt": "2026-06-21T09:20:00.000Z"
+    },
+    {
+      "id": "demo-news-012",
+      "title": "Infraestrutura digital avança com fibra óptica em distritos simulados",
+      "summary": "Contrato demonstrativo prevê conectividade em escolas, postos de saúde e centros comunitários.",
+      "content": "Meta fictícia é alcançar 95% de cobertura em áreas urbanas até o fim do ciclo demonstrativo.",
+      "url": "https://exemplo-demo.local/noticias/fibra-optica",
+      "source": "tech-cidade-demo.com.br",
+      "publishedAt": "2026-06-20T20:45:00.000Z",
+      "collectedAt": "2026-06-20T20:50:00.000Z"
+    },
+    {
+      "id": "demo-news-013",
+      "title": "Observatório político publica mapa de narrativas em alta",
+      "summary": "Temas simulados incluem reforma administrativa, tarifas públicas e investimentos em cultura.",
+      "content": "Relatório demonstrativo destaca variação de sentimento nas últimas 48 horas fictícias.",
+      "url": "https://exemplo-demo.local/noticias/narrativas-politicas",
+      "source": "observatorio-demo.org",
+      "publishedAt": "2026-06-20T17:30:00.000Z",
+      "collectedAt": "2026-06-20T17:35:00.000Z"
+    },
+    {
+      "id": "demo-news-014",
+      "title": "Conselho municipal aprova plano de resiliência climática",
+      "summary": "Documento simulado define metas de drenagem, arborização e alertas de enchentes.",
+      "content": "Votação demonstrativa contou com participação de especialistas e representantes comunitários fictícios.",
+      "url": "https://exemplo-demo.local/noticias/resiliencia-climatica",
+      "source": "clima-demo.net.br",
+      "publishedAt": "2026-06-20T15:00:00.000Z",
+      "collectedAt": "2026-06-20T15:05:00.000Z"
+    },
+    {
+      "id": "demo-news-015",
+      "title": "Gabinete demonstrativo lança canal unificado de comunicação",
+      "summary": "Central simula integração de releases, redes sociais e respostas a demandas cidadãs.",
+      "content": "Equipe fictícia Maria Exemplo e João Demo coordenam monitoramento reputacional em tempo real simulado.",
+      "url": "https://exemplo-demo.local/noticias/comunicacao-unificada",
+      "source": "gabinete-demo.gov.br",
+      "publishedAt": "2026-06-20T12:10:00.000Z",
+      "collectedAt": "2026-06-20T12:15:00.000Z"
+    }
+  ]
+}

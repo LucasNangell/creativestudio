@@ -1,0 +1,15 @@
+{
+  "id": 1001,
+  "status": "completed",
+  "produto": "Ct Visita",
+  "modelo_id": 1,
+  "tem_arquivo_pdf": true,
+  "tem_arquivo_cdr": true,
+  "prova_revisao": "pending",
+  "dados": {
+    "nome_cliente": "João Demo",
+    "cargo": "Diretor Comercial",
+    "empresa": "Empresa Alpha Ltda",
+    "email": "contato@empresa-demo.com"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "setores": [
+    { "Setor": "Atendimento" },
+    { "Setor": "Pré-impressão" },
+    { "Setor": "Impressão" },
+    { "Setor": "Acabamento" },
+    { "Setor": "Expedição" },
+    { "Setor": "Papelaria" },
+    { "Setor": "PCP" }
+  ],
+  "situacoes": [
+    { "Situacao": "Recebido" },
+    { "Situacao": "Aguardando arquivos" },
+    { "Situacao": "Em análise técnica" },
+    { "Situacao": "Aguardando aprovação" },
+    { "Situacao": "Aprovado para produção" },
+    { "Situacao": "Na fila PCP" },
+    { "Situacao": "Em produção" },
+    { "Situacao": "Em acabamento" },
+    { "Situacao": "Finalizado" },
+    { "Situacao": "Entregue" },
+    { "Situacao": "Cancelado" }
+  ],
+  "maquinas": [
+    { "MaquinaLink": "Offset CD-102" },
+    { "MaquinaLink": "Digital Indigo" },
+    { "MaquinaLink": "Plotter HP" },
+    { "MaquinaLink": "Guilhotina Polar" }
+  ],
+  "produtos": [
+    { "Produto": "Folder" },
+    { "Produto": "Cartão de Visita" },
+    { "Produto": "Banner" },
+    { "Produto": "Revista" },
+    { "Produto": "Envelope" },
+    { "Produto": "Adesivo" },
+    { "Produto": "Papel Timbrado" },
+    { "Produto": "Catálogo" }
+  ],
+  "categorias": [
+    { "Categoria": "Institucional" },
+    { "Categoria": "Comercial" },
+    { "Categoria": "Eventos" }
+  ],
+  "papeis": [
+    { "Papel": "Couché 150g" },
+    { "Papel": "Supremo 300g" },
+    { "Papel": "Offset 90g" },
+    { "Papel": "Adesivo Vinil" }
+  ],
+  "cores": [
+    { "Cor": "4/4" },
+    { "Cor": "4/0" },
+    { "Cor": "1/1" }
+  ],
+  "formatos": [
+    { "Formato": "A4", "altura_mm": 297, "largura_mm": 210 },
+    { "Formato": "A3", "altura_mm": 420, "largura_mm": 297 },
+    { "Formato": "9x5 cm", "altura_mm": 50, "largura_mm": 90 },
+    { "Formato": "80x200 cm", "altura_mm": 2000, "largura_mm": 800 }
+  ],
+  "andamentos": [
+    { "Situacao": "Recebido" },
+    { "Situacao": "Em análise técnica" },
+    { "Situacao": "Em produção" },
+    { "Situacao": "Finalizado" },
+    { "Situacao": "Entregue" }
+  ]
+}

@@ -22,6 +22,13 @@ const MOCKUP_SPECS = [
   { name: "post-demo", label: "Demo Interativa", colors: ["#05070d", "#00c2fc", "#6139fa"] },
   { name: "post-architecture", label: "Arquitetura", colors: ["#0b0f1a", "#3061fa", "#058ff7"] },
   { name: "post-diagnostico", label: "Diagnóstico", colors: ["#05070d", "#058ff7", "#00c2fc"] },
+  { name: "lar-dos-anjos", label: "Lar dos Anjos", colors: ["#0b0f1a", "#2AA98C", "#6139fa"] },
+  { name: "player-video-marcadores", label: "Player Vídeo", colors: ["#0b0f1a", "#6366f1", "#00c2fc"] },
+  { name: "monitor-arquivos", label: "HT Monitor", colors: ["#05070d", "#3061fa", "#058ff7"] },
+  { name: "gestao-producao-grafica", label: "Produção Gráfica", colors: ["#121214", "#6139fa", "#00c2fc"] },
+  { name: "sharescreen-lan", label: "ShareScreen LAN", colors: ["#05070d", "#00c2fc", "#3061fa"] },
+  { name: "site-psicologia-profissional", label: "Site Psicologia", colors: ["#0b0f1a", "#8b5cf6", "#2dd4bf"] },
+  { name: "vigilia-politica", label: "Vigília Política", colors: ["#0b0f1a", "#dc2626", "#6139fa"] },
 ];
 
 async function optimizeBrandAssets() {

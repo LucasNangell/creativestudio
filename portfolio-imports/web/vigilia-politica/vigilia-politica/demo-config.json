@@ -1,0 +1,61 @@
+{
+  "title": "Vigília Política",
+  "slug": "vigilia-politica",
+  "category": "Inteligência Política / GovTech",
+  "systemType": "SPA React fullstack (demo estática com simulação client-side)",
+  "recommendedDemoType": "IFRAME",
+  "demoRoute": "/demo/vigilia-politica",
+  "caseRoute": "/cases/vigilia-politica",
+  "coverImageSuggestion": "/assets/mockups/vigilia-politica.webp",
+  "shortDescription": "Central de inteligência política com alertas, feed multicanal e briefings estratégicos em tempo real simulado.",
+  "stack": [
+    "React 19",
+    "TypeScript",
+    "Vite 8",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Recharts",
+    "React Router 7"
+  ],
+  "mainFeatures": [
+    "War Room com KPIs e simulação ao vivo",
+    "Feed de inteligência multicanal",
+    "Alertas críticos e providências",
+    "Briefing executivo automatizado",
+    "Monitoramento de narrativas e adversários",
+    "Territórios e palavras-chave",
+    "Configurações e exportação simulada"
+  ],
+  "demoInteractions": [
+    "Login com qualquer credencial",
+    "Filtrar feed por canal, risco e sentimento",
+    "Resolver alertas e criar providências",
+    "Pausar/retomar simulação no dashboard",
+    "Copiar briefing e exportar CSV/JSON",
+    "Cadastrar portal fictício em Configurações"
+  ],
+  "mockDataFiles": [
+    "mock-data/news.json",
+    "mock-data/portals.json",
+    "mock-data/topics-trending.json"
+  ],
+  "hasStaticBuild": true,
+  "buildEntryPoint": "build/index.html",
+  "requiresBackend": false,
+  "backendWasMocked": true,
+  "securityNotes": [
+    "Arquivo .env real não incluído",
+    "Credenciais MySQL e Gemini removidas",
+    "URLs de produção e Hostinger neutralizadas",
+    "Notícias substituídas por conteúdo fictício",
+    "WebSocket e API MySQL desativados no modo demo",
+    "Autenticação simulada via localStorage"
+  ],
+  "integrationNotes": [
+    "Servir a pasta build/ como site estático ou embutir via iframe em /demo/vigilia-politica",
+    "Garantir base path relativo (./) — já configurado no Vite",
+    "SPA: configurar fallback para index.html no host do portfólio",
+    "Altura sugerida do iframe: min-height 720px, width 100%",
+    "Para rebuild: cd source && npm install && npm run build:demo && copiar dist/ para build/"
+  ]
+}

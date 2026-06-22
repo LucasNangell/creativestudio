@@ -1,0 +1,68 @@
+{
+  "windowHours": 24,
+  "generatedAt": "2026-06-22T14:30:00.000Z",
+  "topics": [
+    {
+      "clusterId": 1,
+      "label": "Transparência municipal",
+      "category": "Governança",
+      "relevanceScore": 0.92,
+      "volume": 48,
+      "uniqueSources": 6,
+      "momentum": 1.35,
+      "sampleTitles": [
+        "Projeto de lei sobre transparência municipal avança em comissão",
+        "Plataforma digital de participação cidadã atinge marco simulado"
+      ]
+    },
+    {
+      "clusterId": 2,
+      "label": "Mobilidade urbana",
+      "category": "Infraestrutura",
+      "relevanceScore": 0.87,
+      "volume": 36,
+      "uniqueSources": 5,
+      "momentum": 1.12,
+      "sampleTitles": [
+        "Debate sobre mobilidade urbana mobiliza lideranças regionais"
+      ]
+    },
+    {
+      "clusterId": 3,
+      "label": "Saúde básica",
+      "category": "Políticas públicas",
+      "relevanceScore": 0.81,
+      "volume": 29,
+      "uniqueSources": 4,
+      "momentum": 0.98,
+      "sampleTitles": [
+        "Audiência pública discute investimentos em saúde básica"
+      ]
+    },
+    {
+      "clusterId": 4,
+      "label": "Segurança pública",
+      "category": "Segurança",
+      "relevanceScore": 0.78,
+      "volume": 24,
+      "uniqueSources": 3,
+      "momentum": 0.85,
+      "sampleTitles": [
+        "Painel de segurança pública apresenta indicadores trimestrais"
+      ]
+    },
+    {
+      "clusterId": 5,
+      "label": "Clima e meio ambiente",
+      "category": "Sustentabilidade",
+      "relevanceScore": 0.74,
+      "volume": 21,
+      "uniqueSources": 4,
+      "momentum": 0.79,
+      "sampleTitles": [
+        "Conselho municipal aprova plano de resiliência climática",
+        "Monitoramento ambiental registra melhora em qualidade do ar"
+      ]
+    }
+  ]
+}

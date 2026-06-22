@@ -1,0 +1,16 @@
+{
+  "exists": true,
+  "id": 501,
+  "versao": "v2 — Revisão pós-correção",
+  "componente": "Capa",
+  "items": [
+    {
+      "uniqueId": 101,
+      "titulo": "Resolução de imagem insuficiente",
+      "html": "<p>Logomarca na capa em <strong>150 dpi</strong>.</p>",
+      "obs": "Solicitar arquivo em alta ao cliente.",
+      "componenteOrigem": "Capa",
+      "resolucaoObrigatoria": true
+    }
+  ]
+}

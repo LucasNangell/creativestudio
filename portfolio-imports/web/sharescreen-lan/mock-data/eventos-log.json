@@ -1,0 +1,13 @@
+{
+  "eventos": [
+  { "hora": "14:28:01", "nivel": "info", "mensagem": "Servidor iniciado — modo demonstração" },
+  { "hora": "14:28:03", "nivel": "info", "mensagem": "Host conectado: Painel Host (este computador)" },
+  { "hora": "14:28:15", "nivel": "info", "mensagem": "Client entrou: PC Sala Reunião A" },
+  { "hora": "14:28:22", "nivel": "info", "mensagem": "Client entrou: PC Recepção" },
+  { "hora": "14:28:45", "nivel": "info", "mensagem": "Client entrou: Estação Treinamento 3" },
+  { "hora": "14:29:01", "nivel": "warn", "mensagem": "Estação Treinamento 3 sem vídeo publicado" },
+  { "hora": "14:29:18", "nivel": "info", "mensagem": "Host selecionou: PC Sala Reunião A" },
+  { "hora": "14:30:02", "nivel": "info", "mensagem": "Transmissão ativa — H.264 1920×1080 @ 30fps" },
+  { "hora": "14:31:10", "nivel": "info", "mensagem": "Client entrou: Notebook Auditoria" }
+  ]
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HT Monitor — Demonstração de monitoramento, renomeação e movimentação de arquivos PDF" />
+  <title>HT Monitor — Demo | Nangell Creative Studio</title>
+  <link rel="icon" href="assets/img/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/img/favicon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/app.css?v=demo" />
+  <link rel="stylesheet" href="assets/css/demo.css?v=demo" />
+</head>
+
+<body>
+  <div class="demo-banner" role="status">
+    <strong>Demonstração interativa</strong>
+    <span>Dados fictícios · Nangell Creative Studio · Sem conexão com servidores reais</span>
+    <button type="button" class="demo-banner__reset" id="demo-reset" title="Restaurar dados iniciais da demo">↺ Reiniciar demo</button>
+  </div>
+  <div id="app" class="app app--demo">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo">
+          <img src="assets/img/htmonitor-logo.svg" alt="" width="42" height="42" decoding="async" />
+        </div>
+        <div>
+          <strong data-i18n="titulo_painel">HT Monitor</strong>
+          <span data-i18n="lbl_sistema_integrado">Sistema integrado</span>
+        </div>
+      </div>
+      <nav class="sidebar__nav" id="nav">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">◉</span><span
+            data-i18n="menu_dashboard">Dashboard</span></button>
+        <button class="nav-item" data-view="monitor"><span class="nav-icon">◎</span><span
+            data-i18n="menu_banco_dados">Banco de dados</span></button>
+        <button class="nav-item" data-view="rename"><span class="nav-icon">✎</span><span
+            data-i18n="menu_renomeador">Renomeador</span></button>
+        <button class="nav-item" data-view="move"><span class="nav-icon">⇢</span><span
+            data-i18n="menu_movimentacoes">Movimentações</span></button>
+        <button class="nav-item" data-view="errors"><span class="nav-icon">⚠</span><span data-i18n="menu_erros">Log de
+            Erros</span></button>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="status-pill no-translate" id="api-status"><span class="dot"></span>Conectando...</div>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="btn-icon menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
+        <h1 class="topbar__title" id="page-title">Dashboard</h1>
+        <div class="topbar__actions">
+          <button class="btn btn--ghost" id="btn-restart" title="Reiniciar serviços">↻ Reiniciar</button>
+        </div>
+      </header>
+
+      <div class="content" id="content">
+        <!-- Dashboard -->
+        <section class="view view--active" id="view-dashboard">
+          <div class="cards-grid" id="status-cards"></div>
+          <div class="panel">
+            <h3 data-i18n="lbl_visao_geral">Visão geral</h3>
+            <p class="muted">
+              O HT Monitor automatiza o fluxo de arquivos PDF em ambientes de pré-impressão e produção gráfica.<br>
+              Quando um operador envia um arquivo para processamento, o sistema garante que ele seja renomeado com a nomenclatura correta (ano, número da OP, cliente) antes de seguir para a fila de produção.<br>
+              Isso elimina correções manuais repetitivas e reduz erros de identificação de trabalhos.<br>
+              O ano e o número da OP são extraídos automaticamente a partir da estrutura de pastas e metadados do arquivo.<br><br>
+            </p>
+            <h3>Funcionamento</h3>
+            <ul class="help-list">
+              <li>O operador envia o arquivo original para a pasta de entrada monitorada</li>
+              <li>Antes do processamento, o módulo Renomeador aplica o padrão de nomenclatura configurado</li>
+              <li>O arquivo processado segue para a saída definida nas regras de produção</li>
+              <li>O módulo Movimentações encaminha o arquivo para a pasta de destino do cliente</li>
+            </ul><br>
+
+            <h3>Painel Web</h3>
+            <p class="muted">
+              Este painel funciona como central de configuração e monitoramento do serviço, disponível 24 horas.<br>
+              Os ajustes realizados aqui são replicados nas configurações do serviço em execução no servidor.<br><br>
+            </p>
+            <h3 data-i18n="lbl_modulos">Módulos</h3>
+            <ul class="help-list">
+              <li data-i18n="mod_banco_dados">Banco de dados
+              </li>
+              <li data-i18n="mod_renomeador">Renomeador</li>
+              <li data-i18n="mod_movimentacoes">Movimentações</li>
+              <li data-i18n="mod_erros">Log de erros</li>
+            </ul>
+          </div>
+          <div class="panel-grid dashboard-history-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <h2 data-i18n="lbl_historico_renomeacao">Histórico de renomeação</h2>
+              </div>
+              <div class="table-wrap table-wrap--dashboard">
+                <table class="data-table" id="dashboard-rename-hist-table">
+                  <thead>
+                    <tr>
+                      <th>Hora</th>
+                      <th>Original</th>
+                      <th>Novo</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <h2>Histórico de movimentação</h2>
+              </div>
+              <div class="table-wrap table-wrap--dashboard">
+                <table class="data-table" id="dashboard-move-hist-table">
+                  <thead>
+                    <tr>
+                      <th>Hora</th>
+                      <th>Arquivo</th>
+                      <th>Destino</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Monitor -->
+        <section class="view" id="view-monitor">
+          <div class="help-banner">
+            <strong>Sincronização com o banco de dados MySQL</strong>
+            <p>Registra e atualiza arquivos PDF no banco. Configure a conexão MySQL, adicione pastas (locais ou UNC) e
+              force sincronização quando necessário.</p>
+          </div>
+          <div class="panel-grid">
+            <div class="panel">
+              <div class="panel__head">
+                <h2>Informações do banco de dados MySQL</h2>
+              </div>
+              <form id="form-mysql" class="form-grid">
+                <label><span class="field-label">Host <span class="field-tip"
+                      title="Endereço IP ou hostname do servidor MySQL">?</span></span><input name="host"
+                    required /></label>
+                <label><span class="field-label">Usuário <span class="field-tip"
+                      title="Usuário com permissão de leitura/escrita no banco file_monitor">?</span></span><input
+                    name="user" required /></label>
+                <label><span class="field-label">Senha <span class="field-tip"
+                      title="Deixe em branco no painel web se não quiser alterar a senha salva">?</span></span><input
+                    name="password" type="password" /></label>
+                <label><span class="field-label">Database <span class="field-tip"
+                      title="Nome do banco (ex.: file_monitor)">?</span></span><input name="database"
+                    required /></label>
+              </form>
+              <div class="btn-row">
+                <button class="btn btn--primary" id="btn-save-mysql">Salvar</button>
+                <button class="btn btn--secondary" id="btn-test-mysql">Testar conexão</button>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <h2>API para conexão do painel web com o serviço local</h2>
+              </div>
+              <form id="form-api" class="form-grid">
+                <label class="checkbox-row"><input type="checkbox" name="enabled" /> <span>Habilitar API <span
+                      class="field-tip"
+                      title="Permite que este painel web defina as configurações do serviço local via http://127.0.0.1:8787">?</span></span></label>
+                <label><span class="field-label">Host <span class="field-tip"
+                      title="127.0.0.1 — apenas local. Use 0.0.0.0 apenas se souber o risco">?</span></span><input
+                    name="host" /></label>
+                <label><span class="field-label">Porta <span class="field-tip"
+                      title="Porta padrão: 8787. Reinicie o exe após alterar">?</span></span><input name="port"
+                    type="number" /></label>
+              </form>
+              <button class="btn btn--primary" id="btn-save-api">Salvar API</button>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel__head">
+              <h2>Pastas de origem monitoradas</h2>
+              <button class="btn btn--primary btn--sm" id="btn-add-mon-folder">+ Adicionar</button>
+            </div>
+            <ul class="path-list" id="mon-folder-list"></ul>
+            <p class="hint">Arquivos criados dentro destas pastas e subpastas são carregados para o banco de dados
+              permitindo a criação de jobs no RIP com a nomenclatura de ano e número de OP corretas a partir dos
+              fluxos de entrada.<br>
+              O monitoramento e carga de registros no banco são realizados em tempo real.<br>
+              Podem ser incluídos tanto caminhos locais como caminhos de pastas na rede (padrão UNC)<br>
+            </p>
+            <div class="btn-row">
+              <button class="btn btn--secondary" id="btn-restart-monitor"
+                title="Reinicia o watchdog e o worker de sincronização">↻ Reestabelecer monitoramento</button>
+              <button class="btn btn--secondary" id="btn-sync">Forçar recarga do banco</button>
+            </div>
+            <p class="hint no-translate" id="monitor-status-hint"></p>
+          </div>
+        </section>
+
+        <!-- Rename -->
+        <section class="view" id="view-rename">
+          <div class="help-banner">
+            <strong>Renomeação de PDFs originais</strong>
+            <ul class="help-list">
+              <li>Defina padrões de nomenclatura para alteração dos arquivos originais</li>
+              <li>Informe as pastas de entrada que receberão os arquivos enviados para processamento</li>
+              <li>Associe cada pasta monitorada a um padrão de nomenclatura</li>
+            </ul>
+            <p>Obs.: a alteração do nome original é realizada antes do RIP iniciar o processamento do arquivo</p>
+          </div>
+          <div class="tabs">
+            <button class="tab active" data-tab="rename-patterns">Nomenclatura</button>
+            <button class="tab" data-tab="rename-folders">Hot Folders</button>
+            <button class="tab" data-tab="rename-history">Histórico</button>
+          </div>
+          <div class="tab-panel active" id="rename-patterns">
+            <div class="panel-grid">
+              <div class="panel">
+                <div class="panel__head">
+                  <h2>Padrões salvos</h2><button class="btn btn--sm btn--primary" id="btn-new-pattern">+ Novo</button>
+                </div>
+                <ul class="select-list no-translate" id="pattern-list"></ul>
+              </div>
+              <div class="panel">
+                <h2>Editor de padrão</h2>
+                <form id="form-pattern" class="form-stack">
+                  <label><span class="field-label">Nome do padrão <span class="field-tip"
+                        title="Identificação interna — ex.: Padrão Clientes">?</span></span><input name="name" required
+                      placeholder="Ex.: Padrão Original" /></label>
+                  <label><span class="field-label">Expressão <span class="field-tip"
+                        title="Modelo do nome final. Ex.: {YYYY}#{OPNUM}#{NOME_PASTA}{PART}.pdf">?</span></span>
+                    <div class="input-group">
+                      <input name="pattern" class="mono" required placeholder="{YYYY}#{OPNUM}#{NOME_PASTA}{PART}.pdf"
+                        autocomplete="off" />
+                      <div class="var-popover-wrapper">
+                        <button type="button" class="btn btn--secondary var-popover-btn" data-target="pattern"
+                          title="Inserir variável">{}</button>
+                        <div class="var-popover-menu" id="rename-var-popover"></div>
+                      </div>
+                    </div>
+                  </label>
+                </form>
+                <div class="preview-box">
+                  <span class="preview-box__label">Exemplo do arquivo renomeado:</span>
+                  <code class="preview-box__value mono no-translate" id="pattern-preview">—</code>
+                </div>
+                <div class="btn-row">
+                  <button class="btn btn--primary" id="btn-save-pattern">Salvar</button>
+                  <button class="btn btn--danger btn--ghost" id="btn-del-pattern">Excluir</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <h2>Tratamento de erros</h2>
+              <p class="hint">Define como o serviço reage quando algo falha. O monitoramento <strong>nunca para</strong>
+                — apenas o arquivo em questão é afetado.</p>
+              <form id="form-rename-errors" class="form-stack">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+                  <label><span class="field-label">Arquivo ausente no banco <span class="field-tip"
+                        title="Quando o PDF ainda não foi sincronizado no MySQL">?</span></span>
+                    <select name="on_db_missing">
+                      <option value="log">Registrar e tentar depois</option>
+                      <option value="retry">Repetir após intervalo</option>
+                      <option value="ignore">Ignorar arquivo</option>
+                    </select></label>
+                  <label><span class="field-label">Falha ao renomear <span class="field-tip"
+                        title="Erro de permissão, arquivo bloqueado, etc.">?</span></span>
+                    <select name="on_file_error">
+                      <option value="log">Registrar no log</option>
+                      <option value="retry">Repetir após intervalo</option>
+                      <option value="ignore">Ignorar arquivo</option>
+                    </select></label>
+                  <label><span class="field-label">Banco indisponível <span class="field-tip"
+                        title="Quando MySQL está offline no momento do processamento">?</span></span>
+                    <select name="on_db_error">
+                      <option value="retry">Repetir após intervalo</option>
+                      <option value="log">Registrar no log</option>
+                      <option value="ignore">Ignorar arquivo</option>
+                    </select></label>
+                </div>
+                <div style="margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--border);">
+                  <label style="max-width: 320px;"><span class="field-label">Intervalo de retry (seg) <span
+                        class="field-tip" title="Tempo mínimo entre novas tentativas do mesmo arquivo">?</span></span>
+                    <input name="retry_delay_sec" type="number" min="5" max="3600" value="30" /></label>
+                  <p class="hint" style="margin-top: 6px; margin-bottom: 0;">Esta configuração de intervalo se aplica
+                    globalmente a qualquer política de erro configurada como "Repetir após intervalo".</p>
+                </div>
+              </form>
+              <button class="btn btn--primary" id="btn-save-rename-errors">Salvar política</button>
+            </div>
+          </div>
+          <div class="tab-panel" id="rename-folders">
+            <div class="panel">
+              <div class="panel__head">
+                <h2>Pastas de entrada monitoradas</h2><button
+                  class="btn btn--primary btn--sm" id="btn-add-ren-folder">+
+                  Adicionar</button>
+              </div>
+              <p class="hint">O monitoramento é feito em tempo real.<br>
+                Qualquer arquivo PDF enviado para uma destas pastas tem
+                seu nome imediatamente alterado seguindo o padrão de renomeação definido.</p>
+              <div id="rename-folder-list" class="folder-assign-list"></div>
+            </div>
+          </div>
+          <div class="tab-panel" id="rename-history">
+            <div class="panel">
+              <div class="panel__head">
+                <h2>Histórico de renomeação de arquivos</h2><button class="btn btn--ghost btn--sm"
+                  id="btn-clear-ren-hist">Limpar</button>
+              </div>
+              <p class="hint">Relatório das últimas cem alterações de nome realizadas, atualizado periodicamente.</p>
+              <div class="table-wrap">
+                <table class="data-table" id="rename-hist-table">
+                  <thead>
+                    <tr>
+                      <th>Hora</th>
+                      <th>Original</th>
+                      <th>Novo</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Move -->
+        <section class="view" id="view-move">
+          <div class="help-banner">
+            <strong>Transferência dos arquivos de saída do processamento</strong>
+            <p>Regras monitoram pastas de origem. PDFs detectados são movidos para a estrutura de rede conforme OPNUM,
+              modo e parâmetros de nome. Arraste para definir prioridade.</p>
+          </div>
+          <div class="panel">
+            <div class="panel__head">
+              <h2>Regras origem → destino</h2>
+              <div class="btn-row">
+                <button class="btn btn--primary btn--sm" id="btn-add-rule">+ Nova regra</button>
+                <button class="btn btn--secondary btn--sm" id="btn-run-move">Mover agora</button>
+              </div>
+            </div>
+            <p class="hint">Arraste as regras para reordenar. Use <strong>Editar</strong> para alterar o nome e as
+              configurações, ou <strong>Duplicar</strong> para copiar uma regra existente.</p>
+            <ul class="drag-list no-translate" id="move-rules-list"></ul>
+          </div>
+          <div class="panel">
+            <h2>Tratamento de erros</h2>
+            <p class="hint">Comportamento quando a movimentação falha. O serviço continua monitorando as demais regras e
+              arquivos.</p>
+            <form id="form-move-errors" class="form-stack">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+                <label><span class="field-label">Falha ao mover arquivo <span class="field-tip"
+                      title="Destino inacessível, permissão negada, arquivo bloqueado">?</span></span>
+                  <select name="on_file_error">
+                    <option value="log">Registrar no log</option>
+                    <option value="retry">Repetir após intervalo</option>
+                    <option value="ignore">Ignorar arquivo</option>
+                  </select></label>
+                <label><span class="field-label">Arquivo ausente no banco <span class="field-tip"
+                      title="OPNUM não encontrado no MySQL">?</span></span>
+                  <select name="on_db_missing">
+                    <option value="log">Registrar no log</option>
+                    <option value="retry">Repetir após intervalo</option>
+                    <option value="ignore">Ignorar arquivo</option>
+                  </select></label>
+                <label><span class="field-label">Banco indisponível <span class="field-tip"
+                      title="MySQL offline durante movimentação">?</span></span>
+                  <select name="on_db_error">
+                    <option value="retry">Repetir após intervalo</option>
+                    <option value="log">Registrar no log</option>
+                    <option value="ignore">Ignorar arquivo</option>
+                  </select></label>
+              </div>
+              <div style="margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--border);">
+                <label style="max-width: 320px;"><span class="field-label">Intervalo de retry (seg) <span
+                      class="field-tip" title="Espera mínima antes de reprocessar o mesmo PDF">?</span></span>
+                  <input name="retry_delay_sec" type="number" min="5" max="3600" value="30" /></label>
+                <p class="hint" style="margin-top: 6px; margin-bottom: 0;">Esta configuração de intervalo se aplica
+                  globalmente a qualquer política de erro configurada como "Repetir após intervalo".</p>
+              </div>
+            </form>
+            <button class="btn btn--primary" id="btn-save-move-errors">Salvar política</button>
+          </div>
+          <div class="panel">
+            <div class="panel__head">
+              <h2>Histórico de movimentação</h2><button class="btn btn--ghost btn--sm"
+                id="btn-clear-move-hist">Limpar</button>
+            </div>
+            <p class="hint">Últimas movimentações executadas pelo serviço (atualização automática).</p>
+            <div class="table-wrap">
+              <table class="data-table" id="move-hist-table">
+                <thead>
+                  <tr>
+                    <th>Hora</th>
+                    <th>Arquivo</th>
+                    <th>Destino</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Errors -->
+        <section class="view" id="view-errors">
+          <div class="help-banner help-banner--warn">
+            <strong>Log central de erros</strong>
+            <p>Erros de Monitoramento, Renomear e Mover aparecem aqui. Corrija a causa e limpe o log após resolver.</p>
+          </div>
+          <div class="panel">
+            <div class="panel__head">
+              <h2>Log central de erros</h2><button class="btn btn--danger btn--sm" id="btn-clear-errors">Limpar</button>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table" id="errors-table">
+                <thead>
+                  <tr>
+                    <th>Data/Hora</th>
+                    <th>Módulo</th>
+                    <th>Mensagem</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop"></div>
+    <div class="modal__box">
+      <div class="modal__head">
+        <h3 id="modal-title" class="no-translate">Título</h3><button class="btn-icon modal__close"
+          id="modal-close">×</button>
+      </div>
+      <div class="modal__body" id="modal-body"></div>
+      <div class="modal__foot" id="modal-foot"></div>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toasts"></div>
+
+  <script src="assets/js/i18n.js?v=demo"></script>
+  <script src="assets/js/config.js?v=demo"></script>
+  <script src="assets/js/demo-api.js?v=demo"></script>
+  <script src="assets/js/api.js?v=demo"></script>
+  <script src="assets/js/ui-forms.js?v=demo"></script>
+  <script src="assets/js/app.js?v=demo"></script>
+  <script src="assets/js/demo-init.js?v=demo"></script>
+</body>
+
+</html>

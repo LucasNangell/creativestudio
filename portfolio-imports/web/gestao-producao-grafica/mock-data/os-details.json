@@ -1,0 +1,36 @@
+{
+  "4521": {
+    "MaquinaLink": "Offset CD-102",
+    "Tiragem": 5000,
+    "EntregPrazoLink": "2026-06-28",
+    "FormatoLink": "A4",
+    "ModelosArq": "folder_alpha_v3.pdf",
+    "Pags": 2,
+    "EntregData": "2026-06-28",
+    "DescAcabamento": "Dobrável, laminação fosca",
+    "PapelLink": "Couché 150g",
+    "PapelDescricao": "Couché fosco 150g",
+    "Cores": "4/4",
+    "CoresDescricao": "CMYK frente e verso",
+    "Observ": "Cliente solicitou prova física antes da tiragem completa.",
+    "ContatoTrab": "contato@empresa-demo.com",
+    "FrenteVerso": true
+  },
+  "4518": {
+    "MaquinaLink": "Digital Indigo",
+    "Tiragem": 500,
+    "EntregPrazoLink": "2026-06-25",
+    "FormatoLink": "9x5 cm",
+    "ModelosArq": "cartao_joao_demo.pdf",
+    "Pags": 1,
+    "EntregData": "2026-06-25",
+    "DescAcabamento": "Corte reto",
+    "PapelLink": "Supremo 300g",
+    "PapelDescricao": "Supremo 300g",
+    "Cores": "4/4",
+    "CoresDescricao": "CMYK frente e verso",
+    "Observ": "Aguardando aprovação da prova digital.",
+    "ContatoTrab": "joao.demo@cliente-exemplo.com",
+    "FrenteVerso": true
+  }
+}

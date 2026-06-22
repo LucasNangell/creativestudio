@@ -1,0 +1,36 @@
+{
+  "4521": [
+    {
+      "CodStatus": "001",
+      "SituacaoLink": "Recebido",
+      "SetorLink": "Atendimento",
+      "Data": "2026-06-18T09:00:00",
+      "Ponto": "1001",
+      "Observaçao": "OS criada a partir do pedido do cliente."
+    },
+    {
+      "CodStatus": "002",
+      "SituacaoLink": "Em análise técnica",
+      "SetorLink": "Pré-impressão",
+      "Data": "2026-06-18T14:30:00",
+      "Ponto": "1002",
+      "Observaçao": "PDF validado — sem pendências técnicas."
+    },
+    {
+      "CodStatus": "003",
+      "SituacaoLink": "Aprovado para produção",
+      "SetorLink": "PCP",
+      "Data": "2026-06-19T10:00:00",
+      "Ponto": "1003",
+      "Observaçao": "Incluído na fila de impressão."
+    },
+    {
+      "CodStatus": "004",
+      "SituacaoLink": "Em produção",
+      "SetorLink": "Impressão",
+      "Data": "2026-06-22T08:00:00",
+      "Ponto": "1004",
+      "Observaçao": "Tiragem iniciada na offset CD-102."
+    }
+  ]
+}

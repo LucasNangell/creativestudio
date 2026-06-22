@@ -1,0 +1,5 @@
+[
+  { "timestamp": "2026-06-20 08:58:05", "source": "Mover", "error_msg": "Validação prévia: arquivo de origem com tamanho zero." },
+  { "timestamp": "2026-06-20 09:12:11", "source": "Renomear", "error_msg": "Número da OP não encontrado no caminho do arquivo sem_op.pdf" },
+  { "timestamp": "2026-06-19 17:45:00", "source": "Monitoramento", "error_msg": "Sincronização concluída: 142 arquivos indexados no banco demo." }
+]

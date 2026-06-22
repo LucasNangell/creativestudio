@@ -1,0 +1,20 @@
+[
+  {
+    "ID": 1,
+    "TituloPT": "Resolução de imagem insuficiente",
+    "ProbTecHTML": "<p>A imagem está abaixo de <strong>300 dpi</strong> para o tamanho final.</p>",
+    "Categoria": "Imagens"
+  },
+  {
+    "ID": 2,
+    "TituloPT": "Margem de segurança",
+    "ProbTecHTML": "<p>Elementos importantes estão a menos de <strong>3 mm</strong> da borda de corte.</p>",
+    "Categoria": "Layout"
+  },
+  {
+    "ID": 3,
+    "TituloPT": "Fonte não incorporada",
+    "ProbTecHTML": "<p>O PDF contém fontes não incorporadas.</p>",
+    "Categoria": "Tipografia"
+  }
+]

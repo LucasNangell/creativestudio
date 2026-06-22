@@ -1,0 +1,3 @@
+:HL["/demos/player-video-marcadores/_next/static/chunks/3f62c27aa332e6af.css","style"]
+:HL["/demos/player-video-marcadores/_next/static/chunks/afba8db315ce688e.css","style"]
+0:{"buildId":"yR9NQPCf0MBWJemOyiblT","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

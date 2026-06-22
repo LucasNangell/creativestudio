@@ -1,0 +1,23 @@
+[
+  {
+    "id": "rule_demo_1",
+    "enabled": true,
+    "source_dir": "\\\\servidor-demo\\Mover\\Origem",
+    "base_rede": "\\\\servidor-demo\\Arquivos\\Clientes",
+    "default_subfolder": "Producao",
+    "filename_pattern": "{OPNUM}-{DBPATH} v{VERSAO}.pdf",
+    "include_version": true,
+    "keep_old": false,
+    "mode": "default"
+  },
+  {
+    "id": "rule_demo_2",
+    "enabled": true,
+    "source_dir": "\\\\servidor-demo\\Mover\\Saida-Temp",
+    "base_rede": "\\\\servidor-demo\\Arquivos\\Arquivo",
+    "default_subfolder": "Finalizados",
+    "include_version": true,
+    "keep_old": true,
+    "mode": "default"
+  }
+]

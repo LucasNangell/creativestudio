@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "tipo": "os_update",
+    "titulo": "OS 4521/2026 atualizada",
+    "mensagem": "Status alterado para Em produção no setor Impressão.",
+    "lida": false,
+    "criada_em": "2026-06-22T10:30:00",
+    "nr_os": 4521,
+    "ano": 2026
+  },
+  {
+    "id": 2,
+    "tipo": "aprovacao",
+    "titulo": "Prova aguardando aprovação",
+    "mensagem": "OS 4518/2026 — cartão de visita aguarda retorno do cliente.",
+    "lida": false,
+    "criada_em": "2026-06-21T15:45:00",
+    "nr_os": 4518,
+    "ano": 2026
+  }
+]

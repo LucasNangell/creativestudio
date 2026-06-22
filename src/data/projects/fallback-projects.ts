@@ -1,5 +1,7 @@
 import { DemoType } from "@prisma/client";
 
+import { IMPORTED_PORTFOLIO_PROJECTS } from "@/data/projects/imported-portfolio-projects";
+
 export const PROJECT_SLUGS = [
   "crm-inteligente",
   "dashboard-bi",
@@ -7,6 +9,13 @@ export const PROJECT_SLUGS = [
   "plataforma-educacional",
   "link-qr",
   "monitoramento-tempo-real",
+  "lar-dos-anjos",
+  "player-video-marcadores",
+  "monitor-arquivos",
+  "gestao-producao-grafica",
+  "sharescreen-lan",
+  "site-psicologia-profissional",
+  "vigilia-politica",
 ] as const;
 
 type FallbackProjectRecord = {
@@ -18,11 +27,11 @@ type FallbackProjectRecord = {
   fullDescription: string;
   problem: string;
   solution: string;
-  features: string[];
-  stack: string[];
+  features: readonly string[];
+  stack: readonly string[];
   coverImage: string;
-  gallery: string[];
-  metrics: Array<{ label: string; value: string; description?: string }>;
+  gallery: readonly string[];
+  metrics: ReadonlyArray<{ label: string; value: string; description?: string }>;
   demoType: DemoType;
   demoRoute: string | null;
   isFeatured: boolean;
@@ -225,4 +234,5 @@ export const FALLBACK_PROJECTS: FallbackProjectRecord[] = [
     seoTitle: "Case Monitoramento em Tempo Real | Nangell Creative Studio",
     seoDescription: "Console de monitoramento com feed de logs e alertas críticos.",
   },
+  ...IMPORTED_PORTFOLIO_PROJECTS,
 ];

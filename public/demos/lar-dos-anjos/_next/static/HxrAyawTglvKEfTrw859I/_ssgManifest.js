@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fanimais\u002F[id]","\u002Fanjo\u002Fvalidar\u002F[cardNumber]","\u002Fcampanhas\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "camp-demo-001",
+    "title": "Cirurgia do Simba",
+    "slug": "cirurgia-simba",
+    "description": "Campanha para cobrir a cirurgia ortopédica e fisioterapia do gato Simba, resgatado com fratura na pata.",
+    "goalAmount": 3500,
+    "raisedAmount": 2180,
+    "progressPercent": 62,
+    "status": "ACTIVE",
+    "coverImageUrl": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&q=80",
+    "animal": { "id": "animal-demo-004", "name": "Simba", "species": "CAT" }
+  },
+  {
+    "id": "camp-demo-002",
+    "title": "Ração para o inverno",
+    "slug": "racao-inverno",
+    "description": "Meta para garantir estoque de ração premium para 45 animais durante os três meses de maior demanda.",
+    "goalAmount": 8000,
+    "raisedAmount": 5420,
+    "progressPercent": 68,
+    "status": "ACTIVE",
+    "coverImageUrl": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=800&q=80",
+    "animal": null
+  },
+  {
+    "id": "camp-demo-003",
+    "title": "Reforma do canil A",
+    "slug": "reforma-canil-a",
+    "description": "Melhoria das instalações do setor A com telas, impermeabilização e camas ortopédicas.",
+    "goalAmount": 12000,
+    "raisedAmount": 3900,
+    "progressPercent": 33,
+    "status": "ACTIVE",
+    "coverImageUrl": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&q=80",
+    "animal": null
+  }
+]

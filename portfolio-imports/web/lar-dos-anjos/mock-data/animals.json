@@ -1,0 +1,86 @@
+[
+  {
+    "id": "animal-demo-001",
+    "name": "Mel",
+    "species": "DOG",
+    "gender": "FEMALE",
+    "age": "2 anos",
+    "size": "MEDIUM",
+    "status": "Disponível para adoção",
+    "story": "Mel foi resgatada em situação de abandono e hoje é dócil, brincalhona e adora crianças. Está castrada, vacinada e pronta para encontrar uma família.",
+    "needs": "Ambiente com quintal e passeios diários.",
+    "coverImageUrl": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80",
+    "images": [
+      { "id": "img-001", "displayOrder": 1, "url": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80" }
+    ]
+  },
+  {
+    "id": "animal-demo-002",
+    "name": "Thor",
+    "species": "DOG",
+    "gender": "MALE",
+    "age": "4 anos",
+    "size": "LARGE",
+    "status": "Disponível para adoção",
+    "story": "Thor chegou ao abrigo após resgate de maus-tratos. Com paciência e cuidado, recuperou a confiança e hoje é um cão leal e protetor.",
+    "needs": "Experiência com cães de porte grande.",
+    "coverImageUrl": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=800&q=80",
+    "images": [
+      { "id": "img-002", "displayOrder": 1, "url": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=400&q=80" }
+    ]
+  },
+  {
+    "id": "animal-demo-003",
+    "name": "Luna",
+    "species": "CAT",
+    "gender": "FEMALE",
+    "age": "1 ano",
+    "size": "SMALL",
+    "status": "Disponível para adoção",
+    "story": "Luna foi encontrada filhote em uma caixa de papelão. Cresceu no abrigo e adora carinho e sonecas ao sol.",
+    "needs": "Ambiente interno seguro, ideal para apartamento.",
+    "coverImageUrl": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    "images": [
+      { "id": "img-003", "displayOrder": 1, "url": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=80" }
+    ]
+  },
+  {
+    "id": "animal-demo-004",
+    "name": "Simba",
+    "species": "CAT",
+    "gender": "MALE",
+    "age": "3 anos",
+    "size": "MEDIUM",
+    "status": "Em tratamento",
+    "story": "Simba está se recuperando de uma cirurgia ortopédica. Sua história inspira doadores a apoiar tratamentos veterinários.",
+    "needs": "Repouso e acompanhamento veterinário por mais 30 dias.",
+    "coverImageUrl": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&q=80",
+    "images": []
+  },
+  {
+    "id": "animal-demo-005",
+    "name": "Pipoca",
+    "species": "DOG",
+    "gender": "FEMALE",
+    "age": "6 meses",
+    "size": "SMALL",
+    "status": "Disponível para adoção",
+    "story": "Pipoca é filhote cheia de energia, resgatada de uma ninhada abandonada. Socializada e vacinada.",
+    "needs": "Família com tempo para treinamento básico.",
+    "coverImageUrl": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80",
+    "images": []
+  },
+  {
+    "id": "animal-demo-006",
+    "name": "Mia",
+    "species": "CAT",
+    "gender": "FEMALE",
+    "age": "5 anos",
+    "size": "SMALL",
+    "status": "Adotado",
+    "story": "Mia foi adotada pela família Exemplo em março de 2026. Sua transformação mostra o impacto das doações no abrigo.",
+    "needs": null,
+    "coverImageUrl": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=800&q=80",
+    "images": []
+  }
+]

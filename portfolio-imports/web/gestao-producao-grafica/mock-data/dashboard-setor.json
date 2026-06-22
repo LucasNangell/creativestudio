@@ -1,0 +1,26 @@
+{
+  "setor": "Impressão",
+  "resumo": {
+    "total_os_ativas": 12,
+    "em_producao": 4,
+    "aguardando": 3,
+    "atrasadas": 1,
+    "entregues_hoje": 2
+  },
+  "por_situacao": [
+    { "situacao": "Em produção", "quantidade": 4 },
+    { "situacao": "Na fila PCP", "quantidade": 3 },
+    { "situacao": "Aguardando aprovação", "quantidade": 2 },
+    { "situacao": "Finalizado", "quantidade": 3 }
+  ],
+  "por_prioridade": [
+    { "prioridade": "Normal", "quantidade": 7 },
+    { "prioridade": "Solicitado p/", "quantidade": 3 },
+    { "prioridade": "Prometido p/", "quantidade": 2 }
+  ],
+  "proximas_entregas": [
+    { "nr_os": 4521, "ano": 2026, "titulo": "Folder institucional", "data_entrega": "2026-06-28" },
+    { "nr_os": 4490, "ano": 2026, "titulo": "Adesivo vinil", "data_entrega": "2026-06-24" },
+    { "nr_os": 4518, "ano": 2026, "titulo": "Cartão de visita", "data_entrega": "2026-06-25" }
+  ]
+}

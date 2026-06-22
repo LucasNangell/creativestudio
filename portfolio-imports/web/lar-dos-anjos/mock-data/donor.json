@@ -1,0 +1,154 @@
+{
+  "demoCredentials": {
+    "email": "doador@empresa-demo.com",
+    "password": "demo123456",
+    "note": "Credenciais fictícias visíveis apenas na demonstração."
+  },
+  "loginResponse": {
+    "accessToken": "demo-token-ficticio-sem-valor-real",
+    "donor": {
+      "id": "donor-demo-001",
+      "full_name": "Maria Exemplo",
+      "email": "doador@empresa-demo.com"
+    }
+  },
+  "profile": {
+    "id": "donor-demo-001",
+    "full_name": "Maria Exemplo",
+    "public_name": "Maria E.",
+    "email": "doador@empresa-demo.com",
+    "phone": "(61) 99999-0000",
+    "cpf_cnpj": "000.000.000-00",
+    "birth_date": "1990-05-15",
+    "zip_code": "70000-000",
+    "address": "Rua Demonstração",
+    "address_number": "123",
+    "address_complement": "Apto 1",
+    "neighborhood": "Centro Demo",
+    "city": "Cidade Demonstração",
+    "state": "DF",
+    "wants_public_profile": true,
+    "public_display_type": "FIRST_NAME",
+    "communication_email": true,
+    "communication_whatsapp": false
+  },
+  "impact": {
+    "total_confirmed": 319.2,
+    "support_months": 8,
+    "current_plan": {
+      "id": "plan-demo-003",
+      "name": "Anjo Cuidado",
+      "slug": "anjo-cuidado",
+      "value": 39.9
+    },
+    "next_billing_date": "2026-07-15",
+    "badges": [
+      {
+        "id": "badge-001",
+        "name": "Primeiro Passo",
+        "description": "Primeira doação realizada",
+        "icon": "footprints",
+        "awarded_at": "2025-10-01T12:00:00.000Z"
+      },
+      {
+        "id": "badge-002",
+        "name": "Anjo Fiel",
+        "description": "6 meses de assinatura ativa",
+        "icon": "heart",
+        "awarded_at": "2026-04-01T12:00:00.000Z"
+      }
+    ],
+    "pending_note": "Demonstração: doações pendentes não são processadas de verdade."
+  },
+  "donations": {
+    "items": [
+      {
+        "id": "don-001",
+        "source": "asaas",
+        "type": "SUBSCRIPTION",
+        "billing_type": "CREDIT_CARD",
+        "value": 39.9,
+        "status": "CONFIRMED",
+        "paid_at": "2026-06-15T10:00:00.000Z",
+        "created_at": "2026-06-15T10:00:00.000Z"
+      },
+      {
+        "id": "don-002",
+        "source": "pix",
+        "type": "ONETIME",
+        "billing_type": "PIX",
+        "value": 50,
+        "status": "CONFIRMED",
+        "paid_at": "2026-05-20T14:30:00.000Z",
+        "created_at": "2026-05-20T14:30:00.000Z"
+      },
+      {
+        "id": "don-003",
+        "source": "asaas",
+        "type": "SUBSCRIPTION",
+        "billing_type": "CREDIT_CARD",
+        "value": 39.9,
+        "status": "CONFIRMED",
+        "paid_at": "2026-05-15T10:00:00.000Z",
+        "created_at": "2026-05-15T10:00:00.000Z"
+      }
+    ],
+    "total": 3
+  },
+  "subscription": {
+    "subscription": {
+      "id": "sub-demo-001",
+      "status": "ACTIVE",
+      "billing_type": "CREDIT_CARD",
+      "value": 39.9,
+      "next_due_date": "2026-07-15",
+      "started_at": "2025-10-15",
+      "plan": {
+        "id": "plan-demo-003",
+        "name": "Anjo Cuidado",
+        "slug": "anjo-cuidado",
+        "value": 39.9,
+        "description": "Cuidados veterinários preventivos"
+      },
+      "consequences": {
+        "future_charges": "Próxima cobrança simulada em 15/07/2026",
+        "card_status": "Cartão fictício •••• 4242"
+      }
+    }
+  },
+  "card": {
+    "card": {
+      "id": "card-demo-001",
+      "card_number": "ANJO-DEMO-2026-001",
+      "status": "ACTIVE",
+      "valid": true,
+      "status_label": "Anjo ativo",
+      "display_name": "Maria E.",
+      "plan_name": "Anjo Cuidado",
+      "plan_slug": "anjo-cuidado",
+      "subscription_status": "ACTIVE",
+      "issued_at": "2025-10-15T12:00:00.000Z",
+      "started_at": "2025-10-15",
+      "validation_url": "/anjo/validar/ANJO-DEMO-2026-001",
+      "qr_code_data_url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect fill='%232AA98C' width='120' height='120'/%3E%3Ctext x='50%25' y='50%25' fill='white' text-anchor='middle' dy='.3em' font-size='12'%3EDEMO%3C/text%3E%3C/svg%3E",
+      "badges": [
+        {
+          "id": "badge-001",
+          "name": "Anjo Fiel",
+          "description": "6 meses de apoio",
+          "icon": "heart",
+          "awarded_at": "2026-04-01T12:00:00.000Z"
+        }
+      ]
+    }
+  },
+  "publicCardValidation": {
+    "valid": true,
+    "card_number": "ANJO-DEMO-2026-001",
+    "display_name": "Maria E.",
+    "plan_name": "Anjo Cuidado",
+    "member_since": "2025-10-15",
+    "status_label": "Anjo ativo",
+    "badges": [{ "name": "Anjo Fiel", "icon": "heart" }]
+  }
+}

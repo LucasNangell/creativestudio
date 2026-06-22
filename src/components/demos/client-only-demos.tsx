@@ -50,3 +50,15 @@ export const EduDemoClient = clientDemo(
   "EduDemo",
   "Plataforma Educacional",
 );
+
+export const SharescreenLanDemoClient = clientDemo(
+  () => import("@/components/demos/sharescreen-lan/sharescreen-lan-demo"),
+  "SharescreenLanDemo",
+  "ShareScreen LAN",
+);
+
+export const PsicologiaDemoClient = clientDemo(
+  () => import("@/components/demos/psicologia/psicologia-demo"),
+  "PsicologiaDemo",
+  "Site Psicologia",
+);

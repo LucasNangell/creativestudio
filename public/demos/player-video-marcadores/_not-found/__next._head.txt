@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/demos/player-video-marcadores/_next/static/chunks/90315ce579982abe.js","/demos/player-video-marcadores/_next/static/chunks/3fb340759d3f1fa9.js"],"ViewportBoundary"]
+3:I[97367,["/demos/player-video-marcadores/_next/static/chunks/90315ce579982abe.js","/demos/player-video-marcadores/_next/static/chunks/3fb340759d3f1fa9.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"yR9NQPCf0MBWJemOyiblT","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Player de Vídeo Corporativo — Demonstração"}],["$","meta","1",{"name":"description","content":"Biblioteca de vídeos com player avançado, marcadores e organização por pastas (versão demonstrativa)"}]]}]}]}],null]}],"loading":null,"isPartial":false}

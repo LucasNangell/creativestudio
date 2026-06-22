@@ -1,0 +1,62 @@
+{
+  "title": "Site Profissional para Psicóloga",
+  "slug": "site-psicologia-profissional",
+  "category": "Sites Institucionais",
+  "systemType": "Web fullstack PHP",
+  "recommendedDemoType": "IFRAME",
+  "demoRoute": "/demo/site-psicologia-profissional",
+  "caseRoute": "/cases/site-psicologia-profissional",
+  "coverImageSuggestion": "/assets/mockups/site-psicologia-profissional.webp",
+  "shortDescription": "Site profissional com agendamento online, blog e painel administrativo para psicólogas. Versão demonstrativa com dados fictícios.",
+  "stack": [
+    "PHP 8",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "JSON",
+    "Apache"
+  ],
+  "mainFeatures": [
+    "Site institucional responsivo com design system próprio",
+    "Agendamento online com calendário interativo",
+    "Blog com busca e categorias",
+    "Painel administrativo com gestão de agendamentos",
+    "CRUD de artigos do blog",
+    "SEO com Schema.org, sitemap e meta tags",
+    "Conformidade LGPD com política de privacidade"
+  ],
+  "demoInteractions": [
+    "Navegar pelo site institucional e especialidades",
+    "Selecionar data e horário no calendário de agendamento",
+    "Enviar solicitação de agendamento fictícia",
+    "Filtrar artigos do blog por categoria",
+    "Entrar no painel admin com credenciais demo",
+    "Alterar status de um agendamento no painel"
+  ],
+  "mockDataFiles": [
+    "mock-data/agendamentos.json",
+    "mock-data/posts.json",
+    "mock-data/dashboard-stats.json"
+  ],
+  "hasStaticBuild": false,
+  "buildEntryPoint": "",
+  "requiresBackend": true,
+  "backendWasMocked": true,
+  "securityNotes": [
+    "Credenciais reais removidas; login demo visível na tela (demo/demo2026)",
+    "Dados de contato fictícios (contato@clinica-demo.com, telefone 0000)",
+    "Redes sociais apontam para links neutros (#)",
+    "Nenhum arquivo .env incluído",
+    "Nenhuma URL de produção ou Hostinger referenciada na versão demo",
+    "Agendamentos com nomes claramente fictícios (João Demo, Maria Exemplo)",
+    "Posts do blog com referências anonimizadas (Cidade Exemplo, Dra. Maria Exemplo)"
+  ],
+  "integrationNotes": [
+    "Publicar pasta source/ em subdomínio PHP (ex.: demo.nangell.com.br/site-psicologia-profissional)",
+    "Embutir via iframe apontando para a URL publicada",
+    "Garantir permissão de escrita na pasta data/ no servidor",
+    "PHP 8.0+ com extensões json, session e mbstring",
+    "Apache com mod_rewrite para URLs amigáveis",
+    "Alternativa sem PHP: recriar telas em React usando mock-data/ (estratégia NATIVE)"
+  ]
+}

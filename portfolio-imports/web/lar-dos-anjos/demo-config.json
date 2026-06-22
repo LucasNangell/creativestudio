@@ -1,0 +1,68 @@
+{
+  "title": "Plataforma de Doações e Gestão para Abrigos",
+  "slug": "lar-dos-anjos",
+  "category": "ONG / Terceiro Setor / SaaS",
+  "systemType": "Web fullstack (Next.js + NestJS + MySQL) — demo estática do frontend público",
+  "recommendedDemoType": "IFRAME",
+  "demoRoute": "/demo/lar-dos-anjos",
+  "caseRoute": "/cases/lar-dos-anjos",
+  "coverImageSuggestion": "/assets/mockups/lar-dos-anjos.webp",
+  "shortDescription": "Plataforma completa para abrigos: doações Pix e recorrentes, transparência, campanhas, adoção e área do doador com carteirinha digital.",
+  "stack": [
+    "Next.js 14",
+    "React 18",
+    "TypeScript",
+    "Tailwind CSS",
+    "NestJS",
+    "Prisma",
+    "MySQL",
+    "Redis",
+    "Asaas",
+    "PWA"
+  ],
+  "mainFeatures": [
+    "Home institucional com indicadores de arrecadação",
+    "Doação única via Pix simulado",
+    "Assinaturas mensais (checkout simulado)",
+    "Portal de transparência com gráficos",
+    "Campanhas e mural de apoiadores",
+    "Galeria de animais para adoção",
+    "Área do doador com impacto, selos e carteirinha",
+    "Validação pública de carteirinha"
+  ],
+  "demoInteractions": [
+    "Navegar pela home e portal de transparência",
+    "Filtrar animais por espécie e status",
+    "Simular doação Pix até comprovante",
+    "Entrar na área do doador com login demo",
+    "Visualizar dashboard, doações e carteirinha"
+  ],
+  "mockDataFiles": [
+    "mock-data/plans.json",
+    "mock-data/animals.json",
+    "mock-data/campaigns.json",
+    "mock-data/mural.json",
+    "mock-data/transparency.json",
+    "mock-data/donor.json",
+    "mock-data/pix-settings.json"
+  ],
+  "hasStaticBuild": true,
+  "buildEntryPoint": "build/index.html",
+  "requiresBackend": false,
+  "backendWasMocked": true,
+  "securityNotes": [
+    "NEXT_PUBLIC_DEMO_MODE=true desativa API real",
+    "Credenciais demo fictícias (doador@empresa-demo.com)",
+    "E-mails de contato substituídos por @empresa-demo.com",
+    "Sem .env de produção, sem tokens Asaas, sem MySQL",
+    "Service Worker desativado na demo",
+    "Imagens via Unsplash (URLs públicas genéricas)"
+  ],
+  "integrationNotes": [
+    "Copiar pasta build/ para /public/demo/lar-dos-anjos/ no site do portfólio",
+    "Embutir via iframe apontando para /demo/lar-dos-anjos/index.html",
+    "Se hospedar em subpasta, definir NEXT_PUBLIC_BASE_PATH antes de rebuild",
+    "Painel admin não incluído — documentar como case complementar ou vídeo",
+    "Recomendado iframe com min-height 800px e borda arredondada"
+  ]
+}

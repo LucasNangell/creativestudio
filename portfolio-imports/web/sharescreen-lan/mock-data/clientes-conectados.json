@@ -1,0 +1,49 @@
+{
+  "clients": [
+    {
+      "peerId": "peer-demo-host-001",
+      "nome": "Painel Host (este computador)",
+      "papel": "host",
+      "temVideo": true,
+      "selecionado": false,
+      "ehHost": true
+    },
+    {
+      "peerId": "peer-demo-abc12345",
+      "nome": "PC Sala Reunião A",
+      "papel": "client",
+      "temVideo": true,
+      "selecionado": true,
+      "ehHost": false
+    },
+    {
+      "peerId": "peer-demo-def67890",
+      "nome": "PC Recepção",
+      "papel": "client",
+      "temVideo": true,
+      "selecionado": false,
+      "ehHost": false
+    },
+    {
+      "peerId": "peer-demo-ghi11223",
+      "nome": "Estação Treinamento 3",
+      "papel": "client",
+      "temVideo": false,
+      "selecionado": false,
+      "ehHost": false
+    },
+    {
+      "peerId": "peer-demo-jkl44556",
+      "nome": "Notebook Auditoria",
+      "papel": "client",
+      "temVideo": true,
+      "selecionado": false,
+      "ehHost": false
+    }
+  ],
+  "transmissaoAtiva": {
+    "peerId": "peer-demo-abc12345",
+    "nome": "PC Sala Reunião A",
+    "pausada": false
+  }
+}

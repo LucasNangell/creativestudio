@@ -1,0 +1,6 @@
+{
+  "lanIp": "192.168.100.10",
+  "httpsPort": 3443,
+  "maxClients": 10,
+  "rtcPorts": "40000-40100"
+}

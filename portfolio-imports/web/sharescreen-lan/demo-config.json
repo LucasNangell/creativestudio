@@ -1,0 +1,61 @@
+{
+  "title": "ShareScreen LAN",
+  "slug": "sharescreen-lan",
+  "category": "comunicacao-tempo-real",
+  "systemType": "web-fullstack-webrtc",
+  "recommendedDemoType": "NATIVE",
+  "demoRoute": "/demo/sharescreen-lan",
+  "caseRoute": "/cases/sharescreen-lan",
+  "coverImageSuggestion": "/assets/mockups/sharescreen-lan.webp",
+  "shortDescription": "Compartilhamento de tela em rede local com baixa latência para até 10 computadores, sem nuvem.",
+  "stack": [
+    "Node.js",
+    "Express",
+    "mediasoup",
+    "WebRTC",
+    "WebSocket",
+    "esbuild",
+    "nginx"
+  ],
+  "mainFeatures": [
+    "Painel host para selecionar qual tela transmitir",
+    "Até 10 clients simultâneos na mesma rede",
+    "SFU mediasoup sem transcodificação",
+    "Captura de tela Full HD com áudio opcional",
+    "Controles de pausa, retomada e gravação",
+    "Reconexão automática e logs de eventos"
+  ],
+  "demoInteractions": [
+    "Selecionar fonte de transmissão no painel host",
+    "Pausar e retomar transmissão",
+    "Ajustar volume e silenciar áudio",
+    "Identificar computador na tela client",
+    "Alternar entre telas Host e Client na demo estática"
+  ],
+  "mockDataFiles": [
+    "mock-data/info.json",
+    "mock-data/diagnostico.json",
+    "mock-data/agentes.json",
+    "mock-data/clientes-conectados.json",
+    "mock-data/eventos-log.json",
+    "mock-data/gravacao-resposta.json"
+  ],
+  "hasStaticBuild": true,
+  "buildEntryPoint": "build/index.html",
+  "requiresBackend": true,
+  "backendWasMocked": true,
+  "securityNotes": [
+    "IPs de produção (10.1.1.73, cgrafsysvm) substituídos por 192.168.100.10 e sharescreen-demo.local",
+    "Caminhos UNC de gravação e banco SQLite de agentes removidos",
+    "Certificados TLS (server.key) não incluídos na pasta source/",
+    "config.json com URLs reais não incluído",
+    "Pacotes de deploy (pacote-servidor*) não copiados"
+  ],
+  "integrationNotes": [
+    "Demo estática em build/ pode ser embutida via iframe apenas para visualização da UI — WebRTC real não funciona em iframe",
+    "Recomenda-se recriar a interface em React (estratégia NATIVE) com dados mock para interação completa no site",
+    "Para demo real com WebRTC, o visitante precisa rodar npm start em máquina local com 2+ navegadores",
+    "Incluir vídeo walkthrough no case para demonstrar fluxo completo com múltiplos PCs",
+    "Rotas sugeridas: /demo/sharescreen-lan (UI mock) e /cases/sharescreen-lan (texto + vídeo)"
+  ]
+}

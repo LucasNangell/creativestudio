@@ -1,0 +1,49 @@
+{
+  "mysql": {
+    "host": "demo-mysql.empresa-demo.local",
+    "user": "demo_monitor",
+    "password": "********",
+    "database": "file_monitor_demo"
+  },
+  "monitor": {
+    "folders": [
+      "\\\\servidor-demo\\Arquivos\\Entrada\\2026",
+      "\\\\servidor-demo\\Arquivos\\Entrada\\Portal",
+      "\\\\servidor-demo\\Arquivos\\Temp\\Processamento"
+    ],
+    "api": { "enabled": true, "host": "127.0.0.1", "port": 8787 }
+  },
+  "rename": {
+    "naming_patterns": [
+      { "id": "default", "name": "Padrão Original", "pattern": "{yyyy}#{opnum}#{nome_pasta}{PART}.pdf" },
+      { "id": "pattern_capa", "name": "Capa Simplificada", "pattern": "{yyyy}_{opnum}_Capa.pdf" }
+    ],
+    "custom_variables": [{ "key": "cliente_tag", "value": "DEMO" }],
+    "monitored_folders": [
+      { "path": "\\\\servidor-demo\\Renomear\\Entrada", "pattern_id": "default", "ignored_subfolders": ["_temp"] },
+      { "path": "\\\\servidor-demo\\Renomear\\HotFolder", "pattern_id": "pattern_capa", "ignored_subfolders": [] }
+    ]
+  },
+  "move": {
+    "rules": [
+      {
+        "id": "rule_demo_1",
+        "enabled": true,
+        "source_dir": "\\\\servidor-demo\\Mover\\Origem",
+        "base_rede": "\\\\servidor-demo\\Arquivos\\Clientes",
+        "default_subfolder": "Producao",
+        "filename_pattern": "{OPNUM}-{DBPATH} v{VERSAO}.pdf",
+        "mode": "default"
+      },
+      {
+        "id": "rule_demo_2",
+        "enabled": true,
+        "source_dir": "\\\\servidor-demo\\Mover\\Saida-Temp",
+        "base_rede": "\\\\servidor-demo\\Arquivos\\Arquivo",
+        "default_subfolder": "Finalizados",
+        "keep_old": true,
+        "mode": "default"
+      }
+    ]
+  }
+}

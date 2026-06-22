@@ -1,0 +1,12 @@
+{
+  "patterns": [
+    { "id": "default", "name": "Padrão Original", "pattern": "{yyyy}#{opnum}#{nome_pasta}{PART}.pdf" },
+    { "id": "pattern_capa", "name": "Capa Simplificada", "pattern": "{yyyy}_{opnum}_Capa.pdf" }
+  ],
+  "builtin": [
+    ["{yyyy}", "Ano da operação (extraído do banco/caminho)"],
+    ["{opnum}", "Número da OP com 5 dígitos"],
+    ["{nome_pasta}", "Nome da pasta anterior ao diretório base"],
+    ["{PART}", "Capa ou Miolo (ou vazio)"]
+  ]
+}

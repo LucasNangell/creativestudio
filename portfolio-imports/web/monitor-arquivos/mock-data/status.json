@@ -1,0 +1,6 @@
+{
+  "monitor": { "active": true, "folders": 3 },
+  "rename": { "active": true, "folders": 2 },
+  "move": { "active": true, "rules": 2 },
+  "database": { "connected": true }
+}

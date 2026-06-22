@@ -1,0 +1,104 @@
+{
+  "Pré-impressão": {
+    "setor": "Pré-impressão",
+    "items": [
+      {
+        "nr_os": 4518,
+        "ano": 2026,
+        "titulo": "Cartão de visita — João Demo",
+        "produto": "Cartão de Visita",
+        "formato": "9x5 cm",
+        "tiragem": 500,
+        "pags": 1,
+        "situacao": "Aguardando aprovação",
+        "setor": "Pré-impressão",
+        "data_entrega": "2026-06-25",
+        "entreg_periodo": "Tarde",
+        "prioridade": "Solicitado p/",
+        "nome_usuario": "Maria Exemplo",
+        "last_update": "2026-06-21T15:45:00",
+        "pcp_ordem": 1,
+        "previsao": {
+          "previsao_proximo_andamento": "2026-06-23",
+          "previsao_conclusao": "2026-06-24",
+          "confianca": "alta",
+          "amostras": 45
+        }
+      },
+      {
+        "nr_os": 4505,
+        "ano": 2026,
+        "titulo": "Revista trimestral — 48 páginas",
+        "produto": "Revista",
+        "formato": "A4",
+        "tiragem": 2000,
+        "pags": 48,
+        "situacao": "Em análise técnica",
+        "setor": "Pré-impressão",
+        "data_entrega": "2026-07-05",
+        "entreg_periodo": "Manhã",
+        "prioridade": "Prometido p/",
+        "nome_usuario": "Carlos Demo",
+        "last_update": "2026-06-22T08:15:00",
+        "pcp_ordem": 2,
+        "previsao": {
+          "previsao_proximo_andamento": "2026-06-24",
+          "previsao_conclusao": "2026-06-26",
+          "confianca": "media",
+          "amostras": 28
+        }
+      }
+    ]
+  },
+  "Impressão": {
+    "setor": "Impressão",
+    "items": [
+      {
+        "nr_os": 4521,
+        "ano": 2026,
+        "titulo": "Folder institucional — campanha Alpha",
+        "produto": "Folder",
+        "formato": "A4",
+        "tiragem": 5000,
+        "pags": 2,
+        "situacao": "Em produção",
+        "setor": "Impressão",
+        "data_entrega": "2026-06-28",
+        "entreg_periodo": "Manhã",
+        "prioridade": "Normal",
+        "nome_usuario": "Ana Exemplo",
+        "last_update": "2026-06-22T10:30:00",
+        "pcp_ordem": 1,
+        "previsao": {
+          "previsao_proximo_andamento": "2026-06-23",
+          "previsao_conclusao": "2026-06-25",
+          "confianca": "alta",
+          "amostras": 62
+        }
+      },
+      {
+        "nr_os": 4498,
+        "ano": 2026,
+        "titulo": "Envelope personalizado — lote 2026",
+        "produto": "Envelope",
+        "formato": "229x324 mm",
+        "tiragem": 10000,
+        "pags": 1,
+        "situacao": "Na fila PCP",
+        "setor": "Impressão",
+        "data_entrega": "2026-06-30",
+        "entreg_periodo": "Tarde",
+        "prioridade": "Normal",
+        "nome_usuario": "Pedro Demo",
+        "last_update": "2026-06-19T14:20:00",
+        "pcp_ordem": 2,
+        "previsao": {
+          "previsao_proximo_andamento": "2026-06-26",
+          "previsao_conclusao": "2026-06-28",
+          "confianca": "media",
+          "amostras": 35
+        }
+      }
+    ]
+  }
+}

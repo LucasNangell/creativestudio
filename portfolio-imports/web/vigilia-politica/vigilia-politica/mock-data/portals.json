@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "domain": "portal-noticias-demo.com.br" },
+    { "domain": "agencia-exemplo.com.br" },
+    { "domain": "jornal-regiao-demo.com.br" },
+    { "domain": "portal-cidade-demo.com.br" },
+    { "domain": "governo-aberto-demo.gov.br" }
+  ]
+}

@@ -9,6 +9,8 @@ import {
 } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
+import { IMPORTED_PORTFOLIO_PROJECTS } from "../src/data/projects/imported-portfolio-projects";
+
 const prisma = new PrismaClient();
 
 const ADMIN_EMAIL = "admin@nangell.com.br";
@@ -343,6 +345,11 @@ async function seedProjects() {
       seoTitle: "Case Monitoramento em Tempo Real | Nangell Creative Studio",
       seoDescription: "Console de monitoramento com feed de logs e alertas críticos.",
     },
+    ...IMPORTED_PORTFOLIO_PROJECTS.map((project) => {
+      const { id: _seedId, ...rest } = project;
+      void _seedId;
+      return rest;
+    }),
   ];
 
   for (const project of projects) {

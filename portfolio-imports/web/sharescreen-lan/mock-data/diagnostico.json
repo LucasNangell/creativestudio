@@ -1,0 +1,12 @@
+{
+  "servidor": "ShareScreen LAN SFU",
+  "versao": "1.0.0",
+  "ipLocal": "192.168.100.10",
+  "announcedIp": "192.168.100.10",
+  "mediasoup": true,
+  "codecPreferido": "video/H264",
+  "bitrateInicial": 4000000,
+  "bitrateMaximo": 8000000,
+  "fpsAlvo": 30,
+  "capturaNativa": "resizeMode none — resolução do monitor"
+}

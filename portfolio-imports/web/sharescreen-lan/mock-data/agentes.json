@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "agentes": [
+    {
+      "hostname": "PC-SALA-DEMO-01",
+      "ip": "192.168.100.21",
+      "online": true,
+      "lastSeen": "2026-06-22T14:32:10.000Z"
+    },
+    {
+      "hostname": "PC-SALA-DEMO-02",
+      "ip": "192.168.100.22",
+      "online": true,
+      "lastSeen": "2026-06-22T14:31:55.000Z"
+    },
+    {
+      "hostname": "PC-RECEPCAO-DEMO",
+      "ip": "192.168.100.23",
+      "online": false,
+      "lastSeen": "2026-06-22T13:45:00.000Z"
+    },
+    {
+      "hostname": "PC-AUDITORIO-DEMO",
+      "ip": "192.168.100.24",
+      "online": true,
+      "lastSeen": "2026-06-22T14:32:05.000Z"
+    }
+  ],
+  "serverHost": "192.168.100.10",
+  "onlineMaxAgeSeconds": 20
+}

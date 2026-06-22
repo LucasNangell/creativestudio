@@ -1,0 +1,11 @@
+{
+  "min_amount": 10,
+  "allow_custom_amount": true,
+  "quick_amounts": [25, 50, 100, 200],
+  "instructions": "Demonstração: o Pix exibido é fictício. Nenhum pagamento real será processado.",
+  "require_donor_data": false,
+  "require_receipt_upload": true,
+  "hide_sensitive_details": false,
+  "receiver_name": "Refúgio Esperança Demo",
+  "receiver_city": "CIDADE DEMO"
+}
