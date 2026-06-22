@@ -6,6 +6,7 @@ export type IframeDemoConfig = {
   iframeSrc: string;
   minHeight: number;
   minWidth?: number;
+  wideViewer?: boolean;
   desktopRecommended?: boolean;
   keywords: string[];
 };
@@ -51,7 +52,8 @@ export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
     ctaLabel: "Quero organizar minha produção",
     iframeSrc: "/demos/gestao-producao-grafica/index.html",
     minHeight: 920,
-    minWidth: 1280,
+    minWidth: 1520,
+    wideViewer: true,
     desktopRecommended: true,
     keywords: ["gráfica", "ordens de serviço", "PCP", "produção"],
   },

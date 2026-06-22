@@ -1,5 +1,5 @@
 /**
- * Ajustes de layout para a demo de portfólio (iframe ~1280px).
+ * Ajustes de layout para a demo de portfólio (iframe ~1520px).
  * Carregado apenas na build estática em public/demos/gestao-producao-grafica.
  */
 html[data-portfolio-demo="gestao"] {
@@ -141,7 +141,7 @@ html[data-portfolio-demo="gestao"] .sm\:w-\[45\.6\%\] {
 
 /* —— Sidebar + conteúdo principal —— */
 html[data-portfolio-demo="gestao"] .painel-standalone {
-  min-width: 1240px;
+  min-width: 1480px;
 }
 
 html[data-portfolio-demo="gestao"] main,

@@ -24,6 +24,7 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
       title={config.title}
       subtitle={config.subtitle}
       ctaLabel={config.ctaLabel}
+      wideContainer={config.wideViewer}
       overview={<DemoSystemOverview content={overviewContent} />}
     >
       {config.desktopRecommended ? (
@@ -68,7 +69,9 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
               )}
               style={{
                 minHeight: config.minHeight,
-                ...(config.minWidth ? { minWidth: config.minWidth, width: "100%" } : {}),
+                ...(config.minWidth
+                  ? { minWidth: config.minWidth, width: config.minWidth, maxWidth: "none" }
+                  : {}),
               }}
               loading="eager"
               onError={() => setLoadError(true)}

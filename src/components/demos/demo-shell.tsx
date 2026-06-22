@@ -22,6 +22,7 @@ type DemoShellProps = {
   children: React.ReactNode;
   className?: string;
   fullBleed?: boolean;
+  wideContainer?: boolean;
 };
 
 export function DemoShell({
@@ -35,6 +36,7 @@ export function DemoShell({
   children,
   className,
   fullBleed = false,
+  wideContainer = false,
 }: DemoShellProps) {
   useEffect(() => {
     trackEvent("open_demo", { demoId, action: "page_load" });
@@ -50,7 +52,9 @@ export function DemoShell({
 
   return (
     <div className="pb-16 pt-8">
-      <Container>
+      <Container
+        className={cn(wideContainer && "max-w-[96rem]")}
+      >
         <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-1 text-xs text-nangell-muted">
           <Link href="/portfolio" className="hover:text-nangell-cyan">
             {breadcrumb[0]}
