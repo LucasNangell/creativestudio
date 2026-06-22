@@ -15,11 +15,17 @@
   }
 
   if (p.indexOf("/analise") !== -1 && !location.search) {
-
     location.replace(p + "?ano=2026&id=4521" + location.hash);
-
     return;
-
+  }
+  if (p.indexOf("/papelaria") !== -1) {
+    try {
+      if (!sessionStorage.getItem("sagra_current_os_id") || !sessionStorage.getItem("sagra_current_os_ano")) {
+        sessionStorage.setItem("sagra_current_os_id", "5485");
+        sessionStorage.setItem("sagra_current_os_ano", "2026");
+        sessionStorage.setItem("sagra_target_product", "Ct Visita");
+      }
+    } catch (e) {}
   }
 
   if ("serviceWorker" in navigator) {

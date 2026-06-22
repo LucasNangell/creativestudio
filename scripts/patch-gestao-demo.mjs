@@ -6,9 +6,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const demoDir = path.join(__dirname, "..", "public", "demos", "gestao-producao-grafica");
 const assetsDir = path.join(demoDir, "assets");
 
-const noopG6 = "function G6({children:e}){return e}";
 const demoBootstrapG6 =
   'function G6({children:e}){const t=Mn(),n=xg({select:s=>s.location.pathname});return b.useEffect(()=>{if(n.includes("/papelaria")){const s=Hd();(!s.osId||!s.osAno)&&Ap({nr_os:5485,ano:2026,produto:"Ct Visita"})}if(n.includes("/analise")){const s=new URLSearchParams(window.location.search);(!s.get("ano")||!s.get("id"))&&t({to:"/analise",search:{ano:"2026",id:"4521"},replace:!0})}},[t,n]),e}';
+const noopG6 = "function G6({children:e}){return e}";
 
 const AUTH_UI_REPLACEMENTS = [
   [
@@ -66,6 +66,15 @@ const SW_BOOT = `<script>
     location.replace(p + "?ano=2026&id=4521" + location.hash);
     return;
   }
+  if (p.indexOf("/papelaria") !== -1) {
+    try {
+      if (!sessionStorage.getItem("sagra_current_os_id") || !sessionStorage.getItem("sagra_current_os_ano")) {
+        sessionStorage.setItem("sagra_current_os_id", "5485");
+        sessionStorage.setItem("sagra_current_os_ano", "2026");
+        sessionStorage.setItem("sagra_target_product", "Ct Visita");
+      }
+    } catch (e) {}
+  }
   if ("serviceWorker" in navigator) {
     var noop = function () {
       return Promise.resolve({ unregister: function () { return Promise.resolve(true); } });
@@ -92,10 +101,10 @@ for (const file of fs.readdirSync(assetsDir)) {
   let content = fs.readFileSync(filePath, "utf8");
   const before = content;
 
-  content = content.replace(noopG6, demoBootstrapG6);
+  content = content.replace(demoBootstrapG6, noopG6);
   content = content.replace(
-    "r.jsx(CI,{router:xle})",
     "r.jsx(G6,{children:r.jsx(CI,{router:xle})})",
+    "r.jsx(CI,{router:xle})",
   );
   if (content.includes(EMAIL_MOCK_ANCHOR) && !content.includes('demo-mail-1')) {
     content = content.replace(EMAIL_MOCK_ANCHOR, EMAIL_MOCK_HANDLERS);
@@ -152,6 +161,25 @@ if (!html.includes("data-portfolio-demo")) {
   }
 } else if (!html.includes("gestao-portfolio-fix.css")) {
   html = html.replace("<head>", `<head>${HEAD_ASSETS}`);
+}
+
+if (!html.includes("sagra_current_os_id")) {
+  html = html.replace(
+    /if \(p\.indexOf\("\/analise"\) !== -1 && !location\.search\) \{[\s\S]*?return;\s*\}/,
+    `if (p.indexOf("/analise") !== -1 && !location.search) {
+    location.replace(p + "?ano=2026&id=4521" + location.hash);
+    return;
+  }
+  if (p.indexOf("/papelaria") !== -1) {
+    try {
+      if (!sessionStorage.getItem("sagra_current_os_id") || !sessionStorage.getItem("sagra_current_os_ano")) {
+        sessionStorage.setItem("sagra_current_os_id", "5485");
+        sessionStorage.setItem("sagra_current_os_ano", "2026");
+        sessionStorage.setItem("sagra_target_product", "Ct Visita");
+      }
+    } catch (e) {}
+  }`,
+  );
 }
 
 fs.writeFileSync(indexPath, html, "utf8");
