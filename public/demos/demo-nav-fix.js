@@ -15,32 +15,56 @@
       path.charAt(0) === "/" &&
       path.indexOf(base) !== 0 &&
       path.indexOf("/demos/") !== 0 &&
-      path.indexOf("/api/") !== 0
+      path.indexOf("/api/") !== 0 &&
+      path.indexOf("/_next/") !== 0
     );
   }
 
-  function rewriteRootPath(path) {
-    if (!isInternalRootPath(path)) return path;
-    var parts = path.split("#");
+  function toIndexHtml(pathname) {
+    if (!pathname || pathname.endsWith(".html") || pathname.indexOf("/_next/") !== -1) {
+      return pathname;
+    }
+    if (pathname.endsWith("/")) {
+      pathname = pathname.slice(0, -1);
+    }
+    if (pathname === base) {
+      return base + "/index.html";
+    }
+    return pathname + "/index.html";
+  }
+
+  /** Converte /entrar ou /demos/foo/entrar/ → caminho estático com index.html */
+  function resolveDemoPath(href) {
+    var parts = href.split("#");
     var pathPart = parts[0];
     var hash = parts[1] ? "#" + parts[1] : "";
     var querySplit = pathPart.split("?");
     var pathname = querySplit[0];
     var query = querySplit[1] ? "?" + querySplit[1] : "";
 
-    if (pathname === "/" || pathname === "/index.html") {
-      return base + "/index.html" + query + hash;
+    if (isInternalRootPath(pathname)) {
+      if (pathname === "/" || pathname === "/index.html") {
+        pathname = base + "/index.html";
+      } else if (pathname.endsWith(".html")) {
+        pathname = base + pathname;
+      } else {
+        pathname = toIndexHtml(base + (pathname.endsWith("/") ? pathname.slice(0, -1) : pathname));
+      }
+    } else if (pathname.indexOf(base) === 0) {
+      pathname = toIndexHtml(pathname);
     }
 
-    if (pathname.endsWith(".html")) {
-      return base + pathname + query + hash;
-    }
+    return pathname + query + hash;
+  }
 
-    if (pathname.endsWith("/")) {
-      return base + pathname.slice(0, -1) + "/index.html" + query + hash;
-    }
-
-    return base + pathname + "/index.html" + query + hash;
+  function needsDemoNavigation(href) {
+    if (!href || href.charAt(0) !== "/") return false;
+    var pathname = href.split("#")[0].split("?")[0];
+    if (pathname.indexOf("/_next/") !== -1) return false;
+    if (pathname.endsWith(".html")) return false;
+    if (isInternalRootPath(pathname)) return true;
+    if (pathname.indexOf(base) === 0) return true;
+    return false;
   }
 
   function rewriteFetchUrl(url) {
@@ -50,6 +74,16 @@
     }
     if (url.indexOf("/_next/") === 0) return base + url;
     if (url.indexOf("/api/") === 0) return base + url;
+
+    try {
+      var parsed = new URL(url, location.origin);
+      if (parsed.origin === location.origin && needsDemoNavigation(parsed.pathname)) {
+        return resolveDemoPath(parsed.pathname + parsed.search) + parsed.hash;
+      }
+    } catch (e) {
+      /* ignore */
+    }
+
     return url;
   }
 
@@ -61,7 +95,7 @@
   }
 
   function navigateInternal(href) {
-    var target = rewriteRootPath(href);
+    var target = resolveDemoPath(href);
     fetch(target, { method: "GET", cache: "no-store", credentials: "same-origin" })
       .then(function (res) {
         if (res.ok) {
@@ -94,7 +128,16 @@
     var method = ((init && init.method) || "GET").toUpperCase();
     var body = { ok: true, demo: true };
 
-    if (method === "POST") {
+    if (method === "POST" && path.indexOf("/auth/donor/login") === 0) {
+      body = {
+        accessToken: "demo-token-ficticio-sem-valor-real",
+        donor: {
+          id: "donor-demo-001",
+          full_name: "Maria Exemplo",
+          email: "doador@empresa-demo.com",
+        },
+      };
+    } else if (method === "POST") {
       body = {
         ok: true,
         status: "ok",
@@ -142,7 +185,7 @@
         return;
       }
 
-      if (href.charAt(0) === "/" && isInternalRootPath(href)) {
+      if (needsDemoNavigation(href)) {
         event.preventDefault();
         event.stopPropagation();
         navigateInternal(href);
@@ -182,16 +225,18 @@
   if (window.history && window.history.pushState) {
     var pushState = window.history.pushState.bind(window.history);
     window.history.pushState = function (state, title, url) {
-      if (typeof url === "string" && isInternalRootPath(url)) {
-        url = rewriteRootPath(url);
+      if (typeof url === "string" && needsDemoNavigation(url.split("#")[0].split("?")[0])) {
+        navigateInternal(url);
+        return;
       }
       return pushState(state, title, url);
     };
 
     var replaceState = window.history.replaceState.bind(window.history);
     window.history.replaceState = function (state, title, url) {
-      if (typeof url === "string" && isInternalRootPath(url)) {
-        url = rewriteRootPath(url);
+      if (typeof url === "string" && needsDemoNavigation(url.split("#")[0].split("?")[0])) {
+        navigateInternal(url);
+        return;
       }
       return replaceState(state, title, url);
     };
@@ -203,7 +248,7 @@
     var replace = loc.replace.bind(loc);
 
     loc.assign = function (url) {
-      if (typeof url === "string" && url.charAt(0) === "/" && isInternalRootPath(url)) {
+      if (typeof url === "string" && needsDemoNavigation(url.split("#")[0].split("?")[0])) {
         navigateInternal(url);
         return;
       }
@@ -211,7 +256,7 @@
     };
 
     loc.replace = function (url) {
-      if (typeof url === "string" && url.charAt(0) === "/" && isInternalRootPath(url)) {
+      if (typeof url === "string" && needsDemoNavigation(url.split("#")[0].split("?")[0])) {
         navigateInternal(url);
         return;
       }
@@ -221,7 +266,8 @@
     /* location methods may be read-only in some browsers */
   }
 
-  if (isInternalRootPath(location.pathname)) {
+  if (needsDemoNavigation(location.pathname)) {
     navigateInternal(location.pathname + location.search + location.hash);
   }
 })();
+
