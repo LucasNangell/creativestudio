@@ -8,6 +8,9 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const demosRoot = path.join(__dirname, "..", "public", "demos");
 
+/** SPAs com React Router (basename no bundle) — não usar demo-nav-fix */
+const SPA_TARGETS = new Set(["vigilia-politica", "gestao-producao-grafica"]);
+
 const TARGETS = [
   "lar-dos-anjos",
   "player-video-marcadores",
@@ -51,6 +54,11 @@ for (const slug of TARGETS) {
   const demoDir = path.join(demosRoot, slug);
   if (!fs.existsSync(demoDir)) {
     console.warn(`SKIP ${slug}: pasta não encontrada`);
+    continue;
+  }
+
+  if (SPA_TARGETS.has(slug)) {
+    console.log(`SKIP ${slug}: SPA com router — demo-nav-fix omitido`);
     continue;
   }
 

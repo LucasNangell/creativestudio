@@ -102,6 +102,12 @@ const bootstrap = `<script>
 const indexPath = path.join(demoDir, "index.html");
 let html = fs.readFileSync(indexPath, "utf8");
 
+// SPA com basename no bundle — demo-nav-fix causa loop de reload (index.html ↔ path limpo)
+html = html.replace(
+  /\s*<script src="\/demos\/demo-nav-fix\.js"[^>]*><\/script>/gi,
+  "",
+);
+
 if (!html.includes('data-portfolio-demo", "vigilia')) {
   if (html.includes("<head>")) {
     html = html.replace("<head>", `<head>${urlStrip}`);
