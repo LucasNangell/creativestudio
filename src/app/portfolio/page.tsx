@@ -17,7 +17,7 @@ export const metadata: Metadata = createPageMetadata({
 
 export default async function PortfolioPage() {
   const projects = await getPublishedProjects();
-  const { categories, stacks } = collectFilterOptions(projects);
+  const { categories, stacks, businessGoals } = collectFilterOptions(projects);
 
   return (
     <main className="relative min-h-screen bg-noise-overlay">
@@ -25,6 +25,7 @@ export default async function PortfolioPage() {
         projects={projects}
         categories={categories}
         stacks={stacks}
+        businessGoals={businessGoals}
       />
     </main>
   );

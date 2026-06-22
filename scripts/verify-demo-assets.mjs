@@ -10,6 +10,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const REQUIRED = [
   "public/demos/lar-dos-anjos/index.html",
   "public/demos/gestao-producao-grafica/index.html",
+  "public/demos/gestao-portfolio-fix.css",
   "public/demos/player-video-marcadores/index.html",
   "public/demos/monitor-arquivos/index.html",
   "public/demos/vigilia-politica/index.html",

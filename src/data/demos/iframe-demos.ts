@@ -5,6 +5,7 @@ export type IframeDemoConfig = {
   ctaLabel: string;
   iframeSrc: string;
   minHeight: number;
+  minWidth?: number;
   desktopRecommended?: boolean;
   keywords: string[];
 };
@@ -49,7 +50,8 @@ export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
       "Ordens de serviço, kanban PCP, dashboards e análise técnica — demonstração operacional simulada.",
     ctaLabel: "Quero organizar minha produção",
     iframeSrc: "/demos/gestao-producao-grafica/index.html",
-    minHeight: 800,
+    minHeight: 920,
+    minWidth: 1280,
     desktopRecommended: true,
     keywords: ["gráfica", "ordens de serviço", "PCP", "produção"],
   },

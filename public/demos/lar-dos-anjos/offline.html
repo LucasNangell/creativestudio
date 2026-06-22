@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head><script>
+  <head><script src="/demos/demo-nav-fix.js" data-base="/demos/lar-dos-anjos"></script><script>
+
 (function () {
+
   if ("serviceWorker" in navigator) {
+
     var noop = function () {
+
       return Promise.resolve({ unregister: function () { return Promise.resolve(true); } });
+
     };
+
     navigator.serviceWorker.register = noop;
+
     navigator.serviceWorker.getRegistrations().then(function (regs) {
+
       regs.forEach(function (r) { r.unregister(); });
+
     });
+
   }
+
 })();
+
 </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

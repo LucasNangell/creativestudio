@@ -14,7 +14,7 @@ const logoMap = {
 } as const;
 
 const sizeMap = {
-  horizontal: { width: 200, height: 56 },
+  horizontal: { width: 885, height: 284 },
   vertical: { width: 160, height: 56 },
   icon: { width: 40, height: 40 },
 } as const;

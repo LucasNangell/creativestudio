@@ -19,14 +19,16 @@ type PortfolioPageContentProps = {
   projects: ProjectDetail[];
   categories: string[];
   stacks: string[];
+  businessGoals: string[];
 };
 
 export function PortfolioPageContent({
   projects,
   categories,
   stacks,
+  businessGoals,
 }: PortfolioPageContentProps) {
-  const { hero, showDontTell, cta } = portfolioPageContent;
+  const { hero, showDontTell, filters, cta } = portfolioPageContent;
 
   return (
     <>
@@ -92,8 +94,8 @@ export function PortfolioPageContent({
           <Reveal>
             <SectionHeading
               align="left"
-              title="Filtrar e explorar cases"
-              description="Combine filtros por categoria, stack, objetivo de negócio e disponibilidade de demo — sem recarregar a página."
+              title={filters.title}
+              description={filters.description}
               className="mx-0 max-w-none"
             />
           </Reveal>
@@ -102,6 +104,7 @@ export function PortfolioPageContent({
               projects={projects}
               categories={categories}
               stacks={stacks}
+              businessGoals={businessGoals}
             />
           </div>
         </Container>

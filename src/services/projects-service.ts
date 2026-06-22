@@ -180,16 +180,21 @@ export async function getRelatedProjects(
 export function collectFilterOptions(projects: ProjectDetail[]) {
   const categories = new Set<string>();
   const stacks = new Set<string>();
+  const businessGoals = new Set<string>();
 
   for (const project of projects) {
     categories.add(project.category);
     for (const tech of project.stack) {
       stacks.add(tech);
     }
+    for (const goal of project.businessGoals) {
+      businessGoals.add(goal);
+    }
   }
 
   return {
     categories: Array.from(categories).sort(),
     stacks: Array.from(stacks).sort(),
+    businessGoals: Array.from(businessGoals).sort(),
   };
 }

@@ -1,113 +1,113 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Play } from "lucide-react";
+
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import {
-  DashboardNavItem,
-  DashboardShell,
-  DashboardStat,
-} from "@/components/mockups/dashboard-shell";
 import { BrowserWindow } from "@/components/mockups/browser-window";
-import { TerminalWindow } from "@/components/mockups/terminal-window";
 import { Reveal } from "@/components/motion/reveal";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { getPublishedProjects } from "@/services/projects-service";
+import type { ProjectListItem } from "@/types/projects";
 
 import { SectionHeading } from "./section-heading";
 
-export function VisualProofSection() {
+function VisualProofCard({ project }: { project: ProjectListItem }) {
+  const demoHref = project.demoRoute ?? `/cases/${project.slug}`;
+
+  return (
+    <BrowserWindow
+      title={project.title}
+      url={`nangell.com.br${demoHref}`}
+      className="h-full"
+    >
+      <Link href={demoHref} className="group block">
+        <div className="-mx-4 -mt-4 overflow-hidden sm:-mx-6 sm:-mt-6">
+          <Image
+            src={project.coverImage}
+            alt={`Interface do case ${project.title}`}
+            width={640}
+            height={360}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
+            className="aspect-video w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        </div>
+
+        <div className="mt-4 space-y-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="outline">{project.category}</Badge>
+            {project.hasDemo ? (
+              <Badge variant="default" className="gap-1">
+                <Play className="h-3 w-3" aria-hidden />
+                Demo
+              </Badge>
+            ) : null}
+          </div>
+
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h3 className="font-heading text-base font-semibold text-nangell-text sm:text-lg">
+                {project.title}
+              </h3>
+              <p className="mt-1 line-clamp-2 text-sm text-nangell-muted">
+                {project.shortDescription}
+              </p>
+            </div>
+            <ArrowUpRight
+              className="mt-1 h-4 w-4 shrink-0 text-nangell-cyan opacity-0 transition-opacity group-hover:opacity-100"
+              aria-hidden
+            />
+          </div>
+
+          {project.primaryMetric ? (
+            <div className="rounded-nangell border border-glass-border bg-nangell-dark/40 p-3">
+              <p className="font-mono text-[10px] text-nangell-muted uppercase">
+                {project.primaryMetric.label}
+              </p>
+              <p className="font-heading text-xl font-bold text-nangell-cyan">
+                {project.primaryMetric.value}
+              </p>
+            </div>
+          ) : null}
+        </div>
+      </Link>
+    </BrowserWindow>
+  );
+}
+
+export async function VisualProofSection() {
+  const featuredProjects = (await getPublishedProjects()).filter(
+    (project) => project.isFeatured && project.coverImage,
+  );
+
   return (
     <Section id="prova-visual">
       <Container>
         <Reveal>
           <SectionHeading
             eyebrow="Prova visual"
-            title="Interfaces que transmitem autoridade técnica"
-            description="Mockups simulados de navegador, dashboard e terminal — o mesmo padrão visual aplicado em cada entrega."
+            title="Telas reais dos cases em destaque"
+            description="Capturas das demonstrações do portfólio — cada interface abaixo corresponde a um sistema que você pode testar na seção anterior."
           />
         </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <Reveal direction="up">
-            <BrowserWindow url="nangell.com.br/demo/lar-dos-anjos">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <p className="font-heading text-sm font-semibold text-nangell-text">
-                    Funil comercial
-                  </p>
-                  <Badge variant="success">8 leads ativos</Badge>
-                </div>
-                <div className="grid grid-cols-4 gap-2">
-                  {["Prospecção", "Qualificação", "Proposta", "Fechado"].map(
-                    (col, i) => (
-                      <div
-                        key={col}
-                        className="rounded-nangell border border-glass-border bg-nangell-surface/60 p-2"
-                      >
-                        <p className="font-mono text-[9px] text-nangell-muted uppercase">
-                          {col}
-                        </p>
-                        <div className="mt-2 space-y-1">
-                          {Array.from({ length: 3 - i }).map((_, j) => (
-                            <div
-                              key={j}
-                              className="h-6 rounded border border-glass-border bg-nangell-dark/60"
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    ),
-                  )}
-                </div>
-              </div>
-            </BrowserWindow>
-          </Reveal>
-
-          <Reveal direction="up" delay={0.1}>
-            <DashboardShell
-              title="Analytics"
-              sidebar={
-                <div className="space-y-1">
-                  <DashboardNavItem label="Overview" active />
-                  <DashboardNavItem label="Vendas" />
-                  <DashboardNavItem label="Financeiro" />
-                </div>
-              }
-              header={
-                <p className="font-heading text-sm font-semibold text-nangell-text">
-                  KPIs executivos
-                </p>
-              }
-            >
-              <div className="grid grid-cols-2 gap-2">
-                <DashboardStat label="MRR" value="R$ 42k" trend="+12%" />
-                <DashboardStat label="Churn" value="2,1%" trend="-0,4%" />
-              </div>
-              <div className="mt-3 flex h-24 items-end gap-1">
-                {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-                  <div
-                    key={i}
-                    className="flex-1 rounded-t bg-nangell-gradient opacity-80"
-                    style={{ height: `${h}%` }}
-                    aria-hidden
-                  />
-                ))}
-              </div>
-            </DashboardShell>
-          </Reveal>
-
-          <Reveal direction="up" delay={0.15} className="lg:col-span-2">
-            <TerminalWindow
-              title="deploy — nangell-cli"
-              lines={[
-                "$ nangell deploy --env production",
-                "→ Building Next.js application...",
-                "→ Running type checks and lint...",
-                "✓ Compiled successfully in 4.2s",
-                "→ Deploying to edge network...",
-                "✓ Deploy complete — https://app.nangell.com.br",
-                "→ Health check: all systems operational",
-              ]}
-            />
-          </Reveal>
+          {featuredProjects.map((project, index) => (
+            <Reveal key={project.slug} direction="up" delay={index * 0.05}>
+              <VisualProofCard project={project} />
+            </Reveal>
+          ))}
         </div>
+
+        <Reveal delay={0.1}>
+          <div className="mt-10 flex justify-center">
+            <Link href="#demos" className={cn(buttonVariants({ variant: "ghost", size: "lg" }))}>
+              Ver todos os cases com demo
+            </Link>
+          </div>
+        </Reveal>
       </Container>
     </Section>
   );

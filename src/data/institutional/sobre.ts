@@ -130,7 +130,7 @@ export const sobreDiferenciaisTecnicos: SobreValue[] = [
   },
   {
     icon: Eye,
-    title: "Show, don't tell",
+    title: "Mostre, não conte",
     description:
       "Demos interativas no próprio site para que o cliente experimente usabilidade e inteligência antes de contratar.",
   },

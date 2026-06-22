@@ -5,9 +5,6 @@ import { Search } from "lucide-react";
 
 import { EmptyState } from "@/components/ui/empty-state";
 import { Select } from "@/components/ui/select";
-import {
-  PORTFOLIO_BUSINESS_GOALS,
-} from "@/data/projects/enriched-content";
 import { trackEvent } from "@/lib/analytics";
 import type { ProjectDetail } from "@/types/projects";
 
@@ -17,18 +14,14 @@ type PortfolioFiltersGridProps = {
   projects: ProjectDetail[];
   categories: string[];
   stacks: string[];
+  businessGoals: string[];
 };
-
-const DEMO_FILTER_OPTIONS = [
-  { label: "Todos", value: "all" },
-  { label: "Com demo interativa", value: "with-demo" },
-  { label: "Sem demo", value: "without-demo" },
-];
 
 export function PortfolioFiltersGrid({
   projects,
   categories,
   stacks,
+  businessGoals,
 }: PortfolioFiltersGridProps) {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
@@ -36,6 +29,9 @@ export function PortfolioFiltersGrid({
   const [businessGoal, setBusinessGoal] = useState("all");
   const [demo, setDemo] = useState("all");
   const isFirstRender = useRef(true);
+
+  const allProjectsHaveDemo = projects.length > 0 && projects.every((project) => project.hasDemo);
+  const showDemoFilter = !allProjectsHaveDemo;
 
   const filteredProjects = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -102,13 +98,17 @@ export function PortfolioFiltersGrid({
 
   const businessGoalOptions = [
     { label: "Todos os objetivos", value: "all" },
-    ...PORTFOLIO_BUSINESS_GOALS.map((goal) => ({ label: goal, value: goal })),
+    ...businessGoals.map((goal) => ({ label: goal, value: goal })),
   ];
+
+  const filterGridClass = showDemoFilter
+    ? "grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+    : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3";
 
   return (
     <div id="portfolio-grid">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="sm:col-span-2 lg:col-span-4">
+      <div className={filterGridClass}>
+        <div className="sm:col-span-2 lg:col-span-full">
           <label
             htmlFor="portfolio-search"
             className="mb-1.5 block text-sm font-medium text-nangell-text"
@@ -123,7 +123,7 @@ export function PortfolioFiltersGrid({
             <input
               id="portfolio-search"
               type="search"
-              placeholder="Título, categoria, stack ou objetivo..."
+              placeholder="Ex.: Vigília Política, React, automação PDF, doações..."
               value={search}
               onChange={(event) => setSearch(event.target.value)}
               className="h-11 w-full rounded-nangell border border-glass-border bg-nangell-surface/80 pr-4 pl-10 text-sm text-nangell-text placeholder:text-nangell-muted/70 transition-colors hover:border-nangell-electric/30 focus-visible:border-nangell-electric focus-visible:outline-none"
@@ -152,12 +152,18 @@ export function PortfolioFiltersGrid({
           options={businessGoalOptions}
         />
 
-        <Select
-          label="Demo interativa"
-          value={demo}
-          onChange={(event) => setDemo(event.target.value)}
-          options={DEMO_FILTER_OPTIONS}
-        />
+        {showDemoFilter ? (
+          <Select
+            label="Demo interativa"
+            value={demo}
+            onChange={(event) => setDemo(event.target.value)}
+            options={[
+              { label: "Todos", value: "all" },
+              { label: "Com demo interativa", value: "with-demo" },
+              { label: "Sem demo", value: "without-demo" },
+            ]}
+          />
+        ) : null}
       </div>
 
       <p className="mt-6 text-sm text-nangell-muted" aria-live="polite">
@@ -188,7 +194,7 @@ export function PortfolioFiltersGrid({
           }
         />
       ) : (
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}

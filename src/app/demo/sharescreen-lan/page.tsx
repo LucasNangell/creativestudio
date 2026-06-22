@@ -1,24 +1,11 @@
-import { DemoPageFrame } from "@/components/seo/demo-page-frame";
 import { SharescreenLanDemoClient } from "@/components/demos/client-only-demos";
-import { createPageMetadata } from "@/lib/page-metadata";
+import { createNativeDemoPage } from "@/lib/demos/create-native-demo-page";
 
-export const metadata = createPageMetadata({
-  title: "Demo ShareScreen LAN",
-  description:
-    "Compartilhamento de tela em rede local — interface simulada do painel host e client.",
-  path: "/demo/sharescreen-lan",
+const { metadata, Page } = createNativeDemoPage({
+  slug: "sharescreen-lan",
   keywords: ["WebRTC", "LAN", "compartilhamento de tela", "mediasoup"],
+  renderDemo: () => <SharescreenLanDemoClient />,
 });
 
-export default function SharescreenLanDemoPage() {
-  return (
-    <DemoPageFrame
-      name="Demo ShareScreen LAN"
-      description="Painel host e client simulados para rede local sem nuvem."
-      path="/demo/sharescreen-lan"
-      genre="BusinessApplication"
-    >
-      <SharescreenLanDemoClient />
-    </DemoPageFrame>
-  );
-}
+export { metadata };
+export default Page;

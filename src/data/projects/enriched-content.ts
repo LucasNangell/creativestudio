@@ -7,22 +7,20 @@ export type ProjectEnrichedContent = {
 };
 
 export const PORTFOLIO_BUSINESS_GOALS = [
-  "Vender mais",
   "Automatizar processos",
+  "Captar leads",
   "Controlar operação",
-  "Reduzir custos",
-  "Visualizar dados",
   "Criar produto digital",
   "Melhorar atendimento",
-  "Captar leads",
+  "Reduzir custos",
 ] as const;
 
 export const PORTFOLIO_FILTER_CATEGORIES = [
   "Todos",
   "ONG / Terceiro Setor",
-  "Gráfica / PCP",
   "Mídia Interna",
   "Automação Industrial",
+  "Operações",
   "Comunicação em Tempo Real",
   "Sites Institucionais",
   "Inteligência Política / GovTech",
@@ -50,7 +48,7 @@ export const portfolioPageContent = {
     secondaryCta: { label: "Ver demos em ação", href: "#portfolio-grid" },
   },
   showDontTell: {
-    title: "Show, don't tell",
+    title: "Mostre, não conte",
     description:
       "O diferencial da Nangell é colocar o visitante dentro do software. Filtre por stack, objetivo de negócio ou categoria e abra a demo no mesmo domínio — sem cadastro, sem agendar reunião para ver valor.",
     highlights: [
@@ -58,6 +56,11 @@ export const portfolioPageContent = {
       "Cases com problema, solução e métricas",
       "Stack e arquitetura documentada em cada estudo",
     ],
+  },
+  filters: {
+    title: "Filtrar e explorar cases",
+    description:
+      "Sete projetos reais do portfólio — doações, vídeo corporativo, automação PDF, produção gráfica, sharescreen LAN, site clínico e inteligência política. Combine filtros por categoria, stack ou objetivo de negócio.",
   },
   cta: {
     title: "Quer um sistema parecido com um desses cases?",

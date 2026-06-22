@@ -1,0 +1,166 @@
+/**
+ * Ajustes de layout para a demo de portfólio (iframe ~1280px).
+ * Carregado apenas na build estática em public/demos/gestao-producao-grafica.
+ */
+html[data-portfolio-demo="gestao"] {
+  -webkit-font-smoothing: antialiased;
+}
+
+html[data-portfolio-demo="gestao"] body {
+  overflow-x: auto;
+}
+
+/* —— Filtros de pesquisa —— */
+html[data-portfolio-demo="gestao"] .os-filter-row {
+  gap: 0.625rem !important;
+}
+
+html[data-portfolio-demo="gestao"] .os-filter-row .os-filter-field--xs {
+  flex: 0 0 5rem !important;
+  min-width: 4.75rem !important;
+}
+
+html[data-portfolio-demo="gestao"] .os-filter-row .os-filter-field--sm {
+  flex: 1 1 9.5rem !important;
+  min-width: 9.5rem !important;
+}
+
+html[data-portfolio-demo="gestao"] .os-filter-row .os-filter-field--md {
+  flex: 1 1 10.5rem !important;
+  min-width: 10.5rem !important;
+}
+
+html[data-portfolio-demo="gestao"] .os-filter-row .relative.min-w-0.flex-1 {
+  min-width: 10.5rem !important;
+}
+
+html[data-portfolio-demo="gestao"] .os-filter-row button .truncate,
+html[data-portfolio-demo="gestao"] .os-filter-row .truncate {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+}
+
+html[data-portfolio-demo="gestao"] .os-filter-row button {
+  min-width: 0;
+  padding-inline: 0.625rem !important;
+}
+
+/* —— Tabela de OS —— */
+html[data-portfolio-demo="gestao"] [role="grid"],
+html[data-portfolio-demo="gestao"] table {
+  min-width: max(100%, 980px);
+}
+
+html[data-portfolio-demo="gestao"] [role="grid"] [role="cell"],
+html[data-portfolio-demo="gestao"] [role="grid"] [role="columnheader"],
+html[data-portfolio-demo="gestao"] table td,
+html[data-portfolio-demo="gestao"] table th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-inline: 0.5rem !important;
+}
+
+html[data-portfolio-demo="gestao"] [role="grid"] [role="cell"] .truncate,
+html[data-portfolio-demo="gestao"] [role="grid"] [role="cell"] .block.truncate {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* —— Painel de detalhes —— */
+html[data-portfolio-demo="gestao"] input[readonly]:not([type="checkbox"]),
+html[data-portfolio-demo="gestao"] textarea[readonly] {
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  height: auto !important;
+  min-height: 2rem;
+  line-height: 1.35;
+  field-sizing: content;
+}
+
+@supports not (field-sizing: content) {
+  html[data-portfolio-demo="gestao"] input[readonly]:not([type="checkbox"]) {
+    min-height: 2rem;
+    padding-block: 0.375rem;
+  }
+
+  html[data-portfolio-demo="gestao"] textarea[readonly] {
+    min-height: 4.5rem;
+  }
+}
+
+html[data-portfolio-demo="gestao"] .grid.sm\:grid-cols-12 > .col-span-2,
+html[data-portfolio-demo="gestao"] .grid.sm\:grid-cols-12 > .col-span-1 {
+  min-width: 0;
+}
+
+/* Campos multilinha (Papel, Obs, Contato…) */
+html[data-portfolio-demo="gestao"] .grid.lg\:grid-cols-5 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 1280px) {
+  html[data-portfolio-demo="gestao"] .grid.lg\:grid-cols-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  html[data-portfolio-demo="gestao"] .grid.lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+/* —— Histórico e novo andamento —— */
+html[data-portfolio-demo="gestao"] .grid.sm\:grid-cols-3 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 1280px) {
+  html[data-portfolio-demo="gestao"] .grid.sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+html[data-portfolio-demo="gestao"] select {
+  min-width: 0;
+  padding-inline: 0.5rem !important;
+  text-overflow: ellipsis;
+}
+
+html[data-portfolio-demo="gestao"] .sm\:w-\[45\.6\%\] {
+  width: 48% !important;
+  min-width: 17rem;
+}
+
+/* —— Sidebar + conteúdo principal —— */
+html[data-portfolio-demo="gestao"] .painel-standalone {
+  min-width: 1240px;
+}
+
+html[data-portfolio-demo="gestao"] main,
+html[data-portfolio-demo="gestao"] .layout-main {
+  min-width: 0;
+}
+
+/* Scroll horizontal suave na área da tabela */
+html[data-portfolio-demo="gestao"] .overflow-x-auto,
+html[data-portfolio-demo="gestao"] [class*="overflow-hidden"] {
+  scrollbar-width: thin;
+}
+
+html[data-portfolio-demo="gestao"] ::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+html[data-portfolio-demo="gestao"] ::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.45);
+  border-radius: 999px;
+}

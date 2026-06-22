@@ -4,6 +4,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -62,6 +63,15 @@ function rewriteRootPaths(content, base) {
   prefixAttr("href");
   prefixAttr("src");
 
+  content = content.replace(/href:(["'])\/(["'])/g, (_, q) => `href:${q}${base}/${q}`);
+  content = content.replace(
+    /href:(["'])\/(?!demos\/|_next\/|http|#)([^"']*)\1/g,
+    (_, q, sub) => `href:${q}${base}/${sub}${q}`,
+  );
+
+  content = content.replaceAll("http://demo.local/api/v1", "");
+  content = content.replaceAll("https://demo.local/api/v1", "");
+
   content = content.replaceAll(`href="${base}/http`, 'href="http');
   content = content.replaceAll(`src="${base}/http`, 'src="http');
   content = content.replaceAll(`href="${base}//`, 'href="//');
@@ -97,93 +107,12 @@ function walkRewrite(dir, slug, rewriteAbsolute) {
   }
 }
 
-function patchGestaoHtml(dest) {
-  const indexPath = path.join(dest, "index.html");
-  if (!fs.existsSync(indexPath)) return;
-
-  let html = fs.readFileSync(indexPath, "utf8");
-  html = html.replace(/<link rel="manifest"[^>]*>/i, "");
-  html = html.replace(
-    "<head>",
-    `<head>
-    <script>
-      (function () {
-        var p = location.pathname;
-        if (p.endsWith("/index.html")) {
-          history.replaceState(null, "", p.slice(0, -10) + location.search + location.hash);
-        }
-        if ("serviceWorker" in navigator) {
-          var noop = function () {
-            return Promise.resolve({ unregister: function () { return Promise.resolve(true); } });
-          };
-          navigator.serviceWorker.register = noop;
-          navigator.serviceWorker.getRegistrations().then(function (regs) {
-            regs.forEach(function (r) { r.unregister(); });
-          });
-        }
-        try { localStorage.setItem("sagra-pwa-update-dismissed", "1"); } catch (e) {}
-      })();
-    </script>`,
-  );
-  fs.writeFileSync(indexPath, html, "utf8");
-}
-
-function patchGestaoJs(dest) {
-  const assetsDir = path.join(dest, "assets");
-  if (!fs.existsSync(assetsDir)) return;
-
-  const brokenG6 =
-    'function G6({children:e}){const t=Mn(),n=xg({select:s=>s.location.pathname});return b.useEffect(()=>{if(n.includes("/papelaria")){const s=Hd();(!s.osId||!s.osAno)&&Ap({nr_os:5485,ano:2026,produto:"Ct Visita"})}if(n.includes("/analise")&&!n.includes("?")){const s=new URLSearchParams(window.location.search);(!s.get("ano")||!s.get("id"))&&t({to:"/analise",search:{ano:"2026",id:"4521"},replace:!0})}},[t,n]),e}';
-  const fixedG6 = "function G6({children:e}){return e}";
-
-  for (const file of fs.readdirSync(assetsDir)) {
-    if (!file.endsWith(".js") || !file.startsWith("index-")) continue;
-    const filePath = path.join(assetsDir, file);
-    let content = fs.readFileSync(filePath, "utf8");
-    const before = content;
-    content = content.replace(brokenG6, fixedG6);
-    content = content.replace(
-      "r.jsx(G6,{children:r.jsx(CI,{router:xle})})",
-      "r.jsx(CI,{router:xle})",
-    );
-    if (content !== before) {
-      fs.writeFileSync(filePath, content, "utf8");
-    }
+function runPatch(scriptName) {
+  const scriptPath = path.join(__dirname, scriptName);
+  const result = spawnSync(process.execPath, [scriptPath], { stdio: "inherit" });
+  if (result.status !== 0) {
+    process.exit(result.status ?? 1);
   }
-}
-
-function patchLarDosAnjosHtml(dest) {
-  const swDisable = `<script>
-(function () {
-  if ("serviceWorker" in navigator) {
-    var noop = function () {
-      return Promise.resolve({ unregister: function () { return Promise.resolve(true); } });
-    };
-    navigator.serviceWorker.register = noop;
-    navigator.serviceWorker.getRegistrations().then(function (regs) {
-      regs.forEach(function (r) { r.unregister(); });
-    });
-  }
-})();
-</script>`;
-
-  function walkHtml(dir) {
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      const full = path.join(dir, entry.name);
-      if (entry.isDirectory()) {
-        walkHtml(full);
-      } else if (entry.name.endsWith(".html")) {
-        let html = fs.readFileSync(full, "utf8");
-        if (html.includes("navigator.serviceWorker.register = noop")) continue;
-        if (!html.includes("<head")) continue;
-        html = html.replace("<head>", `<head>${swDisable}`);
-        html = html.replace(/<link rel="manifest"[^>]*>/gi, "");
-        fs.writeFileSync(full, html, "utf8");
-      }
-    }
-  }
-
-  walkHtml(dest);
 }
 
 function patchVigiliaJs(dest) {
@@ -222,18 +151,16 @@ for (const item of IFRAME_BUILDS) {
   copyRecursive(src, dest);
   walkRewrite(dest, item.slug, item.rewriteAbsolute);
 
-  if (item.slug === "lar-dos-anjos") {
-    patchLarDosAnjosHtml(dest);
-  }
-  if (item.slug === "gestao-producao-grafica") {
-    patchGestaoHtml(dest);
-    patchGestaoJs(dest);
-  }
   if (item.slug === "vigilia-politica") {
     patchVigiliaJs(dest);
   }
 
   console.log(`OK ${item.slug} → public/demos/${item.slug}`);
 }
+
+runPatch("patch-lar-dos-anjos-demo.mjs");
+runPatch("patch-gestao-demo.mjs");
+runPatch("patch-vigilia-demo.mjs");
+runPatch("patch-demo-navigation.mjs");
 
 console.log("Integração de builds concluída.");

@@ -18,6 +18,7 @@ type DemoShellProps = {
   ctaLabel: string;
   breadcrumb?: string[];
   sidebar?: React.ReactNode;
+  overview?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
   fullBleed?: boolean;
@@ -30,6 +31,7 @@ export function DemoShell({
   ctaLabel,
   breadcrumb = ["Portfólio", title],
   sidebar,
+  overview,
   children,
   className,
   fullBleed = false,
@@ -81,9 +83,12 @@ export function DemoShell({
           </p>
         </div>
 
+        {overview}
+
         <div
           className={cn(
-            "mt-6 overflow-hidden rounded-nangell-xl border border-glass-border bg-nangell-surface shadow-glass",
+            "overflow-hidden rounded-nangell-xl border border-glass-border bg-nangell-surface shadow-glass",
+            overview ? "mt-6" : "mt-6",
             fullBleed && "min-h-[560px]",
             className,
           )}

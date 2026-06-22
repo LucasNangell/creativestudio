@@ -31,7 +31,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         title: "Demos interativas no site",
         description:
-          "Mostramos CRM, BI e SaaS funcionando antes da contratação — show, don't tell.",
+          "Mostramos CRM, BI e SaaS funcionando antes da contratação — mostre, não conte.",
       },
       {
         title: "Engenharia + estratégia comercial",

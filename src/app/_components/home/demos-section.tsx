@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ExternalLink, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
+import { ProjectCard } from "@/app/_components/portfolio/project-card";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Reveal } from "@/components/motion/reveal";
@@ -8,79 +9,52 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/motion/stagger-container";
-import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { homeDemos } from "@/data/home";
+import { homeDemos } from "@/data/home-demos";
+import { portfolioPageContent } from "@/data/projects/enriched-content";
 import { cn } from "@/lib/utils";
+import { getPublishedProjects } from "@/services/projects-service";
 
 import { SectionHeading } from "./section-heading";
 
-export function DemosSection() {
+export async function DemosSection() {
+  const projects = (await getPublishedProjects()).filter((project) => project.hasDemo);
+  const demoCount = projects.length || homeDemos.length;
+
   return (
     <Section id="demos" className="bg-nangell-surface/30">
       <Container>
         <Reveal>
           <SectionHeading
             eyebrow="Experimente antes de contratar"
-            title="7 demos dos sistemas que desenvolvemos"
-            description="Abra as demonstrações reais do portfólio — doações, produção gráfica, vídeo corporativo, automação, sharescreen, site clínico e inteligência política."
+            title="Cases reais com demo interativa no site"
+            description="Os mesmos projetos do portfólio — com mockups, métricas e demonstrações que você abre aqui, sem cadastro. Mostre, não conte."
           />
         </Reveal>
 
-        <StaggerContainer className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {homeDemos.map((demo) => (
-            <StaggerItem key={demo.id}>
-              <Card variant="default" padding="md" className="flex h-full flex-col">
-                <CardHeader>
-                  <Badge variant="outline" className="mb-3 w-fit">
-                    {demo.category}
-                  </Badge>
-                  <CardTitle>{demo.title}</CardTitle>
-                  <CardDescription>{demo.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <div className="flex flex-wrap gap-1.5">
-                    {demo.stack.map((tech) => (
-                      <Badge key={tech} variant="muted">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex-col gap-2 border-t-0 pt-0 sm:flex-row">
-                  <Link
-                    href={demo.demoHref}
-                    className={cn(
-                      buttonVariants({ variant: "primary", size: "sm" }),
-                      "w-full sm:flex-1",
-                    )}
-                  >
-                    <Play className="h-3.5 w-3.5" aria-hidden />
-                    Abrir demo
-                  </Link>
-                  <Link
-                    href={demo.caseHref}
-                    className={cn(
-                      buttonVariants({ variant: "outline", size: "sm" }),
-                      "w-full sm:flex-1",
-                    )}
-                  >
-                    Ver case
-                    <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-                  </Link>
-                </CardFooter>
-              </Card>
+        <StaggerContainer className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project) => (
+            <StaggerItem key={project.slug} className="h-full">
+              <ProjectCard project={project} />
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        <Reveal delay={0.1}>
+          <div className="mt-10 flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-center">
+            <Link
+              href="/portfolio"
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+            >
+              Ver portfólio completo
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <p className="max-w-xl text-sm text-nangell-muted">
+              {demoCount} sistemas com estudo de caso, stack documentada e{" "}
+              {portfolioPageContent.showDontTell.highlights[0].toLowerCase()}.
+            </p>
+          </div>
+        </Reveal>
       </Container>
     </Section>
   );

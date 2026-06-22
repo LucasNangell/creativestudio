@@ -5,7 +5,9 @@ import { useState } from "react";
 import { AlertTriangle, ExternalLink, Monitor } from "lucide-react";
 
 import { DemoShell } from "@/components/demos/demo-shell";
+import { DemoSystemOverview } from "@/components/demos/demo-system-overview";
 import type { IframeDemoConfig } from "@/data/demos/iframe-demos";
+import { getDemoPageContentOrThrow } from "@/lib/demos/get-demo-content";
 import { cn } from "@/lib/utils";
 
 type IframePortfolioDemoProps = {
@@ -14,6 +16,7 @@ type IframePortfolioDemoProps = {
 
 export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
   const [loadError, setLoadError] = useState(false);
+  const overviewContent = getDemoPageContentOrThrow(config.slug);
 
   return (
     <DemoShell
@@ -21,6 +24,7 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
       title={config.title}
       subtitle={config.subtitle}
       ctaLabel={config.ctaLabel}
+      overview={<DemoSystemOverview content={overviewContent} />}
     >
       {config.desktopRecommended ? (
         <p className="border-b border-glass-border bg-nangell-surface/60 px-4 py-2 text-center text-xs text-nangell-muted md:hidden">
@@ -39,8 +43,7 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
             <div>
               <p className="font-medium text-nangell-text">Não foi possível carregar a demo aqui</p>
               <p className="mt-1 text-sm text-nangell-muted">
-                Abra em uma nova aba — os arquivos estáticos da demonstração ficam em{" "}
-                <code className="text-nangell-cyan">{config.iframeSrc}</code>
+                Abra em uma nova aba para explorar o sistema completo.
               </p>
             </div>
             <Link
@@ -54,17 +57,23 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
             </Link>
           </div>
         ) : (
-          <iframe
-            title={`Demonstração interativa — ${config.title}`}
-            src={config.iframeSrc}
-            className={cn(
-              "w-full rounded-nangell border border-glass-border bg-white",
-              "min-h-[480px]",
-            )}
-            style={{ minHeight: config.minHeight }}
-            loading="eager"
-            onError={() => setLoadError(true)}
-          />
+          <div className={cn(config.minWidth ? "overflow-x-auto rounded-nangell" : undefined)}>
+            <iframe
+              title={`Demonstração interativa — ${config.title}`}
+              src={config.iframeSrc}
+              className={cn(
+                "w-full rounded-nangell border border-glass-border bg-white",
+                "min-h-[480px]",
+                config.minWidth && "max-w-none",
+              )}
+              style={{
+                minHeight: config.minHeight,
+                ...(config.minWidth ? { minWidth: config.minWidth, width: "100%" } : {}),
+              }}
+              loading="eager"
+              onError={() => setLoadError(true)}
+            />
+          </div>
         )}
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-nangell-muted">
           <span>Dados 100% fictícios — simulação para portfólio.</span>

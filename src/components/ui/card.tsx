@@ -91,7 +91,10 @@ export function CardFooter({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("mt-4 flex items-center gap-3 border-t border-glass-border pt-4", className)}
+      className={cn(
+        "mt-4 flex flex-wrap items-center gap-3 border-t border-glass-border px-0 pt-4 pb-4",
+        className,
+      )}
       {...props}
     />
   );

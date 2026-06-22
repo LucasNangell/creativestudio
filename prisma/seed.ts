@@ -261,7 +261,7 @@ async function seedPosts() {
       title: "Por que demonstrar software em ação converte mais que screenshots",
       slug: "demonstrar-software-em-acao",
       excerpt:
-        "Show, don't tell: como demos interativas reduzem objeções e aceleram decisões em projetos B2B.",
+        "Mostre, não conte: como demos interativas reduzem objeções e aceleram decisões em projetos B2B.",
       content:
         "## O problema das promessas vazias\n\nQuando uma empresa precisa contratar desenvolvimento de software, o maior risco percebido é comprar uma caixa preta.\n\n## A vantagem das demos interativas\n\nDemos simuladas no próprio site permitem que o visitante experimente fluxos reais antes do primeiro contato comercial.\n\n## Resultado para o negócio\n\nMais leads qualificados, conversas mais objetivas e percepção imediata de competência técnica.",
       coverImage: "/assets/mockups/post-demo.png",

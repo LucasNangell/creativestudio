@@ -1,0 +1,673 @@
+{
+  "feedSeeds": [
+    {
+      "title": "Críticas à gestão de emendas parlamentares ganham tração em portais regionais",
+      "content": "Matéria demonstrativa relata questionamentos sobre transparência na destinação de recursos. Tom crítico com citação a lideranças de oposição.",
+      "source": "portal-noticias-demo.com.br",
+      "sourceType": "news",
+      "sentiment": "critical",
+      "sentimentScore": 0.82,
+      "riskLevel": "high",
+      "region": "Região Metropolitana",
+      "keywords": ["emendas", "transparência", "oposição"],
+      "opponentMentioned": "Deputado Silva Demo",
+      "isCoordinatedAttack": false,
+      "isFakeNewsSuspect": false
+    },
+    {
+      "title": "Vídeo viral questiona voto em projeto de saúde — checagem pendente",
+      "content": "Conteúdo circula em grupos regionais com afirmações sem fonte primária verificável sobre votação simulada.",
+      "source": "canal-regional-demo.tv",
+      "sourceType": "regional_group",
+      "sentiment": "very_critical",
+      "sentimentScore": 0.91,
+      "riskLevel": "critical",
+      "region": "Interior Norte",
+      "keywords": ["saúde", "votação", "desinformação"],
+      "isCoordinatedAttack": true,
+      "isFakeNewsSuspect": true
+    },
+    {
+      "title": "Publicação no Diário Oficial registra ato de nomeação em comissão",
+      "content": "Ato administrativo fictício reforça agenda institucional positiva do mandato monitorado.",
+      "source": "diario-oficial-demo.gov.br",
+      "sourceType": "official_diary",
+      "sentiment": "positive",
+      "sentimentScore": 0.72,
+      "riskLevel": "low",
+      "region": "Capital",
+      "keywords": ["nomeação", "comissão", "institucional"]
+    },
+    {
+      "title": "Thread no X amplifica crítica a discurso sobre mobilidade urbana",
+      "content": "Perfil verificado compartilha recorte de fala fora de contexto com alto engajamento simulado.",
+      "source": "@analista_politico_demo",
+      "sourceType": "twitter",
+      "sentiment": "critical",
+      "sentimentScore": 0.78,
+      "riskLevel": "high",
+      "region": "Região Metropolitana",
+      "keywords": ["mobilidade", "transporte", "discurso"],
+      "opponentMentioned": "Vereador Costa Demo",
+      "isCoordinatedAttack": true
+    },
+    {
+      "title": "Grupo de Telegram replica alerta sobre segurança pública",
+      "content": "Mensagens idênticas aparecem em três grupos distintos em intervalo de 12 minutos (simulação).",
+      "source": "Telegram — Grupo Cidade Demo",
+      "sourceType": "telegram",
+      "sentiment": "critical",
+      "sentimentScore": 0.75,
+      "riskLevel": "high",
+      "region": "Baixada Fluminense",
+      "keywords": ["segurança", "violência", "política local"],
+      "isCoordinatedAttack": true
+    },
+    {
+      "title": "Influenciador regional elogia projeto de educação técnica",
+      "content": "Menção positiva com alcance estimado de 48 mil impressões na demo.",
+      "source": "instagram.com/perfil_demo_educacao",
+      "sourceType": "instagram",
+      "sentiment": "positive",
+      "sentimentScore": 0.68,
+      "riskLevel": "low",
+      "region": "Interior Sul",
+      "keywords": ["educação", "ensino técnico", "oportunidade"]
+    },
+    {
+      "title": "Portal publica comparativo entre parlamentares da bancada demo",
+      "content": "Matéria neutra com gráficos de presença e proposições — menção indireta ao mandato monitorado.",
+      "source": "agencia-exemplo.com.br",
+      "sourceType": "news",
+      "sentiment": "neutral",
+      "sentimentScore": 0.5,
+      "riskLevel": "medium",
+      "region": "Capital",
+      "keywords": ["bancada", "comparativo", "produtividade"]
+    },
+    {
+      "title": "Audiência pública sobre meio ambiente mobiliza entidades",
+      "content": "Demanda territorial por políticas de resiliência climática com tom construtivo.",
+      "source": "jornal-regiao-demo.com.br",
+      "sourceType": "news",
+      "sentiment": "neutral",
+      "sentimentScore": 0.55,
+      "riskLevel": "medium",
+      "region": "Litoral",
+      "keywords": ["meio ambiente", "clima", "audiência"]
+    },
+    {
+      "title": "Live no Facebook discute emendas com tom acusatório",
+      "content": "Transmissão acumula comentários críticos e compartilhamentos em cadeia simulada.",
+      "source": "facebook.com/live/demo_cidade",
+      "sourceType": "facebook",
+      "sentiment": "critical",
+      "sentimentScore": 0.8,
+      "riskLevel": "high",
+      "region": "Região Metropolitana",
+      "keywords": ["emendas", "live", "crítica"],
+      "opponentMentioned": "Deputado Silva Demo"
+    },
+    {
+      "title": "Proposição simulada sobre habitação entra em pauta na comissão",
+      "content": "Registro legislativo fictício com potencial de agenda positiva para o mandato.",
+      "source": "dados-legislativos-demo.gov.br",
+      "sourceType": "legislative_data",
+      "sentiment": "positive",
+      "sentimentScore": 0.65,
+      "riskLevel": "low",
+      "region": "Capital",
+      "keywords": ["habitação", "comissão", "pauta"]
+    },
+    {
+      "title": "Fórum online espalha rumor sobre corte de verbas em saúde",
+      "content": "Tópico sem fonte oficial gera pico de menções negativas em janela de 2 horas.",
+      "source": "forum-cidade-demo.org",
+      "sourceType": "forum",
+      "sentiment": "very_critical",
+      "sentimentScore": 0.88,
+      "riskLevel": "critical",
+      "region": "Interior Norte",
+      "keywords": ["saúde", "verbas", "rumor"],
+      "isFakeNewsSuspect": true,
+      "isCoordinatedAttack": true
+    },
+    {
+      "title": "Entrevista em rádio local destaca atuação em projetos de infraestrutura",
+      "content": "Tom favorável com citação a obras simuladas em distrito monitorado.",
+      "source": "radio-interior-demo.fm",
+      "sourceType": "news",
+      "sentiment": "positive",
+      "sentimentScore": 0.7,
+      "riskLevel": "low",
+      "region": "Interior Sul",
+      "keywords": ["infraestrutura", "obras", "entrevista"]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "kw-demo-001",
+      "term": "Deputado Demo",
+      "category": "mandate_name",
+      "sensitivity": "critical",
+      "channelScope": "all",
+      "alertEnabled": true,
+      "active": true
+    },
+    {
+      "id": "kw-demo-002",
+      "term": "emendas parlamentares",
+      "category": "priority_theme",
+      "sensitivity": "high",
+      "channelScope": "all",
+      "alertEnabled": true,
+      "active": true
+    },
+    {
+      "id": "kw-demo-003",
+      "term": "mobilidade urbana",
+      "category": "priority_theme",
+      "sensitivity": "medium",
+      "channelScope": "press",
+      "alertEnabled": true,
+      "active": true
+    },
+    {
+      "id": "kw-demo-004",
+      "term": "Deputado Silva Demo",
+      "category": "opponent",
+      "sensitivity": "high",
+      "channelScope": "all",
+      "alertEnabled": true,
+      "active": true
+    },
+    {
+      "id": "kw-demo-005",
+      "term": "saúde básica",
+      "category": "priority_theme",
+      "sensitivity": "medium",
+      "channelScope": "all",
+      "alertEnabled": true,
+      "active": true
+    },
+    {
+      "id": "kw-demo-006",
+      "term": "segurança pública",
+      "category": "priority_theme",
+      "sensitivity": "high",
+      "channelScope": "all",
+      "alertEnabled": true,
+      "active": true
+    }
+  ],
+  "narratives": [
+    {
+      "id": "nar-001",
+      "term": "Transparência em emendas",
+      "growth": 42,
+      "risk": "high",
+      "sentiment": "Crítico",
+      "suggestedAction": "Preparar nota técnica com dados abertos e cronograma de prestação de contas.",
+      "associatedTerms": ["emendas", "transparência", "TCE", "oposição", "controle"],
+      "timeline": [
+        { "time": "08:15", "label": "Primeira menção em portal regional" },
+        { "time": "11:40", "label": "Replicação em grupos de Telegram" },
+        { "time": "14:20", "label": "Pico de engajamento no X" }
+      ],
+      "series": [
+        { "value": 12 },
+        { "value": 18 },
+        { "value": 24 },
+        { "value": 31 },
+        { "value": 38 },
+        { "value": 42 }
+      ]
+    },
+    {
+      "id": "nar-002",
+      "term": "Mobilidade e transporte",
+      "growth": 28,
+      "risk": "medium",
+      "sentiment": "Misto",
+      "suggestedAction": "Monitorar recortes de discurso e preparar FAQ sobre projeto de mobilidade.",
+      "associatedTerms": ["BRT", "ciclovia", "transporte", "tarifa", "mobilidade"],
+      "timeline": [
+        { "time": "09:00", "label": "Matéria em portal de infraestrutura" },
+        { "time": "13:10", "label": "Thread crítica no X" }
+      ],
+      "series": [
+        { "value": 8 },
+        { "value": 14 },
+        { "value": 19 },
+        { "value": 22 },
+        { "value": 26 },
+        { "value": 28 }
+      ]
+    },
+    {
+      "id": "nar-003",
+      "term": "Saúde e desinformação",
+      "growth": 56,
+      "risk": "critical",
+      "sentiment": "Muito crítico",
+      "suggestedAction": "Acionar fluxo de checagem e desmentido com veículos parceiros.",
+      "associatedTerms": ["SUS", "verbas", "hospital", "rumor", "fake news"],
+      "timeline": [
+        { "time": "07:30", "label": "Rumor em fórum online" },
+        { "time": "10:05", "label": "Vídeo viral sem fonte" },
+        { "time": "15:45", "label": "Alerta crítico gerado" }
+      ],
+      "series": [
+        { "value": 15 },
+        { "value": 22 },
+        { "value": 35 },
+        { "value": 44 },
+        { "value": 51 },
+        { "value": 56 }
+      ]
+    },
+    {
+      "id": "nar-004",
+      "term": "Educação técnica",
+      "growth": 18,
+      "risk": "low",
+      "sentiment": "Positivo",
+      "suggestedAction": "Amplificar cases de sucesso em canais institucionais.",
+      "associatedTerms": ["ensino técnico", "vagas", "qualificação", "jovens"],
+      "timeline": [
+        { "time": "12:00", "label": "Menção positiva em Instagram" }
+      ],
+      "series": [
+        { "value": 6 },
+        { "value": 9 },
+        { "value": 12 },
+        { "value": 15 },
+        { "value": 17 },
+        { "value": 18 }
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "reg-001",
+      "name": "Região Metropolitana",
+      "volume": 1240,
+      "risk": "high",
+      "topIssue": "Emendas e transparência",
+      "suggestedAction": "Reforçar presença em veículos locais com dados verificáveis."
+    },
+    {
+      "id": "reg-002",
+      "name": "Interior Norte",
+      "volume": 680,
+      "risk": "critical",
+      "topIssue": "Rumores sobre saúde",
+      "suggestedAction": "Agendar entrevista em rádio local e publicar nota oficial."
+    },
+    {
+      "id": "reg-003",
+      "name": "Baixada Fluminense",
+      "volume": 520,
+      "risk": "medium",
+      "topIssue": "Segurança pública",
+      "suggestedAction": "Articular agenda com lideranças comunitárias monitoradas."
+    },
+    {
+      "id": "reg-004",
+      "name": "Litoral",
+      "volume": 390,
+      "risk": "low",
+      "topIssue": "Meio ambiente e turismo",
+      "suggestedAction": "Destacar projetos de resiliência climática em release."
+    },
+    {
+      "id": "reg-005",
+      "name": "Capital",
+      "volume": 1580,
+      "risk": "medium",
+      "topIssue": "Pauta legislativa",
+      "suggestedAction": "Atualizar briefing para equipe de assessoria de imprensa."
+    }
+  ],
+  "opponents": [
+    {
+      "id": "opp-001",
+      "name": "Deputado Silva Demo",
+      "mentionsCount": 842,
+      "deltaPct": 34,
+      "sentimentScore": 0.22,
+      "insight": "Aumento de menções críticas ligadas a emendas — possível coordenação com portais regionais."
+    },
+    {
+      "id": "opp-002",
+      "name": "Vereador Costa Demo",
+      "mentionsCount": 516,
+      "deltaPct": 12,
+      "sentimentScore": 0.35,
+      "insight": "Atuação concentrada em mobilidade urbana com recortes de discurso."
+    },
+    {
+      "id": "opp-003",
+      "name": "Senador Almeida Demo",
+      "mentionsCount": 398,
+      "deltaPct": -8,
+      "sentimentScore": 0.41,
+      "insight": "Volume estável; monitorar articulações em comissões temáticas."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-demo-001",
+      "title": "Providência: Checar vídeo viral sobre voto em saúde",
+      "alertId": "alert-seed-002",
+      "assignee": "Assessoria de Imprensa",
+      "dueLabel": "Hoje, 18h",
+      "priority": "critical",
+      "status": "in_progress",
+      "comments": ["Solicitada checagem junto à assessoria jurídica."],
+      "region": "Interior Norte",
+      "channel": "regional_group",
+      "recommendedAction": "Publicar desmentido institucional com nota técnica."
+    },
+    {
+      "id": "task-demo-002",
+      "title": "Providência: Nota sobre transparência de emendas",
+      "alertId": "alert-seed-001",
+      "assignee": "Equipe Digital",
+      "dueLabel": "Amanhã, 10h",
+      "priority": "high",
+      "status": "new",
+      "comments": [],
+      "region": "Região Metropolitana",
+      "channel": "news",
+      "recommendedAction": "Preparar infográfico com dados abertos."
+    }
+  ],
+  "initialAlerts": [
+    {
+      "id": "alert-seed-001",
+      "title": "Críticas à gestão de emendas parlamentares ganham tração em portais regionais",
+      "type": "press",
+      "severity": "high",
+      "channel": "news",
+      "channelsInvolved": ["news"],
+      "sourceLabel": "portal-noticias-demo.com.br",
+      "region": "Região Metropolitana",
+      "timestamp": "2026-06-22T13:50:00.000Z",
+      "status": "new",
+      "intelligenceItemId": "seed-feed-001",
+      "summary": "Matéria demonstrativa relata questionamentos sobre transparência na destinação de recursos.",
+      "reasons": [
+        "Volume fora do padrão histórico da janela.",
+        "Termos críticos correlacionados: emendas, transparência, oposição.",
+        "Adversário citado: Deputado Silva Demo."
+      ],
+      "recommendedAction": "Preparar nota técnica e pauta de transparência para veículos parceiros.",
+      "relatedEventIds": ["seed-feed-001"],
+      "timeline": [
+        { "time": "13:50", "label": "Alerta gerado automaticamente" },
+        { "time": "13:45", "label": "Matéria detectada no portal" }
+      ]
+    },
+    {
+      "id": "alert-seed-002",
+      "title": "Vídeo viral questiona voto em projeto de saúde — checagem pendente",
+      "type": "fake_news",
+      "severity": "critical",
+      "channel": "regional_group",
+      "channelsInvolved": ["regional_group", "twitter"],
+      "sourceLabel": "canal-regional-demo.tv",
+      "region": "Interior Norte",
+      "timestamp": "2026-06-22T12:30:00.000Z",
+      "status": "analyzing",
+      "intelligenceItemId": "seed-feed-002",
+      "summary": "Conteúdo circula em grupos regionais com afirmações sem fonte primária verificável.",
+      "reasons": [
+        "Replicação coordenada detectada em intervalos curtos.",
+        "Conteúdo com ausência de fonte primária verificável.",
+        "Volume fora do padrão histórico da janela."
+      ],
+      "recommendedAction": "Publicar desmentido institucional e acionar veículos parceiros com nota técnica.",
+      "relatedEventIds": ["seed-feed-002"],
+      "timeline": [
+        { "time": "12:30", "label": "Escalado para análise" },
+        { "time": "12:15", "label": "Detecção multicanal" }
+      ]
+    },
+    {
+      "id": "alert-seed-003",
+      "title": "Thread no X amplifica crítica a discurso sobre mobilidade urbana",
+      "type": "coordinated_attack",
+      "severity": "high",
+      "channel": "twitter",
+      "channelsInvolved": ["twitter"],
+      "sourceLabel": "@analista_politico_demo",
+      "region": "Região Metropolitana",
+      "timestamp": "2026-06-22T11:20:00.000Z",
+      "status": "new",
+      "intelligenceItemId": "seed-feed-004",
+      "summary": "Perfil verificado compartilha recorte de fala fora de contexto com alto engajamento simulado.",
+      "reasons": [
+        "Replicação coordenada detectada em intervalos curtos.",
+        "Adversário citado: Vereador Costa Demo."
+      ],
+      "recommendedAction": "Publicar contexto completo do discurso e monitorar réplicas.",
+      "relatedEventIds": ["seed-feed-004"],
+      "timeline": [
+        { "time": "11:20", "label": "Alerta de coordenação" }
+      ]
+    },
+    {
+      "id": "alert-seed-004",
+      "title": "Fórum online espalha rumor sobre corte de verbas em saúde",
+      "type": "crisis",
+      "severity": "critical",
+      "channel": "forum",
+      "channelsInvolved": ["forum", "telegram"],
+      "sourceLabel": "forum-cidade-demo.org",
+      "region": "Interior Norte",
+      "timestamp": "2026-06-22T10:05:00.000Z",
+      "status": "new",
+      "intelligenceItemId": "seed-feed-011",
+      "summary": "Tópico sem fonte oficial gera pico de menções negativas em janela de 2 horas.",
+      "reasons": [
+        "Conteúdo com ausência de fonte primária verificável.",
+        "Volume fora do padrão histórico da janela."
+      ],
+      "recommendedAction": "Acionar checagem e resposta rápida com dados oficiais do setor.",
+      "relatedEventIds": ["seed-feed-011"],
+      "timeline": [
+        { "time": "10:05", "label": "Pico de menções detectado" }
+      ]
+    },
+    {
+      "id": "alert-seed-005",
+      "title": "Grupo de Telegram replica alerta sobre segurança pública",
+      "type": "coordinated_attack",
+      "severity": "high",
+      "channel": "telegram",
+      "channelsInvolved": ["telegram"],
+      "sourceLabel": "Telegram — Grupo Cidade Demo",
+      "region": "Baixada Fluminense",
+      "timestamp": "2026-06-22T09:40:00.000Z",
+      "status": "resolved",
+      "intelligenceItemId": "seed-feed-005",
+      "summary": "Mensagens idênticas aparecem em três grupos distintos em intervalo de 12 minutos.",
+      "reasons": ["Replicação coordenada detectada em intervalos curtos."],
+      "recommendedAction": "Monitorar evolução e documentar padrão de replicação.",
+      "relatedEventIds": ["seed-feed-005"],
+      "timeline": [
+        { "time": "09:40", "label": "Marcado como resolvido na demo" }
+      ]
+    }
+  ],
+  "initialFeedItems": [
+    {
+      "id": "seed-feed-001",
+      "title": "Críticas à gestão de emendas parlamentares ganham tração em portais regionais",
+      "content": "Matéria demonstrativa relata questionamentos sobre transparência na destinação de recursos. Tom crítico com citação a lideranças de oposição.",
+      "source": "portal-noticias-demo.com.br",
+      "sourceType": "news",
+      "channel": "portal-noticias-demo.com.br",
+      "author": "Redação Demo",
+      "url": "https://exemplo-demo.local/noticias/emendas-transparencia",
+      "createdAt": "2026-06-22T13:50:00.000Z",
+      "capturedAt": "2026-06-22T13:50:00.000Z",
+      "sentiment": "critical",
+      "sentimentScore": 0.82,
+      "riskLevel": "high",
+      "region": "Região Metropolitana",
+      "keywords": ["emendas", "transparência", "oposição"],
+      "actorsCited": ["Deputado Demo"],
+      "opponentMentioned": "Deputado Silva Demo",
+      "isCoordinatedAttack": false,
+      "isFakeNewsSuspect": false,
+      "engagement": 2840,
+      "shareHint": "Vigília Política — emendas | portal-noticias-demo.com.br | Risco: high",
+      "status": "new",
+      "alertReason": "Alerta gerado por cruzamento de termos críticos e volume fora da média."
+    },
+    {
+      "id": "seed-feed-002",
+      "title": "Vídeo viral questiona voto em projeto de saúde — checagem pendente",
+      "content": "Conteúdo circula em grupos regionais com afirmações sem fonte primária verificável sobre votação simulada.",
+      "source": "canal-regional-demo.tv",
+      "sourceType": "regional_group",
+      "channel": "canal-regional-demo.tv",
+      "author": "Monitor automatizado",
+      "url": "https://exemplo-demo.local/video/saude-voto",
+      "createdAt": "2026-06-22T12:30:00.000Z",
+      "capturedAt": "2026-06-22T12:30:00.000Z",
+      "sentiment": "very_critical",
+      "sentimentScore": 0.91,
+      "riskLevel": "critical",
+      "region": "Interior Norte",
+      "keywords": ["saúde", "votação", "desinformação"],
+      "actorsCited": ["Deputado Demo"],
+      "isCoordinatedAttack": true,
+      "isFakeNewsSuspect": true,
+      "engagement": 5120,
+      "shareHint": "Vigília Política — saúde | canal-regional-demo.tv | Risco: critical",
+      "status": "new",
+      "alertReason": "Sinal detectado em múltiplos canais com padrão de replicação atípica."
+    },
+    {
+      "id": "seed-feed-003",
+      "title": "Publicação no Diário Oficial registra ato de nomeação em comissão",
+      "content": "Ato administrativo fictício reforça agenda institucional positiva do mandato monitorado.",
+      "source": "diario-oficial-demo.gov.br",
+      "sourceType": "official_diary",
+      "channel": "diario-oficial-demo.gov.br",
+      "author": "DOU Demo",
+      "url": "https://exemplo-demo.local/dou/nomeacao-comissao",
+      "createdAt": "2026-06-22T12:00:00.000Z",
+      "capturedAt": "2026-06-22T12:00:00.000Z",
+      "sentiment": "positive",
+      "sentimentScore": 0.72,
+      "riskLevel": "low",
+      "region": "Capital",
+      "keywords": ["nomeação", "comissão"],
+      "actorsCited": ["Deputado Demo"],
+      "isCoordinatedAttack": false,
+      "isFakeNewsSuspect": false,
+      "engagement": 420,
+      "shareHint": "Vigília Política — institucional | Risco: low",
+      "status": "new",
+      "alertReason": "Coleta RSS — diário oficial monitorado."
+    },
+    {
+      "id": "seed-feed-004",
+      "title": "Thread no X amplifica crítica a discurso sobre mobilidade urbana",
+      "content": "Perfil verificado compartilha recorte de fala fora de contexto com alto engajamento simulado.",
+      "source": "@analista_politico_demo",
+      "sourceType": "twitter",
+      "channel": "@analista_politico_demo",
+      "author": "@analista_politico_demo",
+      "url": "https://exemplo-demo.local/x/mobilidade-thread",
+      "createdAt": "2026-06-22T11:20:00.000Z",
+      "capturedAt": "2026-06-22T11:20:00.000Z",
+      "sentiment": "critical",
+      "sentimentScore": 0.78,
+      "riskLevel": "high",
+      "region": "Região Metropolitana",
+      "keywords": ["mobilidade", "transporte"],
+      "opponentMentioned": "Vereador Costa Demo",
+      "isCoordinatedAttack": true,
+      "isFakeNewsSuspect": false,
+      "engagement": 3890,
+      "shareHint": "Vigília Política — mobilidade | X | Risco: high",
+      "status": "new",
+      "alertReason": "Sinal detectado em múltiplos canais com padrão de replicação atípica."
+    },
+    {
+      "id": "seed-feed-005",
+      "title": "Grupo de Telegram replica alerta sobre segurança pública",
+      "content": "Mensagens idênticas aparecem em três grupos distintos em intervalo de 12 minutos (simulação).",
+      "source": "Telegram — Grupo Cidade Demo",
+      "sourceType": "telegram",
+      "channel": "Telegram — Grupo Cidade Demo",
+      "author": "Monitor automatizado",
+      "url": "https://exemplo-demo.local/telegram/seguranca",
+      "createdAt": "2026-06-22T09:40:00.000Z",
+      "capturedAt": "2026-06-22T09:40:00.000Z",
+      "sentiment": "critical",
+      "sentimentScore": 0.75,
+      "riskLevel": "high",
+      "region": "Baixada Fluminense",
+      "keywords": ["segurança", "violência"],
+      "isCoordinatedAttack": true,
+      "isFakeNewsSuspect": false,
+      "engagement": 1560,
+      "shareHint": "Vigília Política — segurança | Telegram | Risco: high",
+      "status": "new",
+      "alertReason": "Sinal detectado em múltiplos canais com padrão de replicação atípica."
+    },
+    {
+      "id": "seed-feed-006",
+      "title": "Influenciador regional elogia projeto de educação técnica",
+      "content": "Menção positiva com alcance estimado de 48 mil impressões na demo.",
+      "source": "instagram.com/perfil_demo_educacao",
+      "sourceType": "instagram",
+      "channel": "instagram.com/perfil_demo_educacao",
+      "author": "Perfil Demo Educação",
+      "url": "https://exemplo-demo.local/instagram/educacao-tecnica",
+      "createdAt": "2026-06-22T08:55:00.000Z",
+      "capturedAt": "2026-06-22T08:55:00.000Z",
+      "sentiment": "positive",
+      "sentimentScore": 0.68,
+      "riskLevel": "low",
+      "region": "Interior Sul",
+      "keywords": ["educação", "ensino técnico"],
+      "isCoordinatedAttack": false,
+      "isFakeNewsSuspect": false,
+      "engagement": 48000,
+      "shareHint": "Vigília Política — educação | Instagram | Risco: low",
+      "status": "new",
+      "alertReason": "Menção positiva detectada — oportunidade de amplificação."
+    }
+  ],
+  "valueDelivered": {
+    "periodLabel": "Últimas 24 horas (demo)",
+    "mentionsMonitored": 4410,
+    "relevantAlerts": 12,
+    "criticalAlerts": 4,
+    "suggestedAgendas": 6,
+    "territorialDemands": 5,
+    "reportsGenerated": 3,
+    "hoursSavedEstimate": 18,
+    "narrativesAheadOfPress": 2,
+    "tasksLogged": 2,
+    "opponentsMonitored": 3,
+    "narrativeSummary": "Ambiente digital com risco moderado a elevado. Destaques: transparência em emendas, desinformação em saúde e mobilidade urbana. Regiões sensíveis: Interior Norte e Região Metropolitana."
+  },
+  "defaultSettings": {
+    "parliamentarianName": "Deputado Demo",
+    "role": "Deputado Federal",
+    "party": "PD Demo",
+    "uf": "RJ",
+    "cabinetName": "Gabinete Demonstração",
+    "leadContact": "Assessor Demo",
+    "alertEmail": "alertas@demo.exemplo.local",
+    "whatsapp": "+55 21 90000-0000"
+  }
+}

@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import { DemoShell, trackDemoInteraction } from "@/components/demos/demo-shell";
+import { DemoSystemOverview } from "@/components/demos/demo-system-overview";
 import {
   PSICOLOGIA_APPOINTMENTS,
   PSICOLOGIA_FAQ,
@@ -24,9 +25,11 @@ import {
   TIME_SLOTS,
   type PsicologiaAppointment,
 } from "@/data/demos/psicologia/mock-data";
+import { getDemoPageContentOrThrow } from "@/lib/demos/get-demo-content";
 import { cn } from "@/lib/utils";
 
 const DEMO_ID = "site-psicologia-profissional";
+const demoContent = getDemoPageContentOrThrow(DEMO_ID);
 
 type Tab = "home" | "agenda" | "blog" | "admin";
 
@@ -108,10 +111,11 @@ export function PsicologiaDemo() {
   return (
     <DemoShell
       demoId={DEMO_ID}
-      title="Site Profissional para Psicóloga"
-      subtitle="Site institucional, agendamento online, blog e painel admin — demonstração com dados fictícios."
+      title={demoContent.title}
+      subtitle={demoContent.shortDescription}
       ctaLabel="Quero um site parecido"
       fullBleed
+      overview={<DemoSystemOverview content={demoContent} />}
       className="!border-0 !bg-transparent !shadow-none"
     >
       <div className="min-h-[760px] overflow-hidden rounded-b-nangell-xl bg-[#FAF8F5] font-sans text-[#3D4F5F]">

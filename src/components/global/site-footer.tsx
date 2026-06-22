@@ -12,7 +12,7 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-glass-border bg-nangell-surface/50">
+    <footer className="border-t border-glass-border bg-nangell-surface/50 pb-24 sm:pb-0">
       <Container className="py-12 sm:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">

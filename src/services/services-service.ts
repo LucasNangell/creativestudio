@@ -1,8 +1,8 @@
 import { ProjectStatus } from "@prisma/client";
 
+import { FALLBACK_PROJECTS as PORTFOLIO_FALLBACK_PROJECTS } from "@/data/projects/fallback-projects";
 import { FALLBACK_SERVICES, SERVICE_SLUGS } from "@/data/services/fallback-services";
 import { SERVICE_ENRICHED_CONTENT } from "@/data/services/enriched-content";
-import { homeDemos } from "@/data/home";
 import prisma from "@/lib/prisma";
 import type {
   RelatedProjectCard,
@@ -146,15 +146,17 @@ export function toServiceListItem(service: ServiceDetail): ServiceListItem {
   };
 }
 
-const FALLBACK_PROJECTS: RelatedProjectCard[] = homeDemos.map((demo) => ({
-  slug: demo.id,
-  title: demo.title,
-  shortDescription: demo.description,
-  category: demo.category,
-  coverImage: `/assets/mockups/${demo.id}.webp`,
-  demoRoute: demo.demoHref,
-  caseHref: demo.caseHref,
-}));
+const FALLBACK_RELATED_PROJECTS: RelatedProjectCard[] = PORTFOLIO_FALLBACK_PROJECTS.map(
+  (project) => ({
+    slug: project.slug,
+    title: project.title,
+    shortDescription: project.shortDescription,
+    category: project.category,
+    coverImage: project.coverImage,
+    demoRoute: project.demoRoute ?? `/demo/${project.slug}`,
+    caseHref: `/cases/${project.slug}`,
+  }),
+);
 
 export async function getRelatedProjectsForService(
   slug: string,
@@ -201,5 +203,5 @@ export async function getRelatedProjectsForService(
     // fallback abaixo
   }
 
-  return FALLBACK_PROJECTS.filter((project) => slugs.includes(project.slug));
+  return FALLBACK_RELATED_PROJECTS.filter((project) => slugs.includes(project.slug));
 }

@@ -4,11 +4,14 @@ import { useState } from "react";
 import { Monitor, Pause, Play, Radio, Volume2 } from "lucide-react";
 
 import { DemoShell, trackDemoInteraction } from "@/components/demos/demo-shell";
+import { DemoSystemOverview } from "@/components/demos/demo-system-overview";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { getDemoPageContentOrThrow } from "@/lib/demos/get-demo-content";
 
 const DEMO_ID = "sharescreen-lan";
+const demoContent = getDemoPageContentOrThrow(DEMO_ID);
 
 const CLIENTS = [
   { id: "peer-demo-abc12345", name: "PC Sala Reunião A", hasVideo: true },
@@ -42,9 +45,10 @@ export function SharescreenLanDemo() {
   return (
     <DemoShell
       demoId={DEMO_ID}
-      title="ShareScreen LAN"
-      subtitle="Compartilhamento de tela em rede local — interface simulada sem WebRTC real."
+      title={demoContent.title}
+      subtitle={demoContent.shortDescription}
       ctaLabel="Quero um sistema parecido"
+      overview={<DemoSystemOverview content={demoContent} />}
     >
       <div className="p-4 sm:p-6">
         <div className="mb-4 flex flex-wrap gap-2">

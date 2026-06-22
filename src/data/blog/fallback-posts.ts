@@ -24,9 +24,9 @@ export const FALLBACK_POSTS: FallbackPostRecord[] = [
     title: "Por que demonstrar software em ação converte mais que screenshots",
     slug: "demonstrar-software-em-acao",
     excerpt:
-      "Show, don't tell: como demos interativas reduzem objeções e aceleram decisões em projetos B2B.",
+      "Mostre, não conte: como demos interativas reduzem objeções e aceleram decisões em projetos B2B.",
     content:
-      "## O problema das promessas vazias no software B2B\n\nQuando uma empresa precisa contratar desenvolvimento de software, o maior risco percebido é comprar uma caixa preta — promessas sem prova técnica.\n\n### Por que screenshots não bastam\n\nCapturas estáticas não demonstram fluxos, usabilidade nem inteligência do sistema. O comprador precisa *sentir* o produto.\n\n## A vantagem das demos interativas\n\nDemos simuladas no próprio site permitem que o visitante experimente fluxos reais de CRM, dashboards e automações antes do primeiro contato comercial.\n\n### Show, don't tell na prática\n\nKanban arrastável, filtros dinâmicos e KPIs em tempo real geram confiança imediata na competência do fornecedor.\n\n## Resultado para o negócio\n\nMais leads qualificados, conversas mais objetivas e percepção imediata de competência técnica — com menor ciclo de vendas.",
+      "## O problema das promessas vazias no software B2B\n\nQuando uma empresa precisa contratar desenvolvimento de software, o maior risco percebido é comprar uma caixa preta — promessas sem prova técnica.\n\n### Por que screenshots não bastam\n\nCapturas estáticas não demonstram fluxos, usabilidade nem inteligência do sistema. O comprador precisa *sentir* o produto.\n\n## A vantagem das demos interativas\n\nDemos simuladas no próprio site permitem que o visitante experimente fluxos reais de CRM, dashboards e automações antes do primeiro contato comercial.\n\n### Mostre, não conte na prática\n\nKanban arrastável, filtros dinâmicos e KPIs em tempo real geram confiança imediata na competência do fornecedor.\n\n## Resultado para o negócio\n\nMais leads qualificados, conversas mais objetivas e percepção imediata de competência técnica — com menor ciclo de vendas.",
     coverImage: "/assets/mockups/post-demo.webp",
     category: "Conversão",
     tags: ["demos", "b2b", "conversão", "produto"],
