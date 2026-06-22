@@ -3,6 +3,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -77,6 +78,37 @@ if (content === before) {
   console.log(`Vigília Política: seeds injetados em ${jsFiles[0]}`);
 }
 
+// Logo quebrado: bundle referencia /logo.png (404 no portfólio)
+const logoSvgAsset = path.join(__dirname, "assets", "vigilia-logo.svg");
+const logoSvgDest = path.join(demoDir, "logo.svg");
+const logoPngDest = path.join(demoDir, "logo.png");
+if (fs.existsSync(logoSvgAsset)) {
+  fs.copyFileSync(logoSvgAsset, logoSvgDest);
+}
+if (fs.existsSync(logoSvgDest)) {
+  const pngGen = spawnSync(
+    process.execPath,
+    [
+      "-e",
+      "const sharp=require('sharp'); sharp(process.argv[1]).resize(640,160,{fit:'inside'}).png().toFile(process.argv[2]).then(()=>process.exit(0)).catch(()=>process.exit(1));",
+      logoSvgDest,
+      logoPngDest,
+    ],
+    { stdio: "pipe", cwd: root },
+  );
+  if (pngGen.status !== 0) {
+    console.warn("Vigília Política: logo.png não gerado — verifique sharp/logo.svg");
+  }
+}
+let jsAfterLogo = fs.readFileSync(jsPath, "utf8");
+const logoBefore = jsAfterLogo;
+jsAfterLogo = jsAfterLogo.replace("var hh=`/logo.png`", "var hh=`./logo.png`");
+jsAfterLogo = jsAfterLogo.replace("var hh=`./logo.svg`", "var hh=`./logo.png`");
+if (jsAfterLogo !== logoBefore) {
+  fs.writeFileSync(jsPath, jsAfterLogo, "utf8");
+  console.log("Vigília Política: caminho do logo corrigido para ./logo.png");
+}
+
 const urlStrip = `<script>
 (function () {
   document.documentElement.setAttribute("data-portfolio-demo", "vigilia");
@@ -122,6 +154,12 @@ if (!html.includes("vp_authenticated")) {
   } else if (html.includes("<head ")) {
     html = html.replace(/<head[^>]*>/, (match) => `${match}${bootstrap}`);
   }
+}
+
+const portfolioFixLink =
+  '<link rel="stylesheet" href="/demos/vigilia-portfolio-fix.css" />';
+if (!html.includes("vigilia-portfolio-fix.css")) {
+  html = html.replace("</head>", `    ${portfolioFixLink}\n  </head>`);
 }
 
 fs.writeFileSync(indexPath, html, "utf8");

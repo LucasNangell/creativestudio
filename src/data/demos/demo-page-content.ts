@@ -188,6 +188,6 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
     ],
     stack: ["PHP", "MySQL", "JavaScript", "Cloudflare Workers", "Asaas", "Chart.js"],
     demoHint:
-      "Clique em “Abrir Encurtou.pro” para acessar o painel completo em produção. A prévia abaixo mostra a landing comercial; cadastre-se no site oficial para testar links, QR e analytics.",
+      "Explore a prévia do painel (Início, links, QR, analytics com dados demo). Para cadastro, login e recursos completos, clique em “Abrir Encurtou.pro”.",
   },
 };

@@ -451,7 +451,7 @@ export const solucoesPageContent = {
   comparison: {
     title: "Template genérico vs. software sob medida",
     description:
-      "Entenda quando uma plataforma pronta resolve — e quando customização gera vantagem competitiva real.",
+      "Entenda quando uma plataforma pronta resolve e quando a customização gera vantagem competitiva real.",
     template: {
       label: "Template / SaaS genérico",
       items: [

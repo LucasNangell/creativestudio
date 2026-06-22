@@ -68,6 +68,7 @@ export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
     ctaLabel: "Quero uma central de inteligência",
     iframeSrc: "/demos/vigilia-politica/index.html",
     minHeight: 720,
+    minWidth: 1280,
     desktopRecommended: true,
     keywords: ["inteligência política", "monitoramento", "alertas", "GovTech"],
   },

@@ -109,6 +109,22 @@ const CAPTURES = [
       return null;
     },
   },
+  {
+    slug: "encurtou-pro",
+    prepare: async (page) => {
+      await page.setViewportSize({ width: 1440, height: 900 });
+      const localUrl = `${BASE_URL}/demos/encurtou-pro/index.html`;
+      try {
+        await goto(page, localUrl);
+        await page.waitForSelector("#section-home", { timeout: 20_000 });
+      } catch {
+        await page.goto("https://encurtou.pro", { waitUntil: "load", timeout: 60_000 });
+        await page.waitForSelector("#section-home", { timeout: 20_000 });
+      }
+      await page.waitForTimeout(2000);
+      return null;
+    },
+  },
 ];
 
 async function main() {

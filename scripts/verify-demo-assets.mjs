@@ -14,6 +14,8 @@ const REQUIRED = [
   "public/demos/player-video-marcadores/index.html",
   "public/demos/monitor-arquivos/index.html",
   "public/demos/vigilia-politica/index.html",
+  "public/demos/vigilia-politica/logo.png",
+  "public/demos/vigilia-portfolio-fix.css",
   "public/demos/encurtou-pro/index.html",
 ];
 

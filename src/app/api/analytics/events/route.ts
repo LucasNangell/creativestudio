@@ -61,7 +61,7 @@ export async function POST(request: Request) {
 
     const { eventName, page, demoSlug, metadata } = parsed.data;
 
-    if (page.startsWith("/admin")) {
+    if (page.startsWith("/admin") || page.startsWith("/adm")) {
       return NextResponse.json({ success: false }, { status: 403 });
     }
 

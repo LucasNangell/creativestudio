@@ -21,7 +21,7 @@ export const EXTERNAL_DEMO_CONFIG: Record<string, ExternalDemoConfig> = {
     ctaLabel: "Quero uma plataforma de links parecida",
     externalUrl: "https://encurtou.pro",
     previewIframeSrc: "/demos/encurtou-pro/index.html",
-    previewMinHeight: 720,
+    previewMinHeight: 820,
     desktopRecommended: true,
     keywords: [
       "encurtador de links",

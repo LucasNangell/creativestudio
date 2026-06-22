@@ -238,3 +238,24 @@ model DemoInteraction {
   @@index([createdAt])
   @@map("demo_interactions")
 }
+
+model PageVisit {
+  id          String   @id @default(uuid()) @db.VarChar(36)
+  path        String   @db.VarChar(500)
+  referrer    String?  @db.VarChar(500)
+  userAgent   String?  @map("user_agent") @db.VarChar(500)
+  ipAddress   String   @map("ip_address") @db.VarChar(45)
+  country     String?  @db.VarChar(100)
+  region      String?  @db.VarChar(100)
+  city        String?  @db.VarChar(100)
+  utmSource   String?  @map("utm_source") @db.VarChar(255)
+  utmMedium   String?  @map("utm_medium") @db.VarChar(255)
+  utmCampaign String?  @map("utm_campaign") @db.VarChar(255)
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([path])
+  @@index([createdAt])
+  @@index([country])
+  @@index([ipAddress])
+  @@map("page_visits")
+}

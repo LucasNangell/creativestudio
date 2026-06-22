@@ -8,7 +8,7 @@ type SiteChromeGateProps = {
 
 export function SiteChromeGate({ children }: SiteChromeGateProps) {
   const pathname = usePathname();
-  const hideOnAdmin = pathname.startsWith("/admin");
+  const hideOnAdmin = pathname.startsWith("/admin") || pathname.startsWith("/adm");
 
   if (hideOnAdmin) return null;
 

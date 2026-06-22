@@ -49,7 +49,8 @@ const ALLOWED_INTERNAL_EVENTS = new Set<AnalyticsEventName>([
 
 function isAdminPath(): boolean {
   if (typeof window === "undefined") return false;
-  return window.location.pathname.startsWith("/admin");
+  const path = window.location.pathname;
+  return path.startsWith("/admin") || path.startsWith("/adm");
 }
 
 function getCurrentPage(fallback?: string): string {

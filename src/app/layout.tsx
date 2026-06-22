@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Sora } from "next/font/google";
 
+import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { ScrollProgress } from "@/components/global/scroll-progress";
 import { SiteChromeGate } from "@/components/global/site-chrome-gate";
 import { SiteFooter } from "@/components/global/site-footer";
@@ -97,6 +98,7 @@ export default function RootLayout({
         <SkipLink />
         <AnalyticsScripts />
         <AnalyticsNoScript />
+        <PageViewTracker />
         <JsonLd data={[buildOrganizationSchema(), buildWebSiteSchema()]} />
         <SiteChromeGate>
           <ScrollProgress />

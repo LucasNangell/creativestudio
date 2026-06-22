@@ -59,8 +59,8 @@ export function ExternalPortfolioDemo({ config }: ExternalPortfolioDemoProps) {
       {config.previewIframeSrc ? (
         <div className="relative bg-nangell-dark/40 p-2 sm:p-4">
           <p className="mb-2 px-1 text-xs text-nangell-muted">
-            Prévia da landing comercial — role para explorar. Para o painel completo, use o botão
-            acima.
+            Prévia do painel principal — navegue pelos módulos. Algumas ações exigem login no site
+            oficial.
           </p>
           <iframe
             title={`Prévia — ${config.title}`}
@@ -70,7 +70,10 @@ export function ExternalPortfolioDemo({ config }: ExternalPortfolioDemoProps) {
             loading="lazy"
           />
           <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-nangell-muted">
-            <span>Landing comercial estática — planos carregados do ambiente oficial quando disponível.</span>
+            <span>
+              Interface real do sistema — dados fictícios em modo visitante. Use o botão acima para
+              abrir a versão completa.
+            </span>
             <Link
               href={config.externalUrl}
               target="_blank"
