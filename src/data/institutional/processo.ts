@@ -104,7 +104,7 @@ export const processoEtapas: ProcessoEtapa[] = [
     step: 4,
     title: "Desenvolvimento incremental",
     duration: "4 a 16 semanas",
-    caseSlug: "crm-inteligente",
+    caseSlug: "lar-dos-anjos",
     description:
       "Engenharia iterativa com entregas parciais funcionais, code review, padrões de qualidade e comunicação semanal de progresso.",
     deliverables: [
@@ -150,7 +150,7 @@ export const processoEtapas: ProcessoEtapa[] = [
     step: 6,
     title: "Deploy, treinamento e evolução",
     duration: "1 a 2 semanas",
-    caseSlug: "dashboard-bi",
+    caseSlug: "gestao-producao-grafica",
     description:
       "Publicação em produção, treinamento da equipe, monitoramento pós-lançamento e roadmap de melhorias contínuas.",
     deliverables: [

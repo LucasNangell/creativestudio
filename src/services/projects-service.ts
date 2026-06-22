@@ -129,6 +129,12 @@ function sortProjects<T extends { sortOrder: number }>(projects: T[]): T[] {
   return [...projects].sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
+const ALLOWED_PROJECT_SLUGS = new Set<string>(PROJECT_SLUGS);
+
+function filterAllowedProjects<T extends { slug: string }>(projects: T[]): T[] {
+  return projects.filter((project) => ALLOWED_PROJECT_SLUGS.has(project.slug));
+}
+
 async function fetchPublishedFromDb(): Promise<DbProjectRecord[] | null> {
   try {
     const projects = await prisma.project.findMany({
@@ -152,8 +158,12 @@ export async function getPublishedProjects(): Promise<ProjectDetail[]> {
     return getFallbackProjects();
   }
 
-  const merged = dbProjects.map((record) => mergeProject(record));
-  return sortProjects(merged.length > 0 ? merged : getFallbackProjects());
+  const allowed = filterAllowedProjects(dbProjects);
+  if (allowed.length === 0) {
+    return getFallbackProjects();
+  }
+
+  return sortProjects(allowed.map((record) => mergeProject(record)));
 }
 
 export async function getProjectBySlug(slug: string): Promise<ProjectDetail | null> {
@@ -162,7 +172,7 @@ export async function getProjectBySlug(slug: string): Promise<ProjectDetail | nu
       where: { slug, status: ProjectStatus.PUBLISHED },
     });
 
-    if (record) {
+    if (record && ALLOWED_PROJECT_SLUGS.has(record.slug)) {
       return mergeProject(record);
     }
   } catch {
@@ -181,8 +191,9 @@ export async function getProjectSlugs(): Promise<string[]> {
       orderBy: { sortOrder: "asc" },
     });
 
-    if (projects.length > 0) {
-      return projects.map((project) => project.slug);
+    const allowed = filterAllowedProjects(projects);
+    if (allowed.length > 0) {
+      return allowed.map((project) => project.slug);
     }
   } catch {
     // fallback abaixo

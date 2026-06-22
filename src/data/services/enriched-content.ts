@@ -66,7 +66,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Mapeamos contratos, autenticação, retries e logs. Implementamos webhooks, filas e monitoramento para integrações críticas.",
       },
     ],
-    relatedProjectSlugs: ["crm-inteligente", "plataforma-educacional", "link-qr"],
+    relatedProjectSlugs: ["lar-dos-anjos", "site-psicologia-profissional", "player-video-marcadores"],
   },
   "apps-mobile": {
     sortOrder: 2,
@@ -130,7 +130,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Implementamos push via Firebase ou serviços equivalentes, com opt-in LGPD e segmentação por perfil.",
       },
     ],
-    relatedProjectSlugs: ["gestao-os", "plataforma-educacional"],
+    relatedProjectSlugs: ["gestao-producao-grafica", "monitor-arquivos"],
   },
   "sistemas-desktop": {
     sortOrder: 3,
@@ -194,7 +194,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Sim. Migramos fórmulas críticas para regras de negócio testáveis com validação e auditoria.",
       },
     ],
-    relatedProjectSlugs: ["gestao-os"],
+    relatedProjectSlugs: ["gestao-producao-grafica"],
   },
   automacoes: {
     sortOrder: 4,
@@ -259,7 +259,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Sim. Oferecemos planos de evolução e monitoramento para ajustes quando sistemas externos mudam.",
       },
     ],
-    relatedProjectSlugs: ["monitoramento-tempo-real", "link-qr"],
+    relatedProjectSlugs: ["sharescreen-lan", "monitor-arquivos"],
   },
   "dashboards-bi": {
     sortOrder: 5,
@@ -323,7 +323,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Entre 3 e 6 semanas após discovery, dependendo de fontes de dados e complexidade de indicadores.",
       },
     ],
-    relatedProjectSlugs: ["dashboard-bi", "crm-inteligente"],
+    relatedProjectSlugs: ["vigilia-politica", "gestao-producao-grafica"],
   },
   "sites-landing-pages": {
     sortOrder: 6,
@@ -388,7 +388,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Sim. Conectamos formulários a CRM, e-mail, webhooks ou banco próprio com notificação instantânea.",
       },
     ],
-    relatedProjectSlugs: ["link-qr"],
+    relatedProjectSlugs: ["player-video-marcadores"],
   },
 };
 

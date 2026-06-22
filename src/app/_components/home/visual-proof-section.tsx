@@ -26,7 +26,7 @@ export function VisualProofSection() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <Reveal direction="up">
-            <BrowserWindow url="nangell.com.br/demo/crm-inteligente">
+            <BrowserWindow url="nangell.com.br/demo/lar-dos-anjos">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <p className="font-heading text-sm font-semibold text-nangell-text">

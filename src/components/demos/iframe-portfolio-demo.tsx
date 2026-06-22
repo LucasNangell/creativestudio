@@ -35,7 +35,6 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
             "min-h-[480px]",
           )}
           style={{ minHeight: config.minHeight }}
-          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           loading="lazy"
         />
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-nangell-muted">

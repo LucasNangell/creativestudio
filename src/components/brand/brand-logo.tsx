@@ -8,24 +8,15 @@ import {
 import { cn } from "@/lib/utils";
 
 const logoMap = {
-  horizontal: {
-    light: brandAssets.logoHorizontalLight,
-    dark: brandAssets.logoHorizontalDark,
-  },
-  vertical: {
-    light: brandAssets.logoVerticalLight,
-    dark: brandAssets.logoVerticalDark,
-  },
-  icon: {
-    light: brandAssets.iconTransparent,
-    dark: brandAssets.iconGradient,
-  },
+  horizontal: brandAssets.logo,
+  vertical: brandAssets.logo,
+  icon: brandAssets.icon,
 } as const;
 
 const sizeMap = {
-  horizontal: { width: 220, height: 48 },
-  vertical: { width: 160, height: 140 },
-  icon: { width: 56, height: 56 },
+  horizontal: { width: 200, height: 56 },
+  vertical: { width: 160, height: 56 },
+  icon: { width: 40, height: 40 },
 } as const;
 
 type BrandLogoProps = {
@@ -37,11 +28,11 @@ type BrandLogoProps = {
 
 export function BrandLogo({
   variant = "horizontal",
-  theme = "dark",
+  theme: _theme = "dark",
   className,
   priority = false,
 }: BrandLogoProps) {
-  const src = logoMap[variant][theme];
+  const src = logoMap[variant];
   const { width, height } = sizeMap[variant];
 
   const altByVariant = {

@@ -25,6 +25,8 @@ const IFRAME_BUILDS = [
 
 const SKIP_FILES = new Set([".htaccess", ".env", ".env.local", ".env.production"]);
 
+const REWRITE_EXTENSIONS = new Set([".html", ".js", ".css", ".json", ".txt", ".rsc"]);
+
 function copyRecursive(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
@@ -39,27 +41,47 @@ function copyRecursive(src, dest) {
   }
 }
 
+function rewriteRootPaths(content, base) {
+  content = content.replaceAll('"/_next/', `"${base}/_next/`);
+  content = content.replaceAll("'/_next/", `'${base}/_next/`);
+  content = content.replaceAll('HL["/_next/', `HL["${base}/_next/`);
+
+  const prefixAttr = (attr) => {
+    const re = new RegExp(`${attr}="\\/(?!demos\\/|\\/|https?:|#|_next)([^"]*)"`, "g");
+    content = content.replace(re, (_, subpath) => {
+      const normalized = subpath.replace(/^\/+/, "");
+      return `${attr}="${base}/${normalized}"`;
+    });
+    const reSingle = new RegExp(`${attr}='\\/(?!demos\\/|\\/|https?:|#|_next)([^']*)'`, "g");
+    content = content.replace(reSingle, (_, subpath) => {
+      const normalized = subpath.replace(/^\/+/, "");
+      return `${attr}='${base}/${normalized}'`;
+    });
+  };
+
+  prefixAttr("href");
+  prefixAttr("src");
+
+  content = content.replaceAll(`href="${base}/http`, 'href="http');
+  content = content.replaceAll(`src="${base}/http`, 'src="http');
+  content = content.replaceAll(`href="${base}//`, 'href="//');
+  content = content.replaceAll(`src="${base}//`, 'src="//');
+  content = content.replaceAll(`href="${base}/#`, 'href="#');
+
+  const escaped = base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  content = content.replace(new RegExp(`${escaped}${escaped}`, "g"), base);
+  content = content.replaceAll(`${base}/demos/`, `${base}/`);
+
+  return content;
+}
+
 function rewriteFile(filePath, slug) {
   const base = `/demos/${slug}`;
-  let content = fs.readFileSync(filePath, "utf8");
   const ext = path.extname(filePath);
+  if (!REWRITE_EXTENSIONS.has(ext)) return;
 
-  if ([".html", ".js", ".css", ".json", ".txt", ".rsc"].includes(ext)) {
-    content = content.replaceAll('"/_next/', `"${base}/_next/`);
-    content = content.replaceAll("'/_next/", `'${base}/_next/`);
-    content = content.replaceAll("href=\"/", `href="${base}/`);
-    content = content.replaceAll("src=\"/", `src="${base}/`);
-    content = content.replaceAll('href="/', `href="${base}/`);
-    content = content.replaceAll('src="/', `src="${base}/`);
-    content = content.replaceAll(`href="${base}/http`, 'href="/http');
-    content = content.replaceAll(`src="${base}/http`, 'src="/http');
-    content = content.replaceAll(`href="${base}//`, 'href="//');
-    content = content.replaceAll(`src="${base}//`, 'src="//');
-    content = content.replaceAll(`href="${base}/#`, 'href="#');
-    content = content.replaceAll(`href="${base}/demos/`, `href="${base}/`);
-    content = content.replaceAll(`src="${base}/demos/`, `src="${base}/`);
-  }
-
+  let content = fs.readFileSync(filePath, "utf8");
+  content = rewriteRootPaths(content, base);
   fs.writeFileSync(filePath, content, "utf8");
 }
 
@@ -71,6 +93,80 @@ function walkRewrite(dir, slug, rewriteAbsolute) {
       walkRewrite(full, slug, rewriteAbsolute);
     } else {
       rewriteFile(full, slug);
+    }
+  }
+}
+
+function patchGestaoHtml(dest) {
+  const indexPath = path.join(dest, "index.html");
+  if (!fs.existsSync(indexPath)) return;
+
+  let html = fs.readFileSync(indexPath, "utf8");
+  html = html.replace(/<link rel="manifest"[^>]*>/i, "");
+  html = html.replace(
+    "<head>",
+    `<head>
+    <script>
+      (function () {
+        var p = location.pathname;
+        if (p.endsWith("/index.html")) {
+          history.replaceState(null, "", p.slice(0, -10) + location.search + location.hash);
+        }
+        if ("serviceWorker" in navigator) {
+          var noop = function () {
+            return Promise.resolve({ unregister: function () { return Promise.resolve(true); } });
+          };
+          navigator.serviceWorker.register = noop;
+          navigator.serviceWorker.getRegistrations().then(function (regs) {
+            regs.forEach(function (r) { r.unregister(); });
+          });
+        }
+        try { localStorage.setItem("sagra-pwa-update-dismissed", "1"); } catch (e) {}
+      })();
+    </script>`,
+  );
+  fs.writeFileSync(indexPath, html, "utf8");
+}
+
+function patchGestaoJs(dest) {
+  const assetsDir = path.join(dest, "assets");
+  if (!fs.existsSync(assetsDir)) return;
+
+  const brokenG6 =
+    'function G6({children:e}){const t=Mn(),n=xg({select:s=>s.location.pathname});return b.useEffect(()=>{if(n.includes("/papelaria")){const s=Hd();(!s.osId||!s.osAno)&&Ap({nr_os:5485,ano:2026,produto:"Ct Visita"})}if(n.includes("/analise")&&!n.includes("?")){const s=new URLSearchParams(window.location.search);(!s.get("ano")||!s.get("id"))&&t({to:"/analise",search:{ano:"2026",id:"4521"},replace:!0})}},[t,n]),e}';
+  const fixedG6 = "function G6({children:e}){return e}";
+
+  for (const file of fs.readdirSync(assetsDir)) {
+    if (!file.endsWith(".js") || !file.startsWith("index-")) continue;
+    const filePath = path.join(assetsDir, file);
+    let content = fs.readFileSync(filePath, "utf8");
+    const before = content;
+    content = content.replace(brokenG6, fixedG6);
+    content = content.replace(
+      "r.jsx(G6,{children:r.jsx(CI,{router:xle})})",
+      "r.jsx(CI,{router:xle})",
+    );
+    if (content !== before) {
+      fs.writeFileSync(filePath, content, "utf8");
+    }
+  }
+}
+
+function patchVigiliaJs(dest) {
+  const assetsDir = path.join(dest, "assets");
+  if (!fs.existsSync(assetsDir)) return;
+
+  for (const file of fs.readdirSync(assetsDir)) {
+    if (!file.endsWith(".js")) continue;
+    const filePath = path.join(assetsDir, file);
+    let content = fs.readFileSync(filePath, "utf8");
+    const before = content;
+    content = content.replace(
+      "Ambiente de inteligência • monitoramento simulado em tempo real",
+      "",
+    );
+    if (content !== before) {
+      fs.writeFileSync(filePath, content, "utf8");
     }
   }
 }
@@ -91,6 +187,15 @@ for (const item of IFRAME_BUILDS) {
 
   copyRecursive(src, dest);
   walkRewrite(dest, item.slug, item.rewriteAbsolute);
+
+  if (item.slug === "gestao-producao-grafica") {
+    patchGestaoHtml(dest);
+    patchGestaoJs(dest);
+  }
+  if (item.slug === "vigilia-politica") {
+    patchVigiliaJs(dest);
+  }
+
   console.log(`OK ${item.slug} → public/demos/${item.slug}`);
 }
 
