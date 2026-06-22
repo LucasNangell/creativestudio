@@ -30,8 +30,8 @@ export function DemosSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Experimente antes de contratar"
-            title="6 demos interativas para provar competência técnica"
-            description="Navegue por simulações reais de CRM, BI, gestão operacional, LMS, SaaS e monitoramento — direto no navegador, sem cadastro."
+            title="7 demos dos sistemas que desenvolvemos"
+            description="Abra as demonstrações reais do portfólio — doações, produção gráfica, vídeo corporativo, automação, sharescreen, site clínico e inteligência política."
           />
         </Reveal>
 

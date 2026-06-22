@@ -2,6 +2,15 @@ import type { NextConfig } from "next";
 
 const isProduction = process.env.NODE_ENV === "production";
 
+const LEGACY_DEMO_SLUGS = [
+  "crm-inteligente",
+  "dashboard-bi",
+  "gestao-os",
+  "plataforma-educacional",
+  "link-qr",
+  "monitoramento-tempo-real",
+] as const;
+
 const contentSecurityPolicy = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com",
@@ -63,6 +72,13 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  async redirects() {
+    return LEGACY_DEMO_SLUGS.map((slug) => ({
+      source: `/demo/${slug}`,
+      destination: "/portfolio",
+      permanent: false,
+    }));
+  },
   async headers() {
     return [
       {
@@ -70,6 +86,7 @@ const nextConfig: NextConfig = {
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Content-Security-Policy", value: demoStaticCsp },
+          { key: "Cache-Control", value: "public, max-age=86400" },
         ],
       },
       {

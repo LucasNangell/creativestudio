@@ -152,6 +152,40 @@ function patchGestaoJs(dest) {
   }
 }
 
+function patchLarDosAnjosHtml(dest) {
+  const swDisable = `<script>
+(function () {
+  if ("serviceWorker" in navigator) {
+    var noop = function () {
+      return Promise.resolve({ unregister: function () { return Promise.resolve(true); } });
+    };
+    navigator.serviceWorker.register = noop;
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      regs.forEach(function (r) { r.unregister(); });
+    });
+  }
+})();
+</script>`;
+
+  function walkHtml(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walkHtml(full);
+      } else if (entry.name.endsWith(".html")) {
+        let html = fs.readFileSync(full, "utf8");
+        if (html.includes("navigator.serviceWorker.register = noop")) continue;
+        if (!html.includes("<head")) continue;
+        html = html.replace("<head>", `<head>${swDisable}`);
+        html = html.replace(/<link rel="manifest"[^>]*>/gi, "");
+        fs.writeFileSync(full, html, "utf8");
+      }
+    }
+  }
+
+  walkHtml(dest);
+}
+
 function patchVigiliaJs(dest) {
   const assetsDir = path.join(dest, "assets");
   if (!fs.existsSync(assetsDir)) return;
@@ -188,6 +222,9 @@ for (const item of IFRAME_BUILDS) {
   copyRecursive(src, dest);
   walkRewrite(dest, item.slug, item.rewriteAbsolute);
 
+  if (item.slug === "lar-dos-anjos") {
+    patchLarDosAnjosHtml(dest);
+  }
   if (item.slug === "gestao-producao-grafica") {
     patchGestaoHtml(dest);
     patchGestaoJs(dest);

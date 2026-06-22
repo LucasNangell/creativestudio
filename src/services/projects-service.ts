@@ -1,4 +1,4 @@
-import { DemoType, ProjectStatus } from "@prisma/client";
+import { DemoType } from "@prisma/client";
 
 import {
   PROJECT_ENRICHED_CONTENT,
@@ -7,7 +7,6 @@ import {
   FALLBACK_PROJECTS,
   PROJECT_SLUGS,
 } from "@/data/projects/fallback-projects";
-import prisma from "@/lib/prisma";
 import type {
   ArchitectureLayer,
   ProjectDetail,
@@ -129,54 +128,19 @@ function sortProjects<T extends { sortOrder: number }>(projects: T[]): T[] {
   return [...projects].sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
-const ALLOWED_PROJECT_SLUGS = new Set<string>(PROJECT_SLUGS);
-
-function filterAllowedProjects<T extends { slug: string }>(projects: T[]): T[] {
-  return projects.filter((project) => ALLOWED_PROJECT_SLUGS.has(project.slug));
-}
-
-async function fetchPublishedFromDb(): Promise<DbProjectRecord[] | null> {
-  try {
-    const projects = await prisma.project.findMany({
-      where: { status: ProjectStatus.PUBLISHED },
-      orderBy: { sortOrder: "asc" },
-    });
-    return projects;
-  } catch {
-    return null;
-  }
-}
-
 function getFallbackProjects(): ProjectDetail[] {
   return sortProjects(FALLBACK_PROJECTS.map((record) => mergeProject(record)));
 }
 
 export async function getPublishedProjects(): Promise<ProjectDetail[]> {
-  const dbProjects = await fetchPublishedFromDb();
-
-  if (!dbProjects || dbProjects.length === 0) {
-    return getFallbackProjects();
-  }
-
-  const allowed = filterAllowedProjects(dbProjects);
-  if (allowed.length === 0) {
-    return getFallbackProjects();
-  }
-
-  return sortProjects(allowed.map((record) => mergeProject(record)));
+  return getFallbackProjects();
 }
 
-export async function getProjectBySlug(slug: string): Promise<ProjectDetail | null> {
-  try {
-    const record = await prisma.project.findFirst({
-      where: { slug, status: ProjectStatus.PUBLISHED },
-    });
+const PORTFOLIO_SLUG_SET = new Set<string>(PROJECT_SLUGS);
 
-    if (record && ALLOWED_PROJECT_SLUGS.has(record.slug)) {
-      return mergeProject(record);
-    }
-  } catch {
-    // fallback abaixo
+export async function getProjectBySlug(slug: string): Promise<ProjectDetail | null> {
+  if (!PORTFOLIO_SLUG_SET.has(slug)) {
+    return null;
   }
 
   const fallback = FALLBACK_PROJECTS.find((project) => project.slug === slug);
@@ -184,21 +148,6 @@ export async function getProjectBySlug(slug: string): Promise<ProjectDetail | nu
 }
 
 export async function getProjectSlugs(): Promise<string[]> {
-  try {
-    const projects = await prisma.project.findMany({
-      where: { status: ProjectStatus.PUBLISHED },
-      select: { slug: true },
-      orderBy: { sortOrder: "asc" },
-    });
-
-    const allowed = filterAllowedProjects(projects);
-    if (allowed.length > 0) {
-      return allowed.map((project) => project.slug);
-    }
-  } catch {
-    // fallback abaixo
-  }
-
   return [...PROJECT_SLUGS];
 }
 

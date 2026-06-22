@@ -182,6 +182,12 @@ async function seedServices() {
 }
 
 async function seedProjects() {
+  const allowedSlugs = IMPORTED_PORTFOLIO_PROJECTS.map((project) => project.slug);
+
+  await prisma.project.deleteMany({
+    where: { slug: { notIn: allowedSlugs } },
+  });
+
   const projects = IMPORTED_PORTFOLIO_PROJECTS.map((project) => {
     const { id: _seedId, ...rest } = project;
     void _seedId;

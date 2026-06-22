@@ -204,6 +204,16 @@ export const homeDemos: HomeDemo[] = [
     demoHref: "/demo/monitor-arquivos",
     caseHref: "/cases/monitor-arquivos",
   },
+  {
+    id: "sharescreen-lan",
+    title: "ShareScreen LAN",
+    description:
+      "Compartilhamento de tela em rede local com WebRTC, gravação e painel host para reuniões internas.",
+    category: "Comunicação em Tempo Real",
+    stack: ["Node.js", "WebRTC", "mediasoup", "WebSocket"],
+    demoHref: "/demo/sharescreen-lan",
+    caseHref: "/cases/sharescreen-lan",
+  },
 ];
 
 export type HomeProcessStep = {
