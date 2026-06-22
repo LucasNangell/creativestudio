@@ -14,7 +14,7 @@ export const siteConfig = {
     "Nangell Creative Studio | Desenvolvimento de Softwares Sob Medida",
   titleTemplate: "%s | Nangell Creative Studio",
   ogImage: brandAssets.logoHorizontalDark,
-  email: "contato@nangell.com.br",
+  email: "contato@nangellcreativestudio.online",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5561982015585",
   sameAs: [
     "https://www.linkedin.com/company/nangell-creative-studio",

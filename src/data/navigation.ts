@@ -32,7 +32,8 @@ export const footerLegalLinks: NavLink[] = [
 ];
 
 export const siteContact = {
-  email: "contato@nangell.com.br",
+  email: "contato@nangellcreativestudio.online",
+  cnpj: "66.492.071/0001-67",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? WHATSAPP_NUMBER,
   whatsappMessage: defaultWhatsAppMessage(),
 } as const;

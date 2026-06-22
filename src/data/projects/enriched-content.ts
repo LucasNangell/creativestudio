@@ -24,13 +24,14 @@ export const PORTFOLIO_FILTER_CATEGORIES = [
   "Comunicação em Tempo Real",
   "Sites Institucionais",
   "Inteligência Política / GovTech",
+  "Marketing Digital / SaaS",
 ] as const;
 
 export const portfolioPageContent = {
   seo: {
     title: "Portfólio e Cases | Nangell Creative Studio",
     description:
-      "Sistemas reais desenvolvidos pela Nangell: doações, produção gráfica, vídeo corporativo, automação PDF, sharescreen LAN, site clínico e inteligência política — com demonstrações interativas.",
+      "Sistemas reais desenvolvidos pela Nangell: doações, produção gráfica, vídeo corporativo, automação PDF, sharescreen LAN, site clínico, inteligência política e marketing de links — com demonstrações interativas.",
     keywords: [
       "portfólio software",
       "cases reais",
@@ -50,7 +51,7 @@ export const portfolioPageContent = {
   showDontTell: {
     title: "Mostre, não conte",
     description:
-      "O diferencial da Nangell é colocar o visitante dentro do software. Filtre por stack, objetivo de negócio ou categoria e abra a demonstração no mesmo domínio — sem cadastro, sem agendar reunião para ver valor.",
+      "O diferencial da Nangell é colocar o visitante dentro do software. Explore os cases e abra a demonstração no mesmo domínio — sem cadastro, sem agendar reunião para ver valor.",
     highlights: [
       "Demonstrações nativas no navegador com dados fictícios",
       "Cases com problema, solução e métricas",
@@ -58,9 +59,9 @@ export const portfolioPageContent = {
     ],
   },
   filters: {
-    title: "Filtrar e explorar cases",
+    title: "Explorar cases",
     description:
-      "Sete projetos reais do portfólio — doações, vídeo corporativo, automação PDF, produção gráfica, sharescreen LAN, site clínico e inteligência política. Combine filtros por categoria, stack ou objetivo de negócio.",
+      "Oito projetos reais do portfólio — doações, vídeo corporativo, automação PDF, produção gráfica, sharescreen LAN, site clínico, inteligência política e Encurtou.pro. Abra cada case e teste a demonstração.",
   },
   cta: {
     title: "Quer um sistema parecido com um desses cases?",
@@ -140,6 +141,42 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
       { name: "Feed", description: "Consolidação multicanal com filtros por risco e sentimento." },
       { name: "Alertas", description: "Detecção de crises com fluxo de providências e responsáveis." },
       { name: "Demonstração", description: "SPA React com dados fictícios e autenticação simulada via localStorage." },
+    ],
+  },
+  "encurtou-pro": {
+    badges: ["Demonstração externa", "SaaS", "Marketing de links"],
+    businessGoals: ["Captar leads", "Controlar operação", "Criar produto digital"],
+    architecture: [
+      {
+        name: "Dashboard SPA",
+        description:
+          "Interface única em HTML/JS com módulos de links, QR, analytics, campanhas, bio pages, equipe, conta e admin.",
+      },
+      {
+        name: "API PHP + MySQL",
+        description:
+          "Backend monolítico com auth, CRUD de links/QRs/bios, analytics, billing, afiliados e permissões por plano.",
+      },
+      {
+        name: "Redirecionamento",
+        description:
+          "redirect.php resolve slugs, aplica regras A/B, vigência, deep link e registra cliques com identificador de atribuição.",
+      },
+      {
+        name: "Edge Cloudflare",
+        description:
+          "Workers para resolve/click/invalidate com cache e fila assíncrona — latência baixa em picos de campanha.",
+      },
+      {
+        name: "Monetização",
+        description:
+          "Checkout Asaas, webhooks, entitlements por plano, Founder Edition e programa de afiliados com comissionamento.",
+      },
+      {
+        name: "Conversão",
+        description:
+          "tracker.js no site do cliente + track.php correlacionam eventos pós-clique ao link de origem.",
+      },
     ],
   },
 };

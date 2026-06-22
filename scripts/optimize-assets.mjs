@@ -29,6 +29,7 @@ const MOCKUP_SPECS = [
   { name: "sharescreen-lan", label: "ShareScreen LAN", colors: ["#05070d", "#00c2fc", "#3061fa"] },
   { name: "site-psicologia-profissional", label: "Site Psicologia", colors: ["#0b0f1a", "#8b5cf6", "#2dd4bf"] },
   { name: "vigilia-politica", label: "Vigília Política", colors: ["#0b0f1a", "#dc2626", "#6139fa"] },
+  { name: "encurtou-pro", label: "Encurtou.pro", colors: ["#05070d", "#00c2fc", "#6139fa"] },
 ];
 
 async function optimizeBrandAssets() {

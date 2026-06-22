@@ -17,17 +17,9 @@ import { PortfolioFiltersGrid } from "./portfolio-filters-grid";
 
 type PortfolioPageContentProps = {
   projects: ProjectDetail[];
-  categories: string[];
-  stacks: string[];
-  businessGoals: string[];
 };
 
-export function PortfolioPageContent({
-  projects,
-  categories,
-  stacks,
-  businessGoals,
-}: PortfolioPageContentProps) {
+export function PortfolioPageContent({ projects }: PortfolioPageContentProps) {
   const { hero, showDontTell, filters, cta } = portfolioPageContent;
 
   return (
@@ -100,12 +92,7 @@ export function PortfolioPageContent({
             />
           </Reveal>
           <div className="mt-10">
-            <PortfolioFiltersGrid
-              projects={projects}
-              categories={categories}
-              stacks={stacks}
-              businessGoals={businessGoals}
-            />
+            <PortfolioFiltersGrid projects={projects} />
           </div>
         </Container>
       </Section>

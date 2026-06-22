@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 
 import { BrandLogo } from "@/components/brand/brand-logo";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { Container } from "@/components/layout/container";
 import {
   buildWhatsAppUrl,
@@ -16,7 +17,7 @@ export function SiteFooter() {
       <Container className="py-12 sm:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <BrandLogo variant="horizontal" theme="dark" className="h-9 w-auto" />
+            <BrandLogo variant="horizontal" theme="dark" className="h-12 w-auto sm:h-14" />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-nangell-muted">
               Engenharia criativa para softwares sob medida — sistemas web,
               mobile, desktop, automações, dashboards e SaaS para empresas que
@@ -63,9 +64,7 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-nangell-muted transition-colors hover:text-nangell-cyan"
                 >
-                  <span className="font-mono text-nangell-cyan" aria-hidden>
-                    WA
-                  </span>
+                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-[#25D366]" />
                   WhatsApp comercial
                 </a>
               </li>
@@ -78,11 +77,14 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-glass-border pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-nangell-muted">
-            ©{" "}
-            <span suppressHydrationWarning>{new Date().getFullYear()}</span>{" "}
-            Nangell Creative Studio. Todos os direitos reservados.
-          </p>
+          <div className="text-xs text-nangell-muted">
+            <p>
+              ©{" "}
+              <span suppressHydrationWarning>{new Date().getFullYear()}</span>{" "}
+              Nangell Creative Studio. Todos os direitos reservados.
+            </p>
+            <p className="mt-1">CNPJ {siteContact.cnpj}</p>
+          </div>
           <nav aria-label="Links legais" className="flex flex-wrap gap-4">
             {footerLegalLinks.map((link) => (
               <Link

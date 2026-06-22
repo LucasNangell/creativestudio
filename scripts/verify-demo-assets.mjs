@@ -14,6 +14,7 @@ const REQUIRED = [
   "public/demos/player-video-marcadores/index.html",
   "public/demos/monitor-arquivos/index.html",
   "public/demos/vigilia-politica/index.html",
+  "public/demos/encurtou-pro/index.html",
 ];
 
 const missing = REQUIRED.filter((rel) => !fs.existsSync(path.join(root, rel)));

@@ -18,7 +18,7 @@ export const contatoHero = {
 } as const;
 
 export const contatoInfo = {
-  email: "contato@nangell.com.br",
+  email: "contato@nangellcreativestudio.online",
   emailLabel: "E-mail comercial",
   whatsappLabel: "WhatsApp",
   whatsappHint: "Resposta mais rápida em horário comercial",

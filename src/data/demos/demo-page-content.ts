@@ -164,4 +164,30 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
     demoHint:
       "Acesso automático na simulação. Explore War Room, Feed, Central de Alertas, Narrativas, Territórios e Briefing — novos alertas simulados surgem a cada poucos segundos.",
   },
+  "encurtou-pro": {
+    slug: "encurtou-pro",
+    title: "Encurtou.pro — Plataforma de Marketing de Links",
+    category: "Marketing Digital / SaaS",
+    shortDescription:
+      "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques, campanhas UTM, A/B testing e assinaturas — produto SaaS em produção.",
+    fullDescription:
+      "O Encurtou.pro centraliza encurtamento, QR dinâmico, bio pages, analytics, campanhas UTM, testes A/B, equipes, afiliados e assinaturas em um painel único. Cada clique é registrado e pode ser correlacionado a conversões no site do cliente via tracker embutido. A infraestrutura edge Cloudflare garante redirecionamento rápido mesmo em campanhas de alto volume.",
+    problem:
+      "Encurtadores gratuitos expiram links, não medem conversão e impedem QR dinâmico — desperdiçando material impresso e ocultando ROI por canal.",
+    solution:
+      "SaaS completo com redirecionamento inteligente, QR editável, bio pages, analytics unificado, billing Asaas e edge para escala.",
+    features: [
+      "Encurtamento com slug e subdomínio customizados",
+      "QR Codes dinâmicos com personalização visual",
+      "Bio Pages com templates e formulários de captura",
+      "Analytics: origem, dispositivo, geo e funil",
+      "Campanhas UTM e testes A/B de destino",
+      "Tracker de conversão pós-clique",
+      "Assinaturas Asaas e programa de afiliados",
+      "Edge Cloudflare para resolve e cliques",
+    ],
+    stack: ["PHP", "MySQL", "JavaScript", "Cloudflare Workers", "Asaas", "Chart.js"],
+    demoHint:
+      "Clique em “Abrir Encurtou.pro” para acessar o painel completo em produção. A prévia abaixo mostra a landing comercial; cadastre-se no site oficial para testar links, QR e analytics.",
+  },
 };

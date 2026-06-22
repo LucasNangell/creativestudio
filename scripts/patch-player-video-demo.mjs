@@ -16,6 +16,10 @@ const JS_REPLACEMENTS = [
     '${W?"fixed inset-0 z-50 flex bg-black/50 lg:hidden":"hidden"}',
     '${W?"fixed inset-0 z-50 flex bg-black/50 xl:hidden":"hidden"}',
   ],
+  [
+    'fixed inset-0 z-50 flex bg-black/50 lg:hidden',
+    'fixed inset-0 z-50 flex bg-black/50 xl:hidden',
+  ],
   ['"/demo-media/', `"${base}/demo-media/`],
   ["'/demo-media/", `'${base}/demo-media/`],
   ['"/demo-thumbnails/', `"${base}/demo-thumbnails/`],

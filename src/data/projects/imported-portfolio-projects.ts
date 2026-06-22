@@ -247,6 +247,44 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     seoDescription:
       "Central de inteligência política com War Room e alertas — demonstração interativa com dados fictícios.",
   },
+  {
+    id: "fallback-encurtou-pro",
+    title: "Encurtou.pro — Plataforma de Marketing de Links",
+    slug: "encurtou-pro",
+    category: "Marketing Digital / SaaS",
+    shortDescription:
+      "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques, campanhas UTM, A/B testing e assinaturas — produto SaaS em produção.",
+    fullDescription:
+      "O Encurtou.pro é uma plataforma completa de marketing de links desenvolvida para campanhas, mandatos e equipes de marketing que precisam medir o que acontece depois do clique. Em um único painel, o usuário cria links curtos personalizados, gera QR Codes dinâmicos com logo e cores da marca, monta Bio Pages (microsites de link na bio), organiza ativos em pastas e tags, e acompanha analytics detalhados — origem, dispositivo, localização, horário e funil de conversão. O sistema suporta campanhas com parâmetros UTM, testes A/B de destino com pesos configuráveis, regras de vigência de links, deep linking mobile, preview social para compartilhamento e pixels de retargeting. A camada de redirecionamento registra cada clique, anexa identificador para atribuição de conversão e pode operar via edge Cloudflare para baixa latência em alto volume. Há módulo de equipes, programa de afiliados, checkout de assinatura integrado ao Asaas com webhooks, entitlements por plano (freemium a avançado) e painel administrativo. Publicado em produção em encurtou.pro.",
+    problem:
+      "Times de marketing e gabinetes dependiam de encurtadores gratuitos que expiram links, não rastreiam conversões, não permitem QR dinâmico nem bio pages integradas — gerando perda de verba em material impresso, analytics fragmentados e zero visibilidade do ROI por canal.",
+    solution:
+      "Construímos um SaaS all-in-one com dashboard unificado, redirecionamento inteligente, QR editável sem reimpressão, tracker de conversão no site do cliente, billing automatizado e infraestrutura edge para escala — transformando links e QR Codes em sensores mensuráveis de campanha.",
+    features: [
+      "Encurtamento com slug e subdomínio customizados",
+      "QR Codes dinâmicos com personalização visual",
+      "Bio Pages com templates e formulários de captura",
+      "Analytics: origem, dispositivo, geo e funil",
+      "Campanhas UTM e testes A/B de destino",
+      "Tracker de conversão pós-clique",
+      "Assinaturas Asaas e programa de afiliados",
+      "Edge Cloudflare para resolve e cliques",
+    ],
+    stack: ["PHP", "MySQL", "JavaScript", "Cloudflare Workers", "Asaas", "Chart.js"],
+    coverImage: "/assets/mockups/encurtou-pro.webp",
+    gallery: ["/assets/mockups/encurtou-pro.webp"],
+    metrics: [
+      { label: "Módulos integrados", value: "10+", description: "Links, QR, bio, analytics, billing" },
+      { label: "Medição", value: "Clique → conversão", description: "Atribuição ponta a ponta" },
+    ],
+    demoType: DemoType.EXTERNAL,
+    demoRoute: "/demo/encurtou-pro",
+    isFeatured: true,
+    sortOrder: 14,
+    seoTitle: "Case Encurtou.pro — Marketing de Links | Nangell Creative Studio",
+    seoDescription:
+      "Plataforma SaaS de encurtamento, QR dinâmico, bio pages e analytics — demonstração no ambiente de produção.",
+  },
 ] as const;
 
 export const IMPORTED_PROJECT_SLUGS = IMPORTED_PORTFOLIO_PROJECTS.map((p) => p.slug);
