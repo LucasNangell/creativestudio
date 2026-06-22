@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { INTERACTIVE_DEMO_LABEL } from "@/data/demos/labels";
 
 type DemoTopbarProps = {

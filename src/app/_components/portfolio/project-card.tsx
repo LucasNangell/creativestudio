@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ExternalLink, Play, Sparkles } from "lucide-react";
 
 import { INTERACTIVE_DEMO_LABEL } from "@/data/demos/labels";
+import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,

@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { INTERACTIVE_DEMO_LABEL } from "@/data/demos/labels";
 import type { DemoPageContent } from "@/lib/demos/get-demo-content";
 
