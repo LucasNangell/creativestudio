@@ -1,4 +1,4 @@
-import { IMPORTED_PORTFOLIO_PROJECTS } from "@/data/projects/imported-portfolio-projects";
+import { DEMO_PAGE_CONTENT } from "@/data/demos/demo-page-content";
 
 export type DemoPageContent = {
   slug: string;
@@ -13,39 +13,8 @@ export type DemoPageContent = {
   demoHint?: string;
 };
 
-const DEMO_HINTS: Record<string, string> = {
-  "gestao-producao-grafica":
-    "Use o usuário 123456 e qualquer senha, ou clique em “Entrar na demonstração”. Explore OS, PCP, dashboards e análise técnica.",
-  "lar-dos-anjos":
-    "Navegue pelo site institucional, campanhas, animais e fluxos de doação — todos os dados são fictícios.",
-  "site-psicologia-profissional":
-    "Painel admin: usuário de demonstração / senha demo2026. Teste agendamento, blog e FAQ do site clínico.",
-  "sharescreen-lan":
-    "Simulação do painel host e clients em rede local — WebRTC e gravação são demonstrativos.",
-  "vigilia-politica":
-    "Acesso automático na simulação. Explore War Room, Feed, Central de Alertas, Narrativas, Territórios e Briefing — novos alertas simulados surgem a cada poucos segundos.",
-};
-
-const projectsBySlug = Object.fromEntries(
-  IMPORTED_PORTFOLIO_PROJECTS.map((project) => [project.slug, project]),
-);
-
 export function getDemoPageContent(slug: string): DemoPageContent | null {
-  const project = projectsBySlug[slug];
-  if (!project) return null;
-
-  return {
-    slug: project.slug,
-    title: project.title,
-    category: project.category,
-    shortDescription: project.shortDescription,
-    fullDescription: project.fullDescription,
-    problem: project.problem,
-    solution: project.solution,
-    features: [...project.features],
-    stack: [...project.stack],
-    demoHint: DEMO_HINTS[slug],
-  };
+  return DEMO_PAGE_CONTENT[slug] ?? null;
 }
 
 export function getDemoPageContentOrThrow(slug: string): DemoPageContent {
