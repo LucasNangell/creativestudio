@@ -29,8 +29,11 @@ export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
     subtitle:
       "Biblioteca corporativa de vídeos com player avançado, marcadores, grupos e busca — versão demonstrativa.",
     ctaLabel: "Quero um player para minha empresa",
-    iframeSrc: "/demos/player-video-marcadores/index.html",
+    iframeSrc:
+      "/demos/player-video-marcadores/video/index.html?id=demo-vid-001",
     minHeight: 720,
+    minWidth: 1280,
+    wideViewer: true,
     desktopRecommended: true,
     keywords: ["player de vídeo", "marcadores", "treinamento", "biblioteca"],
   },

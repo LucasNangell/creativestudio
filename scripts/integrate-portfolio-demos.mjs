@@ -161,6 +161,7 @@ for (const item of IFRAME_BUILDS) {
 runPatch("patch-lar-dos-anjos-demo.mjs");
 runPatch("patch-gestao-demo.mjs");
 runPatch("patch-vigilia-demo.mjs");
+runPatch("patch-player-video-demo.mjs");
 runPatch("patch-demo-navigation.mjs");
 
 console.log("Integração de builds concluída.");

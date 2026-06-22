@@ -48,6 +48,8 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
       "Tema claro e escuro",
     ],
     stack: ["Next.js", "React", "TypeScript", "Video.js", "Tailwind CSS"],
+    demoHint:
+      "A demonstração abre direto no player com marcadores. Clique em um marcador para ir ao trecho, use “Adicionar marcador” no tempo atual e teste os grupos na barra lateral.",
   },
   "monitor-arquivos": {
     slug: "monitor-arquivos",
