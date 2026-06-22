@@ -187,6 +187,7 @@ Build command: npm run build
 Start command: npm start
 Output directory: .next/ (gerado no build; runtime via next start)
 Cache HTML: após deploy, aguarde ~1 min ou limpe cache CDN no hPanel se estilos não carregarem
+Imagens: `images.unoptimized: true` no next.config — o otimizador `/_next/image` da Hostinger retorna 503; mockups são servidos direto de `/assets/mockups/`
 NEXT_PUBLIC_SITE_URL: https://nangellcreativestudio.online (obrigatório — nunca localhost em produção)
 Entry file: (não aplicável — usar Start command npm start)
 Variáveis de ambiente obrigatórias: NODE_ENV, DATABASE_URL, NEXT_PUBLIC_SITE_URL, ADMIN_SESSION_SECRET, NEXT_PUBLIC_WHATSAPP_NUMBER

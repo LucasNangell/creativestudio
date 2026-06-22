@@ -30,6 +30,7 @@ function VisualProofCard({ project }: { project: ProjectListItem }) {
             alt={`Interface do case ${project.title}`}
             width={640}
             height={360}
+            unoptimized
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
             className="aspect-video w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
           />

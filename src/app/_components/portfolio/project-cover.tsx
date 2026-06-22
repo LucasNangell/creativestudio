@@ -56,6 +56,7 @@ export function ProjectCover({
         height={360}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
         priority={priority}
+        unoptimized
         loading={priority ? undefined : "lazy"}
         className="aspect-video w-full object-cover object-top"
         onError={() => setHasError(true)}
