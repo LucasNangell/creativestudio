@@ -141,7 +141,7 @@ export function MonitoringDemo() {
       title="Monitoramento em Tempo Real"
       subtitle="Feed simulado de menções, logs e alertas com classificação de sentimento fictícia."
       ctaLabel="Quero monitorar meus dados"
-      sidebar={<DemoSidebar title="Monitor Demo" items={sidebarItems} />}
+      sidebar={<DemoSidebar title="Simulação de monitoramento" items={sidebarItems} />}
     >
       <div className="border-b border-glass-border bg-nangell-dark/40 px-4 py-3 sm:px-6">
         <div className="flex flex-wrap items-center gap-3">

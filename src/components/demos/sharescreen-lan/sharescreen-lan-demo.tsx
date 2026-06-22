@@ -32,7 +32,7 @@ export function SharescreenLanDemo() {
   const [selectedId, setSelectedId] = useState(CLIENTS[0].id);
   const [paused, setPaused] = useState(false);
   const [volume, setVolume] = useState(80);
-  const [clientName, setClientName] = useState("Estação Demo 01");
+  const [clientName, setClientName] = useState("Estação Simulação 01");
   const [logs, setLogs] = useState(LOG_EVENTS);
 
   const selected = CLIENTS.find((c) => c.id === selectedId) ?? CLIENTS[0];

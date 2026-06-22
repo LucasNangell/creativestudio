@@ -58,7 +58,7 @@ const designCards = [
   },
   {
     title: "Mockups",
-    description: "Browser, terminal e shell de dashboard para demos e heros.",
+    description: "Browser, terminal e shell de dashboard para demonstrações e heros.",
     badge: "Mockup",
   },
   {

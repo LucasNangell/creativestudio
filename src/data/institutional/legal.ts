@@ -8,8 +8,8 @@ export const politicaPrivacidadeSeo = {
 export const termosUsoSeo = {
   title: "Termos de Uso",
   description:
-    "Termos de uso do site, demos interativas e serviços da Nangell Creative Studio. Leia as condições de utilização antes de navegar ou utilizar nossas demonstrações.",
-  keywords: ["termos de uso", "condições de uso", "demos", "Nangell Creative Studio"],
+    "Termos de uso do site, demonstrações interativas e serviços da Nangell Creative Studio. Leia as condições de utilização antes de navegar ou utilizar nossas demonstrações.",
+  keywords: ["termos de uso", "condições de uso", "demonstrações", "Nangell Creative Studio"],
 } as const;
 
 export type LegalSection = {
@@ -25,7 +25,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     content: [
       "A Nangell Creative Studio (“Nangell”, “nós” ou “nosso”) respeita a privacidade dos visitantes, clientes e usuários de nosso site institucional (nangell.com.br e domínios associados).",
       "Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
-      "Ao utilizar nosso site, formulários ou demos interativas, você declara ter lido e compreendido esta política.",
+      "Ao utilizar nosso site, formulários ou demonstrações interativas, você declara ter lido e compreendido esta política.",
     ],
   },
   {
@@ -34,7 +34,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     content: [
       "Dados de identificação e contato: nome, e-mail, telefone, empresa e mensagem — fornecidos voluntariamente em formulários de contato, diagnóstico ou newsletter.",
       "Dados de navegação: endereço IP, tipo de navegador, páginas visitadas, tempo de permanência e origem de tráfego — coletados automaticamente via cookies e ferramentas de analytics.",
-      "Dados de interação com demos: ações realizadas nas demonstrações interativas (ex.: movimentação de cards, filtros aplicados) — armazenados localmente no navegador (session storage) e não vinculados a identificação pessoal.",
+      "Dados de interação com demonstrações: ações realizadas nas demonstrações interativas (ex.: movimentação de cards, filtros aplicados) — armazenados localmente no navegador (session storage) e não vinculados a identificação pessoal.",
       "Dados de campanha: parâmetros UTM (utm_source, utm_medium, utm_campaign) quando presentes na URL de acesso.",
     ],
   },
@@ -66,7 +66,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
       "Dados de leads são armazenados em banco de dados seguro (MySQL) em servidores com acesso restrito.",
       "Retemos dados de contato pelo tempo necessário para atender sua solicitação e, posteriormente, por até 5 anos para fins de histórico comercial e obrigações legais — salvo solicitação de exclusão antecipada.",
       "Dados de analytics são retidos conforme políticas do Google Analytics (GA4), tipicamente por 14 meses.",
-      "Dados de demos interativas permanecem apenas no seu navegador e são apagados ao encerrar a sessão ou limpar o cache.",
+      "Dados de demonstrações interativas permanecem apenas no seu navegador e são apagados ao encerrar a sessão ou limpar o cache.",
     ],
   },
   {
@@ -83,7 +83,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     title: "7. Cookies e tecnologias de rastreamento",
     content: [
       "Utilizamos cookies essenciais para funcionamento do site e cookies analíticos (Google Analytics 4 / Google Tag Manager) para medir tráfego e conversões.",
-      "Cookies de sessão nas demos interativas armazenam estado local da simulação — sem identificação pessoal.",
+      "Cookies de sessão nas demonstrações interativas armazenam estado local da simulação — sem identificação pessoal.",
       "Você pode gerenciar cookies nas configurações do seu navegador. A desativação de cookies analíticos não impede o uso do site, mas limita nossa capacidade de melhorar a experiência com base em dados.",
     ],
   },
@@ -134,7 +134,7 @@ export const termosUsoSections: LegalSection[] = [
     title: "1. Aceitação dos termos",
     content: [
       "Ao acessar e utilizar o site da Nangell Creative Studio, você concorda com estes Termos de Uso. Se não concordar, interrompa o uso imediatamente.",
-      "Estes termos aplicam-se a todas as páginas públicas, demos interativas, formulários e conteúdos disponibilizados no domínio nangell.com.br e subdomínios associados.",
+      "Estes termos aplicam-se a todas as páginas públicas, demonstrações interativas, formulários e conteúdos disponibilizados no domínio nangell.com.br e subdomínios associados.",
     ],
   },
   {
@@ -147,11 +147,11 @@ export const termosUsoSections: LegalSection[] = [
     ],
   },
   {
-    id: "demos",
-    title: "3. Uso das demos interativas",
+    id: "demonstracoes",
+    title: "3. Uso das demonstrações interativas",
     content: [
       "As demonstrações em /demo/* são simulações frontend com dados fictícios, destinadas a ilustrar capacidades técnicas — não constituem produtos finais ou contratos de prestação de serviço.",
-      "O comportamento, dados e funcionalidades das demos podem ser alterados, atualizados ou descontinuados sem aviso prévio.",
+      "O comportamento, dados e funcionalidades das demonstrações podem ser alterados, atualizados ou descontinuados sem aviso prévio.",
       "É vedado utilizar dados reais de terceiros, informações sensíveis ou conteúdo protegido por direitos autorais dentro das simulações.",
     ],
   },
@@ -159,8 +159,8 @@ export const termosUsoSections: LegalSection[] = [
     id: "dados-mockados",
     title: "4. Dados mockados",
     content: [
-      "Todos os dados exibidos nas demos (nomes, empresas, valores financeiros, logs, leads fictícios) são inteiramente simulados e não representam informações reais.",
-      "Dados inseridos por você durante a interação com demos são armazenados apenas localmente no seu navegador (session storage) e não são transmitidos ao nosso servidor.",
+      "Todos os dados exibidos nas demonstrações (nomes, empresas, valores financeiros, logs, leads fictícios) são inteiramente simulados e não representam informações reais.",
+      "Dados inseridos por você durante a interação com demonstrações são armazenados apenas localmente no seu navegador (session storage) e não são transmitidos ao nosso servidor.",
       "Ao limpar o cache ou encerrar a sessão, esses dados são removidos automaticamente.",
     ],
   },
@@ -168,8 +168,8 @@ export const termosUsoSections: LegalSection[] = [
     id: "limitacoes",
     title: "5. Limitações de responsabilidade",
     content: [
-      "O site e as demos são fornecidos “como estão”, sem garantias expressas ou implícitas de disponibilidade ininterrupta ou adequação a finalidade específica.",
-      "A Nangell não se responsabiliza por decisões de negócio tomadas com base exclusivamente em dados ou comportamentos das demos simuladas.",
+      "O site e as demonstrações são fornecidos “como estão”, sem garantias expressas ou implícitas de disponibilidade ininterrupta ou adequação a finalidade específica.",
+      "A Nangell não se responsabiliza por decisões de negócio tomadas com base exclusivamente em dados ou comportamentos das simulações.",
       "Links para sites de terceiros são informativos; não nos responsabilizamos pelo conteúdo ou práticas de privacidade de sites externos.",
     ],
   },
@@ -177,7 +177,7 @@ export const termosUsoSections: LegalSection[] = [
     id: "propriedade-intelectual",
     title: "6. Propriedade intelectual",
     content: [
-      "Todo o conteúdo do site — textos, design, código-fonte, logotipos, mockups, demos e documentação — é propriedade da Nangell Creative Studio ou licenciado para uso exclusivo.",
+      "Todo o conteúdo do site — textos, design, código-fonte, logotipos, mockups, demonstrações e documentação — é propriedade da Nangell Creative Studio ou licenciado para uso exclusivo.",
       "É proibida a reprodução, distribuição, modificação ou uso comercial de qualquer material sem autorização prévia por escrito.",
       "Marcas, nomes comerciais e logotipos de terceiros exibidos em cases ou referências pertencem aos respectivos titulares.",
     ],

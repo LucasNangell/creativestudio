@@ -236,7 +236,7 @@ export function CasePageContent({
         <Section className="bg-nangell-surface/30">
           <Container>
             <CtaSection
-              title="Experimente a demo interativa"
+              title="Experimente a demonstração interativa"
               description="Navegue pelo sistema simulado no navegador — sem cadastro, com dados fictícios."
               variant="gradient"
               className="!py-0"
@@ -246,7 +246,7 @@ export function CasePageContent({
                 className={cn(buttonVariants({ variant: "primary", size: "lg" }))}
               >
                 <Play className="h-4 w-4" aria-hidden />
-                Abrir demo
+                Abrir demonstração
               </Link>
               <Link
                 href="/portfolio"

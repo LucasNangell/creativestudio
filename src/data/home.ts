@@ -215,7 +215,7 @@ export const homeDifferentials: HomeDifferential[] = [
     icon: LineChart,
     title: "Rastreamento e métricas",
     description:
-      "GA4, GTM e eventos customizados para medir conversão, demos e ROI de cada investimento.",
+      "GA4, GTM e eventos customizados para medir conversão, demonstrações e ROI de cada investimento.",
   },
   {
     id: "ai",

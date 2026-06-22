@@ -14,6 +14,14 @@
 
   }
 
+  if (p.indexOf("/analise") !== -1 && !location.search) {
+
+    location.replace(p + "?ano=2026&id=4521" + location.hash);
+
+    return;
+
+  }
+
   if ("serviceWorker" in navigator) {
 
     var noop = function () {
@@ -37,8 +45,6 @@
 })();
 
 </script><link rel="stylesheet" href="/demos/gestao-portfolio-fix.css" />
-
-<script src="/demos/demo-nav-fix.js" data-base="/demos/gestao-producao-grafica"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SAGRA Web</title>
@@ -69,6 +75,6 @@
     <link rel="stylesheet" crossorigin href="./assets/index-ul0z2mcy.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
   </body>
 </html>

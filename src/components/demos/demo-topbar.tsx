@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { INTERACTIVE_DEMO_LABEL } from "@/data/demos/labels";
 
 type DemoTopbarProps = {
   title: string;
@@ -26,7 +26,7 @@ export function DemoTopbar({
           <h1 className="font-heading text-2xl font-bold text-nangell-text sm:text-3xl">
             {title}
           </h1>
-          <Badge variant="outline">Demo interativa</Badge>
+          <Badge variant="outline">{INTERACTIVE_DEMO_LABEL}</Badge>
         </div>
         {subtitle ? (
           <p className="mt-1 max-w-2xl text-sm leading-relaxed text-nangell-muted">{subtitle}</p>

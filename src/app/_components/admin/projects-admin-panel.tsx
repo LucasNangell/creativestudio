@@ -405,9 +405,9 @@ export function ProjectsAdminPanel() {
                 />
               </FormSection>
 
-              <FormSection title="Demo e publicação">
+              <FormSection title="Demonstração e publicação">
                 <Select
-                  label="Tipo de demo"
+                  label="Tipo de demonstração"
                   value={form.demoType}
                   onChange={(event) =>
                     updateField("demoType", event.target.value as DemoType)
@@ -415,7 +415,7 @@ export function ProjectsAdminPanel() {
                   options={DEMO_TYPE_OPTIONS}
                 />
                 <Input
-                  label="Rota da demo"
+                  label="Rota da demonstração"
                   value={form.demoRoute}
                   onChange={(event) => updateField("demoRoute", event.target.value)}
                   hint="Opcional — ex: /demo/crm-inteligente"

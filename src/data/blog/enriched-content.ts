@@ -7,7 +7,7 @@ export const blogPageContent = {
       "blog tecnologia",
       "software sob medida",
       "Next.js",
-      "demos interativas",
+      "demonstrações interativas",
       "Nangell Creative Studio",
     ],
   },
@@ -15,7 +15,7 @@ export const blogPageContent = {
     eyebrow: "Conteúdo estratégico",
     title: "Insights para decidir melhor sobre software",
     description:
-      "Guias práticos sobre arquitetura, conversão, demos interativas e diagnóstico técnico — escritos pela equipe Nangell.",
+      "Guias práticos sobre arquitetura, conversão, demonstrações interativas e diagnóstico técnico — escritos pela equipe Nangell.",
   },
   featuredLabel: "Destaque",
   emptyState: {

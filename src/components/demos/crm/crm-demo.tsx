@@ -311,7 +311,7 @@ export function CrmDemo() {
       title="CRM Inteligente"
       subtitle="Funil comercial com kanban, timeline e simulação de WhatsApp — dados 100% fictícios."
       ctaLabel="Quero um CRM parecido"
-      sidebar={<DemoSidebar title="CRM Demo" items={sidebarItems} />}
+      sidebar={<DemoSidebar title="Simulação CRM" items={sidebarItems} />}
     >
       <DemoContentLoader loading={isNavLoading || isActionLoading}>
       <div className="p-4 sm:p-6">

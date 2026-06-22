@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ExternalLink, Play, Sparkles } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
+import { INTERACTIVE_DEMO_LABEL } from "@/data/demos/labels";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -40,7 +40,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.hasDemo ? (
             <Badge variant="default" className="gap-1">
               <Sparkles className="h-3 w-3" aria-hidden />
-              Demo interativa
+              {INTERACTIVE_DEMO_LABEL}
             </Badge>
           ) : null}
         </div>
@@ -63,7 +63,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {project.badges.length > 0 ? (
           <div className="mt-3 flex flex-wrap gap-1.5">
             {project.badges
-              .filter((badge) => badge !== "Demo interativa")
+              .filter((badge) => badge !== INTERACTIVE_DEMO_LABEL)
               .map((badge) => (
                 <Badge key={badge} variant="outline" className="text-xs">
                   {badge}
@@ -113,7 +113,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               )}
             >
               <Play className="h-3.5 w-3.5 shrink-0" aria-hidden />
-              Abrir demo
+              Abrir demonstração
             </Link>
           ) : null}
         </div>

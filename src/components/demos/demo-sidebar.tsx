@@ -19,7 +19,7 @@ type DemoSidebarProps = {
 export function DemoSidebar({ title = "Menu", items, className }: DemoSidebarProps) {
   return (
     <aside
-      aria-label="Navegação da demo"
+      aria-label="Navegação da simulação"
       className={cn(
         "hidden w-48 shrink-0 border-r border-glass-border bg-nangell-dark/60 p-3 lg:block",
         className,

@@ -27,7 +27,7 @@ export async function DemosSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Experimente antes de contratar"
-            title="Cases reais com demo interativa no site"
+            title="Cases reais com demonstração interativa no site"
             description="Os mesmos projetos do portfólio — com mockups, métricas e demonstrações que você abre aqui, sem cadastro. Mostre, não conte."
           />
         </Reveal>

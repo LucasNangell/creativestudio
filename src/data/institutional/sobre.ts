@@ -41,7 +41,7 @@ export const sobreHistoria = {
   milestones: [
     { year: "Origem", label: "Identificação da lacuna entre código e resultado de negócio" },
     { year: "Fundação", label: "Nascimento da Nangell como estúdio de engenharia criativa" },
-    { year: "Evolução", label: "Portfólio com demos interativas e metodologia em 6 etapas" },
+    { year: "Evolução", label: "Portfólio com demonstrações interativas e metodologia em 6 etapas" },
     { year: "Hoje", label: "Parceiro técnico de empresas que transformam operação em software" },
   ],
 } as const;

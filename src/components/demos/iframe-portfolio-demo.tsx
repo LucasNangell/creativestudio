@@ -42,7 +42,7 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
           >
             <AlertTriangle className="h-10 w-10 text-amber-400" aria-hidden />
             <div>
-              <p className="font-medium text-nangell-text">Não foi possível carregar a demo aqui</p>
+              <p className="font-medium text-nangell-text">Não foi possível carregar a demonstração aqui</p>
               <p className="mt-1 text-sm text-nangell-muted">
                 Abra em uma nova aba para explorar o sistema completo.
               </p>
@@ -86,7 +86,7 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-nangell-cyan hover:text-nangell-blue"
           >
-            Abrir demo em tela cheia
+            Abrir demonstração em tela cheia
             <ExternalLink className="h-3 w-3" aria-hidden />
           </Link>
         </div>

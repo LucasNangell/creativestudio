@@ -53,7 +53,7 @@ export function buildContextualWhatsAppMessage(context: WhatsAppContext = {}): s
     case "demo":
       return [
         greeting,
-        "Experimentei uma demo interativa no site da Nangell e quero um sistema parecido.",
+        "Experimentei uma demonstração interativa no site da Nangell e quero um sistema parecido.",
       ].join(" ");
 
     default:

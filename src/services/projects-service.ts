@@ -1,5 +1,6 @@
 import { DemoType } from "@prisma/client";
 
+import { INTERACTIVE_DEMO_LABEL } from "@/data/demos/labels";
 import {
   PROJECT_ENRICHED_CONTENT,
 } from "@/data/projects/enriched-content";
@@ -96,9 +97,9 @@ function mergeProject(record: DbProjectRecord): ProjectDetail {
     shortDescription: record.shortDescription,
     stack,
     badges: hasDemo
-      ? enriched.badges.includes("Demo interativa")
+      ? enriched.badges.includes(INTERACTIVE_DEMO_LABEL)
         ? enriched.badges
-        : ["Demo interativa", ...enriched.badges]
+        : [INTERACTIVE_DEMO_LABEL, ...enriched.badges]
       : enriched.badges,
     businessGoals: enriched.businessGoals,
     primaryMetric: metrics[0] ?? null,

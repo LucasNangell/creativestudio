@@ -34,6 +34,6 @@ describe("whatsapp utilities", () => {
   it("builds contextual URL from context", () => {
     const url = buildContextualWhatsAppUrl({ source: "demo" });
     expect(url).toContain(WHATSAPP_NUMBER);
-    expect(decodeURIComponent(url)).toContain("demo interativa");
+    expect(decodeURIComponent(url)).toContain("demonstração interativa");
   });
 });

@@ -33,7 +33,7 @@ export function CaseHeroActions({
           onClick={() => trackCaseCta(slug, "open_demo", title)}
         >
           <Play className="h-4 w-4" aria-hidden />
-          Abrir demo interativa
+          Abrir demonstração interativa
         </Link>
       ) : null}
       <a

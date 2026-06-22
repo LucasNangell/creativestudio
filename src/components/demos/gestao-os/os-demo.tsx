@@ -100,7 +100,7 @@ export function OsDemo() {
     if (!selected || !progressNote.trim()) return;
     const entry = {
       id: `t-${Date.now()}`,
-      author: "Você (demo)",
+      author: "Você (simulação)",
       message: progressNote,
       date: new Date().toLocaleString("pt-BR"),
     };
@@ -157,7 +157,7 @@ export function OsDemo() {
       title="Gestão de OS"
       subtitle="Controle operacional de ordens de serviço com kanban, timeline e notificações simuladas."
       ctaLabel="Preciso organizar minha operação"
-      sidebar={<DemoSidebar title="OS Demo" items={sidebarItems} />}
+      sidebar={<DemoSidebar title="Simulação OS" items={sidebarItems} />}
     >
       <div className="border-b border-glass-border bg-nangell-dark/40 px-4 py-3 sm:px-6">
         <div className="flex flex-wrap items-center justify-between gap-3">

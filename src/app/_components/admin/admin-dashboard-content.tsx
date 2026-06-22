@@ -47,7 +47,7 @@ export async function AdminDashboardContent() {
         <AdminStatCard label="Projetos publicados" value={stats.publishedProjects} />
         <AdminStatCard label="Posts publicados" value={stats.publishedPosts} />
         <AdminStatCard
-          label="Cases com demo"
+          label="Cases com demonstração"
           value={stats.demoCases}
           hint="Portfólio interativo"
         />

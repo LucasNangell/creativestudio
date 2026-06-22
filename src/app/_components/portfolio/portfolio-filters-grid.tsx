@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 
 import { EmptyState } from "@/components/ui/empty-state";
 import { Select } from "@/components/ui/select";
+import { INTERACTIVE_DEMO_LABEL } from "@/data/demos/labels";
 import { trackEvent } from "@/lib/analytics";
 import type { ProjectDetail } from "@/types/projects";
 
@@ -154,13 +155,13 @@ export function PortfolioFiltersGrid({
 
         {showDemoFilter ? (
           <Select
-            label="Demo interativa"
+            label={INTERACTIVE_DEMO_LABEL}
             value={demo}
             onChange={(event) => setDemo(event.target.value)}
             options={[
               { label: "Todos", value: "all" },
-              { label: "Com demo interativa", value: "with-demo" },
-              { label: "Sem demo", value: "without-demo" },
+              { label: "Com demonstração interativa", value: "with-demo" },
+              { label: "Sem demonstração", value: "without-demo" },
             ]}
           />
         ) : null}

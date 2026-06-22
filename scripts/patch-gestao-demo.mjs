@@ -6,9 +6,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const demoDir = path.join(__dirname, "..", "public", "demos", "gestao-producao-grafica");
 const assetsDir = path.join(demoDir, "assets");
 
-const brokenG6 =
-  'function G6({children:e}){const t=Mn(),n=xg({select:s=>s.location.pathname});return b.useEffect(()=>{if(n.includes("/papelaria")){const s=Hd();(!s.osId||!s.osAno)&&Ap({nr_os:5485,ano:2026,produto:"Ct Visita"})}if(n.includes("/analise")&&!n.includes("?")){const s=new URLSearchParams(window.location.search);(!s.get("ano")||!s.get("id"))&&t({to:"/analise",search:{ano:"2026",id:"4521"},replace:!0})}},[t,n]),e}';
-const fixedG6 = "function G6({children:e}){return e}";
+const noopG6 = "function G6({children:e}){return e}";
+const demoBootstrapG6 =
+  'function G6({children:e}){const t=Mn(),n=xg({select:s=>s.location.pathname});return b.useEffect(()=>{if(n.includes("/papelaria")){const s=Hd();(!s.osId||!s.osAno)&&Ap({nr_os:5485,ano:2026,produto:"Ct Visita"})}if(n.includes("/analise")){const s=new URLSearchParams(window.location.search);(!s.get("ano")||!s.get("id"))&&t({to:"/analise",search:{ano:"2026",id:"4521"},replace:!0})}},[t,n]),e}';
 
 const AUTH_UI_REPLACEMENTS = [
   [
@@ -62,6 +62,10 @@ const SW_BOOT = `<script>
   if (p.endsWith("/index.html")) {
     history.replaceState(null, "", p.slice(0, -10) + location.search + location.hash);
   }
+  if (p.indexOf("/analise") !== -1 && !location.search) {
+    location.replace(p + "?ano=2026&id=4521" + location.hash);
+    return;
+  }
   if ("serviceWorker" in navigator) {
     var noop = function () {
       return Promise.resolve({ unregister: function () { return Promise.resolve(true); } });
@@ -75,8 +79,12 @@ const SW_BOOT = `<script>
 })();
 </script>`;
 
-const HEAD_ASSETS = `<link rel="stylesheet" href="/demos/gestao-portfolio-fix.css" />
-<script src="/demos/demo-nav-fix.js" data-base="/demos/gestao-producao-grafica"></script>`;
+const HEAD_ASSETS = `<link rel="stylesheet" href="/demos/gestao-portfolio-fix.css" />`;
+
+const EMAIL_MOCK_ANCHOR =
+  ':n.startsWith("/email")||n.startsWith("/reports")||n.startsWith("/cotas-graf")';
+const EMAIL_MOCK_HANDLERS =
+  ':n==="/email/config"&&i==="GET"?Ye({configured:!0,refresh_interval_sec:30,ews_url:"https://exchange.demo.local/EWS/Exchange.asmx",verify_ssl:!1,monitored_targets:[{mailbox:"operacao.demo@empresa-demo.com",folders:[{id:"inbox",name:"Caixa de Entrada",parent:"Inbox"}]}]}):n==="/email/inbox"&&i==="GET"?Ye([{id:"demo-mail-1",sender:"Empresa Alpha Ltda",email:"contato@empresa-alpha.demo",subject:"OS 4521/2026 — Aprovação de prova",preview:"Segue a prova do folder institucional para aprovação...",date:"2026-06-22T09:15:00",read:!1,folder:"Caixa de Entrada",account:"sepim.demo@empresa-demo.com",hasAttachment:!0,real_id:"demo-entry-001",body:"<p>Prezados, segue a prova do folder institucional (OS 4521/2026) para aprovação.</p>",inline_images:[],attachments:[{name:"prova_folder_v2.pdf",index:1}]},{id:"demo-mail-2",sender:"Cliente Demonstração",email:"cliente.demo@empresa-demo.com",subject:"OS 4518/2026 — Cartão de visita",preview:"Poderiam confirmar o recebimento dos arquivos atualizados?",date:"2026-06-21T16:40:00",read:!0,folder:"Caixa de Entrada",account:"sepim.demo@empresa-demo.com",hasAttachment:!1,real_id:"demo-entry-002",body:"<p>Bom dia! Confirmam o recebimento dos arquivos do cartão de visita?</p>",inline_images:[],attachments:[]}]):n.startsWith("/email/pendencias")&&i==="GET"?Ye([{os:4521,ano:2026,situacao:"Aguardando aprovação",setor:"SEFOC",data:"2026-06-21T14:30:00",produto:"Folder"},{os:4518,ano:2026,situacao:"Em Execução",setor:"SEFOC",data:"2026-06-20T11:00:00",produto:"Cartão de Visita"}]):n.startsWith("/email")||n.startsWith("/reports")||n.startsWith("/cotas-graf")';
 
 for (const file of fs.readdirSync(assetsDir)) {
   if (!file.endsWith(".js") || !file.startsWith("index-")) continue;
@@ -84,11 +92,14 @@ for (const file of fs.readdirSync(assetsDir)) {
   let content = fs.readFileSync(filePath, "utf8");
   const before = content;
 
-  content = content.replace(brokenG6, fixedG6);
+  content = content.replace(noopG6, demoBootstrapG6);
   content = content.replace(
-    "r.jsx(G6,{children:r.jsx(CI,{router:xle})})",
     "r.jsx(CI,{router:xle})",
+    "r.jsx(G6,{children:r.jsx(CI,{router:xle})})",
   );
+  if (content.includes(EMAIL_MOCK_ANCHOR) && !content.includes('demo-mail-1')) {
+    content = content.replace(EMAIL_MOCK_ANCHOR, EMAIL_MOCK_HANDLERS);
+  }
   content = content.replaceAll("ponto:1001", "ponto:1234");
   content = content.replaceAll("ponto:123456", "ponto:1234");
 
@@ -114,6 +125,24 @@ const indexPath = path.join(demoDir, "index.html");
 let html = fs.readFileSync(indexPath, "utf8");
 
 html = html.replace(/<link rel="manifest"[^>]*>/gi, "");
+html = html.replace(
+  /\s*<script src="\/demos\/demo-nav-fix\.js"[^>]*><\/script>/gi,
+  "",
+);
+
+const analiseBootSnippet = 'if (p.indexOf("/analise") !== -1 && !location.search)';
+if (!html.includes(analiseBootSnippet)) {
+  html = html.replace(
+    /if \(p\.endsWith\("\/index\.html"\)\) \{\s*\n\s*history\.replaceState\(null, "", p\.slice\(0, -10\) \+ location\.search \+ location\.hash\);\s*\n\s*\}/,
+    `if (p.endsWith("/index.html")) {
+    history.replaceState(null, "", p.slice(0, -10) + location.search + location.hash);
+  }
+  if (p.indexOf("/analise") !== -1 && !location.search) {
+    location.replace(p + "?ano=2026&id=4521" + location.hash);
+    return;
+  }`,
+  );
+}
 
 if (!html.includes("data-portfolio-demo")) {
   if (html.includes("<head>")) {
@@ -123,13 +152,6 @@ if (!html.includes("data-portfolio-demo")) {
   }
 } else if (!html.includes("gestao-portfolio-fix.css")) {
   html = html.replace("<head>", `<head>${HEAD_ASSETS}`);
-}
-
-if (html.includes('demo-nav-fix.js') && html.includes("gestao-portfolio-fix.css") === false) {
-  html = html.replace(
-    '<script src="/demos/demo-nav-fix.js"',
-    `<link rel="stylesheet" href="/demos/gestao-portfolio-fix.css" />\n    <script src="/demos/demo-nav-fix.js"`,
-  );
 }
 
 fs.writeFileSync(indexPath, html, "utf8");

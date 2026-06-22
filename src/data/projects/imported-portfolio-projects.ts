@@ -35,7 +35,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 7,
     seoTitle: "Case Plataforma de Doações | Nangell Creative Studio",
     seoDescription:
-      "Plataforma para abrigos com doações, transparência e área do doador — demo interativa com dados fictícios.",
+      "Plataforma para abrigos com doações, transparência e área do doador — demonstração interativa com dados fictícios.",
   },
   {
     id: "fallback-player-video-marcadores",
@@ -140,7 +140,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 10,
     seoTitle: "Case Gestão de Produção Gráfica | Nangell Creative Studio",
     seoDescription:
-      "Sistema para gráficas com OS, PCP e dashboards — demo interativa simulada.",
+      "Sistema para gráficas com OS, PCP e dashboards — demonstração interativa simulada.",
   },
   {
     id: "fallback-sharescreen-lan",
@@ -175,7 +175,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 11,
     seoTitle: "Case ShareScreen LAN | Nangell Creative Studio",
     seoDescription:
-      "Compartilhamento de tela em rede local com WebRTC — demo simulada da interface.",
+      "Compartilhamento de tela em rede local com WebRTC — simulação da interface.",
   },
   {
     id: "fallback-site-psicologia-profissional",
@@ -245,7 +245,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 13,
     seoTitle: "Case Vigília Política | Nangell Creative Studio",
     seoDescription:
-      "Central de inteligência política com War Room e alertas — demo interativa com dados fictícios.",
+      "Central de inteligência política com War Room e alertas — demonstração interativa com dados fictícios.",
   },
 ] as const;
 

@@ -30,11 +30,11 @@ export const portfolioPageContent = {
   seo: {
     title: "Portfólio e Cases | Nangell Creative Studio",
     description:
-      "Sistemas reais desenvolvidos pela Nangell: doações, produção gráfica, vídeo corporativo, automação PDF, sharescreen LAN, site clínico e inteligência política — com demos interativas.",
+      "Sistemas reais desenvolvidos pela Nangell: doações, produção gráfica, vídeo corporativo, automação PDF, sharescreen LAN, site clínico e inteligência política — com demonstrações interativas.",
     keywords: [
       "portfólio software",
       "cases reais",
-      "demos interativas",
+      "demonstrações interativas",
       "Nangell Creative Studio",
       "software sob medida",
     ],
@@ -43,16 +43,16 @@ export const portfolioPageContent = {
     eyebrow: "Portfólio",
     title: "Cases que provam competência antes do primeiro contato",
     description:
-      "Não mostramos apenas prints. Cada projeto combina estudo de caso comercial, métricas de resultado e demo interativa para você experimentar como um sistema real funciona.",
+      "Não mostramos apenas prints. Cada projeto combina estudo de caso comercial, métricas de resultado e demonstração interativa para você experimentar como um sistema real funciona.",
     primaryCta: { label: "Solicitar diagnóstico", href: "/diagnostico" },
-    secondaryCta: { label: "Ver demos em ação", href: "#portfolio-grid" },
+    secondaryCta: { label: "Ver demonstrações em ação", href: "#portfolio-grid" },
   },
   showDontTell: {
     title: "Mostre, não conte",
     description:
-      "O diferencial da Nangell é colocar o visitante dentro do software. Filtre por stack, objetivo de negócio ou categoria e abra a demo no mesmo domínio — sem cadastro, sem agendar reunião para ver valor.",
+      "O diferencial da Nangell é colocar o visitante dentro do software. Filtre por stack, objetivo de negócio ou categoria e abra a demonstração no mesmo domínio — sem cadastro, sem agendar reunião para ver valor.",
     highlights: [
-      "Demos nativas no navegador com dados fictícios",
+      "Demonstrações nativas no navegador com dados fictícios",
       "Cases com problema, solução e métricas",
       "Stack e arquitetura documentada em cada estudo",
     ],
@@ -73,7 +73,7 @@ export const portfolioPageContent = {
 
 export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = {
   "lar-dos-anjos": {
-    badges: ["Demo iframe", "ONG", "Doações"],
+    badges: ["Demonstração iframe", "ONG", "Doações"],
     businessGoals: ["Captar leads", "Melhorar atendimento"],
     architecture: [
       { name: "Frontend público", description: "Next.js com site institucional, campanhas e área do doador." },
@@ -83,7 +83,7 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
     ],
   },
   "player-video-marcadores": {
-    badges: ["Demo iframe", "Vídeo", "Corporativo"],
+    badges: ["Demonstração iframe", "Vídeo", "Corporativo"],
     businessGoals: ["Automatizar processos", "Criar produto digital"],
     architecture: [
       { name: "Biblioteca", description: "Organização por pastas, grupos e marcadores navegáveis." },
@@ -93,7 +93,7 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
     ],
   },
   "monitor-arquivos": {
-    badges: ["Demo iframe", "Automação", "PDF"],
+    badges: ["Demonstração iframe", "Automação", "PDF"],
     businessGoals: ["Automatizar processos", "Reduzir custos"],
     architecture: [
       { name: "Monitor", description: "Watchdog Python monitorando pastas de entrada." },
@@ -103,7 +103,7 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
     ],
   },
   "gestao-producao-grafica": {
-    badges: ["Demo iframe", "Gráfica", "PCP"],
+    badges: ["Demonstração iframe", "Gráfica", "PCP"],
     businessGoals: ["Controlar operação", "Automatizar processos"],
     architecture: [
       { name: "Frontend", description: "React + Vite com kanban PCP e dashboards por setor." },
@@ -113,7 +113,7 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
     ],
   },
   "sharescreen-lan": {
-    badges: ["Demo nativa", "WebRTC", "LAN"],
+    badges: ["Demonstração nativa", "WebRTC", "LAN"],
     businessGoals: ["Controlar operação", "Reduzir custos"],
     architecture: [
       { name: "SFU", description: "mediasoup encaminhando vídeo sem transcodificação na LAN." },
@@ -123,7 +123,7 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
     ],
   },
   "site-psicologia-profissional": {
-    badges: ["Demo nativa", "Saúde", "Agendamento"],
+    badges: ["Demonstração nativa", "Saúde", "Agendamento"],
     businessGoals: ["Captar leads", "Melhorar atendimento"],
     architecture: [
       { name: "Site institucional", description: "PHP responsivo com design system acolhedor." },
@@ -133,13 +133,13 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
     ],
   },
   "vigilia-politica": {
-    badges: ["Demo iframe", "GovTech", "Inteligência"],
+    badges: ["Demonstração iframe", "GovTech", "Inteligência"],
     businessGoals: ["Controlar operação", "Automatizar processos"],
     architecture: [
       { name: "War Room", description: "Dashboard com KPIs, simulação ao vivo e gráficos estratégicos." },
       { name: "Feed", description: "Consolidação multicanal com filtros por risco e sentimento." },
       { name: "Alertas", description: "Detecção de crises com fluxo de providências e responsáveis." },
-      { name: "Demo", description: "SPA React com dados fictícios e autenticação simulada via localStorage." },
+      { name: "Demonstração", description: "SPA React com dados fictícios e autenticação simulada via localStorage." },
     ],
   },
 };

@@ -1,6 +1,6 @@
 /**
  * Configuração do painel web HT Monitor — versão demonstrativa.
- * Modo demo ativo: todas as chamadas de API são simuladas localmente.
+ * Modo simulação ativo: todas as chamadas de API são simuladas localmente.
  */
 (function () {
   window.HTMONITOR_CONFIG = {

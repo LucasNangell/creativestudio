@@ -1,9 +1,9 @@
-/** Inicialização da demonstração de portfólio */
+/** Inicialização da demonstraçãonstraçãonstração de portfólio */
 (() => {
   "use strict";
 
   document.getElementById("demo-reset")?.addEventListener("click", () => {
-    if (!window.confirm("Restaurar todos os dados da demonstração ao estado inicial?")) return;
+    if (!window.confirm("Restaurar todos os dados da demonstraçãonstraçãonstração ao estado inicial?")) return;
     window.HTDemoApi?.reset?.();
     window.location.reload();
   });

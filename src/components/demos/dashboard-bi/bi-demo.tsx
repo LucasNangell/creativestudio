@@ -82,7 +82,7 @@ export function BiDemo() {
   };
 
   const handleExport = () => {
-    setExportMsg("Exportação simulada — arquivo BI-demo.csv gerado.");
+    setExportMsg("Exportação simulada — arquivo BI-simulacao.csv gerado.");
     trackDemoFinish(DEMO_ID, "export_csv");
     setTimeout(() => setExportMsg(""), 4000);
   };
@@ -99,7 +99,7 @@ export function BiDemo() {
       title="Dashboard BI"
       subtitle="Painel executivo e operacional com KPIs, gráficos e alertas inteligentes simulados."
       ctaLabel="Quero um painel para minha empresa"
-      sidebar={<DemoSidebar title="BI Demo" items={sidebarItems} />}
+      sidebar={<DemoSidebar title="Simulação BI" items={sidebarItems} />}
     >
       <DemoContentLoader loading={isNavLoading}>
       <div className="p-4 sm:p-6">

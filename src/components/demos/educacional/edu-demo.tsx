@@ -101,19 +101,19 @@ export function EduDemo() {
       <DemoShell
         demoId={DEMO_ID}
         title="Plataforma Educacional"
-        subtitle="Ambiente LMS simulado — entre como aluno demo para explorar módulos, quiz e certificado."
+        subtitle="Ambiente LMS simulado — entre como aluno simulado para explorar módulos, quiz e certificado."
         ctaLabel="Criar minha plataforma educacional"
       >
         <div className="flex min-h-[420px] flex-col items-center justify-center p-8 text-center">
           <BookOpen className="mb-4 h-12 w-12 text-nangell-cyan" aria-hidden />
           <h2 className="font-heading text-xl font-semibold text-nangell-text">
-            Bem-vindo ao curso demo
+            Bem-vindo ao curso simulado
           </h2>
           <p className="mt-2 max-w-md text-sm text-nangell-muted">
             {EDU_COURSE.title} — instrutora {EDU_COURSE.instructor}. Todos os dados são fictícios.
           </p>
           <Button className="mt-6" size="lg" onClick={handleLogin}>
-            Entrar como aluno demo
+            Entrar como aluno simulado
           </Button>
         </div>
       </DemoShell>
@@ -126,9 +126,9 @@ export function EduDemo() {
     <DemoShell
       demoId={DEMO_ID}
       title="Plataforma Educacional"
-      subtitle={`Aluno demo — ${EDU_COURSE.title}`}
+      subtitle={`Aluno simulado — ${EDU_COURSE.title}`}
       ctaLabel="Criar minha plataforma educacional"
-      sidebar={<DemoSidebar title="LMS Demo" items={sidebarItems} />}
+      sidebar={<DemoSidebar title="Simulação LMS" items={sidebarItems} />}
     >
       <div className="p-4 sm:p-6">
         <div className="mb-6 rounded-nangell border border-glass-border bg-nangell-dark/40 p-4">
@@ -209,7 +209,7 @@ export function EduDemo() {
                   ) : (
                     <Button size="lg" onClick={handlePlay}>
                       <Play className="h-5 w-5" aria-hidden />
-                      Assistir aula demo
+                      Assistir aula simulada
                     </Button>
                   )}
                 </div>
@@ -286,7 +286,7 @@ export function EduDemo() {
                 <Award className="mx-auto h-12 w-12 text-nangell-cyan" aria-hidden />
                 <p className="mt-3 font-heading text-lg font-bold">Certificado fictício</p>
                 <p className="mt-1 text-sm text-nangell-muted">
-                  Aluno Demo — {EDU_COURSE.title}
+                  Aluno simulado — {EDU_COURSE.title}
                 </p>
                 <p className="mt-2 font-mono text-[10px] text-nangell-muted">
                   ID: NANGELL-EDU-DEMO-2026 — Ambiente demonstrativo

@@ -185,7 +185,7 @@ export function PsicologiaDemo() {
                 </h1>
                 <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#5A6B7A]">
                   Atendimento presencial e online com Terapia Cognitivo-Comportamental. Espaço
-                  seguro para ansiedade, autoestima, sexualidade e autoconhecimento — demo com
+                  seguro para ansiedade, autoestima, sexualidade e autoconhecimento — simulação com
                   dados fictícios.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -474,7 +474,7 @@ export function PsicologiaDemo() {
                   <h2 className="text-lg font-semibold text-[#2D3748]">Painel administrativo</h2>
                 </div>
                 <p className="mt-3 rounded-xl bg-[#FFF8E6] px-4 py-3 text-sm text-[#7A6B4A]">
-                  Credenciais demo: <strong>demo</strong> / <strong>demo2026</strong>
+                  Credenciais de demonstração: <strong>demo</strong> / <strong>demo2026</strong>
                 </p>
                 <div className="mt-6 space-y-4">
                   <Field label="Usuário" id="admin-user" defaultValue="demo" />
@@ -552,7 +552,7 @@ export function PsicologiaDemo() {
         ) : null}
 
         <footer className="mt-auto border-t border-[#E2DDD6] bg-white px-4 py-6 text-center text-xs text-[#7A8B99] sm:px-6">
-          Demo fictícia · Dados de contato: contato@clinica-demo.com · (00) 90000-0000
+          Simulação fictícia · Dados de contato: contato@clinica-demo.com · (00) 90000-0000
         </footer>
       </div>
     </DemoShell>

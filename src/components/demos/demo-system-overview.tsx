@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import { INTERACTIVE_DEMO_LABEL } from "@/data/demos/labels";
 import type { DemoPageContent } from "@/lib/demos/get-demo-content";
 
 type DemoSystemOverviewProps = {
@@ -25,7 +25,7 @@ export function DemoSystemOverview({ content }: DemoSystemOverviewProps) {
           <p className="mt-1 text-sm text-nangell-muted">{content.category}</p>
         </div>
         <Badge variant="outline" className="shrink-0">
-          Demo interativa
+          {INTERACTIVE_DEMO_LABEL}
         </Badge>
       </div>
 

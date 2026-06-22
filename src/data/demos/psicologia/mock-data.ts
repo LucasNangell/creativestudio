@@ -49,7 +49,7 @@ export const PSICOLOGIA_POSTS = [
 export const PSICOLOGIA_APPOINTMENTS = [
   {
     id: "a1",
-    name: "João Demo Silva",
+    name: "João Exemplo Silva",
     email: "joao.demo@exemplo.com",
     phone: "(00) 90001-0001",
     status: "novo",
@@ -117,7 +117,7 @@ export const PSICOLOGIA_FAQ = [
   },
   {
     q: "Atende online e presencial?",
-    a: "Sim. Você escolhe a modalidade mais confortável. Todos os dados desta demo são fictícios.",
+    a: "Sim. Você escolhe a modalidade mais confortável. Todos os dados desta simulação são fictícios.",
   },
   {
     q: "Quanto tempo dura cada sessão?",

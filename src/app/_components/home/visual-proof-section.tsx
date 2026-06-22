@@ -42,7 +42,7 @@ function VisualProofCard({ project }: { project: ProjectListItem }) {
             {project.hasDemo ? (
               <Badge variant="default" className="gap-1">
                 <Play className="h-3 w-3" aria-hidden />
-                Demo
+                Demonstração
               </Badge>
             ) : null}
           </div>
@@ -105,7 +105,7 @@ export async function VisualProofSection() {
         <Reveal delay={0.1}>
           <div className="mt-10 flex justify-center">
             <Link href="#demos" className={cn(buttonVariants({ variant: "ghost", size: "lg" }))}>
-              Ver todos os cases com demo
+              Ver todos os cases com demonstração
             </Link>
           </div>
         </Reveal>

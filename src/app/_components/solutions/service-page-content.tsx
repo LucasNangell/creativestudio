@@ -192,7 +192,7 @@ export function ServicePageContent({
           <Container>
             <Reveal>
               <SectionHeading
-                title="Cases e demos relacionados"
+                title="Cases e demonstrações relacionados"
                 description="Experimente soluções similares em funcionamento no nosso site."
               />
             </Reveal>
@@ -215,7 +215,7 @@ export function ServicePageContent({
                             buttonVariants({ variant: "secondary", size: "sm" }),
                           )}
                         >
-                          Abrir demo
+                          Abrir demonstração
                         </Link>
                       ) : null}
                       <Link

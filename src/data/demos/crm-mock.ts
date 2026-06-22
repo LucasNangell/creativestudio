@@ -137,7 +137,7 @@ export const CRM_MOCK_LEADS: CrmLead[] = [
     responsavel: "Carla Dias",
     ultimaInteracao: "Há 30 min",
     interactions: [
-      { id: "i7", type: "whatsapp", message: "Solicitou demo personalizada.", date: "21/06 11:45" },
+      { id: "i7", type: "whatsapp", message: "Solicitou demonstração personalizada.", date: "21/06 11:45" },
     ],
   },
   {

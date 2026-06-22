@@ -19,11 +19,11 @@ const DEMO_HINTS: Record<string, string> = {
   "lar-dos-anjos":
     "Navegue pelo site institucional, campanhas, animais e fluxos de doação — todos os dados são fictícios.",
   "site-psicologia-profissional":
-    "Painel admin: usuário demo / senha demo2026. Teste agendamento, blog e FAQ do site clínico.",
+    "Painel admin: usuário de demonstração / senha demo2026. Teste agendamento, blog e FAQ do site clínico.",
   "sharescreen-lan":
     "Simulação do painel host e clients em rede local — WebRTC e gravação são demonstrativos.",
   "vigilia-politica":
-    "Acesso automático na demo. Explore War Room, Feed, Central de Alertas, Narrativas, Territórios e Briefing — novos alertas simulados surgem a cada poucos segundos.",
+    "Acesso automático na simulação. Explore War Room, Feed, Central de Alertas, Narrativas, Territórios e Briefing — novos alertas simulados surgem a cada poucos segundos.",
 };
 
 const projectsBySlug = Object.fromEntries(
@@ -51,7 +51,7 @@ export function getDemoPageContent(slug: string): DemoPageContent | null {
 export function getDemoPageContentOrThrow(slug: string): DemoPageContent {
   const content = getDemoPageContent(slug);
   if (!content) {
-    throw new Error(`Demo content not found for slug: ${slug}`);
+    throw new Error(`Conteúdo da demonstração não encontrado para slug: ${slug}`);
   }
   return content;
 }

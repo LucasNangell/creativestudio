@@ -29,7 +29,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Modularidade desde o MVP — sem refatoração traumática quando o produto cresce.",
       },
       {
-        title: "Demos interativas no site",
+        title: "Demonstrações interativas no site",
         description:
           "Mostramos CRM, BI e SaaS funcionando antes da contratação — mostre, não conte.",
       },
@@ -286,9 +286,9 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Narrativa visual que diretores entendem em segundos — não apenas gráficos soltos.",
       },
       {
-        title: "Demo BI interativa",
+        title: "Demonstração BI interativa",
         description:
-          "Visitantes experimentam filtros e alertas no nosso demo antes de contratar.",
+          "Visitantes experimentam filtros e alertas na simulação antes de contratar.",
       },
       {
         title: "Modelagem de indicadores",
@@ -397,7 +397,7 @@ export const solucoesPageContent = {
     eyebrow: "Soluções",
     title: "Software sob medida para cada momento do seu negócio",
     description:
-      "Da automação pontual ao SaaS completo — escolha a solução certa, compare abordagens e veja demos reais antes de investir.",
+      "Da automação pontual ao SaaS completo — escolha a solução certa, compare abordagens e veja demonstrações reais antes de investir.",
   },
   momentFit: {
     title: "Qual solução combina com seu momento?",
@@ -469,7 +469,7 @@ export const solucoesPageContent = {
         "Fluxos alinhados ao seu processo",
         "Integrações profundas (ERP, CRM, APIs)",
         "Escalabilidade sem trocar de plataforma",
-        "UX premium e demos interativas",
+        "UX premium e demonstrações interativas",
         "Propriedade do código e roadmap",
         "ROI mensurável e evolução contínua",
       ],
@@ -511,7 +511,7 @@ export const solucoesPageContent = {
   seo: {
     title: "Soluções de Software Sob Medida | Nangell Creative Studio",
     description:
-      "Sistemas web, mobile, desktop, automações, dashboards BI e landing pages premium. Conheça nossas soluções e veja demos interativas.",
+      "Sistemas web, mobile, desktop, automações, dashboards BI e landing pages premium. Conheça nossas soluções e veja demonstrações interativas.",
     keywords: [
       "soluções de software",
       "desenvolvimento sob medida",
