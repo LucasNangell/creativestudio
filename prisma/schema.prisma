@@ -1,0 +1,240 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+}
+
+enum LeadStatus {
+  NOVO
+  CONTATO
+  REUNIAO
+  PROPOSTA
+  FECHADO
+  PERDIDO
+}
+
+enum ProjectStatus {
+  DRAFT
+  PUBLISHED
+  HIDDEN
+}
+
+enum DemoType {
+  NONE
+  NATIVE
+  IFRAME
+  EXTERNAL
+}
+
+enum ServiceStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum TestimonialStatus {
+  APPROVED
+  PENDING
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model User {
+  id           String   @id @default(uuid()) @db.VarChar(36)
+  name         String   @db.VarChar(255)
+  email        String   @unique @db.VarChar(255)
+  passwordHash String   @map("password_hash") @db.VarChar(255)
+  role         UserRole @default(EDITOR)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@index([email])
+  @@map("users")
+}
+
+model Lead {
+  id                String     @id @default(uuid()) @db.VarChar(36)
+  name              String     @db.VarChar(255)
+  email             String     @db.VarChar(255)
+  phone             String     @db.VarChar(50)
+  company           String     @db.VarChar(255)
+  website           String?    @db.VarChar(255)
+  projectType       String     @map("project_type") @db.VarChar(100)
+  challenge         String     @db.Text
+  budgetRange       String     @map("budget_range") @db.VarChar(100)
+  urgency           String     @db.VarChar(100)
+  preferredContact  String     @map("preferred_contact") @db.VarChar(50)
+  message           String?    @db.Text
+  sourcePage        String     @map("source_page") @db.VarChar(255)
+  sourceDemo        String?    @map("source_demo") @db.VarChar(255)
+  utmSource         String?    @map("utm_source") @db.VarChar(255)
+  utmMedium         String?    @map("utm_medium") @db.VarChar(255)
+  utmCampaign       String?    @map("utm_campaign") @db.VarChar(255)
+  consent           Boolean    @default(false)
+  status            LeadStatus @default(NOVO)
+  internalNotes     String?    @map("internal_notes") @db.Text
+  createdAt         DateTime   @default(now()) @map("created_at")
+  updatedAt         DateTime   @updatedAt @map("updated_at")
+
+  analyticsEvents AnalyticsEvent[]
+
+  @@index([createdAt])
+  @@index([status])
+  @@map("leads")
+}
+
+model Project {
+  id               String        @id @default(uuid()) @db.VarChar(36)
+  title            String        @db.VarChar(255)
+  slug             String        @unique @db.VarChar(255)
+  category         String        @db.VarChar(100)
+  shortDescription String        @map("short_description") @db.Text
+  fullDescription  String        @map("full_description") @db.Text
+  problem          String        @db.Text
+  solution         String        @db.Text
+  features         Json
+  stack            Json
+  coverImage       String        @map("cover_image") @db.VarChar(500)
+  gallery          Json
+  metrics          Json
+  demoType         DemoType      @default(NATIVE) @map("demo_type")
+  demoRoute        String?       @map("demo_route") @db.VarChar(255)
+  isFeatured       Boolean       @default(false) @map("is_featured")
+  status           ProjectStatus @default(DRAFT)
+  seoTitle         String        @map("seo_title") @db.VarChar(255)
+  seoDescription   String        @map("seo_description") @db.VarChar(500)
+  sortOrder        Int           @default(0) @map("sort_order")
+  createdAt        DateTime      @default(now()) @map("created_at")
+  updatedAt        DateTime      @updatedAt @map("updated_at")
+
+  @@index([slug])
+  @@index([status])
+  @@map("projects")
+}
+
+model Service {
+  id             String        @id @default(uuid()) @db.VarChar(36)
+  title          String        @db.VarChar(255)
+  slug           String        @unique @db.VarChar(255)
+  headline       String        @db.VarChar(255)
+  description    String        @db.Text
+  problemSolved  String        @map("problem_solved") @db.Text
+  deliverables   Json
+  technologies   Json
+  targetAudience String        @map("target_audience") @db.Text
+  ctaLabel       String        @map("cta_label") @db.VarChar(100)
+  seoTitle       String        @map("seo_title") @db.VarChar(255)
+  seoDescription String        @map("seo_description") @db.VarChar(500)
+  status         ServiceStatus @default(ACTIVE)
+  createdAt      DateTime      @default(now()) @map("created_at")
+  updatedAt      DateTime      @updatedAt @map("updated_at")
+
+  @@index([slug])
+  @@index([status])
+  @@map("services")
+}
+
+model Testimonial {
+  id         String            @id @default(uuid()) @db.VarChar(36)
+  clientName String            @map("client_name") @db.VarChar(255)
+  clientRole String            @map("client_role") @db.VarChar(255)
+  company    String            @db.VarChar(255)
+  content    String            @db.Text
+  rating     Int               @default(5)
+  image      String            @db.VarChar(500)
+  status     TestimonialStatus @default(PENDING)
+  createdAt  DateTime          @default(now()) @map("created_at")
+
+  @@index([status])
+  @@map("testimonials")
+}
+
+model Post {
+  id             String     @id @default(uuid()) @db.VarChar(36)
+  title          String     @db.VarChar(255)
+  slug           String     @unique @db.VarChar(255)
+  excerpt        String     @db.Text
+  content        String     @db.LongText
+  coverImage     String     @map("cover_image") @db.VarChar(500)
+  category       String     @db.VarChar(100)
+  tags           Json
+  author         String     @db.VarChar(255)
+  status         PostStatus @default(DRAFT)
+  seoTitle       String     @map("seo_title") @db.VarChar(255)
+  seoDescription String     @map("seo_description") @db.VarChar(500)
+  publishedAt    DateTime?  @map("published_at")
+  createdAt      DateTime   @default(now()) @map("created_at")
+  updatedAt      DateTime   @updatedAt @map("updated_at")
+
+  @@index([slug])
+  @@index([status])
+  @@index([publishedAt])
+  @@map("posts")
+}
+
+model SiteSetting {
+  id        String   @id @default(uuid()) @db.VarChar(36)
+  key       String   @unique @db.VarChar(100)
+  value     String   @db.Text
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("site_settings")
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(uuid()) @db.VarChar(36)
+  eventName String   @map("event_name") @db.VarChar(100)
+  page      String   @db.VarChar(255)
+  demoSlug  String?  @map("demo_slug") @db.VarChar(255)
+  leadId    String?  @map("lead_id") @db.VarChar(36)
+  metadata  Json
+  createdAt DateTime @default(now()) @map("created_at")
+
+  lead Lead? @relation(fields: [leadId], references: [id], onDelete: SetNull)
+
+  @@index([eventName])
+  @@index([createdAt])
+  @@map("analytics_events")
+}
+
+model DemoSession {
+  id           String    @id @default(uuid()) @db.VarChar(36)
+  demoSlug     String    @map("demo_slug") @db.VarChar(255)
+  sessionToken String    @unique @map("session_token") @db.VarChar(255)
+  userAgent    String?   @map("user_agent") @db.VarChar(500)
+  referrer     String?   @db.VarChar(500)
+  startedAt    DateTime  @default(now()) @map("started_at")
+  endedAt      DateTime? @map("ended_at")
+  metadata     Json?
+
+  interactions DemoInteraction[]
+
+  @@index([demoSlug])
+  @@index([startedAt])
+  @@map("demo_sessions")
+}
+
+model DemoInteraction {
+  id          String   @id @default(uuid()) @db.VarChar(36)
+  sessionId   String   @map("session_id") @db.VarChar(36)
+  eventType   String   @map("event_type") @db.VarChar(100)
+  payload     Json
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  session DemoSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId])
+  @@index([eventType])
+  @@index([createdAt])
+  @@map("demo_interactions")
+}

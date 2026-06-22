@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+:root {
+  --nangell-cyan: #00c2fc;
+  --nangell-blue: #058ff7;
+  --nangell-electric: #3061fa;
+  --nangell-violet: #6139fa;
+  --nangell-dark: #05070d;
+  --nangell-surface: #0b0f1a;
+  --nangell-text: #f8fafc;
+  --nangell-muted: #94a3b8;
+  --nangell-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-nangell-dark font-sans text-nangell-text antialiased;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: rgba(0, 194, 252, 0.25);
+    color: var(--nangell-text);
+  }
+
+  a {
+    @apply text-nangell-cyan transition-colors duration-200;
+  }
+
+  a:hover {
+    @apply text-nangell-blue;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [role="tab"]:focus-visible,
+  [tabindex]:focus-visible {
+    @apply outline-2 outline-offset-2 outline-nangell-electric;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply bg-nangell-surface text-nangell-text;
+  }
+
+  dialog::backdrop {
+    background: rgba(5, 7, 13, 0.8);
+    backdrop-filter: blur(4px);
+  }
+}
+
+@layer utilities {
+  .scrollbar-nangell {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 194, 252, 0.3) var(--nangell-surface);
+  }
+
+  .scrollbar-nangell::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-nangell::-webkit-scrollbar-track {
+    background: var(--nangell-surface);
+  }
+
+  .scrollbar-nangell::-webkit-scrollbar-thumb {
+    background: rgba(0, 194, 252, 0.3);
+    border-radius: 9999px;
+  }
+
+  .scrollbar-nangell::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 194, 252, 0.5);
+  }
+
+  .glass-surface {
+    @apply border border-glass-border bg-nangell-surface/80 shadow-glass backdrop-blur-md;
+  }
+
+  .glass-card {
+    @apply rounded-nangell-lg border border-glass-border bg-nangell-surface/80 shadow-glass backdrop-blur-md transition-colors duration-200 hover:border-nangell-electric/30;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nangell-electric;
+  }
+
+  .text-gradient-brand {
+    @apply bg-nangell-gradient bg-clip-text text-transparent;
+  }
+
+  .bg-grid-subtle {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .bg-noise-overlay {
+    position: relative;
+  }
+
+  .bg-noise-overlay::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
