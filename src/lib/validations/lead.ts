@@ -32,10 +32,10 @@ export const PROJECT_MOMENT_OPTIONS = [
 ] as const;
 
 export const URGENCY_OPTIONS = [
-  { value: "baixa", label: "Baixa — posso aguardar" },
-  { value: "media", label: "Média — próximos 2–3 meses" },
-  { value: "alta", label: "Alta — preciso resolver logo" },
-  { value: "critica", label: "Crítica — impacto operacional imediato" },
+  { value: "baixa", label: "Baixa, posso aguardar" },
+  { value: "media", label: "Média, próximos 2 a 3 meses" },
+  { value: "alta", label: "Alta, preciso resolver logo" },
+  { value: "critica", label: "Crítica, impacto operacional imediato" },
 ] as const;
 
 export const BUDGET_RANGE_OPTIONS = [

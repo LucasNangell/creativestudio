@@ -1,4 +1,4 @@
-/** Fallback estático espelhando o seed Prisma — usado quando o banco não está disponível no build. */
+/** Fallback estático espelhando o seed Prisma, usado quando o banco não está disponível no build. */
 export const FALLBACK_SERVICES = [
   {
     id: "fallback-desenvolvimento-web",

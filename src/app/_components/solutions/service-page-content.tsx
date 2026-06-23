@@ -113,7 +113,7 @@ export function ServicePageContent({
             <SectionHeading
               align="left"
               title="Entregáveis"
-              description="Escopo típico de um projeto nesta frente — ajustado após discovery."
+              description="Escopo típico de um projeto nesta frente, ajustado após discovery."
               className="mx-0 max-w-none"
             />
           </Reveal>

@@ -90,7 +90,7 @@ export async function VisualProofSection() {
           <SectionHeading
             eyebrow="Prova visual"
             title="Telas reais dos cases em destaque"
-            description="Capturas das demonstrações do portfólio — cada interface abaixo corresponde a um sistema que você pode testar na seção anterior."
+            description="Capturas das demonstrações do portfólio, cada interface abaixo corresponde a um sistema que você pode testar na seção anterior."
           />
         </Reveal>
 

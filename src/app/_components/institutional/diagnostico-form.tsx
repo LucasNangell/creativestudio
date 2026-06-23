@@ -310,7 +310,7 @@ export function DiagnosticoForm() {
                   <Input
                     label="Site ou Instagram"
                     placeholder="https:// ou @usuario"
-                    hint="Opcional — ajuda a entender seu contexto"
+                    hint="Opcional, ajuda a entender seu contexto"
                     error={errors.website?.message}
                     disabled={isSubmitting}
                     {...register("website")}

@@ -194,7 +194,7 @@ export const homeDifferentials: HomeDifferential[] = [
     icon: Code2,
     title: "Desenvolvimento sob medida",
     description:
-      "Cada linha de código serve ao seu processo — sem templates genéricos ou limitações de plataforma.",
+      "Cada linha de código serve ao seu processo, sem templates genéricos ou limitações de plataforma.",
   },
   {
     id: "design",

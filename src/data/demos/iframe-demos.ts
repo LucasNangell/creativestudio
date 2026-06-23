@@ -14,9 +14,9 @@ export type IframeDemoConfig = {
 export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
   "lar-dos-anjos": {
     slug: "lar-dos-anjos",
-    title: "Lar dos Anjos — Plataforma de Doações",
+    title: "Lar dos Anjos, Plataforma de Doações",
     subtitle:
-      "Site institucional, doações, transparência, campanhas e área do doador — demonstração com dados fictícios.",
+      "Site institucional, doações, transparência, campanhas e área do doador, demonstração com dados fictícios.",
     ctaLabel: "Quero uma plataforma parecida",
     iframeSrc: "/demos/lar-dos-anjos/index.html",
     minHeight: 820,
@@ -27,7 +27,7 @@ export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
     slug: "player-video-marcadores",
     title: "Player de Vídeo com Marcadores",
     subtitle:
-      "Biblioteca corporativa de vídeos com player avançado, marcadores, grupos e busca — versão demonstrativa.",
+      "Biblioteca corporativa de vídeos com player avançado, marcadores, grupos e busca, versão demonstrativa.",
     ctaLabel: "Quero um player para minha empresa",
     iframeSrc:
       "/demos/player-video-marcadores/video/index.html?id=demo-vid-001",
@@ -39,7 +39,7 @@ export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
   },
   "monitor-arquivos": {
     slug: "monitor-arquivos",
-    title: "HT Monitor — Automação de PDFs",
+    title: "HT Monitor, Automação de PDFs",
     subtitle:
       "Painel web para monitorar pastas, renomear e mover arquivos PDF em fluxos de pré-impressão simulados.",
     ctaLabel: "Quero automatizar meus arquivos",
@@ -51,7 +51,7 @@ export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
     slug: "gestao-producao-grafica",
     title: "Gestão de Produção Gráfica",
     subtitle:
-      "Ordens de serviço, kanban PCP, dashboards e análise técnica — demonstração operacional simulada.",
+      "Ordens de serviço, kanban PCP, dashboards e análise técnica, demonstração operacional simulada.",
     ctaLabel: "Quero organizar minha produção",
     iframeSrc: "/demos/gestao-producao-grafica/index.html",
     minHeight: 920,
@@ -62,9 +62,9 @@ export const IFRAME_DEMO_CONFIG: Record<string, IframeDemoConfig> = {
   },
   "vigilia-politica": {
     slug: "vigilia-politica",
-    title: "Vigília Política — Inteligência Política",
+    title: "Vigília Política, Inteligência Política",
     subtitle:
-      "War Room com alertas, feed multicanal e briefings estratégicos — demonstração com dados fictícios.",
+      "War Room com alertas, feed multicanal e briefings estratégicos, demonstração com dados fictícios.",
     ctaLabel: "Quero uma central de inteligência",
     iframeSrc: "/demos/vigilia-politica/index.html",
     minHeight: 720,

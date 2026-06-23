@@ -274,7 +274,7 @@ export function ProjectsAdminPanel() {
                       {project.isFeatured ? (
                         <Star className="h-4 w-4 fill-nangell-cyan text-nangell-cyan" aria-hidden />
                       ) : (
-                        <span className="text-nangell-muted">—</span>
+                        <span className="text-nangell-muted">, </span>
                       )}
                     </DataTableCell>
                     <DataTableCell className="text-right">
@@ -418,7 +418,7 @@ export function ProjectsAdminPanel() {
                   label="Rota da demonstração"
                   value={form.demoRoute}
                   onChange={(event) => updateField("demoRoute", event.target.value)}
-                  hint="Opcional — ex: /demo/crm-inteligente"
+                  hint="Opcional, ex: /demo/crm-inteligente"
                 />
                 <Select
                   label="Status"

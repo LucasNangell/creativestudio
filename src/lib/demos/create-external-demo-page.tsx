@@ -10,7 +10,7 @@ export function createExternalDemoPage(slug: keyof typeof EXTERNAL_DEMO_CONFIG) 
 
   return {
     metadata: createPageMetadata({
-      title: `Demonstração — ${config.title}`,
+      title: `Demonstração, ${config.title}`,
       description: config.subtitle,
       path: `/demo/${slug}`,
       keywords: config.keywords,

@@ -1,4 +1,4 @@
-/** Cliente HTTP — em modo simulação delega para HTDemoApi (dados fictícios locais). */
+/** Cliente HTTP — em modo demo delega para HTDemoApi (dados fictícios locais). */
 const HTApi = (() => {
   const isDemo = () => !!window.HTMONITOR_CONFIG?.demoMode;
 

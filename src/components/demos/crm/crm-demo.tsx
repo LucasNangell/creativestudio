@@ -279,7 +279,7 @@ export function CrmDemo() {
   };
 
   const handleExportCsv = () => {
-    setExportMsg("Exportação simulada — arquivo CRM-leads.csv gerado.");
+    setExportMsg("Exportação simulada, arquivo CRM-leads.csv gerado.");
     trackDemoFinish(DEMO_ID, "export_csv");
     window.setTimeout(() => setExportMsg(""), 4000);
   };
@@ -309,7 +309,7 @@ export function CrmDemo() {
     <DemoShell
       demoId={DEMO_ID}
       title="CRM Inteligente"
-      subtitle="Funil comercial com kanban, timeline e simulação de WhatsApp — dados 100% fictícios."
+      subtitle="Funil comercial com kanban, timeline e simulação de WhatsApp, dados 100% fictícios."
       ctaLabel="Quero um CRM parecido"
       sidebar={<DemoSidebar title="Simulação CRM" items={sidebarItems} />}
     >

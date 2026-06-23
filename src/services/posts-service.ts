@@ -134,9 +134,18 @@ export function collectBlogFilterOptions(posts: BlogPostListItem[]): BlogFilterO
   return { categories, tags };
 }
 
-export function getFeaturedPost(posts: BlogPostListItem[]): BlogPostListItem | null {
+export function getFeaturedPost(
+  posts: BlogPostListItem[],
+  featuredSlug?: string,
+): BlogPostListItem | null {
   if (posts.length === 0) return null;
-  return [...posts].sort((a, b) =>
-    (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""),
-  )[0] ?? null;
+  if (featuredSlug) {
+    const featured = posts.find((post) => post.slug === featuredSlug);
+    if (featured) return featured;
+  }
+  return (
+    [...posts].sort((a, b) =>
+      (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""),
+    )[0] ?? null
+  );
 }

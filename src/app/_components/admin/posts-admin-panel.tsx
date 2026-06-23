@@ -75,7 +75,7 @@ function toFormState(post: PostRecord | PostFormInput) {
 type FormState = ReturnType<typeof toFormState>;
 
 function formatDate(value: string | null | undefined) {
-  if (!value) return "—";
+  if (!value) return "-";
   return new Intl.DateTimeFormat("pt-BR", { dateStyle: "short" }).format(new Date(value));
 }
 

@@ -1,7 +1,7 @@
 export const processoSeo = {
   title: "Nosso Processo de Desenvolvimento",
   description:
-    "Metodologia em 6 etapas da Nangell Creative Studio: diagnóstico, requisitos, prototipação, desenvolvimento incremental, testes e evolução contínua — com entregáveis claros em cada fase.",
+    "Metodologia em 6 etapas da Nangell Creative Studio: diagnóstico, requisitos, prototipação, desenvolvimento incremental, testes e evolução contínua, com entregáveis claros em cada fase.",
   keywords: [
     "processo de desenvolvimento de software",
     "metodologia ágil",
@@ -15,7 +15,7 @@ export const processoHero = {
   eyebrow: "Metodologia",
   title: "Do diagnóstico à evolução contínua",
   description:
-    "Um processo transparente em 6 etapas, desenhado para reduzir riscos, alinhar expectativas e entregar software que funciona no mundo real — não apenas em apresentações.",
+    "Um processo transparente em 6 etapas, desenhado para reduzir riscos, alinhar expectativas e entregar software que funciona no mundo real, não apenas em apresentações.",
 } as const;
 
 export type ProcessoEtapa = {
@@ -81,7 +81,7 @@ export const processoEtapas: ProcessoEtapa[] = [
     step: 3,
     title: "Prototipação",
     duration: "2 a 4 semanas",
-    blogSlug: "demonstrar-software-em-acao",
+    blogSlug: "site-profissional-nao-e-so-aparencia-como-transformar-visitantes-em-oportunidades",
     description:
       "Validação visual e funcional de telas, jornadas críticas e arquitetura de informação antes do desenvolvimento em produção.",
     deliverables: [
@@ -127,7 +127,7 @@ export const processoEtapas: ProcessoEtapa[] = [
     step: 5,
     title: "Testes, segurança e performance",
     duration: "2 a 3 semanas",
-    blogSlug: "arquitetura-moderna-sistemas-2026",
+    blogSlug: "automacao-de-processos-como-economizar-tempo-sem-perder-controle",
     description:
       "Homologação rigorosa com testes funcionais, de carga, segurança (OWASP), acessibilidade e otimização de Core Web Vitals.",
     deliverables: [
@@ -196,7 +196,7 @@ export const processoFaq: ProcessoFaq[] = [
   {
     question: "E se precisarmos mudar o escopo no meio do projeto?",
     answer:
-      "Mudanças são naturais. Avaliamos impacto em prazo e investimento, documentamos o ajuste e replanejamos antes de executar — sempre com sua aprovação explícita.",
+      "Mudanças são naturais. Avaliamos impacto em prazo e investimento, documentamos o ajuste e replanejamos antes de executar, sempre com sua aprovação explícita.",
   },
   {
     question: "Vocês oferecem suporte após o lançamento?",

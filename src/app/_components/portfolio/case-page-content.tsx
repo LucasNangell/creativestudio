@@ -179,7 +179,7 @@ export function CasePageContent({
               <SectionHeading
                 align="left"
                 title="Resultados e métricas"
-                description="Indicadores de impacto — fictícios para demos ou reais quando autorizados pelo cliente."
+                description="Indicadores de impacto, fictícios para demos ou reais quando autorizados pelo cliente."
                 className="mx-0 max-w-none"
               />
             </Reveal>
@@ -222,7 +222,7 @@ export function CasePageContent({
                 <Reveal key={`${image}-${index}`} delay={index * 0.05}>
                   <ProjectCover
                     src={image}
-                    alt={`Mockup ${index + 1} — ${project.title}`}
+                    alt={`Mockup ${index + 1}, ${project.title}`}
                     title={project.title}
                   />
                 </Reveal>
@@ -237,7 +237,7 @@ export function CasePageContent({
           <Container>
             <CtaSection
               title="Experimente a demonstração interativa"
-              description="Navegue pelo sistema simulado no navegador — sem cadastro, com dados fictícios."
+              description="Navegue pelo sistema simulado no navegador, sem cadastro, com dados fictícios."
               variant="gradient"
               className="!py-0"
             >

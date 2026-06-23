@@ -19,7 +19,7 @@ export function ProcessSection() {
           <SectionHeading
             eyebrow="Como trabalhamos"
             title="Metodologia clara em 6 etapas"
-            description="Do primeiro contato à evolução contínua — transparência total em cada fase do projeto."
+            description="Do primeiro contato à evolução contínua, transparência total em cada fase do projeto."
           />
         </Reveal>
 

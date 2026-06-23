@@ -1,6 +1,6 @@
 import { DemoType } from "@prisma/client";
 
-/** Cases integrados a partir de portfolio-imports/ — mesclados em FALLBACK_PROJECTS. */
+/** Cases integrados a partir de portfolio-imports/, mesclados em FALLBACK_PROJECTS. */
 export const IMPORTED_PORTFOLIO_PROJECTS = [
   {
     id: "fallback-lar-dos-anjos",
@@ -10,7 +10,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     shortDescription:
       "Doações Pix e recorrentes, transparência, campanhas, adoção de animais e área do doador com carteirinha digital.",
     fullDescription:
-      "Plataforma completa para abrigos e ONGs: site institucional, arrecadação, portal de transparência, campanhas, mural de apoiadores e área exclusiva do doador — com painel administrativo no sistema completo.",
+      "Plataforma completa para abrigos e ONGs: site institucional, arrecadação, portal de transparência, campanhas, mural de apoiadores e área exclusiva do doador, com painel administrativo no sistema completo.",
     problem:
       "Abrigos perdiam doadores por falta de transparência, processos manuais de Pix e assinaturas, e informações dispersas sobre animais e campanhas.",
     solution:
@@ -35,7 +35,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 7,
     seoTitle: "Case Plataforma de Doações | Nangell Creative Studio",
     seoDescription:
-      "Plataforma para abrigos com doações, transparência e área do doador — demonstração interativa com dados fictícios.",
+      "Plataforma para abrigos com doações, transparência e área do doador, demonstração interativa com dados fictícios.",
   },
   {
     id: "fallback-player-video-marcadores",
@@ -70,11 +70,11 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 8,
     seoTitle: "Case Player de Vídeo com Marcadores | Nangell Creative Studio",
     seoDescription:
-      "Biblioteca corporativa de vídeos com marcadores e busca — demonstração interativa.",
+      "Biblioteca corporativa de vídeos com marcadores e busca, demonstração interativa.",
   },
   {
     id: "fallback-monitor-arquivos",
-    title: "HT Monitor — Automação de Arquivos PDF",
+    title: "HT Monitor, Automação de Arquivos PDF",
     slug: "monitor-arquivos",
     category: "Automação Industrial",
     shortDescription:
@@ -103,7 +103,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     demoRoute: "/demo/monitor-arquivos",
     isFeatured: false,
     sortOrder: 9,
-    seoTitle: "Case HT Monitor — Automação PDF | Nangell Creative Studio",
+    seoTitle: "Case HT Monitor, Automação PDF | Nangell Creative Studio",
     seoDescription:
       "Automação de renomeação e movimentação de PDFs com painel web simulado.",
   },
@@ -140,7 +140,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 10,
     seoTitle: "Case Gestão de Produção Gráfica | Nangell Creative Studio",
     seoDescription:
-      "Sistema para gráficas com OS, PCP e dashboards — demonstração interativa simulada.",
+      "Sistema para gráficas com OS, PCP e dashboards, demonstração interativa simulada.",
   },
   {
     id: "fallback-sharescreen-lan",
@@ -175,7 +175,7 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 11,
     seoTitle: "Case ShareScreen LAN | Nangell Creative Studio",
     seoDescription:
-      "Compartilhamento de tela em rede local com WebRTC — simulação da interface.",
+      "Compartilhamento de tela em rede local com WebRTC, simulação da interface.",
   },
   {
     id: "fallback-site-psicologia-profissional",
@@ -210,11 +210,11 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 12,
     seoTitle: "Case Site para Psicóloga | Nangell Creative Studio",
     seoDescription:
-      "Site profissional com agendamento e blog — demonstração interativa com dados fictícios.",
+      "Site profissional com agendamento e blog, demonstração interativa com dados fictícios.",
   },
   {
     id: "fallback-vigilia-politica",
-    title: "Vigília Política — Inteligência Política",
+    title: "Vigília Política, Inteligência Política",
     slug: "vigilia-politica",
     category: "Inteligência Política / GovTech",
     shortDescription:
@@ -245,21 +245,21 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     sortOrder: 13,
     seoTitle: "Case Vigília Política | Nangell Creative Studio",
     seoDescription:
-      "Central de inteligência política com War Room e alertas — demonstração interativa com dados fictícios.",
+      "Central de inteligência política com War Room e alertas, demonstração interativa com dados fictícios.",
   },
   {
     id: "fallback-encurtou-pro",
-    title: "Encurtou.pro — Plataforma de Marketing de Links",
+    title: "Encurtou.pro, Plataforma de Marketing de Links",
     slug: "encurtou-pro",
     category: "Marketing Digital / SaaS",
     shortDescription:
-      "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques, campanhas UTM, A/B testing e assinaturas — produto SaaS em produção.",
+      "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques, campanhas UTM, A/B testing e assinaturas, produto SaaS em produção.",
     fullDescription:
-      "O Encurtou.pro é uma plataforma completa de marketing de links desenvolvida para campanhas, mandatos e equipes de marketing que precisam medir o que acontece depois do clique. Em um único painel, o usuário cria links curtos personalizados, gera QR Codes dinâmicos com logo e cores da marca, monta Bio Pages (microsites de link na bio), organiza ativos em pastas e tags, e acompanha analytics detalhados — origem, dispositivo, localização, horário e funil de conversão. O sistema suporta campanhas com parâmetros UTM, testes A/B de destino com pesos configuráveis, regras de vigência de links, deep linking mobile, preview social para compartilhamento e pixels de retargeting. A camada de redirecionamento registra cada clique, anexa identificador para atribuição de conversão e pode operar via edge Cloudflare para baixa latência em alto volume. Há módulo de equipes, programa de afiliados, checkout de assinatura integrado ao Asaas com webhooks, entitlements por plano (freemium a avançado) e painel administrativo. Publicado em produção em encurtou.pro.",
+      "O Encurtou.pro é uma plataforma completa de marketing de links desenvolvida para campanhas, mandatos e equipes de marketing que precisam medir o que acontece depois do clique. Em um único painel, o usuário cria links curtos personalizados, gera QR Codes dinâmicos com logo e cores da marca, monta Bio Pages (microsites de link na bio), organiza ativos em pastas e tags, e acompanha analytics detalhados, origem, dispositivo, localização, horário e funil de conversão. O sistema suporta campanhas com parâmetros UTM, testes A/B de destino com pesos configuráveis, regras de vigência de links, deep linking mobile, preview social para compartilhamento e pixels de retargeting. A camada de redirecionamento registra cada clique, anexa identificador para atribuição de conversão e pode operar via edge Cloudflare para baixa latência em alto volume. Há módulo de equipes, programa de afiliados, checkout de assinatura integrado ao Asaas com webhooks, entitlements por plano (freemium a avançado) e painel administrativo. Publicado em produção em encurtou.pro.",
     problem:
-      "Times de marketing e gabinetes dependiam de encurtadores gratuitos que expiram links, não rastreiam conversões, não permitem QR dinâmico nem bio pages integradas — gerando perda de verba em material impresso, analytics fragmentados e zero visibilidade do ROI por canal.",
+      "Times de marketing e gabinetes dependiam de encurtadores gratuitos que expiram links, não rastreiam conversões, não permitem QR dinâmico nem bio pages integradas, gerando perda de verba em material impresso, analytics fragmentados e zero visibilidade do ROI por canal.",
     solution:
-      "Construímos um SaaS all-in-one com dashboard unificado, redirecionamento inteligente, QR editável sem reimpressão, tracker de conversão no site do cliente, billing automatizado e infraestrutura edge para escala — transformando links e QR Codes em sensores mensuráveis de campanha.",
+      "Construímos um SaaS all-in-one com dashboard unificado, redirecionamento inteligente, QR editável sem reimpressão, tracker de conversão no site do cliente, billing automatizado e infraestrutura edge para escala, transformando links e QR Codes em sensores mensuráveis de campanha.",
     features: [
       "Encurtamento com slug e subdomínio customizados",
       "QR Codes dinâmicos com personalização visual",
@@ -281,9 +281,9 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     demoRoute: "/demo/encurtou-pro",
     isFeatured: true,
     sortOrder: 14,
-    seoTitle: "Case Encurtou.pro — Marketing de Links | Nangell Creative Studio",
+    seoTitle: "Case Encurtou.pro, Marketing de Links | Nangell Creative Studio",
     seoDescription:
-      "Plataforma SaaS de encurtamento, QR dinâmico, bio pages e analytics — demonstração no ambiente de produção.",
+      "Plataforma SaaS de encurtamento, QR dinâmico, bio pages e analytics, demonstração no ambiente de produção.",
   },
 ] as const;
 

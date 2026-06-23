@@ -32,7 +32,7 @@ export const EDU_COURSE = {
   materials: [
     "Checklist de discovery.pdf",
     "Template de user journey.fig",
-    "Guia de componentes — referência",
+    "Guia de componentes, referência",
     "Planilha de priorização RICE.xlsx",
   ],
 };

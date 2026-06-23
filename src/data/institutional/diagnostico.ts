@@ -14,7 +14,7 @@ export const diagnosticoHero = {
   eyebrow: "Diagnóstico estratégico",
   title: "Vamos entender seu projeto em 6 passos",
   description:
-    "Leva cerca de 3 minutos. Suas respostas ajudam nossa equipe a preparar uma conversa objetiva — sem compromisso.",
+    "Leva cerca de 3 minutos. Suas respostas ajudam nossa equipe a preparar uma conversa objetiva, sem compromisso.",
 } as const;
 
 export const DIAGNOSTIC_DRAFT_STORAGE_KEY = "nangell-diagnostico-draft";

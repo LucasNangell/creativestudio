@@ -266,7 +266,7 @@ export function TestimonialsAdminPanel() {
               onChange={(event) => updateField("content", event.target.value)}
             />
             <Input
-              label="Nota (1–5)"
+              label="Nota (1 a 5)"
               type="number"
               min={1}
               max={5}

@@ -73,7 +73,7 @@ export const CRM_MOCK_LEADS: CrmLead[] = [
     ultimaInteracao: "Ontem",
     interactions: [
       { id: "i2", type: "whatsapp", message: "Demonstrou interesse em integração WhatsApp.", date: "20/06 14:30" },
-      { id: "i3", type: "call", message: "Call de discovery — 45 min.", date: "20/06 16:00" },
+      { id: "i3", type: "call", message: "Call de discovery, 45 min.", date: "20/06 16:00" },
     ],
   },
   {
@@ -121,7 +121,7 @@ export const CRM_MOCK_LEADS: CrmLead[] = [
     responsavel: "Bruno Lima",
     ultimaInteracao: "Há 2 semanas",
     interactions: [
-      { id: "i6", type: "email", message: "Contrato assinado — kickoff agendado.", date: "07/06 09:00" },
+      { id: "i6", type: "email", message: "Contrato assinado, kickoff agendado.", date: "07/06 09:00" },
     ],
   },
   {

@@ -8,7 +8,7 @@ type TerminalWindowProps = {
 };
 
 export function TerminalWindow({
-  title = "terminal — nangell",
+  title = "terminal, nangell",
   lines,
   className,
   prompt = "$",

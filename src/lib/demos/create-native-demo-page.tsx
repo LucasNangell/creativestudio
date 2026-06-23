@@ -13,7 +13,7 @@ export function createNativeDemoPage({ slug, keywords, renderDemo }: NativeDemoP
 
   return {
     metadata: createPageMetadata({
-      title: `Demonstração — ${content.title}`,
+      title: `Demonstração, ${content.title}`,
       description: content.fullDescription,
       path: `/demo/${slug}`,
       keywords,

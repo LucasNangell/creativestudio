@@ -101,7 +101,7 @@ export function EduDemo() {
       <DemoShell
         demoId={DEMO_ID}
         title="Plataforma Educacional"
-        subtitle="Ambiente LMS simulado — entre como aluno simulado para explorar módulos, quiz e certificado."
+        subtitle="Ambiente LMS simulado, entre como aluno simulado para explorar módulos, quiz e certificado."
         ctaLabel="Criar minha plataforma educacional"
       >
         <div className="flex min-h-[420px] flex-col items-center justify-center p-8 text-center">
@@ -110,7 +110,7 @@ export function EduDemo() {
             Bem-vindo ao curso simulado
           </h2>
           <p className="mt-2 max-w-md text-sm text-nangell-muted">
-            {EDU_COURSE.title} — instrutora {EDU_COURSE.instructor}. Todos os dados são fictícios.
+            {EDU_COURSE.title}, instrutora {EDU_COURSE.instructor}. Todos os dados são fictícios.
           </p>
           <Button className="mt-6" size="lg" onClick={handleLogin}>
             Entrar como aluno simulado
@@ -126,7 +126,7 @@ export function EduDemo() {
     <DemoShell
       demoId={DEMO_ID}
       title="Plataforma Educacional"
-      subtitle={`Aluno simulado — ${EDU_COURSE.title}`}
+      subtitle={`Aluno simulado, ${EDU_COURSE.title}`}
       ctaLabel="Criar minha plataforma educacional"
       sidebar={<DemoSidebar title="Simulação LMS" items={sidebarItems} />}
     >
@@ -200,7 +200,7 @@ export function EduDemo() {
             <Card>
               <CardHeader>
                 <CardTitle>Player de vídeo (simulado)</CardTitle>
-                <CardDescription>Módulo ativo — reprodução fictícia com progresso animado</CardDescription>
+                <CardDescription>Módulo ativo, reprodução fictícia com progresso animado</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="relative flex aspect-video items-center justify-center rounded-nangell bg-nangell-dark/80">
@@ -220,7 +220,7 @@ export function EduDemo() {
               <CardHeader>
                 <CardTitle>Quiz interativo</CardTitle>
                 <CardDescription>
-                  Pergunta {quizIndex + 1} de {EDU_QUIZ.length} — pontuação: {quizScore}
+                  Pergunta {quizIndex + 1} de {EDU_QUIZ.length}, pontuação: {quizScore}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -251,7 +251,7 @@ export function EduDemo() {
                 {quizFeedback ? (
                   <div className="mt-4">
                     <p className={cn("text-sm", quizFeedback === "correct" ? "text-emerald-400" : "text-red-400")}>
-                      {quizFeedback === "correct" ? "Resposta correta!" : "Resposta incorreta — tente revisar o módulo."}
+                      {quizFeedback === "correct" ? "Resposta correta!" : "Resposta incorreta, tente revisar o módulo."}
                     </p>
                     <Button className="mt-2" size="sm" onClick={handleNextQuestion}>
                       {quizIndex < EDU_QUIZ.length - 1 ? "Próxima pergunta" : "Finalizar quiz"}
@@ -286,10 +286,10 @@ export function EduDemo() {
                 <Award className="mx-auto h-12 w-12 text-nangell-cyan" aria-hidden />
                 <p className="mt-3 font-heading text-lg font-bold">Certificado fictício</p>
                 <p className="mt-1 text-sm text-nangell-muted">
-                  Aluno simulado — {EDU_COURSE.title}
+                  Aluno simulado, {EDU_COURSE.title}
                 </p>
                 <p className="mt-2 font-mono text-[10px] text-nangell-muted">
-                  ID: NANGELL-EDU-DEMO-2026 — Ambiente demonstrativo
+                  ID: NANGELL-EDU-DEMO-2026, Ambiente demonstrativo
                 </p>
               </div>
             ) : null}

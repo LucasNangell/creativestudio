@@ -44,10 +44,21 @@ export function AdminLoginForm() {
         body: JSON.stringify(data),
       });
 
-      const result = (await response.json()) as {
-        success?: boolean;
-        error?: string;
-      };
+      const raw = await response.text();
+      let result: { success?: boolean; error?: string } = {};
+
+      if (raw) {
+        try {
+          result = JSON.parse(raw) as { success?: boolean; error?: string };
+        } catch {
+          setServerError(
+            response.status >= 500
+              ? "Serviço temporariamente indisponível. Tente novamente em instantes."
+              : "Resposta inválida do servidor. Tente novamente.",
+          );
+          return;
+        }
+      }
 
       if (!response.ok || !result.success) {
         setServerError(result.error ?? GENERIC_LOGIN_ERROR);
@@ -55,7 +66,11 @@ export function AdminLoginForm() {
       }
 
       const redirect = searchParams.get("redirect") ?? "/admin";
-      router.push(redirect.startsWith("/admin") ? redirect : "/admin");
+      const safeRedirect =
+        redirect.startsWith("/admin") || redirect.startsWith("/adm")
+          ? redirect
+          : "/admin";
+      router.push(safeRedirect);
       router.refresh();
     } catch {
       setServerError("Não foi possível conectar ao servidor. Tente novamente.");

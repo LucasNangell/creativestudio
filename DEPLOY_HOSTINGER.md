@@ -46,7 +46,7 @@ Executa `prisma generate` + `next build`. A saída fica em `.next/`.
 npm start
 ```
 
-Equivale a `next start -H 0.0.0.0`. A Hostinger define `PORT` automaticamente; o Next.js a utiliza.
+Equivale a `node scripts/ensure-admin-user.mjs && next start -H 0.0.0.0`. O script `ensure-admin-user` cria/atualiza o usuário admin no MySQL antes de subir o Next.js.
 
 ## 9. Output directory
 
@@ -69,6 +69,8 @@ Configure no **hPanel → Node.js Web App → Environment Variables** (nunca no 
 | `DATABASE_URL` | Sim | Conexão MySQL (Prisma) |
 | `NEXT_PUBLIC_SITE_URL` | Sim | URL pública (`https://seudominio.com`) |
 | `ADMIN_SESSION_SECRET` | Sim | Segredo HMAC da sessão admin (32+ chars) |
+| `ADMIN_BOOTSTRAP_EMAIL` | Recomendado | E-mail admin de fallback (`admin@nangell.com.br`) |
+| `ADMIN_BOOTSTRAP_PASSWORD` | Recomendado | Senha admin de fallback (altere após 1º login) |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Sim | WhatsApp com DDI (somente dígitos) |
 | `NEXT_PUBLIC_GTM_ID` | Não | Google Tag Manager |
 | `NEXT_PUBLIC_GA4_ID` | Não | Google Analytics 4 |

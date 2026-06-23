@@ -19,7 +19,7 @@ export function SiteFooter() {
           <div className="lg:col-span-2">
             <BrandLogo variant="horizontal" theme="dark" className="h-12 w-auto sm:h-14" />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-nangell-muted">
-              Engenharia criativa para softwares sob medida — sistemas web,
+              Engenharia criativa para softwares sob medida, sistemas web,
               mobile, desktop, automações, dashboards e SaaS para empresas que
               querem crescer com tecnologia.
             </p>
@@ -70,7 +70,7 @@ export function SiteFooter() {
               </li>
               <li className="inline-flex items-start gap-2 text-sm text-nangell-muted">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
-                Brasília, DF — atendimento remoto em todo o Brasil
+                Brasília, DF, atendimento remoto em todo o Brasil
               </li>
             </ul>
           </div>

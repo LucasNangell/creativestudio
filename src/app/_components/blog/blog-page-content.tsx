@@ -20,7 +20,7 @@ type BlogPageContentProps = {
 };
 
 export function BlogPageContent({ posts, filters, featured }: BlogPageContentProps) {
-  const { hero, cta, emptyState } = blogPageContent;
+  const { hero, highlight, cta, emptyState } = blogPageContent;
 
   return (
     <>
@@ -35,7 +35,21 @@ export function BlogPageContent({ posts, filters, featured }: BlogPageContentPro
             <Link href={cta.primary.href} className={cn(buttonVariants({ variant: "primary" }))}>
               {cta.primary.label}
             </Link>
+            <Link href={cta.secondary.href} className={cn(buttonVariants({ variant: "outline" }))}>
+              {cta.secondary.label}
+            </Link>
           </PageHero>
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-nangell-muted">
+            {hero.complement}
+          </p>
+        </Container>
+      </Section>
+
+      <Section className="pt-0">
+        <Container>
+          <div className="border-l-2 border-nangell-cyan bg-nangell-surface/40 px-5 py-4 sm:px-6 sm:py-5">
+            <p className="text-base leading-relaxed text-nangell-text sm:text-lg">{highlight}</p>
+          </div>
         </Container>
       </Section>
 

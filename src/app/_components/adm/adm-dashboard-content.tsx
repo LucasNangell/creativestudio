@@ -37,7 +37,7 @@ function formatMetadata(metadata: Record<string, unknown>): string {
   const entries = Object.entries(metadata).filter(
     ([, value]) => value !== undefined && value !== null && value !== "",
   );
-  if (entries.length === 0) return "—";
+  if (entries.length === 0) return "-";
   return entries
     .slice(0, 3)
     .map(([key, value]) => `${key}: ${String(value)}`)
@@ -59,7 +59,7 @@ export async function AdmDashboardContent({ period }: AdmDashboardContentProps) 
             Painel de estatísticas
           </h1>
           <p className="mt-1 text-sm text-nangell-muted">
-            Visitas, localização, formulários, ações e demonstrações — {stats.periodLabel}.
+            Visitas, localização, formulários, ações e demonstrações, {stats.periodLabel}.
           </p>
         </div>
         <nav
@@ -210,8 +210,8 @@ export async function AdmDashboardContent({ period }: AdmDashboardContentProps) 
                 stats.uniqueIps.map((row) => (
                   <tr key={row.ip} className="border-b border-glass-border/50">
                     <td className="px-4 py-3 font-mono text-xs text-nangell-text">{row.ip}</td>
-                    <td className="px-4 py-3 text-nangell-muted">{row.country ?? "—"}</td>
-                    <td className="px-4 py-3 text-nangell-muted">{row.city ?? "—"}</td>
+                    <td className="px-4 py-3 text-nangell-muted">{row.country ?? "-"}</td>
+                    <td className="px-4 py-3 text-nangell-muted">{row.city ?? "-"}</td>
                     <td className="px-4 py-3 text-nangell-muted">{row.visits}</td>
                     <td className="px-4 py-3 font-mono text-xs text-nangell-muted">
                       {formatDate(row.lastSeen)}
@@ -323,8 +323,8 @@ export async function AdmDashboardContent({ period }: AdmDashboardContentProps) 
                       className="border-b border-glass-border/50"
                     >
                       <td className="px-4 py-3 text-nangell-text">{row.source}</td>
-                      <td className="px-4 py-3 text-nangell-muted">{row.medium ?? "—"}</td>
-                      <td className="px-4 py-3 text-nangell-muted">{row.campaign ?? "—"}</td>
+                      <td className="px-4 py-3 text-nangell-muted">{row.medium ?? "-"}</td>
+                      <td className="px-4 py-3 text-nangell-muted">{row.campaign ?? "-"}</td>
                       <td className="px-4 py-3 text-nangell-muted">{row.count}</td>
                     </tr>
                   ))
@@ -408,7 +408,7 @@ export async function AdmDashboardContent({ period }: AdmDashboardContentProps) 
                     <td className="px-4 py-3 font-mono text-xs text-nangell-muted">
                       {lead.sourcePage}
                     </td>
-                    <td className="px-4 py-3 text-nangell-muted">{lead.sourceDemo ?? "—"}</td>
+                    <td className="px-4 py-3 text-nangell-muted">{lead.sourceDemo ?? "-"}</td>
                     <td className="px-4 py-3">
                       <Badge variant="outline">
                         {LEAD_STATUS[lead.status] ?? lead.status}
@@ -460,7 +460,7 @@ export async function AdmDashboardContent({ period }: AdmDashboardContentProps) 
                         {visit.ipAddress}
                       </td>
                       <td className="px-4 py-3 text-nangell-muted">
-                        {[visit.city, visit.country].filter(Boolean).join(", ") || "—"}
+                        {[visit.city, visit.country].filter(Boolean).join(", ") || "-"}
                       </td>
                     </tr>
                   ))

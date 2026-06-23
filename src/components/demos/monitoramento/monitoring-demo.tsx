@@ -229,7 +229,7 @@ export function MonitoringDemo() {
                       </span>
                     </div>
                     <p className="mt-1">
-                      <span className="text-nangell-cyan">#{event.keyword}</span> — {event.message}
+                      <span className="text-nangell-cyan">#{event.keyword}</span>, {event.message}
                     </p>
                   </li>
                 ))

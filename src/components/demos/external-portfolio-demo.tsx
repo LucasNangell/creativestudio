@@ -59,11 +59,11 @@ export function ExternalPortfolioDemo({ config }: ExternalPortfolioDemoProps) {
       {config.previewIframeSrc ? (
         <div className="relative bg-nangell-dark/40 p-2 sm:p-4">
           <p className="mb-2 px-1 text-xs text-nangell-muted">
-            Prévia do painel principal — navegue pelos módulos. Algumas ações exigem login no site
+            Prévia do painel principal, navegue pelos módulos. Algumas ações exigem login no site
             oficial.
           </p>
           <iframe
-            title={`Prévia — ${config.title}`}
+            title={`Prévia, ${config.title}`}
             src={config.previewIframeSrc}
             className="min-h-[480px] w-full rounded-nangell border border-glass-border bg-white"
             style={{ minHeight: config.previewMinHeight ?? 640 }}
@@ -71,7 +71,7 @@ export function ExternalPortfolioDemo({ config }: ExternalPortfolioDemoProps) {
           />
           <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-nangell-muted">
             <span>
-              Interface real do sistema — dados fictícios em modo visitante. Use o botão acima para
+              Interface real do sistema, dados fictícios em modo visitante. Use o botão acima para
               abrir a versão completa.
             </span>
             <Link

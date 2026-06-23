@@ -121,7 +121,7 @@ export function SharescreenLanDemo() {
   const toggleRecording = () => {
     setRecording((r) => {
       if (r) {
-        addLog("Gravação finalizada — arquivo salvo no servidor local", "success");
+        addLog("Gravação finalizada, arquivo salvo no servidor local", "success");
       } else {
         addLog("Gravação simulada iniciada", "info");
       }
@@ -153,10 +153,10 @@ export function SharescreenLanDemo() {
                 <Wifi className="h-7 w-7 text-nangell-cyan" aria-hidden />
               </div>
               <h2 className="font-display text-xl font-semibold text-nangell-text sm:text-2xl">
-                ShareScreen LAN — Rede local
+                ShareScreen LAN, Rede local
               </h2>
               <p className="mx-auto mt-2 max-w-lg text-sm text-nangell-muted">
-                Simulação do compartilhamento de tela entre computadores na mesma LAN — sem
+                Simulação do compartilhamento de tela entre computadores na mesma LAN, sem
                 internet, sem nuvem. Escolha o ponto de vista:
               </p>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -293,7 +293,7 @@ export function SharescreenLanDemo() {
                     ) : null}
                     <Monitor className="relative h-16 w-16 text-nangell-cyan/40" aria-hidden />
                     <p className="absolute bottom-4 left-4 text-sm text-nangell-muted">
-                      Prévia simulada — {selected?.name ?? "Nenhuma fonte"}
+                      Prévia simulada, {selected?.name ?? "Nenhuma fonte"}
                     </p>
                     {paused ? (
                       <Badge variant="warning" className="absolute right-4 top-4">
@@ -428,7 +428,7 @@ export function SharescreenLanDemo() {
                   <p className="relative text-center text-sm text-nangell-muted">
                     {paused ? "Transmissão pausada pelo host" : "Transmissão recebida do host"}
                     <br />
-                    <span className="text-nangell-cyan">{selected?.name ?? "—"}</span>
+                    <span className="text-nangell-cyan">{selected?.name ?? "-"}</span>
                   </p>
                   <p className="relative font-mono text-[10px] text-nangell-muted">
                     {SERVER_INFO.codec} · latência simulada ~45 ms

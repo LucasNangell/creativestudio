@@ -21,7 +21,7 @@ export function SiteHeader() {
           <div className="flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
             <Link
               href="/"
-              aria-label="Nangell Creative Studio — página inicial"
+              aria-label="Nangell Creative Studio, página inicial"
               className="max-w-[min(100%,11rem)] shrink-0 rounded-nangell focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nangell-electric sm:max-w-none"
             >
               <BrandLogo

@@ -36,7 +36,7 @@ export function ServicesGrid({ services, showHeading = true }: ServicesGridProps
             <SectionHeading
               eyebrow="Catálogo"
               title="Seis frentes de engenharia para escalar sua operação"
-              description="Cada solução combina discovery, arquitetura, UX premium e entrega documentada — com demonstrações interativas quando aplicável."
+              description="Cada solução combina discovery, arquitetura, UX premium e entrega documentada, com demonstrações interativas quando aplicável."
             />
           </Reveal>
         ) : null}

@@ -1,7 +1,7 @@
 import type { DemoPageContent } from "@/lib/demos/get-demo-content";
 
 /**
- * Conteúdo das páginas de demonstração — sem dependência de @prisma/client
+ * Conteúdo das páginas de demonstração, sem dependência de @prisma/client
  * (evita bundling do Prisma no client ao carregar demos nativas).
  */
 export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
@@ -12,7 +12,7 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
     shortDescription:
       "Doações Pix e recorrentes, transparência, campanhas, adoção de animais e área do doador com carteirinha digital.",
     fullDescription:
-      "Plataforma completa para abrigos e ONGs: site institucional, arrecadação, portal de transparência, campanhas, mural de apoiadores e área exclusiva do doador — com painel administrativo no sistema completo.",
+      "Plataforma completa para abrigos e ONGs: site institucional, arrecadação, portal de transparência, campanhas, mural de apoiadores e área exclusiva do doador, com painel administrativo no sistema completo.",
     problem:
       "Abrigos perdiam doadores por falta de transparência, processos manuais de Pix e assinaturas, e informações dispersas sobre animais e campanhas.",
     solution:
@@ -26,7 +26,7 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
     ],
     stack: ["Next.js", "NestJS", "Prisma", "MySQL", "Redis", "Tailwind CSS"],
     demoHint:
-      "Navegue pelo site institucional, campanhas, animais e fluxos de doação — todos os dados são fictícios.",
+      "Navegue pelo site institucional, campanhas, animais e fluxos de doação, todos os dados são fictícios.",
   },
   "player-video-marcadores": {
     slug: "player-video-marcadores",
@@ -53,7 +53,7 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
   },
   "monitor-arquivos": {
     slug: "monitor-arquivos",
-    title: "HT Monitor — Automação de Arquivos PDF",
+    title: "HT Monitor, Automação de Arquivos PDF",
     category: "Automação Industrial",
     shortDescription:
       "Automatize renomeação e movimentação de PDFs com painel web em tempo real para pré-impressão.",
@@ -143,7 +143,7 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
   },
   "vigilia-politica": {
     slug: "vigilia-politica",
-    title: "Vigília Política — Inteligência Política",
+    title: "Vigília Política, Inteligência Política",
     category: "Inteligência Política / GovTech",
     shortDescription:
       "Central de inteligência com alertas, feed multicanal, narrativas e briefings estratégicos em tempo real simulado.",
@@ -162,18 +162,18 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
     ],
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Recharts"],
     demoHint:
-      "Acesso automático na simulação. Explore War Room, Feed, Central de Alertas, Narrativas, Territórios e Briefing — novos alertas simulados surgem a cada poucos segundos.",
+      "Acesso automático na simulação. Explore War Room, Feed, Central de Alertas, Narrativas, Territórios e Briefing, novos alertas simulados surgem a cada poucos segundos.",
   },
   "encurtou-pro": {
     slug: "encurtou-pro",
-    title: "Encurtou.pro — Plataforma de Marketing de Links",
+    title: "Encurtou.pro, Plataforma de Marketing de Links",
     category: "Marketing Digital / SaaS",
     shortDescription:
-      "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques, campanhas UTM, A/B testing e assinaturas — produto SaaS em produção.",
+      "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques, campanhas UTM, A/B testing e assinaturas, produto SaaS em produção.",
     fullDescription:
       "O Encurtou.pro centraliza encurtamento, QR dinâmico, bio pages, analytics, campanhas UTM, testes A/B, equipes, afiliados e assinaturas em um painel único. Cada clique é registrado e pode ser correlacionado a conversões no site do cliente via tracker embutido. A infraestrutura edge Cloudflare garante redirecionamento rápido mesmo em campanhas de alto volume.",
     problem:
-      "Encurtadores gratuitos expiram links, não medem conversão e impedem QR dinâmico — desperdiçando material impresso e ocultando ROI por canal.",
+      "Encurtadores gratuitos expiram links, não medem conversão e impedem QR dinâmico, desperdiçando material impresso e ocultando ROI por canal.",
     solution:
       "SaaS completo com redirecionamento inteligente, QR editável, bio pages, analytics unificado, billing Asaas e edge para escala.",
     features: [

@@ -334,7 +334,7 @@ export function OsDemo() {
                     className="rounded-nangell border border-glass-border bg-nangell-dark/40 px-3 py-2 text-sm"
                   >
                     <span className="font-mono text-[10px] text-nangell-muted">
-                      {entry.date} — {entry.author}
+                      {entry.date}, {entry.author}
                     </span>
                     <p className="mt-0.5">{entry.message}</p>
                   </li>

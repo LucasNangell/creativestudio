@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T22:05:48.378Z",
+  "generatedAt": "2026-06-23T00:01:09.543Z",
   "warning": "Dados fictícios para demonstração comercial — Nangell Creative Studio. Alertas e KPIs são simulados.",
   "items": [
     {
@@ -159,8 +159,8 @@
       "content": "Matéria demonstrativa relata questionamentos sobre transparência na destinação de recursos. Tom crítico com citação a lideranças de oposição.",
       "url": "https://exemplo-demo.local/noticias/extra-1",
       "source": "portal-noticias-demo.com.br",
-      "publishedAt": "2026-06-22T22:05:48.346Z",
-      "collectedAt": "2026-06-22T22:05:48.377Z"
+      "publishedAt": "2026-06-23T00:01:09.539Z",
+      "collectedAt": "2026-06-23T00:01:09.543Z"
     },
     {
       "id": "demo-news-extra-002",
@@ -169,8 +169,8 @@
       "content": "Conteúdo circula em grupos regionais com afirmações sem fonte primária verificável sobre votação simulada.",
       "url": "https://exemplo-demo.local/noticias/extra-2",
       "source": "canal-regional-demo.tv",
-      "publishedAt": "2026-06-22T21:05:48.377Z",
-      "collectedAt": "2026-06-22T21:07:28.377Z"
+      "publishedAt": "2026-06-22T23:01:09.543Z",
+      "collectedAt": "2026-06-22T23:02:49.543Z"
     },
     {
       "id": "demo-news-extra-003",
@@ -179,8 +179,8 @@
       "content": "Ato administrativo fictício reforça agenda institucional positiva do mandato monitorado.",
       "url": "https://exemplo-demo.local/noticias/extra-3",
       "source": "diario-oficial-demo.gov.br",
-      "publishedAt": "2026-06-22T20:05:48.377Z",
-      "collectedAt": "2026-06-22T20:09:08.377Z"
+      "publishedAt": "2026-06-22T22:01:09.543Z",
+      "collectedAt": "2026-06-22T22:04:29.543Z"
     },
     {
       "id": "demo-news-extra-004",
@@ -189,8 +189,8 @@
       "content": "Perfil verificado compartilha recorte de fala fora de contexto com alto engajamento simulado.",
       "url": "https://exemplo-demo.local/noticias/extra-4",
       "source": "@analista_politico_demo",
-      "publishedAt": "2026-06-22T19:05:48.377Z",
-      "collectedAt": "2026-06-22T19:10:48.377Z"
+      "publishedAt": "2026-06-22T21:01:09.543Z",
+      "collectedAt": "2026-06-22T21:06:09.543Z"
     },
     {
       "id": "demo-news-extra-005",
@@ -199,8 +199,8 @@
       "content": "Mensagens idênticas aparecem em três grupos distintos em intervalo de 12 minutos (simulação).",
       "url": "https://exemplo-demo.local/noticias/extra-5",
       "source": "Telegram — Grupo Cidade Exemplo",
-      "publishedAt": "2026-06-22T18:05:48.377Z",
-      "collectedAt": "2026-06-22T18:12:28.377Z"
+      "publishedAt": "2026-06-22T20:01:09.543Z",
+      "collectedAt": "2026-06-22T20:07:49.543Z"
     },
     {
       "id": "demo-news-extra-006",
@@ -209,8 +209,8 @@
       "content": "Menção positiva com alcance estimado de 48 mil impressões na demo.",
       "url": "https://exemplo-demo.local/noticias/extra-6",
       "source": "instagram.com/perfil_demo_educacao",
-      "publishedAt": "2026-06-22T17:05:48.377Z",
-      "collectedAt": "2026-06-22T17:14:08.377Z"
+      "publishedAt": "2026-06-22T19:01:09.543Z",
+      "collectedAt": "2026-06-22T19:09:29.543Z"
     }
   ]
 }

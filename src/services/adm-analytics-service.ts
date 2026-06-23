@@ -389,7 +389,7 @@ export async function getAdmAnalyticsStats(
     const filterCountMap = new Map<string, { filterType: string; filterValue: string; count: number }>();
     for (const event of filterEvents) {
       const filterType = readMetadataString(event.metadata, "filterType") ?? "tipo";
-      const filterValue = readMetadataString(event.metadata, "filterValue") ?? "—";
+      const filterValue = readMetadataString(event.metadata, "filterValue") ?? "-";
       const key = `${filterType}::${filterValue}`;
       const existing = filterCountMap.get(key);
       if (existing) {

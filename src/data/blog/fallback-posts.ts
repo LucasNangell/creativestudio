@@ -1,5 +1,7 @@
 import { PostStatus } from "@prisma/client";
 
+import { BLOG_ARTICLE_CONTENT } from "@/data/blog/articles-content";
+
 export type FallbackPostRecord = {
   id: string;
   title: string;
@@ -18,67 +20,121 @@ export type FallbackPostRecord = {
   updatedAt: Date;
 };
 
-export const FALLBACK_POSTS: FallbackPostRecord[] = [
+type PostDefinition = Omit<
+  FallbackPostRecord,
+  "id" | "content" | "status" | "author" | "createdAt" | "updatedAt"
+> & { id: string };
+
+const POST_DEFINITIONS: PostDefinition[] = [
   {
     id: "post-1",
-    title: "Por que demonstrar software em ação converte mais que screenshots",
-    slug: "demonstrar-software-em-acao",
+    title:
+      "Sistema sob medida: quando sua empresa deve parar de adaptar o processo à ferramenta",
+    slug: "sistema-sob-medida-quando-empresa-deve-parar-de-adaptar-processo-a-ferramenta",
     excerpt:
-      "Mostre, não conte: como demonstrações interativas reduzem objeções e aceleram decisões em projetos B2B.",
-    content:
-      "## O problema das promessas vazias no software B2B\n\nQuando uma empresa precisa contratar desenvolvimento de software, o maior risco percebido é comprar uma caixa preta — promessas sem prova técnica.\n\n### Por que screenshots não bastam\n\nCapturas estáticas não demonstram fluxos, usabilidade nem inteligência do sistema. O comprador precisa *sentir* o produto.\n\n## A vantagem das demonstrações interativas\n\nSimulações no próprio site permitem que o visitante experimente fluxos reais de CRM, dashboards e automações antes do primeiro contato comercial.\n\n### Mostre, não conte na prática\n\nKanban arrastável, filtros dinâmicos e KPIs em tempo real geram confiança imediata na competência do fornecedor.\n\n## Resultado para o negócio\n\nMais leads qualificados, conversas mais objetivas e percepção imediata de competência técnica — com menor ciclo de vendas.",
-    coverImage: "/assets/mockups/post-demo.webp",
-    category: "Conversão",
-    tags: ["demos", "b2b", "conversão", "produto"],
-    author: "Nangell Creative Studio",
-    status: PostStatus.PUBLISHED,
-    publishedAt: new Date("2026-05-10T10:00:00.000Z"),
-    createdAt: new Date("2026-05-10T10:00:00.000Z"),
-    updatedAt: new Date("2026-05-10T10:00:00.000Z"),
-    seoTitle: "Demos interativas convertem mais que screenshots",
+      "Nem toda empresa precisa de um sistema personalizado, mas algumas chegam a um ponto em que ferramentas genéricas começam a limitar o crescimento. Entenda os sinais.",
+    coverImage: "/assets/mockups/crm-inteligente.webp",
+    category: "Sistemas personalizados",
+    tags: ["sistemas sob medida", "automação", "produtividade", "gestão", "tecnologia para empresas"],
+    seoTitle: "Quando investir em sistema sob medida",
     seoDescription:
-      "Descubra como demonstrações interativas de software B2B aumentam confiança, qualificam leads e aceleram decisões de compra.",
+      "Veja quando um sistema sob medida passa a ser mais vantajoso do que planilhas e ferramentas prontas, e como identificar se sua empresa chegou a esse momento.",
+    publishedAt: new Date("2026-06-02T10:00:00.000Z"),
   },
   {
     id: "post-2",
-    title: "Arquitetura moderna para sistemas sob medida em 2026",
-    slug: "arquitetura-moderna-sistemas-2026",
+    title: "Automação de processos: como economizar tempo sem perder o controle da operação",
+    slug: "automacao-de-processos-como-economizar-tempo-sem-perder-controle",
     excerpt:
-      "Next.js, TypeScript, Prisma e observabilidade: a stack que usamos para escalar produtos digitais.",
-    content:
-      "## Fundação sólida com TypeScript e Prisma\n\nTypeScript, validação em camadas e ORM tipado reduzem bugs em produção e aceleram a evolução do produto.\n\n### Separação de responsabilidades\n\nFrontend, API routes, serviços e banco de dados com contratos claros facilitam manutenção e deploy seguro.\n\n## Performance e SEO com Next.js\n\nServer Components e renderização híbrida entregam Core Web Vitals excelentes sem sacrificar experiência interativa.\n\n### Indexação e metadados\n\nSitemaps dinâmicos, JSON-LD e meta-descrições otimizadas garantem visibilidade orgânica.\n\n## Operacionalização e observabilidade\n\nLogs estruturados, health checks e deploy previsível em Node.js são parte do produto, não um extra opcional.",
-    coverImage: "/assets/mockups/post-architecture.webp",
-    category: "Engenharia",
-    tags: ["nextjs", "typescript", "prisma", "arquitetura"],
-    author: "Nangell Creative Studio",
-    status: PostStatus.PUBLISHED,
-    publishedAt: new Date("2026-05-22T14:30:00.000Z"),
-    createdAt: new Date("2026-05-22T14:30:00.000Z"),
-    updatedAt: new Date("2026-05-22T14:30:00.000Z"),
-    seoTitle: "Arquitetura moderna para software sob medida",
+      "Automatizar não é substituir pessoas por robôs. É eliminar tarefas repetitivas, reduzir falhas e liberar a equipe para decisões mais importantes.",
+    coverImage: "/assets/mockups/monitoramento-tempo-real.webp",
+    category: "Automação",
+    tags: ["automação", "processos", "produtividade", "integração", "eficiência operacional"],
+    seoTitle: "Automação de processos para empresas",
     seoDescription:
-      "Guia de arquitetura moderna para software sob medida: Next.js, TypeScript, Prisma, performance e SEO em 2026.",
+      "Entenda como a automação de processos pode economizar tempo, reduzir erros e melhorar o controle operacional sem tornar a empresa dependente de soluções confusas.",
+    publishedAt: new Date("2026-06-05T10:00:00.000Z"),
   },
   {
     id: "post-3",
-    title: "Como estruturar um diagnóstico técnico antes de orçar software",
+    title: "Diagnóstico técnico antes do orçamento: o passo que evita projetos caros e mal planejados",
     slug: "diagnostico-tecnico-antes-do-orcamento",
     excerpt:
-      "Briefings bem feitos economizam tempo, reduzem retrabalho e aumentam a assertividade da proposta.",
-    content:
-      "## Contexto e dor real do negócio\n\nAntes de falar de tecnologia, mapeamos processo atual, gargalos operacionais e impacto financeiro no negócio.\n\n### Mapeamento de stakeholders\n\nEntrevistas com gestores e operadores revelam onde o software gera mais valor imediato.\n\n## Escopo, prioridades e MVP\n\nDefinimos MVP enxuto, integrações críticas e indicadores de sucesso mensuráveis para cada fase.\n\n### Estimativa de prazo realista\n\nMVPs podem levar de 6 a 12 semanas; sistemas completos, de 3 a 6 meses — sempre com marcos claros.\n\n## Próximo passo: proposta fundamentada\n\nCom diagnóstico claro, a proposta deixa de ser chute e vira plano de execução com entregáveis definidos.",
+      "Orçar software sem diagnóstico é como construir sem projeto. Entenda por que essa etapa evita retrabalho, custos inesperados e soluções desalinhadas.",
     coverImage: "/assets/mockups/post-diagnostico.webp",
     category: "Processo",
-    tags: ["diagnóstico", "briefing", "escopo", "consultoria"],
-    author: "Nangell Creative Studio",
-    status: PostStatus.PUBLISHED,
-    publishedAt: new Date("2026-06-01T09:00:00.000Z"),
-    createdAt: new Date("2026-06-01T09:00:00.000Z"),
-    updatedAt: new Date("2026-06-01T09:00:00.000Z"),
+    tags: ["diagnóstico técnico", "briefing", "orçamento", "desenvolvimento de software", "escopo"],
     seoTitle: "Diagnóstico técnico antes de orçar software",
     seoDescription:
-      "Como estruturar diagnóstico técnico e briefing de software: escopo, MVP, prazos e proposta comercial assertiva.",
+      "Saiba por que o diagnóstico técnico é essencial antes de orçar um sistema, app, automação ou plataforma digital, e como ele reduz riscos no desenvolvimento.",
+    publishedAt: new Date("2026-06-10T10:00:00.000Z"),
+  },
+  {
+    id: "post-4",
+    title: "Dashboards empresariais: como transformar dados espalhados em decisões rápidas",
+    slug: "dashboards-empresariais-como-transformar-dados-em-decisoes-rapidas",
+    excerpt:
+      "Empresas geram dados todos os dias, mas poucas conseguem usá-los bem. Veja como dashboards ajudam gestores a acompanhar resultados, gargalos e oportunidades.",
+    coverImage: "/assets/mockups/dashboard-bi.webp",
+    category: "Dashboards",
+    tags: ["dashboards", "indicadores", "gestão", "dados", "relatórios", "business intelligence"],
+    seoTitle: "Dashboards empresariais para decisões rápidas",
+    seoDescription:
+      "Entenda como dashboards empresariais centralizam indicadores, melhoram a tomada de decisão e reduzem a dependência de relatórios manuais.",
+    publishedAt: new Date("2026-06-08T10:00:00.000Z"),
+  },
+  {
+    id: "post-5",
+    title: "IA para pequenas empresas: onde ela realmente ajuda e onde pode virar desperdício",
+    slug: "ia-para-pequenas-empresas-onde-ajuda-e-onde-vira-desperdicio",
+    excerpt:
+      "A IA pode ajudar pequenas empresas a ganhar produtividade, mas nem todo problema precisa de inteligência artificial. Veja onde aplicar com estratégia.",
+    coverImage: "/assets/mockups/post-architecture.webp",
+    category: "Inteligência Artificial",
+    tags: [
+      "inteligência artificial",
+      "automação com IA",
+      "pequenas empresas",
+      "produtividade",
+      "atendimento",
+    ],
+    seoTitle: "IA para pequenas empresas: onde usar",
+    seoDescription:
+      "Entenda como pequenas empresas podem usar inteligência artificial com segurança, evitando modismos e priorizando aplicações que realmente geram resultado.",
+    publishedAt: new Date("2026-06-12T10:00:00.000Z"),
+  },
+  {
+    id: "post-6",
+    title: "Site profissional não é só aparência: como transformar visitantes em oportunidades reais",
+    slug: "site-profissional-nao-e-so-aparencia-como-transformar-visitantes-em-oportunidades",
+    excerpt:
+      "Um site bonito ajuda, mas não basta. Para gerar oportunidades, ele precisa ter clareza, velocidade, conteúdo convincente e chamadas bem posicionadas.",
+    coverImage: "/assets/mockups/site-psicologia-profissional.webp",
+    category: "Presença digital",
+    tags: ["site profissional", "conversão", "landing page", "presença digital", "desenvolvimento web"],
+    seoTitle: "Site profissional que gera oportunidades",
+    seoDescription:
+      "Entenda por que um site profissional precisa unir design, conteúdo, performance e estratégia de conversão para transformar visitantes em clientes.",
+    publishedAt: new Date("2026-06-15T10:00:00.000Z"),
   },
 ];
+
+function buildPost(definition: PostDefinition): FallbackPostRecord {
+  const content = BLOG_ARTICLE_CONTENT[definition.slug];
+  if (!content) {
+    throw new Error(`Missing article content for slug: ${definition.slug}`);
+  }
+
+  return {
+    ...definition,
+    content,
+    author: "Nangell Creative Studio",
+    status: PostStatus.PUBLISHED,
+    createdAt: definition.publishedAt,
+    updatedAt: definition.publishedAt,
+  };
+}
+
+export const FALLBACK_POSTS: FallbackPostRecord[] = POST_DEFINITIONS.map(buildPost);
 
 export const FALLBACK_POST_SLUGS = FALLBACK_POSTS.map((post) => post.slug);

@@ -24,7 +24,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     title: "1. Introdução",
     content: [
       "A Nangell Creative Studio (“Nangell”, “nós” ou “nosso”) respeita a privacidade dos visitantes, clientes e usuários de nosso site institucional (nangell.com.br e domínios associados).",
-      "Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
+      "Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).",
       "Ao utilizar nosso site, formulários ou demonstrações interativas, você declara ter lido e compreendido esta política.",
     ],
   },
@@ -32,9 +32,9 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     id: "dados-coletados",
     title: "2. Dados coletados",
     content: [
-      "Dados de identificação e contato: nome, e-mail, telefone, empresa e mensagem — fornecidos voluntariamente em formulários de contato, diagnóstico ou newsletter.",
-      "Dados de navegação: endereço IP, tipo de navegador, páginas visitadas, tempo de permanência e origem de tráfego — coletados automaticamente via cookies e ferramentas de analytics.",
-      "Dados de interação com demonstrações: ações realizadas nas demonstrações interativas (ex.: movimentação de cards, filtros aplicados) — armazenados localmente no navegador (session storage) e não vinculados a identificação pessoal.",
+      "Dados de identificação e contato: nome, e-mail, telefone, empresa e mensagem, fornecidos voluntariamente em formulários de contato, diagnóstico ou newsletter.",
+      "Dados de navegação: endereço IP, tipo de navegador, páginas visitadas, tempo de permanência e origem de tráfego, coletados automaticamente via cookies e ferramentas de analytics.",
+      "Dados de interação com demonstrações: ações realizadas nas demonstrações interativas (ex.: movimentação de cards, filtros aplicados), armazenados localmente no navegador (session storage) e não vinculados a identificação pessoal.",
       "Dados de campanha: parâmetros UTM (utm_source, utm_medium, utm_campaign) quando presentes na URL de acesso.",
     ],
   },
@@ -55,7 +55,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     content: [
       "Consentimento: quando você marca a opção de consentimento LGPD em formulários.",
       "Execução de contrato ou procedimentos preliminares: quando o tratamento é necessário para atender sua solicitação comercial.",
-      "Legítimo interesse: para analytics agregados, segurança e melhoria contínua do site — sempre respeitando seus direitos.",
+      "Legítimo interesse: para analytics agregados, segurança e melhoria contínua do site, sempre respeitando seus direitos.",
       "Obrigação legal: quando exigido por autoridade competente.",
     ],
   },
@@ -64,7 +64,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     title: "5. Armazenamento e retenção",
     content: [
       "Dados de leads são armazenados em banco de dados seguro (MySQL) em servidores com acesso restrito.",
-      "Retemos dados de contato pelo tempo necessário para atender sua solicitação e, posteriormente, por até 5 anos para fins de histórico comercial e obrigações legais — salvo solicitação de exclusão antecipada.",
+      "Retemos dados de contato pelo tempo necessário para atender sua solicitação e, posteriormente, por até 5 anos para fins de histórico comercial e obrigações legais, salvo solicitação de exclusão antecipada.",
       "Dados de analytics são retidos conforme políticas do Google Analytics (GA4), tipicamente por 14 meses.",
       "Dados de demonstrações interativas permanecem apenas no seu navegador e são apagados ao encerrar a sessão ou limpar o cache.",
     ],
@@ -83,7 +83,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     title: "7. Cookies e tecnologias de rastreamento",
     content: [
       "Utilizamos cookies essenciais para funcionamento do site e cookies analíticos (Google Analytics 4 / Google Tag Manager) para medir tráfego e conversões.",
-      "Cookies de sessão nas demonstrações interativas armazenam estado local da simulação — sem identificação pessoal.",
+      "Cookies de sessão nas demonstrações interativas armazenam estado local da simulação, sem identificação pessoal.",
       "Você pode gerenciar cookies nas configurações do seu navegador. A desativação de cookies analíticos não impede o uso do site, mas limita nossa capacidade de melhorar a experiência com base em dados.",
     ],
   },
@@ -150,7 +150,7 @@ export const termosUsoSections: LegalSection[] = [
     id: "demonstracoes",
     title: "3. Uso das demonstrações interativas",
     content: [
-      "As demonstrações em /demo/* são simulações frontend com dados fictícios, destinadas a ilustrar capacidades técnicas — não constituem produtos finais ou contratos de prestação de serviço.",
+      "As demonstrações em /demo/* são simulações frontend com dados fictícios, destinadas a ilustrar capacidades técnicas, não constituem produtos finais ou contratos de prestação de serviço.",
       "O comportamento, dados e funcionalidades das demonstrações podem ser alterados, atualizados ou descontinuados sem aviso prévio.",
       "É vedado utilizar dados reais de terceiros, informações sensíveis ou conteúdo protegido por direitos autorais dentro das simulações.",
     ],
@@ -177,7 +177,7 @@ export const termosUsoSections: LegalSection[] = [
     id: "propriedade-intelectual",
     title: "6. Propriedade intelectual",
     content: [
-      "Todo o conteúdo do site — textos, design, código-fonte, logotipos, mockups, demonstrações e documentação — é propriedade da Nangell Creative Studio ou licenciado para uso exclusivo.",
+      "Todo o conteúdo do site, textos, design, código-fonte, logotipos, mockups, demonstrações e documentação, é propriedade da Nangell Creative Studio ou licenciado para uso exclusivo.",
       "É proibida a reprodução, distribuição, modificação ou uso comercial de qualquer material sem autorização prévia por escrito.",
       "Marcas, nomes comerciais e logotipos de terceiros exibidos em cases ou referências pertencem aos respectivos titulares.",
     ],

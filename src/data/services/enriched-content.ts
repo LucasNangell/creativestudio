@@ -26,12 +26,12 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         title: "Arquitetura preparada para escala",
         description:
-          "Modularidade desde o MVP — sem refatoração traumática quando o produto cresce.",
+          "Modularidade desde o MVP, sem refatoração traumática quando o produto cresce.",
       },
       {
         title: "Demonstrações interativas no site",
         description:
-          "Mostramos CRM, BI e SaaS funcionando antes da contratação — mostre, não conte.",
+          "Mostramos CRM, BI e SaaS funcionando antes da contratação, mostre, não conte.",
       },
       {
         title: "Engenharia + estratégia comercial",
@@ -53,7 +53,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         question: "Qual stack vocês recomendam para sistemas web B2B?",
         answer:
-          "Next.js, TypeScript, Prisma e MySQL/PostgreSQL para a maioria dos casos — com arquitetura ajustada ao volume, integrações e roadmap.",
+          "Next.js, TypeScript, Prisma e MySQL/PostgreSQL para a maioria dos casos, com arquitetura ajustada ao volume, integrações e roadmap.",
       },
       {
         question: "O painel administrativo está incluso?",
@@ -90,10 +90,10 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         title: "Mobile-first de verdade",
         description:
-          "Fluxos pensados para polegar, campo e conexão instável — não apenas site responsivo.",
+          "Fluxos pensados para polegar, campo e conexão instável, não apenas site responsivo.",
       },
       {
-        title: "PWA ou nativo — decisão técnica honesta",
+        title: "PWA ou nativo, decisão técnica honesta",
         description:
           "Recomendamos a abordagem certa para loja, distribuição interna e recursos nativos.",
       },
@@ -110,7 +110,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
     ],
     faq: [
       {
-        question: "PWA ou app nativo — qual escolher?",
+        question: "PWA ou app nativo, qual escolher?",
         answer:
           "PWA quando distribuição rápida, custo menor e recursos nativos limitados bastam. Nativo quando câmera, GPS avançado ou lojas são requisito central.",
       },
@@ -224,7 +224,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         title: "Orquestração resiliente",
         description:
-          "Filas, retries, dead-letter e logs — automação que não quebra silenciosamente.",
+          "Filas, retries, dead-letter e logs, automação que não quebra silenciosamente.",
       },
       {
         title: "Python + Node sob medida",
@@ -246,7 +246,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         question: "Automação substitui integração nativa entre sistemas?",
         answer:
-          "Em muitos casos, sim — como ponte rápida. Quando volume e criticidade exigem, evoluímos para APIs dedicadas.",
+          "Em muitos casos, sim, como ponte rápida. Quando volume e criticidade exigem, evoluímos para APIs dedicadas.",
       },
       {
         question: "Como garantem que o robô não falhe silenciosamente?",
@@ -283,7 +283,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         title: "Data storytelling",
         description:
-          "Narrativa visual que diretores entendem em segundos — não apenas gráficos soltos.",
+          "Narrativa visual que diretores entendem em segundos, não apenas gráficos soltos.",
       },
       {
         title: "Demonstração BI interativa",
@@ -353,7 +353,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         title: "Conversão antes de estética vazia",
         description:
-          "Cada seção tem objetivo comercial — hero, prova, objeção, CTA.",
+          "Cada seção tem objetivo comercial, hero, prova, objeção, CTA.",
       },
       {
         title: "Tracking configurado",
@@ -397,7 +397,7 @@ export const solucoesPageContent = {
     eyebrow: "Soluções",
     title: "Software sob medida para cada momento do seu negócio",
     description:
-      "Da automação pontual ao SaaS completo — escolha a solução certa, compare abordagens e veja demonstrações reais antes de investir.",
+      "Da automação pontual ao SaaS completo, escolha a solução certa, compare abordagens e veja demonstrações reais antes de investir.",
   },
   momentFit: {
     title: "Qual solução combina com seu momento?",
@@ -503,7 +503,7 @@ export const solucoesPageContent = {
   cta: {
     title: "Não sabe por onde começar?",
     description:
-      "Nosso diagnóstico gratuito mapeia gargalos, estima ROI e indica a solução ideal — sem compromisso.",
+      "Nosso diagnóstico gratuito mapeia gargalos, estima ROI e indica a solução ideal, sem compromisso.",
     primaryLabel: "Solicitar diagnóstico gratuito",
     primaryHref: "/diagnostico",
     secondaryLabel: "Falar no WhatsApp",

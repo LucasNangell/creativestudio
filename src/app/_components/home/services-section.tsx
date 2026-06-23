@@ -30,7 +30,7 @@ export function ServicesSection() {
           <SectionHeading
             eyebrow="O que construímos"
             title="Software sob medida para cada desafio de negócio"
-            description="Do MVP ao sistema enterprise — entregamos soluções completas com engenharia, design e estratégia comercial integrados."
+            description="Do MVP ao sistema enterprise, entregamos soluções completas com engenharia, design e estratégia comercial integrados."
           />
         </Reveal>
 

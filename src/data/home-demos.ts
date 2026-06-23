@@ -12,7 +12,7 @@ export type HomeDemo = {
   isFeatured: boolean;
 };
 
-/** Demos da home derivadas do portfólio — mesma ordem, títulos e rotas dos cases. */
+/** Demos da home derivadas do portfólio, mesma ordem, títulos e rotas dos cases. */
 export const homeDemos: HomeDemo[] = [...FALLBACK_PROJECTS]
   .filter((project) => project.demoRoute)
   .sort((a, b) => a.sortOrder - b.sortOrder)

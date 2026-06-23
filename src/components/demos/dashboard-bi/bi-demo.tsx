@@ -82,7 +82,7 @@ export function BiDemo() {
   };
 
   const handleExport = () => {
-    setExportMsg("Exportação simulada — arquivo BI-simulacao.csv gerado.");
+    setExportMsg("Exportação simulada, arquivo BI-simulacao.csv gerado.");
     trackDemoFinish(DEMO_ID, "export_csv");
     setTimeout(() => setExportMsg(""), 4000);
   };

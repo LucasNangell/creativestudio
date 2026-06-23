@@ -76,14 +76,14 @@ export function DesignSystemShowcase() {
       <Section className="relative pt-8 sm:pt-12">
         <Container>
           <PageHero
-            eyebrow="Fase 3 — Design System"
+            eyebrow="Fase 3, Design System"
             title={
               <>
                 Componentes globais para{" "}
                 <span className="text-gradient-brand">software premium</span>
               </>
             }
-            description="Página temporária para validar o design system definitivo — header, footer, UI base, mockups e padrões visuais dark tech."
+            description="Página temporária para validar o design system definitivo, header, footer, UI base, mockups e padrões visuais dark tech."
           >
             <Button size="lg">Solicitar diagnóstico</Button>
             <Button variant="outline" size="lg" onClick={() => setModalOpen(true)}>

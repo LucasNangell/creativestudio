@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/** True only after the client has hydrated — use to defer browser-only UI. */
+/** True only after the client has hydrated, use to defer browser-only UI. */
 export function useHydrated(): boolean {
   const [hydrated, setHydrated] = useState(false);
 

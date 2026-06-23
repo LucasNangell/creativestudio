@@ -17,7 +17,7 @@ export function DifferentialsSection() {
           <SectionHeading
             eyebrow="Diferenciais"
             title="Por que empresas escolhem a Nangell"
-            description="Engenharia de ponta aliada a visão comercial — cada entrega é um case de competência técnica."
+            description="Engenharia de ponta aliada a visão comercial, cada entrega é um case de competência técnica."
           />
         </Reveal>
 

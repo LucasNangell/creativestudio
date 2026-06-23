@@ -19,7 +19,7 @@ export const metadata: Metadata = createPageMetadata({
 export default async function BlogPage() {
   const posts = await getPublishedPosts();
   const filters = collectBlogFilterOptions(posts);
-  const featured = getFeaturedPost(posts);
+  const featured = getFeaturedPost(posts, blogPageContent.featuredSlug);
 
   return (
     <main className="relative min-h-screen bg-noise-overlay">

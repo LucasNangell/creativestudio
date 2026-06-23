@@ -31,7 +31,7 @@ export const portfolioPageContent = {
   seo: {
     title: "Portfólio e Cases | Nangell Creative Studio",
     description:
-      "Sistemas reais desenvolvidos pela Nangell: doações, produção gráfica, vídeo corporativo, automação PDF, sharescreen LAN, site clínico, inteligência política e marketing de links — com demonstrações interativas.",
+      "Sistemas reais desenvolvidos pela Nangell: doações, produção gráfica, vídeo corporativo, automação PDF, sharescreen LAN, site clínico, inteligência política e marketing de links, com demonstrações interativas.",
     keywords: [
       "portfólio software",
       "cases reais",
@@ -51,7 +51,7 @@ export const portfolioPageContent = {
   showDontTell: {
     title: "Mostre, não conte",
     description:
-      "O diferencial da Nangell é colocar o visitante dentro do software. Explore os cases e abra a demonstração no mesmo domínio — sem cadastro, sem agendar reunião para ver valor.",
+      "O diferencial da Nangell é colocar o visitante dentro do software. Explore os cases e abra a demonstração no mesmo domínio, sem cadastro, sem agendar reunião para ver valor.",
     highlights: [
       "Demonstrações nativas no navegador com dados fictícios",
       "Cases com problema, solução e métricas",
@@ -61,7 +61,7 @@ export const portfolioPageContent = {
   filters: {
     title: "Explorar cases",
     description:
-      "Oito projetos reais do portfólio — doações, vídeo corporativo, automação PDF, produção gráfica, sharescreen LAN, site clínico, inteligência política e Encurtou.pro. Abra cada case e teste a demonstração.",
+      "Oito projetos reais do portfólio, doações, vídeo corporativo, automação PDF, produção gráfica, sharescreen LAN, site clínico, inteligência política e Encurtou.pro. Abra cada case e teste a demonstração.",
   },
   cta: {
     title: "Quer um sistema parecido com um desses cases?",
@@ -165,7 +165,7 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
       {
         name: "Edge Cloudflare",
         description:
-          "Workers para resolve/click/invalidate com cache e fila assíncrona — latência baixa em picos de campanha.",
+          "Workers para resolve/click/invalidate com cache e fila assíncrona, latência baixa em picos de campanha.",
       },
       {
         name: "Monetização",

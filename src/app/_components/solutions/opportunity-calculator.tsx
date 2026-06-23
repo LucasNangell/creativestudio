@@ -82,7 +82,7 @@ export function OpportunityCalculator() {
             </h2>
             <p className="mt-3 text-base text-nangell-muted">
               Estime quanto sua operação pode economizar automatizando tarefas
-              repetitivas — números conservadores para iniciar a conversa.
+              repetitivas, números conservadores para iniciar a conversa.
             </p>
           </div>
         </Reveal>

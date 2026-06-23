@@ -185,7 +185,7 @@ export function PsicologiaDemo() {
                 </h1>
                 <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#5A6B7A]">
                   Atendimento presencial e online com Terapia Cognitivo-Comportamental. Espaço
-                  seguro para ansiedade, autoestima, sexualidade e autoconhecimento — simulação com
+                  seguro para ansiedade, autoestima, sexualidade e autoconhecimento, simulação com
                   dados fictícios.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -309,7 +309,7 @@ export function PsicologiaDemo() {
               <div className="mt-8 grid gap-8 lg:grid-cols-2">
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wide text-[#7A8B99]">
-                    Calendário — próximas 6 semanas
+                    Calendário, próximas 6 semanas
                   </h3>
                   <div className="mt-3 grid grid-cols-7 gap-1.5">
                     {calendarDays.map((day) => (

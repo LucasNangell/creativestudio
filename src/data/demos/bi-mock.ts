@@ -35,7 +35,7 @@ export const BI_ALERTS: BiAlert[] = [
     id: "a1",
     severity: "critical",
     title: "Queda de 12% na região Sul",
-    description: "Receita abaixo da meta nos últimos 7 dias — revisar campanha Q2.",
+    description: "Receita abaixo da meta nos últimos 7 dias, revisar campanha Q2.",
   },
   {
     id: "a2",
@@ -47,7 +47,7 @@ export const BI_ALERTS: BiAlert[] = [
     id: "a3",
     severity: "info",
     title: "Meta mensal atingida",
-    description: "Sudeste superou meta de receita em 8% — oportunidade de upsell.",
+    description: "Sudeste superou meta de receita em 8%, oportunidade de upsell.",
   },
 ];
 

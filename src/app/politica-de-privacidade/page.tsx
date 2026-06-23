@@ -19,7 +19,7 @@ export default function PoliticaPrivacidadePage() {
     <LegalDocument
       title="Política de Privacidade"
       lastUpdated="junho de 2026"
-      intro="Esta política descreve como a Nangell Creative Studio trata dados pessoais em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)."
+      intro="Esta política descreve como a Nangell Creative Studio trata dados pessoais em conformidade com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018)."
       sections={politicaPrivacidadeSections}
     />
   );

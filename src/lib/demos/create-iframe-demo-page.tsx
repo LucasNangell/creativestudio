@@ -10,7 +10,7 @@ export function createIframeDemoPage(slug: keyof typeof IFRAME_DEMO_CONFIG) {
 
   return {
     metadata: createPageMetadata({
-      title: `Demonstração — ${config.title}`,
+      title: `Demonstração, ${config.title}`,
       description: config.subtitle,
       path: `/demo/${slug}`,
       keywords: config.keywords,

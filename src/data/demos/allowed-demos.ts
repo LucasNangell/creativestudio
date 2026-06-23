@@ -10,7 +10,7 @@ export const ALLOWED_DEMO_SLUGS = [
   "site-psicologia-profissional",
 ] as const;
 
-/** Demos legadas removidas — redirecionam para /portfolio. */
+/** Demos legadas removidas, redirecionam para /portfolio. */
 export const LEGACY_DEMO_SLUGS = [
   "crm-inteligente",
   "dashboard-bi",

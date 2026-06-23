@@ -24,8 +24,8 @@ const SETTING_LABELS: Record<(typeof SITE_SETTING_KEYS)[number], string> = {
   social_linkedin: "LinkedIn",
   social_instagram: "Instagram",
   social_github: "GitHub",
-  default_seo_title: "SEO — título padrão",
-  default_seo_description: "SEO — descrição padrão",
+  default_seo_title: "SEO, título padrão",
+  default_seo_description: "SEO, descrição padrão",
   maintenance_mode: "Modo manutenção",
 };
 

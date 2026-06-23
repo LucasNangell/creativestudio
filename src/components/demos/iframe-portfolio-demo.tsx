@@ -60,7 +60,7 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
         ) : (
           <div className={cn(config.minWidth ? "overflow-x-auto rounded-nangell" : undefined)}>
             <iframe
-              title={`Demonstração interativa — ${config.title}`}
+              title={`Demonstração interativa, ${config.title}`}
               src={config.iframeSrc}
               className={cn(
                 "w-full rounded-nangell border border-glass-border bg-white",
@@ -79,7 +79,7 @@ export function IframePortfolioDemo({ config }: IframePortfolioDemoProps) {
           </div>
         )}
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-nangell-muted">
-          <span>Dados 100% fictícios — simulação para portfólio.</span>
+          <span>Dados 100% fictícios, simulação para portfólio.</span>
           <Link
             href={config.iframeSrc}
             target="_blank"

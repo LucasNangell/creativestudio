@@ -36,9 +36,9 @@ export function BrandLogo({
   const { width, height } = sizeMap[variant];
 
   const altByVariant = {
-    horizontal: "Nangell Creative Studio — logomarca horizontal",
-    vertical: "Nangell Creative Studio — logomarca vertical",
-    icon: "Nangell Creative Studio — ícone da marca",
+    horizontal: "Nangell Creative Studio, logomarca horizontal",
+    vertical: "Nangell Creative Studio, logomarca vertical",
+    icon: "Nangell Creative Studio, ícone da marca",
   } as const;
 
   return (
