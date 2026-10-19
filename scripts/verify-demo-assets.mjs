@@ -16,7 +16,7 @@ const REQUIRED = [
   "public/demos/vigilia-politica/index.html",
   "public/demos/vigilia-politica/logo.png",
   "public/demos/vigilia-portfolio-fix.css",
-  "public/demos/encurtou-pro/index.html",
+  "public/demos/linkneo-pro/index.html",
 ];
 
 const missing = REQUIRED.filter((rel) => !fs.existsSync(path.join(root, rel)));

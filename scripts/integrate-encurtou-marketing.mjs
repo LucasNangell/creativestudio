@@ -1,5 +1,5 @@
 /**
- * Copia o painel LinkNeo.pro (index.html + assets) para public/demos/encurtou-pro/.
+ * Copia o painel LinkNeo.pro (index.html + assets) para public/demos/linkneo-pro/.
  * Fonte: portfolio-imports/web/encurtou-pro/dashboard/
  * Uso: node scripts/integrate-encurtou-marketing.mjs
  */
@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const sourceDir = path.join(root, "portfolio-imports", "web", "encurtou-pro", "dashboard");
-const destDir = path.join(root, "public", "demos", "encurtou-pro");
+const destDir = path.join(root, "public", "demos", "linkneo-pro");
 
 const DASHBOARD_FILES = [
   "index.html",
@@ -54,7 +54,7 @@ function copyDashboard() {
     fs.writeFileSync(path.join(destDir, file), content, "utf8");
   }
 
-  console.log(`LinkNeo dashboard → public/demos/encurtou-pro/ (${DASHBOARD_FILES.length} arquivos)`);
+  console.log(`LinkNeo dashboard → public/demos/linkneo-pro/ (${DASHBOARD_FILES.length} arquivos)`);
 }
 
 copyDashboard();

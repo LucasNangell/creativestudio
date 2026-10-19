@@ -20,7 +20,7 @@ export const EXTERNAL_DEMO_CONFIG: Record<string, ExternalDemoConfig> = {
       "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques e campanhas UTM, produto em produção.",
     ctaLabel: "Quero uma plataforma de links parecida",
     externalUrl: "https://linkneo.pro",
-    previewIframeSrc: "/demos/encurtou-pro/index.html",
+    previewIframeSrc: "/demos/linkneo-pro/index.html",
     previewMinHeight: 820,
     desktopRecommended: true,
     keywords: [

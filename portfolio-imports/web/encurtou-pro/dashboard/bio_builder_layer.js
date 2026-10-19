@@ -1471,7 +1471,7 @@ function syncHeroBlockWithProfile() {
         heroBlock.badge = BIO_PAGE_TYPE_LABELS[currentBioPage.page_type] || 'Bio';
     }
     if (heroBlock.subtitle === undefined || heroBlock.subtitle === null) {
-        heroBlock.subtitle = currentBioPage.selected_goal_key ? GOAL_TEMPLATES[currentBioPage.selected_goal_key]?.name || '' : (meta.slug ? `encurtou.pro/bio/${meta.slug}` : 'Página pronta para publicar');
+        heroBlock.subtitle = currentBioPage.selected_goal_key ? GOAL_TEMPLATES[currentBioPage.selected_goal_key]?.name || '' : (meta.slug ? `linkneo.pro/bio/${meta.slug}` : 'Página pronta para publicar');
     }
 }
 
@@ -1804,7 +1804,7 @@ function renderBioPageShellHtml(schema, isPreview = true, options = {}) {
     const blocks = schema.blocks || [];
     const heroBlock = blocks.find(block => block.type === 'hero') || bioCreateBlock('hero');
     const contentBlocks = blocks.filter(block => block.id !== heroBlock.id);
-    const slugLabel = meta.slug ? `encurtou.pro/bio/${meta.slug}` : 'Defina um slug para publicar';
+    const slugLabel = meta.slug ? `linkneo.pro/bio/${meta.slug}` : 'Defina um slug para publicar';
     const hasHeroBadge = Object.prototype.hasOwnProperty.call(heroBlock, 'badge');
     const hasHeroSubtitle = Object.prototype.hasOwnProperty.call(heroBlock, 'subtitle');
     const heroBadge = hasHeroBadge ? String(heroBlock.badge ?? '') : String(BIO_PAGE_TYPE_LABELS[schema.page_type] || 'Bio');
@@ -1843,7 +1843,7 @@ function renderBioPageShellHtml(schema, isPreview = true, options = {}) {
                 <div class="bio-content">
                     ${contentBlocks.map(renderBlockHtml).join('')}
                 </div>
-                <div class="bio-footer">Criado com <a href="https://encurtou.pro" target="_blank"> Encurtou.pro</a></div>
+                <div class="bio-footer">Criado com <a href="https://linkneo.pro" target="_blank"> LinkNeo.pro</a></div>
             </div>
         </div>
     `;

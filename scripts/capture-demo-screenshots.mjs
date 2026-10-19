@@ -110,10 +110,10 @@ const CAPTURES = [
     },
   },
   {
-    slug: "encurtou-pro",
+    slug: "linkneo-pro",
     prepare: async (page) => {
       await page.setViewportSize({ width: 1440, height: 900 });
-      const localUrl = `${BASE_URL}/demos/encurtou-pro/index.html`;
+      const localUrl = `${BASE_URL}/demos/linkneo-pro/index.html`;
       try {
         await goto(page, localUrl);
         await page.waitForSelector("#section-home", { timeout: 20_000 });
