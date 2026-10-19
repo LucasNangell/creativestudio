@@ -1,5 +1,5 @@
 /**
- * Copia o painel Encurtou (index.html + assets) para public/demos/encurtou-pro/.
+ * Copia o painel LinkNeo.pro (index.html + assets) para public/demos/encurtou-pro/.
  * Fonte: portfolio-imports/web/encurtou-pro/dashboard/
  * Uso: node scripts/integrate-encurtou-marketing.mjs
  */
@@ -31,7 +31,7 @@ function patchIndexHtml(content) {
 function copyDashboard() {
   if (!fs.existsSync(sourceDir)) {
     console.warn(
-      "portfolio-imports/web/encurtou-pro/dashboard não encontrado — pulando integração Encurtou.",
+      "portfolio-imports/web/encurtou-pro/dashboard não encontrado — pulando integração LinkNeo.",
     );
     return;
   }
@@ -54,7 +54,7 @@ function copyDashboard() {
     fs.writeFileSync(path.join(destDir, file), content, "utf8");
   }
 
-  console.log(`Encurtou dashboard → public/demos/encurtou-pro/ (${DASHBOARD_FILES.length} arquivos)`);
+  console.log(`LinkNeo dashboard → public/demos/encurtou-pro/ (${DASHBOARD_FILES.length} arquivos)`);
 }
 
 copyDashboard();

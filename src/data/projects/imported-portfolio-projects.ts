@@ -248,14 +248,14 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
       "Central de inteligência política com War Room e alertas, demonstração interativa com dados fictícios.",
   },
   {
-    id: "fallback-encurtou-pro",
-    title: "Encurtou.pro, Plataforma de Marketing de Links",
-    slug: "encurtou-pro",
+    id: "fallback-linkneo-pro",
+    title: "LinkNeo.pro, Plataforma de Marketing de Links",
+    slug: "linkneo-pro",
     category: "Marketing Digital / SaaS",
     shortDescription:
       "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques, campanhas UTM, A/B testing e assinaturas, produto SaaS em produção.",
     fullDescription:
-      "O Encurtou.pro é uma plataforma completa de marketing de links desenvolvida para campanhas, mandatos e equipes de marketing que precisam medir o que acontece depois do clique. Em um único painel, o usuário cria links curtos personalizados, gera QR Codes dinâmicos com logo e cores da marca, monta Bio Pages (microsites de link na bio), organiza ativos em pastas e tags, e acompanha analytics detalhados, origem, dispositivo, localização, horário e funil de conversão. O sistema suporta campanhas com parâmetros UTM, testes A/B de destino com pesos configuráveis, regras de vigência de links, deep linking mobile, preview social para compartilhamento e pixels de retargeting. A camada de redirecionamento registra cada clique, anexa identificador para atribuição de conversão e pode operar via edge Cloudflare para baixa latência em alto volume. Há módulo de equipes, programa de afiliados, checkout de assinatura integrado ao Asaas com webhooks, entitlements por plano (freemium a avançado) e painel administrativo. Publicado em produção em encurtou.pro.",
+      "O LinkNeo.pro é uma plataforma completa de marketing de links desenvolvida para campanhas, mandatos e equipes de marketing que precisam medir o que acontece depois do clique. Em um único painel, o usuário cria links curtos personalizados, gera QR Codes dinâmicos com logo e cores da marca, monta Bio Pages (microsites de link na bio), organiza ativos em pastas e tags, e acompanha analytics detalhados, origem, dispositivo, localização, horário e funil de conversão. O sistema suporta campanhas com parâmetros UTM, testes A/B de destino com pesos configuráveis, regras de vigência de links, deep linking mobile, preview social para compartilhamento e pixels de retargeting. A camada de redirecionamento registra cada clique, anexa identificador para atribuição de conversão e pode operar via edge Cloudflare para baixa latência em alto volume. Há módulo de equipes, programa de afiliados, checkout de assinatura integrado ao Asaas com webhooks, entitlements por plano (freemium a avançado) e painel administrativo. Publicado em produção em linkneo.pro.",
     problem:
       "Times de marketing e gabinetes dependiam de encurtadores gratuitos que expiram links, não rastreiam conversões e não permitem QR dinâmico nem bio pages, com analytics fragmentados por canal.",
     solution:
@@ -275,13 +275,13 @@ export const IMPORTED_PORTFOLIO_PROJECTS = [
     gallery: [],
     metrics: [
       { label: "Módulos", value: "8", description: "Links, QR, bio pages, analytics, UTM, A/B, billing, afiliados" },
-      { label: "Status", value: "Em produção", description: "encurtou.pro" },
+      { label: "Status", value: "Em produção", description: "linkneo.pro" },
     ],
     demoType: DemoType.EXTERNAL,
-    demoRoute: "/demo/encurtou-pro",
+    demoRoute: "/demo/linkneo-pro",
     isFeatured: true,
     sortOrder: 14,
-    seoTitle: "Case Encurtou.pro, Marketing de Links | Nangell Creative Studio",
+    seoTitle: "Case LinkNeo.pro, Marketing de Links | Nangell Creative Studio",
     seoDescription:
       "Plataforma SaaS de encurtamento, QR dinâmico, bio pages e analytics, demonstração no ambiente de produção.",
   },

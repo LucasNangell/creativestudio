@@ -13,13 +13,13 @@ export type ExternalDemoConfig = {
 };
 
 export const EXTERNAL_DEMO_CONFIG: Record<string, ExternalDemoConfig> = {
-  "encurtou-pro": {
-    slug: "encurtou-pro",
-    title: "Encurtou.pro, Marketing de Links",
+  "linkneo-pro": {
+    slug: "linkneo-pro",
+    title: "LinkNeo.pro, Marketing de Links",
     subtitle:
       "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques e campanhas UTM, produto em produção.",
     ctaLabel: "Quero uma plataforma de links parecida",
-    externalUrl: "https://encurtou.pro",
+    externalUrl: "https://linkneo.pro",
     previewIframeSrc: "/demos/encurtou-pro/index.html",
     previewMinHeight: 820,
     desktopRecommended: true,
@@ -30,6 +30,7 @@ export const EXTERNAL_DEMO_CONFIG: Record<string, ExternalDemoConfig> = {
       "UTM",
       "analytics",
       "marketing digital",
+      "LinkNeo",
     ],
   },
 };

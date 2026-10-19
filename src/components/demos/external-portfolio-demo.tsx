@@ -33,8 +33,9 @@ export function ExternalPortfolioDemo({ config }: ExternalPortfolioDemoProps) {
               Demonstração no ambiente de produção
             </p>
             <p className="mt-1 text-sm text-nangell-muted">
-              O Encurtou.pro é um sistema PHP + MySQL com autenticação, pagamentos e edge
-              Cloudflare. Por segurança, o painel completo abre em nova aba no domínio oficial.
+              O {config.title.split(",")[0]} é um sistema PHP + MySQL com autenticação,
+              pagamentos e edge Cloudflare. Por segurança, o painel completo abre em nova aba
+              no domínio oficial.
             </p>
           </div>
           <Link
@@ -43,7 +44,7 @@ export function ExternalPortfolioDemo({ config }: ExternalPortfolioDemoProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-nangell bg-nangell-electric px-5 py-2.5 text-sm font-semibold text-nangell-dark hover:bg-nangell-cyan"
           >
-            Abrir Encurtou.pro
+            Abrir {config.title.split(",")[0]}
             <ExternalLink className="h-4 w-4" aria-hidden />
           </Link>
         </div>

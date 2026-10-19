@@ -61,7 +61,7 @@ export const portfolioPageContent = {
   filters: {
     title: "Explorar cases",
     description:
-      "Filtre por categoria: doações, vídeo corporativo, automação PDF, produção gráfica, LAN, site clínico, inteligência política e Encurtou.pro.",
+      "Filtre por categoria: doações, vídeo corporativo, automação PDF, produção gráfica, LAN, site clínico, inteligência política e LinkNeo.pro.",
   },
   cta: {
     title: "Quer um sistema parecido com um desses cases?",
@@ -143,7 +143,7 @@ export const PROJECT_ENRICHED_CONTENT: Record<string, ProjectEnrichedContent> = 
       { name: "Demonstração", description: "SPA React com dados fictícios e autenticação simulada via localStorage." },
     ],
   },
-  "encurtou-pro": {
+  "linkneo-pro": {
     badges: ["Demonstração externa", "SaaS", "Marketing de links"],
     businessGoals: ["Captar leads", "Controlar operação", "Criar produto digital"],
     architecture: [

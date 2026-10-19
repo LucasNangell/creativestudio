@@ -164,16 +164,16 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
     demoHint:
       "Acesso automático na simulação. Explore War Room, Feed, Central de Alertas, Narrativas, Territórios e Briefing, novos alertas simulados surgem a cada poucos segundos.",
   },
-  "encurtou-pro": {
-    slug: "encurtou-pro",
-    title: "Encurtou.pro, Plataforma de Marketing de Links",
+  "linkneo-pro": {
+    slug: "linkneo-pro",
+    title: "LinkNeo.pro, Plataforma de Marketing de Links",
     category: "Marketing Digital / SaaS",
     shortDescription:
       "Encurtador inteligente, QR Codes dinâmicos, Bio Pages, analytics de cliques, campanhas UTM, A/B testing e assinaturas, produto SaaS em produção.",
     fullDescription:
-      "O Encurtou.pro centraliza encurtamento, QR dinâmico, bio pages, analytics, campanhas UTM, testes A/B, equipes, afiliados e assinaturas em um painel único. Cada clique é registrado e pode ser correlacionado a conversões no site do cliente via tracker embutido. A infraestrutura edge Cloudflare garante redirecionamento rápido mesmo em campanhas de alto volume.",
+      "O LinkNeo.pro centraliza encurtamento, QR dinâmico, bio pages, analytics, campanhas UTM, testes A/B, equipes, afiliados e assinaturas em um painel único. Cada clique é registrado e pode ser correlacionado a conversões no site do cliente via tracker embutido. A infraestrutura edge Cloudflare garante redirecionamento rápido mesmo em campanhas de alto volume.",
     problem:
-      "Encurtadores gratuitos expiram links, não medem conversão e impedem QR dinâmico, desperdiçando material impresso e ocultando ROI por canal.",
+      "Encurtadores gratuitos expiram links, não medem conversão e impedem QR dinâmico, com analytics fragmentados por canal.",
     solution:
       "SaaS completo com redirecionamento inteligente, QR editável, bio pages, analytics unificado, billing Asaas e edge para escala.",
     features: [
@@ -188,6 +188,6 @@ export const DEMO_PAGE_CONTENT: Record<string, DemoPageContent> = {
     ],
     stack: ["PHP", "MySQL", "JavaScript", "Cloudflare Workers", "Asaas", "Chart.js"],
     demoHint:
-      "Explore a prévia do painel (Início, links, QR, analytics com dados demo). Para cadastro, login e recursos completos, clique em “Abrir Encurtou.pro”.",
+      "Explore a prévia do painel (Início, links, QR, analytics com dados demo). Para cadastro, login e recursos completos, clique em “Abrir LinkNeo.pro”.",
   },
 };

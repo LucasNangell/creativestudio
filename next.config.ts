@@ -75,11 +75,23 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
   async redirects() {
-    return LEGACY_DEMO_SLUGS.map((slug) => ({
-      source: `/demo/${slug}`,
-      destination: "/portfolio",
-      permanent: false,
-    }));
+    return [
+      ...LEGACY_DEMO_SLUGS.map((slug) => ({
+        source: `/demo/${slug}`,
+        destination: "/portfolio",
+        permanent: false,
+      })),
+      {
+        source: "/demo/encurtou-pro",
+        destination: "/demo/linkneo-pro",
+        permanent: true,
+      },
+      {
+        source: "/cases/encurtou-pro",
+        destination: "/cases/linkneo-pro",
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [

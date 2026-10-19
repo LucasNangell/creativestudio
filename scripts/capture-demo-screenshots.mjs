@@ -118,7 +118,7 @@ const CAPTURES = [
         await goto(page, localUrl);
         await page.waitForSelector("#section-home", { timeout: 20_000 });
       } catch {
-        await page.goto("https://encurtou.pro", { waitUntil: "load", timeout: 60_000 });
+        await page.goto("https://linkneo.pro", { waitUntil: "load", timeout: 60_000 });
         await page.waitForSelector("#section-home", { timeout: 20_000 });
       }
       await page.waitForTimeout(2000);
