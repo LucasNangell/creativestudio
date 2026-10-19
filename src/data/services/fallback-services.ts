@@ -22,7 +22,7 @@ export const FALLBACK_SERVICES = [
     ctaLabel: "Falar com especialista",
     seoTitle: "Desenvolvimento de Sistemas Web e SaaS | Nangell Creative Studio",
     seoDescription:
-      "Desenvolvimento de sistemas web, plataformas SaaS e software sob medida com engenharia premium.",
+      "Desenvolvimento de sistemas web, plataformas SaaS e software sob medida com engenharia sólida.",
   },
   {
     id: "fallback-apps-mobile",
@@ -45,7 +45,7 @@ export const FALLBACK_SERVICES = [
     ctaLabel: "Solicitar orçamento de app",
     seoTitle: "Desenvolvimento de Apps Mobile e PWA | Nangell Creative Studio",
     seoDescription:
-      "Apps mobile, PWAs e soluções híbridas com UX premium e integração completa.",
+      "Apps mobile, PWAs e soluções híbridas com UX profissional e integração completa.",
   },
   {
     id: "fallback-sistemas-desktop",
@@ -120,13 +120,13 @@ export const FALLBACK_SERVICES = [
     id: "fallback-sites-landing-pages",
     title: "Sites e Landing Pages",
     slug: "sites-landing-pages",
-    headline: "Páginas premium orientadas a conversão e SEO",
+    headline: "Páginas orientadas a conversão e SEO",
     description:
       "Criamos sites institucionais e landing pages de alta performance com tracking, testes A/B e foco comercial.",
     problemSolved:
       "Sites lentos, genéricos ou sem estrutura comercial para captar leads qualificados.",
     deliverables: [
-      "Design premium alinhado à marca",
+      "Design alinhado à marca",
       "Copy e estrutura de conversão",
       "SEO técnico e analytics",
       "Integração com CRM e formulários",

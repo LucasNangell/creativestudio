@@ -289,7 +289,7 @@ export function DiagnosticoForm() {
                     label="WhatsApp *"
                     type="tel"
                     autoComplete="tel"
-                    placeholder="(61) 98201-5585"
+                    placeholder="(00) 00000-0000"
                     error={errors.phone?.message}
                     disabled={isSubmitting}
                     {...register("phone")}
@@ -473,11 +473,21 @@ export function DiagnosticoForm() {
                 <label className="flex cursor-pointer items-start gap-3">
                   <input
                     type="checkbox"
-                    className="mt-1 h-4 w-4 accent-nangell-cyan"
+                    className={cn(
+                      "mt-1 h-4 w-4 accent-nangell-cyan",
+                      errors.consent && "outline outline-2 outline-offset-1 outline-red-500",
+                    )}
                     disabled={isSubmitting}
+                    aria-invalid={errors.consent ? true : undefined}
+                    aria-describedby={
+                      errors.consent ? "diagnostico-consent-error" : "diagnostico-consent-hint"
+                    }
                     {...register("consent")}
                   />
-                  <span className="text-sm leading-relaxed text-nangell-muted">
+                  <span
+                    id="diagnostico-consent-hint"
+                    className="text-sm leading-relaxed text-nangell-muted"
+                  >
                     Autorizo o tratamento dos meus dados conforme a{" "}
                     <Link
                       href="/politica-de-privacidade"
@@ -489,7 +499,15 @@ export function DiagnosticoForm() {
                     (LGPD). *
                   </span>
                 </label>
-                <FieldError message={errors.consent?.message} />
+                {errors.consent ? (
+                  <p
+                    id="diagnostico-consent-error"
+                    role="alert"
+                    className="mt-1.5 text-xs text-red-400"
+                  >
+                    {errors.consent.message}
+                  </p>
+                ) : null}
               </div>
             </div>
           ) : null}

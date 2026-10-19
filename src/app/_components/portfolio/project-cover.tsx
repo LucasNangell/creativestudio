@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ImageOff } from "lucide-react";
 
 import { BrowserWindow } from "@/components/mockups/browser-window";
+import { ParallaxLayer } from "@/components/motion/parallax-layer";
 import { cn } from "@/lib/utils";
 
 type ProjectCoverProps = {
@@ -26,7 +27,11 @@ export function ProjectCover({
 
   if (!src || hasError) {
     return (
-      <BrowserWindow title={title} url="nangell.com.br/demo" className={className}>
+      <BrowserWindow
+        title={title}
+        url="nangellcreativestudio.online/demo"
+        className={className}
+      >
         <div
           className={cn(
             "flex min-h-[140px] flex-col items-center justify-center gap-2 rounded-nangell border border-dashed border-glass-border bg-nangell-dark/60 p-6 text-center sm:min-h-[180px]",
@@ -49,18 +54,20 @@ export function ProjectCover({
         className,
       )}
     >
-      <Image
-        src={src}
-        alt={alt}
-        width={640}
-        height={360}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
-        priority={priority}
-        unoptimized
-        loading={priority ? undefined : "lazy"}
-        className="aspect-video w-full object-cover object-top"
-        onError={() => setHasError(true)}
-      />
+      <ParallaxLayer speed={0.08} className="h-full w-full">
+        <Image
+          src={src}
+          alt={alt}
+          width={640}
+          height={360}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
+          priority={priority}
+          unoptimized
+          loading={priority ? undefined : "lazy"}
+          className="aspect-video w-full scale-105 object-cover object-top"
+          onError={() => setHasError(true)}
+        />
+      </ParallaxLayer>
     </div>
   );
 }

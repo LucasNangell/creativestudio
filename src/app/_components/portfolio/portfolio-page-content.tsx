@@ -24,7 +24,7 @@ export function PortfolioPageContent({ projects }: PortfolioPageContentProps) {
 
   return (
     <>
-      <Section className="pt-8 sm:pt-12">
+      <Section spacing="hero">
         <Container>
           <PageHero
             eyebrow={hero.eyebrow}

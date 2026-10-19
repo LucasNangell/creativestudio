@@ -18,9 +18,9 @@ export function LegalDocument({
   intro,
 }: LegalDocumentProps) {
   return (
-    <main className="relative min-h-screen bg-noise-overlay">
-      <Section className="pt-8 sm:pt-12">
-        <Container className="max-w-3xl">
+    <div className="relative min-h-screen bg-noise-overlay">
+      <Section spacing="hero">
+        <Container size="heading">
           <header className="border-b border-glass-border pb-8">
             <p className="font-mono text-xs tracking-widest text-nangell-cyan uppercase">
               Documento legal
@@ -94,6 +94,6 @@ export function LegalDocument({
           </footer>
         </Container>
       </Section>
-    </main>
+    </div>
   );
 }

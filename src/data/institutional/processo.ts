@@ -133,7 +133,7 @@ export const processoEtapas: ProcessoEtapa[] = [
     deliverables: [
       "Relatório de testes e checklist de homologação",
       "Auditoria de segurança e correções aplicadas",
-      "Benchmark de performance (Lighthouse, queries, APIs)",
+      "Benchmark de performance (queries, APIs, Core Web Vitals)",
     ],
     clientReceives: [
       "Software validado em cenários reais de uso",
@@ -142,7 +142,7 @@ export const processoEtapas: ProcessoEtapa[] = [
     ],
     successCriteria: [
       "Zero bugs críticos em homologação",
-      "Lighthouse Performance ≥ 90 em páginas públicas",
+      "Core Web Vitals dentro das metas definidas no escopo",
       "Conformidade LGPD nos fluxos de dados pessoais",
     ],
   },

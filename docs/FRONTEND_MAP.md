@@ -8,7 +8,7 @@ Este mapa serve para orientar o desenvolvimento e manutenção da interface do u
 
 - **Base:** React 19 + Next.js 16 (App Router)
 - **Estilização:** Tailwind CSS v4 + PostCSS
-- **Animações:** Framer Motion (para transições de estado, micro-animações e modais) + GSAP (para animações complexas, scroll e efeitos premium de entrada)
+- **Animações:** Framer Motion (`Reveal`, `StaggerContainer`, `ParallaxLayer`) com respeito a `prefers-reduced-motion`
 - **Ícones:** Lucide React
 - **Gráficos:** Recharts (utilizado nas demonstrações do Dashboard de BI)
 - **Metadados:** API de Metadata nativa do Next.js + SEO schemas estruturados
@@ -72,10 +72,13 @@ Localizados em [`src/components/demos/`](file:///e:/Creative%20Studio/creative%2
 
 ---
 
-## 4. Estilos e Configurações Visuais
+## 4. Estilos, Layout e Motion
 
-- **Configuração de Design:** [`tailwind.config.ts`](file:///e:/Creative%20Studio/creative%20studio/creativesite/tailwind.config.ts). Controla fontes (Inter/Outfit), cores customizadas (gradientes premium, cinzas escuros no modo dark), sombras e bordas com blur de vidro.
-- **Estilos Globais:** [`src/app/globals.css`](file:///e:/Creative%20Studio/creative%20studio/creativesite/src/app/globals.css). Importa o Tailwind CSS v4, define fontes customizadas e animações chave do GSAP.
+- **Tokens:** `tailwind.config.ts` é a fonte de verdade das cores Nangell; `src/app/globals.css` espelha as mesmas variáveis CSS.
+- **Larguras (`Container` `size`):** `prose` (max-w-2xl), `heading` (max-w-3xl), `narrow` (max-w-4xl), `page` (max-w-7xl, padrão).
+- **Espaçamento (`Section` `spacing`):** `hero`, `default`, `compact`.
+- **z-index:** skip-link 200 → modal 110 → scroll-progress 100 → mobile-menu 90 → header/FAB 50.
+- **Parallax:** `src/components/motion/parallax-layer.tsx` + `src/hooks/use-parallax-enabled.ts`. Ativo apenas após hidratação, em `md+` e sem reduced motion. Usado no hero, CTA, PageHero e capas de case.
 
 ---
 

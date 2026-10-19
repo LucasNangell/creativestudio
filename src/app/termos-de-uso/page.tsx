@@ -13,11 +13,13 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function TermosUsoPage() {
   return (
-    <LegalDocument
-      title="Termos de Uso"
-      lastUpdated="junho de 2026"
-      intro="Leia atentamente estes termos antes de utilizar o site, formulários e demonstrações interativas da Nangell Creative Studio."
-      sections={termosUsoSections}
-    />
+    <main>
+      <LegalDocument
+        title="Termos de Uso"
+        lastUpdated="junho de 2026"
+        intro="Leia atentamente estes termos antes de utilizar o site, formulários e demonstrações interativas da Nangell Creative Studio."
+        sections={termosUsoSections}
+      />
+    </main>
   );
 }

@@ -59,7 +59,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
     provider: {
       "@type": "Organization",
       name: "Nangell Creative Studio",
-      url: "https://nangell.com.br",
+      url: "https://nangellcreativestudio.online",
     },
     areaServed: "BR",
     serviceType: service.title,

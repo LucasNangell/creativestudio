@@ -31,12 +31,13 @@ export function SolutionsPageContent({ services }: SolutionsPageContentProps) {
 
   return (
     <>
-      <Section className="pt-8 sm:pt-12">
+      <Section spacing="hero">
         <Container>
           <PageHero
             eyebrow={hero.eyebrow}
             title={hero.title}
             description={hero.description}
+            align="left"
           >
             <Link
               href="/diagnostico"

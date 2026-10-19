@@ -31,29 +31,29 @@ export const CONTACT_LEAD_ENDPOINT = "/api/leads" as const;
 export const obrigadoSeo = {
   title: "Mensagem recebida",
   description:
-    "Obrigado pelo contato com a Nangell Creative Studio. Sua mensagem foi recebida e nossa equipe retornará em breve.",
+    "Obrigado pelo contato com a Nangell Creative Studio. Sua mensagem foi recebida e será respondida em breve.",
 } as const;
 
 export const obrigadoContent = {
   title: "Recebemos seu briefing!",
   description:
-    "Obrigado por confiar na Nangell Creative Studio. Nossa equipe analisará suas respostas e retornará em até 1 dia útil com orientação personalizada.",
+    "Obrigado por confiar na Nangell Creative Studio. Suas respostas serão analisadas e o retorno chega em até 1 dia útil com orientação objetiva.",
   diagnosticTitle: "Diagnóstico enviado com sucesso!",
   diagnosticDescription:
-    "Seu briefing foi registrado. Em breve entraremos em contato com próximos passos, escopo preliminar e sugestão de caminho técnico.",
+    "Seu briefing foi registrado. Em breve você recebe próximos passos, escopo preliminar e sugestão de caminho técnico.",
   contactTitle: "Mensagem recebida!",
   contactDescription:
-    "Obrigado pelo contato. Nossa equipe revisará sua mensagem e responderá pelo canal que você preferir.",
+    "Obrigado pelo contato. A mensagem será revisada e respondida pelo canal que você preferir.",
   nextSteps: [
     {
       step: 1,
       title: "Análise da solicitação",
-      description: "Nossa equipe revisa seu briefing e identifica a melhor abordagem técnica.",
+      description: "O briefing é revisado para identificar a melhor abordagem técnica.",
     },
     {
       step: 2,
       title: "Retorno personalizado",
-      description: "Entramos em contato por e-mail ou WhatsApp com orientação e próximos passos.",
+      description: "Contato por e-mail ou WhatsApp com orientação e próximos passos.",
     },
     {
       step: 3,

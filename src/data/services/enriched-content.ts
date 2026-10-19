@@ -31,7 +31,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         title: "Demonstrações interativas no site",
         description:
-          "Mostramos CRM, BI e SaaS funcionando antes da contratação, mostre, não conte.",
+          "Mostramos CRM, BI e SaaS funcionando antes da contratação: mostrar, não apenas contar.",
       },
       {
         title: "Engenharia + estratégia comercial",
@@ -103,7 +103,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
           "Filas locais, conflitos resolvidos e feedback claro quando offline.",
       },
       {
-        title: "Design premium consistente",
+        title: "Design consistente",
         description:
           "Mesma identidade visual do ecossistema web da empresa, com UX otimizada para mobile.",
       },
@@ -217,7 +217,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
     ],
     differentials: [
       {
-        title: "ROI mensurável",
+        title: "Horas economizadas mensuráveis",
         description:
           "Calculamos horas economizadas e traduzimos em payback antes de implementar.",
       },
@@ -305,7 +305,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         question: "Vocês integram com Power BI ou constroem painéis custom?",
         answer:
-          "Ambos. Power BI quando o cliente já usa o ecossistema Microsoft; custom com Next.js/Recharts para UX premium e integrações específicas.",
+          "Ambos. Power BI quando o cliente já usa o ecossistema Microsoft; custom com Next.js/Recharts para integrações específicas.",
       },
       {
         question: "De onde vêm os dados dos dashboards?",
@@ -329,7 +329,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
     sortOrder: 6,
     icon: Rocket,
     focusAreas: [
-      "Sites premium",
+      "Sites profissionais",
       "Landing pages",
       "SEO",
       "GTM",
@@ -341,14 +341,14 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       "SEO técnico com metadata e Schema.org",
       "Integração GA4, GTM e Meta Pixel",
       "Formulários com validação e LGPD",
-      "Performance Lighthouse 90+",
+      "Core Web Vitals e SEO técnico",
       "Testes A/B e heatmaps (roadmap)",
     ],
     differentials: [
       {
         title: "Site como case técnico",
         description:
-          "O próprio site Nangell prova performance, SEO e design premium.",
+          "O próprio site Nangell aplica SEO técnico, tracking e layout profissional.",
       },
       {
         title: "Conversão antes de estética vazia",
@@ -380,7 +380,7 @@ export const SERVICE_ENRICHED_CONTENT: Record<string, ServiceEnrichedContent> = 
       {
         question: "Qual performance posso esperar?",
         answer:
-          "Meta Lighthouse Performance 90+ em mobile, com imagens otimizadas, fontes e Core Web Vitals monitorados.",
+          "Imagens otimizadas, fontes controladas e Core Web Vitals monitorados em mobile e desktop.",
       },
       {
         question: "O site integra com CRM para leads?",
@@ -469,9 +469,9 @@ export const solucoesPageContent = {
         "Fluxos alinhados ao seu processo",
         "Integrações profundas (ERP, CRM, APIs)",
         "Escalabilidade sem trocar de plataforma",
-        "UX premium e demonstrações interativas",
+        "Interface profissional e demonstrações interativas",
         "Propriedade do código e roadmap",
-        "ROI mensurável e evolução contínua",
+        "Estimativa de horas e evolução contínua",
       ],
     },
   },
@@ -503,7 +503,7 @@ export const solucoesPageContent = {
   cta: {
     title: "Não sabe por onde começar?",
     description:
-      "Nosso diagnóstico gratuito mapeia gargalos, estima ROI e indica a solução ideal, sem compromisso.",
+      "O diagnóstico mapeia gargalos, estima esforço e indica a solução adequada, sem compromisso.",
     primaryLabel: "Solicitar diagnóstico gratuito",
     primaryHref: "/diagnostico",
     secondaryLabel: "Falar no WhatsApp",
@@ -511,7 +511,7 @@ export const solucoesPageContent = {
   seo: {
     title: "Soluções de Software Sob Medida | Nangell Creative Studio",
     description:
-      "Sistemas web, mobile, desktop, automações, dashboards BI e landing pages premium. Conheça nossas soluções e veja demonstrações interativas.",
+      "Sistemas web, mobile, desktop, automações, dashboards BI e landing pages. Conheça as soluções e veja as demonstrações.",
     keywords: [
       "soluções de software",
       "desenvolvimento sob medida",

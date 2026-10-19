@@ -1,3 +1,4 @@
+import { ParallaxLayer } from "@/components/motion/parallax-layer";
 import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
@@ -7,6 +8,7 @@ type PageHeroProps = {
   children?: React.ReactNode;
   className?: string;
   align?: "left" | "center";
+  size?: "default" | "compact";
 };
 
 export function PageHero({
@@ -15,7 +17,8 @@ export function PageHero({
   description,
   children,
   className,
-  align = "center",
+  align = "left",
+  size = "default",
 }: PageHeroProps) {
   const isCenter = align === "center";
 
@@ -27,14 +30,14 @@ export function PageHero({
         className,
       )}
     >
-      <div
+      <ParallaxLayer
+        speed={0.12}
+        className="pointer-events-none absolute inset-0"
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-nangell-radial"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-nangell-violet/10 blur-3xl"
-      />
+      >
+        <div className="absolute inset-0 bg-nangell-radial" />
+        <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-nangell-violet/10 blur-3xl" />
+      </ParallaxLayer>
 
       <div
         className={cn(
@@ -50,7 +53,10 @@ export function PageHero({
 
         <h1
           className={cn(
-            "font-heading text-3xl font-bold tracking-tight text-nangell-text sm:text-4xl lg:text-5xl",
+            "font-heading font-bold tracking-tight text-nangell-text",
+            size === "compact"
+              ? "text-2xl sm:text-3xl lg:text-4xl"
+              : "text-3xl sm:text-4xl lg:text-5xl",
             eyebrow && "mt-4",
           )}
         >

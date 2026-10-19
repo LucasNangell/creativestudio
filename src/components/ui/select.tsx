@@ -56,9 +56,9 @@ export function Select({
           }
           className={cn(
             "h-11 w-full appearance-none rounded-nangell border border-glass-border bg-nangell-surface/80 px-4 pr-10 text-sm text-nangell-text transition-colors",
-            "hover:border-nangell-electric/30 focus-visible:border-nangell-electric focus-visible:outline-none",
+            "hover:border-nangell-electric/30 focus-visible:border-nangell-electric focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nangell-electric",
             "disabled:cursor-not-allowed disabled:opacity-50",
-            error && "border-red-500/50 focus-visible:border-red-500",
+            error && "border-red-500/50 focus-visible:border-red-500 focus-visible:outline-red-500",
             className,
           )}
           {...props}

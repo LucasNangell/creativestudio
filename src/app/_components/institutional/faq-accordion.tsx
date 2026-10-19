@@ -41,8 +41,6 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
             <button
               type="button"
               id={buttonId}
-              role="button"
-              tabIndex={0}
               aria-expanded={isOpen}
               aria-controls={panelId}
               onClick={() => toggle(index)}

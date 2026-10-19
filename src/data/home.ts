@@ -15,9 +15,10 @@ import {
 } from "lucide-react";
 
 export const homeHero = {
-  headline: "Sistemas sob medida que transformam operação em crescimento.",
+  headline: "Software web, desktop e mobile",
+  headlineAccent: "para a operação da sua empresa.",
   subheadline:
-    "Desenvolvemos softwares web, desktop e mobile, automações, dashboards, SaaS e sites profissionais com design premium, performance e estratégia de negócio.",
+    "Sistemas, automações, dashboards, SaaS e sites com engenharia clara, interface profissional e diagnóstico antes do orçamento.",
   primaryCta: { label: "Ver sistemas em ação", href: "#demos" },
   secondaryCta: { label: "Solicitar diagnóstico", href: "/diagnostico" },
   whatsappCta: { label: "Falar no WhatsApp" },
@@ -58,78 +59,78 @@ export const homeServices: HomeService[] = [
     icon: Globe,
     title: "Sistemas Web e SaaS",
     description:
-      "Plataformas web, portais corporativos e produtos SaaS com arquitetura escalável e painel administrativo completo.",
+      "Plataformas web, portais e produtos SaaS com painel administrativo, autenticação e integrações por API.",
     benefits: [
-      "Arquitetura modular e segura",
-      "Integrações com APIs externas",
+      "Arquitetura modular",
+      "Integrações com APIs",
       "Painel admin e multi-tenant",
     ],
-    cta: { label: "Explorar solução", href: "/solucoes/desenvolvimento-web" },
+    cta: { label: "Solicitar diagnóstico", href: "/solucoes/desenvolvimento-web" },
   },
   {
     id: "mobile-pwa",
     icon: Smartphone,
     title: "Apps Mobile e PWA",
     description:
-      "Aplicativos nativos e PWAs conectados ao ecossistema da empresa, com experiência fluida em campo.",
+      "Aplicativos e PWAs conectados ao restante do ecossistema, com sincronização e uso em campo.",
     benefits: [
-      "Offline-first quando necessário",
+      "Offline quando necessário",
       "Notificações e sincronização",
       "Publicação em lojas ou PWA",
     ],
-    cta: { label: "Ver possibilidades", href: "/solucoes/apps-mobile" },
+    cta: { label: "Solicitar diagnóstico", href: "/solucoes/apps-mobile" },
   },
   {
     id: "desktop",
     icon: Monitor,
     title: "Sistemas Desktop",
     description:
-      "Software local robusto para Windows com integração a ERPs, periféricos e operações críticas.",
+      "Software local para Windows com integração a ERPs, periféricos e operações que não podem depender só da nuvem.",
     benefits: [
       "Integração com hardware local",
       "Instalador e atualização controlada",
-      "Alta confiabilidade operacional",
+      "Operação offline ou híbrida",
     ],
-    cta: { label: "Automatizar local", href: "/solucoes/sistemas-desktop" },
+    cta: { label: "Solicitar diagnóstico", href: "/solucoes/sistemas-desktop" },
   },
   {
     id: "automations",
     icon: Bot,
-    title: "Automações Inteligentes",
+    title: "Automações",
     description:
-      "Bots, scrapers e fluxos que eliminam trabalho repetitivo com monitoramento e alertas.",
+      "Bots, scrapers e fluxos que eliminam trabalho repetitivo, com monitoramento e alertas.",
     benefits: [
       "Integração entre sistemas",
       "Filas, retries e orquestração",
-      "ROI mensurável em horas salvas",
+      "Estimativa de horas economizadas",
     ],
-    cta: { label: "Calcular economia", href: "/solucoes/automacoes" },
+    cta: { label: "Solicitar diagnóstico", href: "/solucoes/automacoes" },
   },
   {
     id: "dashboards-bi",
     icon: BarChart3,
     title: "Dashboards e BI",
     description:
-      "Painéis gerenciais com KPIs, alertas e visualizações pensadas para decisão em tempo real.",
+      "Painéis com indicadores, alertas e visualizações para acompanhamento operacional e gerencial.",
     benefits: [
       "Indicadores customizados",
-      "Alertas e metas configuráveis",
+      "Alertas e metas",
       "Integração com ERP e CRM",
     ],
-    cta: { label: "Ver em ação", href: "/solucoes/dashboards-bi" },
+    cta: { label: "Solicitar diagnóstico", href: "/solucoes/dashboards-bi" },
   },
   {
     id: "sites-landing",
     icon: Rocket,
     title: "Sites e Landing Pages",
     description:
-      "Páginas premium orientadas a conversão, SEO técnico e tracking para captar leads qualificados.",
+      "Sites e páginas de conversão com SEO técnico, tracking e estrutura comercial clara.",
     benefits: [
-      "Copy e estrutura comercial",
-      "Performance Lighthouse 90+",
+      "Estrutura e copy comercial",
+      "Core Web Vitals e SEO técnico",
       "GA4, GTM e Schema.org",
     ],
-    cta: { label: "Criar landing", href: "/solucoes/sites-landing-pages" },
+    cta: { label: "Solicitar diagnóstico", href: "/solucoes/sites-landing-pages" },
   },
 ];
 
@@ -147,37 +148,37 @@ export const homeProcessSteps: HomeProcessStep[] = [
     step: 1,
     title: "Diagnóstico",
     description:
-      "Entendemos seu processo, gargalos e objetivos de negócio em uma conversa estratégica.",
+      "Levantamos processo, gargalos e objetivos em uma conversa objetiva.",
   },
   {
     step: 2,
     title: "Mapeamento",
     description:
-      "Documentamos fluxos, integrações e requisitos técnicos com clareza para evitar surpresas.",
+      "Documentamos fluxos, integrações e requisitos antes de orçar o desenvolvimento.",
   },
   {
     step: 3,
     title: "Prototipação",
     description:
-      "Validamos telas, jornadas e arquitetura antes de escrever código em produção.",
+      "Validamos telas e jornadas antes de escrever código de produção.",
   },
   {
     step: 4,
     title: "Desenvolvimento",
     description:
-      "Engenharia iterativa com entregas parciais, code review e padrões de qualidade.",
+      "Entregas parciais, revisão de código e padrões técnicos definidos.",
   },
   {
     step: 5,
     title: "Testes e deploy",
     description:
-      "Homologação rigorosa, deploy seguro e monitoramento pós-lançamento.",
+      "Homologação, publicação e monitoramento após o lançamento.",
   },
   {
     step: 6,
     title: "Evolução",
     description:
-      "Suporte contínuo, métricas de uso e roadmap de melhorias alinhado ao crescimento.",
+      "Suporte, ajustes e roadmap alinhado ao uso real do sistema.",
   },
 ];
 
@@ -192,64 +193,64 @@ export const homeDifferentials: HomeDifferential[] = [
   {
     id: "custom",
     icon: Code2,
-    title: "Desenvolvimento sob medida",
+    title: "Feito para o seu processo",
     description:
-      "Cada linha de código serve ao seu processo, sem templates genéricos ou limitações de plataforma.",
+      "O software segue a operação da empresa. Sem forçar o negócio a caber em um template.",
   },
   {
     id: "design",
     icon: Palette,
-    title: "Design premium",
+    title: "Interface profissional",
     description:
-      "Interfaces dark tech com UX pensada para conversão, legibilidade e credibilidade corporativa.",
+      "Layout dark tech, tipografia legível e hierarquia visual pensada para uso diário.",
   },
   {
     id: "architecture",
     icon: Layers,
-    title: "Arquitetura escalável",
+    title: "Arquitetura preparada para crescer",
     description:
-      "Base técnica preparada para crescer em usuários, dados e funcionalidades sem retrabalho.",
+      "Base modular para novos usuários, dados e módulos sem reescrever tudo.",
   },
   {
     id: "metrics",
     icon: LineChart,
-    title: "Rastreamento e métricas",
+    title: "Medição de uso e conversão",
     description:
-      "GA4, GTM e eventos customizados para medir conversão, demonstrações e ROI de cada investimento.",
+      "Eventos, GA4 e GTM quando fizer sentido, para acompanhar o que realmente é usado.",
   },
   {
     id: "ai",
     icon: Sparkles,
-    title: "Automações e IA",
+    title: "Automações e IA com propósito",
     description:
-      "Bots, fluxos inteligentes e integrações com IA para acelerar operações repetitivas.",
+      "Automação e IA entram onde há tarefa repetitiva ou volume que justifica.",
   },
   {
     id: "support",
     icon: FileText,
-    title: "Documentação e suporte",
+    title: "Documentação e suporte direto",
     description:
-      "Entrega com documentação técnica, treinamento e canal direto para evolução contínua.",
+      "Entrega com documentação, treinamento e canal direto com quem desenvolveu.",
   },
 ];
 
 export const homeFinalCta = {
-  title: "Tem uma ideia, processo manual ou sistema travando seu crescimento?",
+  title: "Tem um processo manual ou um sistema que não acompanha a operação?",
   description:
-    "Transformamos desafios operacionais em software que escala com sua empresa. Diagnóstico inicial sem compromisso.",
+    "Descreva o cenário no diagnóstico. Você recebe um mapeamento objetivo, sem compromisso de contratação.",
   primaryCta: {
-    label: "Quero transformar isso em software",
+    label: "Solicitar diagnóstico",
     href: "/diagnostico",
   },
   whatsappCta: { label: "Falar no WhatsApp" },
 } as const;
 
 export const homeSeo = {
-  title: "Nangell Creative Studio | Sistemas Sob Medida que Transformam Operação",
+  title: "Nangell Creative Studio | Software web, desktop e mobile",
   description:
-    "Desenvolvemos softwares web, desktop e mobile, automações, dashboards, SaaS e sites profissionais com design premium, performance e estratégia de negócio.",
+    "Desenvolvimento de sistemas web, desktop e mobile, automações, dashboards, SaaS e sites. Diagnóstico antes do orçamento.",
   keywords: [
-    "desenvolvimento de software sob medida",
+    "desenvolvimento de software",
     "sistemas web",
     "SaaS",
     "aplicativos mobile",

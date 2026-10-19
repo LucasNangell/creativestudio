@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Play } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 import { SectionHeading } from "@/app/_components/home/section-heading";
 import { Container } from "@/components/layout/container";
@@ -42,7 +42,7 @@ export function CasePageContent({
   return (
     <>
       <CaseViewTracker slug={project.slug} title={project.title} />
-      <Section className="pt-8 sm:pt-12">
+      <Section spacing="hero">
         <Container>
           <PageHero
             eyebrow="Estudo de caso"
@@ -168,94 +168,6 @@ export function CasePageContent({
                 </StaggerItem>
               ))}
             </StaggerContainer>
-          </Container>
-        </Section>
-      ) : null}
-
-      {project.metrics.length > 0 ? (
-        <Section className="bg-nangell-surface/30">
-          <Container>
-            <Reveal>
-              <SectionHeading
-                align="left"
-                title="Resultados e métricas"
-                description="Indicadores de impacto, fictícios para demos ou reais quando autorizados pelo cliente."
-                className="mx-0 max-w-none"
-              />
-            </Reveal>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {project.metrics.map((metric) => (
-                <div
-                  key={metric.label}
-                  className="rounded-nangell-xl border border-glass-border bg-nangell-surface/80 p-6 shadow-glass"
-                >
-                  <p className="font-mono text-xs tracking-wide text-nangell-muted uppercase">
-                    {metric.label}
-                  </p>
-                  <p className="mt-2 font-heading text-3xl font-bold text-nangell-cyan">
-                    {metric.value}
-                  </p>
-                  {metric.description ? (
-                    <p className="mt-2 text-sm text-nangell-muted">
-                      {metric.description}
-                    </p>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-          </Container>
-        </Section>
-      ) : null}
-
-      {project.gallery.length > 0 ? (
-        <Section>
-          <Container>
-            <Reveal>
-              <SectionHeading
-                align="left"
-                title="Galeria e mockups"
-                className="mx-0 max-w-none"
-              />
-            </Reveal>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              {project.gallery.map((image, index) => (
-                <Reveal key={`${image}-${index}`} delay={index * 0.05}>
-                  <ProjectCover
-                    src={image}
-                    alt={`Mockup ${index + 1}, ${project.title}`}
-                    title={project.title}
-                  />
-                </Reveal>
-              ))}
-            </div>
-          </Container>
-        </Section>
-      ) : null}
-
-      {project.hasDemo && project.demoRoute ? (
-        <Section className="bg-nangell-surface/30">
-          <Container>
-            <CtaSection
-              title="Experimente a demonstração interativa"
-              description="Navegue pelo sistema simulado no navegador, sem cadastro, com dados fictícios."
-              variant="gradient"
-              className="!py-0"
-            >
-              <Link
-                href={project.demoRoute}
-                className={cn(buttonVariants({ variant: "primary", size: "lg" }))}
-              >
-                <Play className="h-4 w-4" aria-hidden />
-                Abrir demonstração
-              </Link>
-              <Link
-                href="/portfolio"
-                className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
-              >
-                Ver mais cases
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </Link>
-            </CtaSection>
           </Container>
         </Section>
       ) : null}

@@ -14,15 +14,13 @@ export const blogPageContent = {
   },
   featuredSlug: "diagnostico-tecnico-antes-do-orcamento",
   hero: {
-    eyebrow: "Blog Nangell Creative Studio",
-    title: "Conteúdo para empresas que querem transformar operação em tecnologia",
+    eyebrow: "Blog",
+    title: "Artigos sobre sistemas, automação e diagnóstico técnico",
     description:
-      "Artigos práticos sobre sistemas personalizados, automação, dashboards, IA, diagnóstico técnico e estratégia digital para negócios que querem crescer com mais eficiência.",
-    complement:
-      "Aqui você encontra conteúdos escritos para empresários, gestores e profissionais que precisam tomar decisões melhores sobre tecnologia, mesmo sem dominar termos técnicos.",
+      "Textos objetivos para gestores que precisam decidir o próximo passo em software, automação ou dashboards.",
   },
   highlight:
-    "Antes de contratar um sistema, entenda o problema que ele precisa resolver. Um bom projeto começa com diagnóstico, clareza de escopo e visão de resultado.",
+    "Antes de contratar, mapeie o problema. Escopo claro reduz retrabalho e orçamento genérico.",
   featuredLabel: "Destaque",
   emptyState: {
     title: "Nenhum artigo encontrado",

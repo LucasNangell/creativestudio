@@ -1,6 +1,7 @@
-import { cn } from "@/lib/utils";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
+import { ParallaxLayer } from "@/components/motion/parallax-layer";
+import { cn } from "@/lib/utils";
 
 type CtaSectionProps = {
   title: string;
@@ -29,10 +30,14 @@ export function CtaSection({
           )}
         >
           {variant === "gradient" ? (
-            <div
+            <ParallaxLayer
+              speed={0.18}
+              className="pointer-events-none absolute inset-0"
               aria-hidden
-              className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-nangell-cyan/10 blur-3xl"
-            />
+            >
+              <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-nangell-cyan/10 blur-3xl" />
+              <div className="absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-nangell-violet/10 blur-3xl" />
+            </ParallaxLayer>
           ) : null}
 
           <div className="relative mx-auto max-w-2xl text-center">

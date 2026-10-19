@@ -7,7 +7,6 @@ import { HeroSection } from "@/app/_components/home/hero-section";
 import { ProcessSection } from "@/app/_components/home/process-section";
 import { ServicesSection } from "@/app/_components/home/services-section";
 import { TechMarquee } from "@/app/_components/home/tech-marquee";
-import { VisualProofSection } from "@/app/_components/home/visual-proof-section";
 import { homeSeo } from "@/data/home";
 import { createPageMetadata } from "@/lib/page-metadata";
 
@@ -25,7 +24,6 @@ export default function HomePage() {
       <TechMarquee />
       <ServicesSection />
       <DemosSection />
-      <VisualProofSection />
       <DifferentialsSection />
       <ProcessSection />
       <FinalCtaSection />

@@ -47,6 +47,11 @@ export function BrandLogo({
       alt={altByVariant[variant]}
       width={width}
       height={height}
+      sizes={
+        variant === "icon"
+          ? "40px"
+          : "(max-width: 640px) 180px, (max-width: 1024px) 220px, 240px"
+      }
       priority={priority}
       unoptimized
       className={cn("h-auto w-auto max-w-full object-contain", className)}

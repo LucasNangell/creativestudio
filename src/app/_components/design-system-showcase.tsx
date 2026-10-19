@@ -80,7 +80,7 @@ export function DesignSystemShowcase() {
             title={
               <>
                 Componentes globais para{" "}
-                <span className="text-gradient-brand">software premium</span>
+                <span className="text-gradient-brand">software profissional</span>
               </>
             }
             description="Página temporária para validar o design system definitivo, header, footer, UI base, mockups e padrões visuais dark tech."
@@ -219,7 +219,7 @@ export function DesignSystemShowcase() {
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             <Reveal delay={0.05}>
-              <BrowserWindow url="nangell.com.br/demo/crm">
+              <BrowserWindow url="nangellcreativestudio.online/demo/crm">
                 <div className="flex items-center gap-3">
                   <Sparkles className="h-5 w-5 text-nangell-cyan" aria-hidden />
                   <div>
@@ -313,7 +313,7 @@ export function DesignSystemShowcase() {
 
       <CtaSection
         variant="gradient"
-        title="Pronto para validar a Home premium?"
+        title="Pronto para validar a Home?"
         description="Esta página será substituída na Fase 4. O design system já está integrado ao layout global."
       >
         <Button size="lg">

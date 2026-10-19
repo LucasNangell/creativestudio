@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
-import { BrandLogo } from "@/components/brand/brand-logo";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import {
@@ -11,6 +10,7 @@ import {
   DashboardShell,
   DashboardStat,
 } from "@/components/mockups/dashboard-shell";
+import { ParallaxLayer } from "@/components/motion/parallax-layer";
 import { Reveal } from "@/components/motion/reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { homeHero } from "@/data/home";
@@ -20,37 +20,37 @@ import { cn } from "@/lib/utils";
 
 export function HeroSection() {
   return (
-    <Section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24">
-      <div
+    <Section spacing="hero" className="relative overflow-hidden">
+      <ParallaxLayer
+        speed={0.08}
+        className="pointer-events-none absolute inset-0"
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-grid-subtle opacity-60"
-      />
-      <div
+      >
+        <div className="absolute inset-0 bg-grid-subtle opacity-60" />
+      </ParallaxLayer>
+      <ParallaxLayer
+        speed={0.2}
+        className="pointer-events-none absolute inset-0"
         aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-nangell-violet/20 blur-[120px] animate-pulse-glow motion-reduce:animate-none"
-      />
-      <div
+      >
+        <div className="absolute -top-32 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-nangell-violet/20 blur-[120px] animate-pulse-glow motion-reduce:animate-none" />
+      </ParallaxLayer>
+      <ParallaxLayer
+        speed={-0.12}
+        className="pointer-events-none absolute inset-0"
         aria-hidden
-        className="pointer-events-none absolute top-1/3 -right-32 h-64 w-64 rounded-full bg-nangell-cyan/10 blur-[80px]"
-      />
+      >
+        <div className="absolute top-1/3 -right-32 h-64 w-64 rounded-full bg-nangell-cyan/10 blur-[80px]" />
+      </ParallaxLayer>
 
       <Container className="relative">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <Reveal>
-              <BrandLogo
-                variant="horizontal"
-                theme="dark"
-                priority
-                className="mb-6 h-10 w-auto max-w-[min(100%,240px)] sm:h-11"
-              />
-            </Reveal>
-
-            <Reveal delay={0.05}>
               <h1 className="font-heading text-3xl font-bold leading-tight tracking-tight text-nangell-text sm:text-4xl lg:text-5xl">
-                Sistemas sob medida que{" "}
+                {homeHero.headline}{" "}
                 <span className="text-gradient-brand">
-                  transformam operação em crescimento.
+                  {homeHero.headlineAccent}
                 </span>
               </h1>
             </Reveal>
@@ -113,7 +113,7 @@ export function HeroSection() {
           </div>
 
           <Reveal direction="left" delay={0.1}>
-            <div className="relative">
+            <ParallaxLayer speed={0.1} className="relative">
               <div
                 aria-hidden
                 className="absolute -inset-4 rounded-nangell-xl bg-nangell-gradient opacity-10 blur-2xl"
@@ -135,28 +135,16 @@ export function HeroSection() {
                     <p className="font-heading text-sm font-semibold text-nangell-text">
                       Visão geral
                     </p>
-                    <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] text-emerald-400">
-                      ● Online
+                    <span className="rounded-full bg-nangell-cyan/10 px-2 py-0.5 font-mono text-[10px] text-nangell-cyan">
+                      Online
                     </span>
                   </div>
                 }
               >
                 <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-3">
-                  <DashboardStat
-                    label="Receita mensal"
-                    value="R$ 284k"
-                    trend="+18,4%"
-                  />
-                  <DashboardStat
-                    label="Projetos ativos"
-                    value="12"
-                    trend="+3 novos"
-                  />
-                  <DashboardStat
-                    label="Conversão"
-                    value="38,2%"
-                    trend="+5,1%"
-                  />
+                  <DashboardStat label="Módulos" value="5" trend="Ativos" />
+                  <DashboardStat label="Integrações" value="3" trend="APIs" />
+                  <DashboardStat label="Ambientes" value="2" trend="Prod / Homolog" />
                 </div>
                 <div className="mt-4 space-y-2">
                   {[1, 2, 3].map((row) => (
@@ -178,7 +166,7 @@ export function HeroSection() {
                   ))}
                 </div>
               </DashboardShell>
-            </div>
+            </ParallaxLayer>
           </Reveal>
         </div>
       </Container>

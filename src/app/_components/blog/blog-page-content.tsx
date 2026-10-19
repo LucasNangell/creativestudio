@@ -24,7 +24,7 @@ export function BlogPageContent({ posts, filters, featured }: BlogPageContentPro
 
   return (
     <>
-      <Section className="pt-8 sm:pt-12">
+      <Section spacing="hero">
         <Container>
           <PageHero
             eyebrow={hero.eyebrow}
@@ -32,16 +32,19 @@ export function BlogPageContent({ posts, filters, featured }: BlogPageContentPro
             description={hero.description}
             align="left"
           >
-            <Link href={cta.primary.href} className={cn(buttonVariants({ variant: "primary" }))}>
+            <Link
+              href={cta.primary.href}
+              className={cn(buttonVariants({ variant: "primary", size: "lg" }))}
+            >
               {cta.primary.label}
             </Link>
-            <Link href={cta.secondary.href} className={cn(buttonVariants({ variant: "outline" }))}>
+            <Link
+              href={cta.secondary.href}
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+            >
               {cta.secondary.label}
             </Link>
           </PageHero>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-nangell-muted">
-            {hero.complement}
-          </p>
         </Container>
       </Section>
 

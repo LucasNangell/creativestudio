@@ -32,15 +32,19 @@ function DiagnosticoFormFallback() {
 export default function DiagnosticoPage() {
   return (
     <main className="relative min-h-screen bg-noise-overlay">
-      <PageHero
-        eyebrow={diagnosticoHero.eyebrow}
-        title={diagnosticoHero.title}
-        description={diagnosticoHero.description}
-        className="pb-8 sm:pb-10"
-      />
+      <Section spacing="hero">
+        <Container size="heading">
+          <PageHero
+            eyebrow={diagnosticoHero.eyebrow}
+            title={diagnosticoHero.title}
+            description={diagnosticoHero.description}
+            align="center"
+          />
+        </Container>
+      </Section>
 
       <Section className="pt-0">
-        <Container className="max-w-3xl">
+        <Container size="heading">
           <Reveal>
             <Suspense fallback={<DiagnosticoFormFallback />}>
               <DiagnosticoForm />

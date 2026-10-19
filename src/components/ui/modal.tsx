@@ -72,7 +72,7 @@ export function Modal({
         if (event.target === dialogRef.current) onClose();
       }}
       className={cn(
-        "fixed inset-0 z-[100] m-0 h-full max-h-none w-full max-w-none border-0 bg-transparent p-4 backdrop:bg-nangell-dark/80 backdrop:backdrop-blur-sm",
+        "fixed inset-0 z-[110] m-0 h-full max-h-none w-full max-w-none border-0 bg-transparent p-4 backdrop:bg-nangell-dark/80 backdrop:backdrop-blur-sm",
         "open:flex open:items-center open:justify-center",
         className,
       )}

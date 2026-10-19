@@ -23,7 +23,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     id: "introducao",
     title: "1. Introdução",
     content: [
-      "A Nangell Creative Studio (“Nangell”, “nós” ou “nosso”) respeita a privacidade dos visitantes, clientes e usuários de nosso site institucional (nangell.com.br e domínios associados).",
+      "A Nangell Creative Studio (“Nangell”, “nós” ou “nosso”) respeita a privacidade dos visitantes, clientes e usuários de nosso site institucional (nangellcreativestudio.online e domínios associados).",
       "Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).",
       "Ao utilizar nosso site, formulários ou demonstrações interativas, você declara ter lido e compreendido esta política.",
     ],
@@ -97,7 +97,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
       "Portabilidade dos dados a outro fornecedor, quando aplicável.",
       "Eliminação dos dados tratados com base no consentimento.",
       "Informação sobre compartilhamento e revogação do consentimento.",
-      "Para exercer seus direitos, entre em contato pelo e-mail contato@nangell.com.br. Responderemos em até 15 dias úteis.",
+      "Para exercer seus direitos, entre em contato pelo e-mail contato@nangellcreativestudio.online. Responderemos em até 15 dias úteis.",
     ],
   },
   {
@@ -113,7 +113,7 @@ export const politicaPrivacidadeSections: LegalSection[] = [
     title: "10. Contato",
     content: [
       "Controlador de dados: Nangell Creative Studio.",
-      "E-mail para privacidade e LGPD: contato@nangell.com.br.",
+      "E-mail para privacidade e LGPD: contato@nangellcreativestudio.online.",
       "Encarregado (DPO): disponível pelo mesmo canal de contato.",
     ],
   },
@@ -134,7 +134,7 @@ export const termosUsoSections: LegalSection[] = [
     title: "1. Aceitação dos termos",
     content: [
       "Ao acessar e utilizar o site da Nangell Creative Studio, você concorda com estes Termos de Uso. Se não concordar, interrompa o uso imediatamente.",
-      "Estes termos aplicam-se a todas as páginas públicas, demonstrações interativas, formulários e conteúdos disponibilizados no domínio nangell.com.br e subdomínios associados.",
+      "Estes termos aplicam-se a todas as páginas públicas, demonstrações interativas, formulários e conteúdos disponibilizados no domínio nangellcreativestudio.online e subdomínios associados.",
     ],
   },
   {
@@ -194,7 +194,7 @@ export const termosUsoSections: LegalSection[] = [
     id: "contato",
     title: "8. Contato",
     content: [
-      "Dúvidas sobre estes Termos de Uso: contato@nangell.com.br.",
+      "Dúvidas sobre estes Termos de Uso: contato@nangellcreativestudio.online.",
       "WhatsApp comercial: disponível na página de contato do site.",
     ],
   },

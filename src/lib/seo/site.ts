@@ -11,7 +11,7 @@ export const siteConfig = {
   keywords: [...homeSeo.keywords],
   locale: "pt_BR",
   defaultTitle:
-    "Nangell Creative Studio | Desenvolvimento de Softwares Sob Medida",
+    "Nangell Creative Studio | Desenvolvimento de software sob medida",
   titleTemplate: "%s | Nangell Creative Studio",
   ogImage: brandAssets.logoHorizontalDark,
   email: "contato@nangellcreativestudio.online",

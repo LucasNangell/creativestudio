@@ -42,32 +42,32 @@ export const portfolioPageContent = {
   },
   hero: {
     eyebrow: "Portfólio",
-    title: "Cases que provam competência antes do primeiro contato",
+    title: "Cases com estudo de caso e demonstração no site",
     description:
-      "Não mostramos apenas prints. Cada projeto combina estudo de caso comercial, métricas de resultado e demonstração interativa para você experimentar como um sistema real funciona.",
+      "Cada projeto documenta problema, solução, stack e, quando disponível, uma demonstração que você abre no navegador sem cadastro.",
     primaryCta: { label: "Solicitar diagnóstico", href: "/diagnostico" },
-    secondaryCta: { label: "Ver demonstrações em ação", href: "#portfolio-grid" },
+    secondaryCta: { label: "Ver demonstrações", href: "#portfolio-grid" },
   },
   showDontTell: {
-    title: "Mostre, não conte",
+    title: "Demonstração no mesmo domínio",
     description:
-      "O diferencial da Nangell é colocar o visitante dentro do software. Explore os cases e abra a demonstração no mesmo domínio, sem cadastro, sem agendar reunião para ver valor.",
+      "Além do estudo de caso, vários projetos têm demonstração interativa com dados fictícios. Você testa o fluxo antes de agendar uma conversa.",
     highlights: [
-      "Demonstrações nativas no navegador com dados fictícios",
-      "Cases com problema, solução e métricas",
-      "Stack e arquitetura documentada em cada estudo",
+      "Demonstrações no navegador com dados fictícios",
+      "Problema, solução e stack documentados",
+      "Arquitetura descrita em cada estudo",
     ],
   },
   filters: {
     title: "Explorar cases",
     description:
-      "Oito projetos reais do portfólio, doações, vídeo corporativo, automação PDF, produção gráfica, sharescreen LAN, site clínico, inteligência política e Encurtou.pro. Abra cada case e teste a demonstração.",
+      "Filtre por categoria: doações, vídeo corporativo, automação PDF, produção gráfica, LAN, site clínico, inteligência política e Encurtou.pro.",
   },
   cta: {
     title: "Quer um sistema parecido com um desses cases?",
     description:
-      "Transformamos desafios operacionais em software que escala. Diagnóstico inicial sem compromisso.",
-    primaryCta: { label: "Quero algo parecido", href: "/diagnostico" },
+      "Descreva o cenário no diagnóstico. Você recebe um caminho técnico objetivo, sem compromisso.",
+    primaryCta: { label: "Solicitar diagnóstico", href: "/diagnostico" },
     whatsappCta: { label: "Falar no WhatsApp" },
   },
 } as const;

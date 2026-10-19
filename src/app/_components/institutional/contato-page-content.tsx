@@ -14,12 +14,13 @@ import { cn } from "@/lib/utils";
 export function ContatoPageContent() {
   return (
     <>
-      <Section className="pt-8 sm:pt-12">
+      <Section spacing="hero">
         <Container>
           <PageHero
             eyebrow={contatoHero.eyebrow}
             title={contatoHero.title}
             description={contatoHero.description}
+            align="center"
           />
         </Container>
       </Section>

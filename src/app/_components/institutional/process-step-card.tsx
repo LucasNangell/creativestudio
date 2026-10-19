@@ -91,7 +91,7 @@ export function ProcessStepCard({ etapa }: ProcessStepCardProps) {
         <div className="mt-6 flex flex-wrap gap-3 border-t border-glass-border pt-5">
           {etapa.caseSlug ? (
             <Link
-              href={`/portfolio/${etapa.caseSlug}`}
+              href={`/cases/${etapa.caseSlug}`}
               className="inline-flex items-center gap-2 text-sm font-medium text-nangell-cyan hover:text-nangell-blue"
             >
               <FolderKanban className="h-4 w-4" aria-hidden />

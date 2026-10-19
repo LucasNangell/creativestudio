@@ -22,10 +22,33 @@ import { cn } from "@/lib/utils";
 function ProcessFlowDiagram() {
   return (
     <div
-      className="mt-10 overflow-x-auto pb-2"
+      className="mt-10"
       aria-label="Fluxo sequencial das 6 etapas do processo"
     >
-      <div className="relative mx-auto flex min-w-[640px] max-w-4xl items-start justify-between px-4">
+      {/* Mobile: vertical list */}
+      <ol className="space-y-3 md:hidden">
+        {processoEtapas.map((etapa) => (
+          <li key={etapa.step}>
+            <a
+              href={`#etapa-${etapa.step}`}
+              className="flex items-center gap-3 rounded-nangell border border-glass-border bg-nangell-surface/60 px-4 py-3 transition-colors hover:border-nangell-cyan/40"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-nangell-cyan/60 bg-nangell-dark font-mono text-sm font-bold text-nangell-cyan">
+                {String(etapa.step).padStart(2, "0")}
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-sm font-medium text-nangell-text">
+                  {etapa.title}
+                </span>
+                <span className="text-xs text-nangell-muted">{etapa.duration}</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ol>
+
+      {/* Desktop: horizontal flow */}
+      <div className="relative mx-auto hidden max-w-4xl items-start justify-between px-4 md:flex">
         <div
           className="absolute top-6 right-8 left-8 h-0.5 bg-gradient-to-r from-nangell-cyan via-nangell-blue to-nangell-violet"
           aria-hidden
@@ -42,7 +65,9 @@ function ProcessFlowDiagram() {
             <span className="mt-2 text-xs font-medium text-nangell-text group-hover:text-nangell-cyan">
               {etapa.title}
             </span>
-            <span className="mt-0.5 text-[10px] text-nangell-muted">{etapa.duration}</span>
+            <span className="mt-0.5 text-[10px] text-nangell-muted">
+              {etapa.duration}
+            </span>
           </a>
         ))}
       </div>
@@ -53,18 +78,19 @@ function ProcessFlowDiagram() {
 export function ProcessoPageContent() {
   return (
     <>
-      <Section className="pt-8 sm:pt-12">
+      <Section spacing="hero">
         <Container>
           <PageHero
             eyebrow={processoHero.eyebrow}
             title={processoHero.title}
             description={processoHero.description}
+            align="left"
           >
             <Link
               href="/diagnostico"
               className={cn(buttonVariants({ variant: "primary", size: "lg" }))}
             >
-              Agendar diagnóstico
+              Solicitar diagnóstico
             </Link>
             <Link
               href="/sobre"
